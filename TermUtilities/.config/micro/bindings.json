@@ -1,0 +1,22 @@
+{
+	"CtrlA":		"UnbindKey",
+	"CtrlC":		"UnbindKey",
+	"CtrlE":		"UnbindKey",
+	"CtrlP":		"UnbindKey",
+	"CtrlQ":		"UnbindKey",
+	"CtrlW":		"UnbindKey",
+	"Alt-w":		"UnbindKey",
+	"CtrlX":		"UnbindKey",
+	"CtrlY":		"UnbindKey",
+	"AltDown":		"UnbindKey",
+	"AltUp":		"UnbindKey",
+	
+	"CtrlA":		"StartOfLine",
+	"CtrlC":		"Quit",
+	"CtrlE":		"EndOfLine",
+	"CtrlW":		"Cut",
+	"Alt-w":		"Copy",
+	"CtrlY":		"Paste",
+	"AltDown":		"Undo",
+	"AltUp":	 	"Redo",
+}

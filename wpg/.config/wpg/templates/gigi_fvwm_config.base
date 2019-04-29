@@ -1,0 +1,394 @@
+SetEnv cache $[HOME]/.fvwm/cache
+SetEnv icons $[HOME]/.fvwm/icons
+
+## Functions                                         
+## Autostart
+# Start or restart
+DestroyFunc StartFunction
+AddToFunc   StartFunction
+# Only execute once
+DestroyFunc InitFunction
+AddToFunc InitFunction
++ I Exec exec autostart.polaroid
++ I Exec exec autostart.common
+
+## To Create a Thumbnail on Minimize
+# Call the script to create a thumbnail using ImageMagick & xwd
+DestroyFunc Thumbnail
+AddToFunc Thumbnail
++ I ThisWindow (Shaded) WindowShade
++ I PipeRead 'bash thumbnail.cre "$[w.id]" "$[cache]"'
+# Restore the window
+DestroyFunc DeThumbnail
+AddToFunc DeThumbnail
++ I PipeRead 'bash thumbnail.del "$[w.id]" "$[cache]"'
+*FvwmEvent: deiconify DeThumbnail
+
+## To Toggle The Titlebar
+DestroyFunc ToggleTitle
+AddToFunc   ToggleTitle
++ I ThisWindow (State 1) WindowStyle Title
++ I TestRc (Match) State 1 False
++ I TestRc (Match) Break
++ I WindowStyle !Title
++ I State 1 True
+
+## Window Snapping
+# Snap left
+DestroyFunc SnapLeft
+AddToFunc SnapLeft
++ I Move 0 0
++ I Maximize True 50 100
++ I Raise
+# Snap right
+DestroyFunc SnapRight
+AddToFunc SnapRight
++ I Maximize True 50 100
++ I Move -0 0
++ I Raise
+# Zoom unmaximize large
+DestroyFunc SnapHalf
+AddToFunc SnapHalf
++ I Maximize True 75 75
++ I Move 50-50w 50-50w
++ I Raise
+# Zoom unmaximize small
+DestroyFunc SnapQuarter
+AddToFunc SnapQuarter
++ I Maximize True 50 50
++ I Move 50-50w 50-50w
++ I Raise
+# Zoom unmaximize tiny
+DestroyFunc SnapTiny
+AddToFunc SnapTiny
++ I Maximize True 36 28
++ I Move 50-50w 50-50w
++ I Raise
+
+## Raising Window
+DestroyFunc RaiseMoveX
+AddToFunc RaiseMoveX
++ I Raise
++ M $0
++ D $1
+DestroyFunc RaiseMove
+AddToFunc RaiseMove
++ I Raise
++ M $0
+
+## Common Keybinds
+# Ignore Numlock and other modifiers for bindings
+IgnoreModifiers L25
+# Launching apps
+Key space A 4 Exec rofi.polaroid
+Key Print A 4 Exec sshot.full
+Key Print A 4S Exec sshot.window
+Key Print A 4 Exec sshot.select
+Key Return A 4S Exec draw-term
+Key Return A 4 Exec kitty
+
+# Volume control
+Key XF86AudioRaiseVolume A A Exec vol up
+Key XF86AudioLowerVolume A A Exec vol down
+Key XF86AudioMute A A Exec vol toggle
+# Music control
+Key XF86AudioNext A A Exec mpc next
+Key XF86AudioPrev A A Exec mpc prev
+Key XF86AudioPlay A A Exec mpc toggle
+Key XF86AudioStop A A Exec mpc stop
+Key m A 4 Exec notify-send "Now Playing ♫" "$(mpc current)"
+
+## Workspace & window Bindings
+# Close, maximize, and minimize
+Key w WT 4 Close
+Key f WT 4 Maximize
+Key t WT 4 Thumbnail
+# Super + 1-4 to switch workspace
+Key 1 A 4 GotoPage 0 0
+Key 2 A 4 GotoPage 1 0
+Key 3 A 4 GotoPage 2 0
+Key 4 A 4 GotoPage 3 0
+# Super + Shift + 1-4 to send to another workspace
+Key 1 A 4S MovetoPage 0 0
+Key 2 A 4S MovetoPage 1 0
+Key 3 A 4S MovetoPage 2 0
+Key 4 A 4S MovetoPage 3 0
+# Control + Alt + Left/Right like usual
+Key Left A CM GotoPage -1p +0p
+Key Right A CM GotoPage +1p +0p
+# Window snapping
+Key Left A 4 SnapLeft
+Key Right A 4 SnapRight
+Key Up A 4 SnapHalf
+Key Down A 4 SnapQuarter
+Key n A 4 SnapTiny
+# Move to the edge of the screen
+Key Left A C4 Move 0 w+0
+Key Right A C4 Move -0 w+0
+Key Up A C4 Move w+0 0
+Key Down A C4 Move w+0 -0
+# Move to the center of the screen
+Key a A 4 Move 50-50w 50-50w
+# Free move using mouse
+Key m A M Move
+# Free resize using mouse
+Key r A M Resize
+
+## Double Click Delay
+ClickTime 250
+MoveThreshold 3
+
+## Focus on Hover Instead of ClickToFocus
+Style * SloppyFocus, MouseFocusClickRaises
+
+## Titlebar Buttons
+Mouse 1 1 A Menu MenuWindowOps Delete
+Mouse 1 2 A Close
+Mouse 1 4 A Maximize
+Mouse 1 6 A Thumbnail
+
+## Titlebar Itself
+Mouse 1	T A RaiseMoveX Move Maximize
+Mouse 1	FS A RaiseMove Resize
+Mouse 4	T A WindowShade True
+Mouse 5	T A WindowShade False
+Mouse 3	T A Menu MenuWindowOps
+
+## Rootmenu on The Desktop
+Mouse 1	R A Menu MenuFvwmRoot
+Mouse 2	R A WindowList
+Mouse 3	R A Menu MenuWindowOpsLong
+
+## On minimized windows
+Mouse 1 I A Iconify off
+Mouse 3 I A Menu MenuIconOps
+      
+## Menu Styling                   
+MenuStyle * MenuColorset 5, ActiveColorset 6, GreyedColorset 7, TitleColorset 8
+MenuStyle * Hilight3DOff, HilightBack, HilightTitleBack, SeparatorsLong
+MenuStyle * TrianglesSolid, TrianglesUseFore
+MenuStyle * BorderWidth 25
+MenuStyle * VerticalItemSpacing 3 3, VerticalTitleSpacing 3 3
+MenuStyle * ItemFormat "%|%4.2i%5.3l%5.3>%|"
+MenuStyle * Font "xft:PTSansNarrow:Bold:size=10:antialias=True"
+
+## Root Menu on The Desktop
+DestroyMenu MenuFvwmRoot
+AddToMenu   MenuFvwmRoot
++ "terminal" Exec exec kitty
++ "emacs" Exec exec emacs
+# + "rofi" Exec exec rofi.polaroid
++ "" Nop
++ "www" Exec exec firefox
++ "mail" Exec exec thunderbird
++ "" Nop
++ "files" Exec exec thunar
++ "" Nop
++ "system" Popup MenuPrograms
+
+
+## Root Menu >> Shortcut
+DestroyMenu MenuPrograms
+AddToMenu   MenuPrograms
++ "refresh" Refresh
++ "restart" Restart
++ "" Nop
++ "quit" Module FvwmScript FvwmScript-ConfirmQuit
+
+
+## Titlebar Right Click
+DestroyMenu MenuWindowOps
+AddToMenu   MenuWindowOps
++ "Send To" Popup MenuSendTo
++ "Move" Move
++ "Resize" Resize
++ "Iconify" Iconify
++ "Maximize" Maximize
++ "Shade" WindowShade
++ "" Nop
++ "Close" Close
++ "More..." Menu MenuWindowOpsLong This 0 0
+
+## Titlebar Right Click >> More
+DestroyMenu MenuWindowOpsLong
+AddToMenu   MenuWindowOpsLong
++ "Send To" Popup MenuSendTo
++ "Move" Move
++ "Resize" Resize
++ "(De)Iconify" Iconify
++ "(Un)Maximize" Maximize
++ "(Un)Shade" WindowShade
++ "(No)TitleBar" Pick (CirculateHit) ToggleTitle
++ "" Nop
++ "Close" Close
++ "Destroy" Destroy
++ "" Nop
++ "Raise" Raise
++ "Lower" Lower
++ "" Nop
++ "StaysOnTop" Pick (CirculateHit) Layer 0 6
++ "StaysPut" Pick (CirculateHit) Layer 0 4
++ "StaysOnBottom" Pick (CirculateHit) Layer 0 2
++ "" Nop
++ "Identify" Module FvwmIdent
+
+## Right Click on Minimized Window
+DestroyMenu MenuIconOps
+AddToMenu   MenuIconOps
++ "(De)Iconify" Iconify
++ "(Un)Maximize" Maximize
++ "(Un)Shade" WindowShade
++ "(No)TitleBar" Pick (CirculateHit) ToggleTitle
++ "" Nop
++ "Close" Close
++ "Destroy" Destroy
++ "" Nop
++ "Raise" Raise
++ "Lower" Lower
++ "" Nop
++ "StaysOnTop" Pick (CirculateHit) Layer 0 6
++ "StaysPut" Pick (CirculateHit) Layer 0 4
++ "StaysOnBottom" Pick (CirculateHit) Layer 0 2
++ "" Nop
++ "Identify" Module FvwmIdent
+
+## Titlebar Right Click >> Send To
+DestroyMenu MenuSendTo
+AddToMenu MenuSendTo
++ " Workspace 1 " MoveToPage 0 0
++ " Workspace 2 " MoveToPage 1 0
++ " Workspace 3 " MoveToPage 2 0
++ " Workspace 4 " MoveToPage 3 0
+
+## COLORSETS   
+## Common Colorset
+# Default
+Colorset 0 fg #fffdfd, bg {color3}, hi, sh, Plain, NoShape
+# Inactive windows
+Colorset 1 fg #, bg #fffdfd, hi, sh, Plain, NoShape
+# Active windows
+Colorset 2 fg {color8}, bg #fffdfd, hi, sh, Plain, NoShape
+# Inactive windows borders
+Colorset 3 fg #fffdfd, bg #fffdfd, hi #fffdfd, sh #fffdfd, Plain, NoShape
+# Active windows borders
+Colorset 4 fg #fffdfd, bg #fffdfd, hi #fffdfd, sh #fffdfd, Plain, NoShape
+# Menu inactive item
+Colorset 5 fg {color8}, bg #fffdfd, hi #fffdfd, sh #fffdfd, Plain, NoShape
+# Menu active item
+Colorset 6 fg {color5}, bg #fffdfd, hi #fffdfd, sh #fffdfd, Plain, NoShape
+# Menu grayed item
+Colorset 7 fg {color1}, bg #fffdfd, hi #fffdfd, sh #fffdfd, Plain, NoShape
+# Menu title
+Colorset 8 fg {color9}, bg #fffdfd, hi #fffdfd, sh #fffdfd, Plain, NoShape
+# Reserved
+Colorset 10 fg {color2}, bg {color0}, hi {color0}, sh {color0}, Plain, NoShape
+# Module default
+Colorset 10 fg {color2}, bg {color0}, hi {color0}, sh {color0}, Plain, NoShape
+# Module highlight
+Colorset 11 fg {color3}, bg {color0}, hi {color0}, sh {color0}, Plain, NoShape
+# Module active buttons (mouse hover)
+Colorset 12 fg {color4}, bg {color0}, hi, sh, Plain, NoShape
+# Pager active page
+Colorset 13 fg {color0}, bg {color0}, hi, sh, Plain, NoShape
+# Iconified buttons
+Colorset 14 fg {color5} bg {color0}, hi {color0}, sh {color0}, Plain, NoShape
+
+## Default Font
+DefaultFont "xft:PTSansNarrow:Regular:size=9:antialias=True"
+
+## Place It On Center instead of MinOverlapPlacement
+Style * PositionPlacement Center
+Style * GrabFocusOff, !UsePPosition
+
+## Transient Windows, Such as Open File Windows
+Style * DecorateTransient, StackTransientParent
+Style * !FPGrabFocusTransient, FPReleaseFocusTransient
+
+## Window Shade / Roll Up
+Style * WindowShadeScrolls, WindowShadeSteps 10
+
+## Disable Icons from Appearing on Desktop
+Style * !Icon
+
+## Decoration Styles
+Style * TitleAtBottom
+Style * ResizeHintOverride
+Style * BorderWidth 20, HandleWidth 20
+Style * Colorset 1, HilightColorset 2
+Style * BorderColorset 3, HilightBorderColorset 4
+
+## Special Rules
+Style bar* !Title, BorderWidth 0, HandleWidth 0
+Style tint2* !Title, BorderWidth 0, HandleWidth 0, PositionPlacement Top
+Style stalonetray* !Title, BorderWidth 0, HandleWidth 0
+Style cool-retro-term* !Title, BorderWidth 1, HandleWidth 5
+
+## Decorations                                      
+# Buttons Locations 1 3 5 7 9 T T T T T 0 8 6 4 2
+# 2 >> Close, 4 >> Maximize, 6 >> Minimize, 1 >> Window Menu
+TitleStyle LeftJustified Height 80 -- Flat
+Style * Font "xft:PermanentMarker:Regular:size=16:antialias=True"
+ButtonStyle Reset
+ButtonStyle All -- Flat
+ButtonStyle All -- UseTitleStyle
+AddButtonStyle All Vector 2 1x1@4 1x1@4
+# AddButtonStyle 2 \
+# 	ActiveUp (Pixmap $[icons]/close-cube.png -- Flat) \
+# 	ActiveDown (Pixmap $[icons]/close-cube.png -- Flat) \
+# 	Inactive (Pixmap $[icons]/close-cube.png -- Flat)
+# AddButtonStyle 4 \
+# 	ActiveUp (Pixmap $[icons]/front-cube.png -- Flat) \
+# 	ActiveDown (Pixmap $[icons]/front-cube.png -- Flat) \
+# 	Inactive (Pixmap $[icons]/front-cube.png -- Flat)
+# AddButtonStyle 6 \
+# 	ActiveUp (Pixmap $[icons]/sphere.png -- Flat) \
+# 	ActiveDown (Pixmap $[icons]/sphere.png -- Flat) \
+# 	Inactive (Pixmap $[icons]/sphere.png -- Flat)
+# AddButtonStyle 1 \
+# 	ActiveUp (Pixmap $[icons]/metamorphose.png -- Flat) \
+# 	ActiveDown (Pixmap $[icons]/metamorphose.png -- Flat) \
+# 	Inactive (Pixmap $[icons]/metamorphose.png -- Flat)
+
+## MODULES
+## FvwmIdent
+# To get various window info
+# Used in Titlebar Right Click >> More >> Identify
+DestroyModuleConfig FvwmIdent:*
+*FvwmIdent: Colorset 10
+*FvwmIdent: Font "xft:PTSansNarrow:Bold:size=10:antialias=True"
+
+## FvwmScript
+# To create desktop widget like date time & quit popup menu
+# Only used for quit popup menu this time
+DestroyModuleConfig FvwmScript:*
+*FvwmScript: DefaultColorset 10
+
+## Pager
+## Workspace
+DesktopSize 4x1
+EdgeScroll 0 0
+EdgeResistance 0
+EdgeThickness 0
+Style * EdgeMoveDelay 350
+Style * EdgeMoveResistance 350
+EwmhBaseStruts 12 12 12 12
+
+## Workspace Indicator
+DestroyModuleConfig FvwmPager: *
+AddToFunc StartFunction
++ I Module FvwmPager
+*FvwmPager: font none
+*FvwmPager: Rows 1
+*FvwmPager: Column 4
+*FvwmPager: Fore {color8}
+*FvwmPager: Back {color0}
+*FvwmPager: Hilight {color4}
+*FvwmPager: SolidSeparators
+*FvwmPager: UseSkipList
+*FvwmPager: Geometry 128x18-12-12
+*FvwmPager: WindowBorderWidth 0
+Style FvwmPager !Title, !Borders, StaysOnBottom, Sticky
+
+## Minimize to Thumbnail Placeholder
+Style * IconBox 400x768+12+40, IconGrid 15 15, \
+IconFill top left, !IconTitle, IconBackgroundRelief 0

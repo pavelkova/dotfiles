@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/gigi/.config/wpg/wallpapers/fashion-3.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#000000",
+        "foreground": "#ffffff",
+        "cursor": "#ffffff"
+    },
+    "colors": {
+        "color0": "#000000",
+        "color1": "#6E6E6E",
+        "color2": "#E8E8E8",
+        "color3": "#AFAFAF",
+        "color4": "#f4f4f4",
+        "color5": "#8F8F8F",
+        "color6": "#D0D0D0",
+        "color7": "#F4F4F4",
+        "color8": "#141414",
+        "color9": "#9d8080",
+        "color10": "#ffe5e5",
+        "color11": "#facccc",
+        "color12": "#ffe5e5",
+        "color13": "#cca7a7",
+        "color14": "#ffe5e5",
+        "color15": "#ffffff"
+    }
+}

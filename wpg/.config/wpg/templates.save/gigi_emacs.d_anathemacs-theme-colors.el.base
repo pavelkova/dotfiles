@@ -1,0 +1,28 @@
+;;; anathemacs-theme-colors.el --- 
+
+;;; Code:
+  (setq ana-bg-1      "#<COLOR0>"  ;; black / o
+        ana-bg-2      "#<COLOR8>"  ;; black / 8
+        ana-base-1    "#<COLOR15>" ;; white / 15
+        ana-base-2    "#<COLOR7>"  ;; white / 7
+        ana-base-dim  "#ebddd7"   ;; --
+        ana-red-1     "#<COLOR1>"  ;; red / 1
+        ana-red-2     "#<COLOR9>"  ;; red / 9
+        ana-green-1   "#<COLOR2>"  ;; green / 2
+        ana-green-2   "#<COLOR10>" ;; green / 10
+        ana-yellow-1  "#<COLOR3>"  ;; yellow / 3
+        ana-yellow-2  "#<COLOR11>" ;; yellow / 11
+        ana-blue-1    "#<COLOR4>"  ;; blue / 4
+        ana-blue-2    "#<COLOR12>" ;; blue / 12
+        ana-magenta-1 "#<COLOR5>"  ;; magenta / 5
+        ana-magenta-2 "#<COLOR13>" ;; magenta / 13
+        ana-cyan-1    "#<COLOR6>"  ;; cyan / 6
+        ana-cyan-2    "#<COLOR14>" ;; cyan / 14
+      )
+
+  
+;; Local Variables:
+;; no-byte-compile: t
+;; End:
+
+;;; anathemacs-theme-colors.el ends here

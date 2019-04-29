@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/gigi/.config/wpg/wallpapers/guopei.jpeg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#010101",
+        "foreground": "#cbcbcb",
+        "cursor": "#cbcbcb"
+    },
+    "colors": {
+        "color0": "#010101",
+        "color1": "#644417",
+        "color2": "#504842",
+        "color3": "#725b34",
+        "color4": "#7a6f64",
+        "color5": "#878787",
+        "color6": "#615c56",
+        "color7": "#afafaf",
+        "color8": "#010101",
+        "color9": "#986517",
+        "color10": "#846753",
+        "color11": "#9c8441",
+        "color12": "#9f9275",
+        "color13": "#ababab",
+        "color14": "#9a846d",
+        "color15": "#cbcbcb"
+    }
+}

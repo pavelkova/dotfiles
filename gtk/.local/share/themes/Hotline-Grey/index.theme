@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Hotline-Grey
+Comment=Rainy Miami
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Hotline-Grey
+MetacityTheme=Hotline-Grey
+IconTheme=gnome
+CursorTheme=DMZ-Black
+ButtonLayout=menu:minimize,maximize,close

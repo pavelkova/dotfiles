@@ -1,0 +1,22 @@
+wpg = {{}}
+
+wpg.background = "{color0}"
+wpg.foreground = "{color15}"
+wpg.color0 = "{color0}"
+wpg.color1 = "{color1}"
+wpg.color2 = "{color2}"
+wpg.color3 = "{color3}"
+wpg.color4 = "{color4}"
+wpg.color5 = "{color5}"
+wpg.color6 = "{color6}"
+wpg.color7 = "{color7}"
+wpg.color8 = "{color8}"
+wpg.color9 = "{color9}"
+wpg.color10 = "{color10}"
+wpg.color11 = "{color11}"
+wpg.color12 = "{color12}"
+wpg.color13 = "{color13}"
+wpg.color14 = "{color14}"
+wpg.color15 = "{color15}"
+
+return wpg

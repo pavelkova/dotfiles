@@ -1,0 +1,54 @@
+/*************************
+ * Check and Radio items *
+ *************************/
+
+
+.radio,
+
+.radio:active,
+
+.radio:disabled {
+    background-color: transparent;
+    border-style: none;
+}
+
+
+.radio,
+.radio row:selected,
+.radio row:selected:focus {
+    background-image: url("assets/radio-unselected.png");
+}
+
+.radio:disabled,
+.radio row:selected:disabled,
+.radio row:selected:focus:disabled {
+    background-image: url("assets/radio-unselected-insensitive.png");
+}
+
+.radio:active,
+.radio row:selected:active,
+.radio row:selected:focus:active {
+	background-image: url("assets/radio-selected.png");
+}
+
+.radio:active:disabled,
+.radio row:selected:active:disabled,
+.radio row:selected:focus:active:disabled {
+    background-image: url("assets/radio-selected-insensitive.png");
+}
+
+.radio:indeterminate,
+.radio row:selected:indeterminate,
+.radio row:selected:focus:indeterminate {
+    background-image: url("assets/radio-mixed.png");
+
+}
+
+.radio:indeterminate:disabled,
+.radio row:selected:indeterminate:disabled,
+.radio row:selected:focus:indeterminate:disabled {
+    background-image: url("assets/radio-mixed-insensitive.png");
+    background-color: transparent;
+}
+
+

@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/gigi/.config/wpg/wallpapers/junglebright.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#11130c",
+        "foreground": "#fdfdfd",
+        "cursor": "#fdfdfd"
+    },
+    "colors": {
+        "color0": "#11130c",
+        "color1": "#b05d50",
+        "color2": "#727f6f",
+        "color3": "#9c906d",
+        "color4": "#7a7a7e",
+        "color5": "#afafaf",
+        "color6": "#7b8788",
+        "color7": "#e4e4e4",
+        "color8": "#272a1c",
+        "color9": "#ed6c57",
+        "color10": "#88b481",
+        "color11": "#dcc47c",
+        "color12": "#8e94b4",
+        "color13": "#e7dedb",
+        "color14": "#8fbbc1",
+        "color15": "#fdfdfd"
+    }
+}

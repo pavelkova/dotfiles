@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/gigi/.config/wpg/wallpapers/babydys.png",
+    "alpha": "100",
+
+    "special": {
+        "background": "#0e0c19",
+        "foreground": "#fef2ff",
+        "cursor": "#fef2ff"
+    },
+    "colors": {
+        "color0": "#0e0c19",
+        "color1": "#8B7A99",
+        "color2": "#63749D",
+        "color3": "#6984B0",
+        "color4": "#5E81AB",
+        "color5": "#8C7DA1",
+        "color6": "#7E93C0",
+        "color7": "#c2b9c8",
+        "color8": "#1c1834",
+        "color9": "#b68cd8",
+        "color10": "#708fdc",
+        "color11": "#76a7f7",
+        "color12": "#68a6ef",
+        "color13": "#b28fe3",
+        "color14": "#8fb7ff",
+        "color15": "#fef2ff"
+    }
+}

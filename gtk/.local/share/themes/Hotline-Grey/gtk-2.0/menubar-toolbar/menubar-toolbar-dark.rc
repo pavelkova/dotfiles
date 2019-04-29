@@ -1,0 +1,221 @@
+style "menubar" {
+
+  bg[NORMAL] = "#171717"
+  fg[NORMAL] = "#00e1ff"
+  fg[PRELIGHT] = "#00e1ff"
+  fg[ACTIVE] = "#00e1ff"
+  fg[SELECTED] = @selected_fg_color
+  fg[INSENSITIVE] = shade(0.7, "#9fcecc")
+
+  xthickness = 0
+  ythickness = 0
+
+  engine "pixmap" {
+
+    image {
+      function = BOX
+      file  = "menubar-toolbar/menubar-dark.png"
+      stretch  = TRUE
+      border = { 0, 0, 0, 0 }
+    }
+  }
+}
+
+style "menubar-borderless" {
+
+  bg[NORMAL] = "#171717"
+  fg[NORMAL] = "#9fcecc"
+  fg[SELECTED] = @selected_fg_color
+  fg[INSENSITIVE] = shade(0.7, "#9fcecc")
+
+  xthickness = 0
+  ythickness = 0
+
+  engine "pixmap" {
+
+    image {
+      function = BOX
+      file  = "assets/null.png"
+      stretch  = TRUE
+      border = { 0, 0, 0, 0 }
+    }
+  }
+}
+
+style "menubar_item" {
+
+  xthickness = 2
+  ythickness = 4
+
+  fg[PRELIGHT] = @selected_fg_color
+
+  engine "pixmap" {
+
+    image {
+      function = BOX
+      state = PRELIGHT
+      file = "menubar-toolbar/menubar_button-dark.png"
+      border = { 0, 0, 0, 0 }
+      stretch = TRUE
+    }
+  }
+}
+
+# Text Style Menubar
+style "menubar-text" {
+
+  engine "murrine" {
+    text_shade = 0.0
+    textstyle = 0
+  }
+}
+
+
+style "toolbar_text" {
+  fg[NORMAL] = "#9fcecc"
+  fg[PRELIGHT] = "#9fcecc"
+  fg[INSENSITIVE] = shade(0.7, "#9fcecc")
+  fg[ACTIVE] = "#9fcecc"
+
+  text[NORMAL] = "#9fcecc"
+  text[PRELIGHT] = "#9fcecc"
+  text[INSENSITIVE] = shade(0.7, "#9fcecc")
+  text[ACTIVE] = "#9fcecc"
+
+}
+
+style "toolbar_button" {
+
+  xthickness = 4
+  ythickness = 4
+
+  engine "pixmap" {
+
+    image {
+      function = BOX
+      state = NORMAL
+      file = "menubar-toolbar/button.png"
+      border = { 0, 0, 0, 0 }
+      stretch = TRUE
+    }
+
+    image {
+      function = BOX
+      state = PRELIGHT
+      file = "menubar-toolbar/button-hover.png"
+      border = { 0, 0, 0, 0 }
+      stretch = TRUE
+    }
+
+    image {
+      function = BOX
+      state = ACTIVE
+      file = "menubar-toolbar/button-active.png"
+      border = { 0, 0, 0, 0 }
+      stretch = TRUE
+    }
+
+    image {
+      function = BOX
+      state = INSENSITIVE
+      file = "menubar-toolbar/button-insensitive.png"
+      border = { 0, 0, 0, 0 }
+      stretch = TRUE
+    }
+  }
+}
+
+style "toolbar_entry" {
+
+  base[NORMAL] = "#1d2026"
+  base[ACTIVE] = "#1d2026"
+  base[INSENSITIVE] = "#1d2026"
+
+  text[NORMAL] = "#9fcecc"
+
+  engine "pixmap" {
+
+    image {
+      function = SHADOW
+      state = NORMAL
+      detail = "entry"
+      file = "menubar-toolbar/entry-toolbar-dark.png"
+      border = { 0, 0, 0, 0 }
+      stretch = TRUE
+    }
+
+    image {
+      function = SHADOW
+      state = ACTIVE
+      detail = "entry"
+      file = "menubar-toolbar/entry-active-toolbar-dark.png"
+      border = { 0, 0, 0, 0 }
+      stretch = TRUE
+    }
+
+    image {
+      function = SHADOW
+      state = INSENSITIVE
+      detail = "entry"
+      file = "menubar-toolbar/entry-disabled-toolbar-dark.png"
+      border = { 0, 0, 0, 0 }
+      stretch = TRUE
+    }
+
+    image {
+      function = FLAT_BOX
+      state    = ACTIVE
+      detail   = "entry_bg"
+      file     = "assets/null.png"
+    }
+
+    image {
+      function = FLAT_BOX
+      state    = INSENSITIVE
+      detail   = "entry_bg"
+      file     = "assets/null.png"
+    }
+
+    image {
+      function = FLAT_BOX
+      detail   = "entry_bg"
+      file     = "assets/null.png"
+    }
+  }
+}
+
+#Chromium
+style "chrome-gtk-frame" {
+
+  ChromeGtkFrame::frame-color = "#171717"
+  ChromeGtkFrame::inactive-frame-color = "#171717"
+
+  ChromeGtkFrame::frame-gradient-size = 0
+  ChromeGtkFrame::frame-gradient-color = shade(0.5, @bg_color)
+
+  ChromeGtkFrame::incognito-frame-color = shade(0.85, @bg_color)
+  ChromeGtkFrame::incognito-inactive-frame-color = @bg_color
+
+  ChromeGtkFrame::incognito-frame-gradient-color = @bg_color
+
+  ChromeGtkFrame::scrollbar-trough-color = shade(0.912, @bg_color)
+  ChromeGtkFrame::scrollbar-slider-prelight-color = shade(1.04, @bg_color)
+  ChromeGtkFrame::scrollbar-slider-normal-color = @bg_color
+
+}
+
+widget_class "*<GtkMenuBar>*"                                       style "menubar"
+widget_class "*<GtkMenuBar>.<GtkMenuItem>*"                         style "menubar_item"
+
+widget_class "*ThunarWindow*<GtkToolbar>"                           style "menubar"
+
+class "ChromeGtkFrame"                                              style "chrome-gtk-frame"
+
+widget_class "*<GtkMenuBar>*<GtkMenuItem>*<GtkAccelLabel>"          style "menubar-text"
+
+# Whitelist for dark toolbars
+widget_class "*ThunarWindow*<GtkMenuBar>"                                   style "menubar-borderless"
+widget_class "*ThunarWindow*<GtkToolbar>*<GtkEntry>"                        style "toolbar_entry"
+widget_class "*ThunarWindow*<GtkToolbar>*<GtkButton>"                       style "toolbar_button"
+widget_class "*ThunarWindow*<GtkToolbar>*<GtkWidget>"                       style "toolbar_text"
+widget_class "*ThunarWindow*<GtkToolbar>*<GtkButton>*<GtkLabel>"            style "menubar-text"

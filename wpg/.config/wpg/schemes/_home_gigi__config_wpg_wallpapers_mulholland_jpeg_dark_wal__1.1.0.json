@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/gigi/.config/wpg/wallpapers/mulholland.jpeg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#080D0B",
+        "foreground": "#e5feff",
+        "cursor": "#e5feff"
+    },
+    "colors": {
+        "color0": "#080D0B",
+        "color1": "#39475C",
+        "color2": "#545B62",
+        "color3": "#86886E",
+        "color4": "#3F5184",
+        "color5": "#556C93",
+        "color6": "#6B8CAE",
+        "color7": "#b3c6da",
+        "color8": "#162620",
+        "color9": "#405a81",
+        "color10": "#61768b",
+        "color11": "#bbc07f",
+        "color12": "#4563b8",
+        "color13": "#5f88ce",
+        "color14": "#78b5f4",
+        "color15": "#e5feff"
+    }
+}

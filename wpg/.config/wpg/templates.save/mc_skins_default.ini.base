@@ -1,0 +1,186 @@
+[skin]
+    description = dark paradise - wpgtk
+    truecolors = true
+
+[Lines]
+    horiz = ─
+    vert = │
+    lefttop = ┌
+    righttop = ┐
+    leftbottom = └
+    rightbottom = ┘
+    topmiddle = ┬
+    bottommiddle = ┴
+    leftmiddle = ├
+    rightmiddle = ┤
+    cross = ┼
+    dhoriz = ═
+    dvert = ║
+    dlefttop = ╔
+    drighttop = ╗
+    dleftbottom = ╚
+    drightbottom = ╝
+    dtopmiddle = ╤
+    dbottommiddle = ╧
+    dleftmiddle = ╟
+    drightmiddle = ╢
+
+[aliases]
+    Main = #<COLOR0>
+    MainFg = #<COLOR15>
+    MarkedFg = #<COLOR0>
+    HeaderFg = #<COLOR7>
+    Selected = #<COLOR11>
+    Dialog = #<COLOR8>
+    DialogFocus = #<COLOR8>
+    Input = #<COLOR7>
+    PaleFg = #ebddd7
+    Error = #<COLOR1>
+    ErrorFocus = #<COLOR9>
+    Top = #<COLOR4>
+    MenuActive = #<COLOR8>
+    MenuSelected = #<COLOR11>
+    Bottom = #<COLOR13>
+    BottomNumber = #<COLOR0>
+    BottomNumberFg = #<COLOR12>
+    Help = Bottom
+    HelpBoldFg = DialogFocus
+    HelpItalicFg = ErrorFocus
+    HelpLinkFg = #<COLOR5>
+    EditorLineNumber = #<COLOR12>
+    EditorWhitespace = EditorLineNumber
+    EditorRightMargin = EditorWhitespace
+    EditorBookmark = Bottom
+    EditorFindAll = Top
+    EditorVoid = #<COLOR8>
+    EditorFrameFg = MainFg
+    EditorFrameActiveFg = MarkedFg
+    EditorFrameDragFg = Top
+    ViewerBoldFg = MarkedFg
+    ViewerUnderlinedFg = HelpLinkFg
+    ViewerSelected = Dialog
+    DiffAdd = #<COLOR10>
+    DiffChangedLine = #<COLOR9>
+    DiffGap = #<COLOR1>
+
+[core]
+    _default_ = MainFg;Main
+    selected = ;Selected
+    marked = MarkedFg;;bold
+    markselect = MarkedFg;Selected;bold
+    gauge = ;DialogFocus
+    input = #<COLOR15>;Input
+    inputunchanged = PaleFg;Input
+    inputmark = #<COLOR1>;DialogFocus
+    disabled = PaleFg;Dialog
+    reverse = #000;Bottom
+    commandlinemark = #000;DialogFocus
+    header = HeaderFg
+
+[dialog]
+    _default_ = #000;Dialog
+    dfocus = ;DialogFocus
+    dhotnormal = ;;underline
+    dhotfocus = ;DialogFocus;underline
+    dtitle = ;;bold
+
+[error]
+    _default_ = #fff;Error
+    errdfocus = ;ErrorFocus
+    errdhotnormal = ;;underline
+    errdhotfocus = ;ErrorFocus;underline
+    errdtitle = ;;bold
+
+[filehighlight]
+    directory = #<COLOR4>
+    executable = #<COLOR13>
+    symlink = #<COLOR11>
+    hardlink =
+    stalelink = #<COLOR1>
+    device = #<COLOR12>
+    special = #<COLOR5>
+    core = #<COLOR3>
+    temp = #<COLOR7>
+    archive = #<COLOR2>
+    doc = #<COLOR15>
+    source = #<COLOR15>
+    media = #<COLOR15>
+    graph = #<COLOR3>
+    database = #<COLOR10>
+
+[menu]
+    _default_ = #000;MenuActive
+    menusel = ;MenuSelected
+    menuhot = ;;underline
+    menuhotsel = ;MenuSelected;underline
+    menuinactive = ;Top
+
+[popupmenu]
+    _default_ = #000;Dialog
+    menusel = ;DialogFocus
+    menutitle = ;;bold
+
+[buttonbar]
+    hotkey = BottomNumberFg;BottomNumber
+    button = #000;Bottom
+
+[statusbar]
+    _default_ = #000;Top
+
+[help]
+    _default_ = #000;Help
+    helpbold = HelpBoldFg;;bold
+    helpitalic = HelpItalicFg;;italic
+    helplink = HelpLinkFg;;underline
+    helpslink = Help;HelpLinkFg
+
+[editor]
+    editbold = MarkedFg;;bold
+    editmarked = ;Selected
+    editwhitespace = ;EditorWhitespace
+    editlinestate = #000;EditorLineNumber
+    bookmark = #000;EditorBookmark
+    bookmarkfound = #000;EditorFindAll
+    editrightmargin = ;EditorRightMargin
+    editbg = ;EditorVoid
+    editframe = EditorFrameFg
+    editframeactive = EditorFrameActiveFg
+    editframedrag = EditorFrameDragFg
+
+[viewer]
+    viewbold = ViewerBoldFg;;bold
+    viewunderline = ViewerUnderlinedFg;;underline
+    viewselected = #000;ViewerSelected
+
+[diffviewer]
+    added = ;DiffAdd
+    changedline = ;DiffChangedLine
+    changednew = ;DiffAdd
+    changed = ;DiffGap
+    removed = ;DiffGap
+    error = #fff;Error
+
+[widget-common]
+    sort-sign-up = ▴
+    sort-sign-down = ▾
+
+[widget-panel]
+    hiddenfiles-sign-show = •
+    hiddenfiles-sign-hide = ○
+    history-prev-item-sign = ◂
+    history-next-item-sign = ▸
+    history-show-list-sign = ▾
+    filename-scroll-left-char = ◂
+    filename-scroll-right-char = ▸
+
+[widget-scollbar]
+    first-vert-char = ▴
+    last-vert-char = ▾
+    first-horiz-char = ◂
+    last-horiz-char = ▸
+    current-char = ■
+    background-char = ▒
+
+[widget-editor]
+    window-state-char = ↕
+    window-close-char = ✕

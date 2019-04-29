@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+THEME="$HOME/.local/sessions/hotline"
+
+wpg -s fashion-3.jpg &
+compiz --replace &
+emerald &
+# cairo-dock &
+conky &
+# conky -c $HOME/.config/conky/app-circles.conf &

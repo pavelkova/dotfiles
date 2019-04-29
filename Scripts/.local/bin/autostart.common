@@ -1,0 +1,31 @@
+#!/usr/bin/env fish
+
+# onearmedman is hostname of a Chromebook with Arch Linux ARM, and not all packages are available on ARM
+
+if test "$hostname" = "rosablanca"
+    ~/.local/lib/Nextcloud.AppImage &
+else
+    nextcloud &
+end
+
+if test "$hostname" = "onearmedman"
+    redshift &
+else
+#   pulseaudio --start &
+    redshift-gtk &
+    sleep 10 &
+    megasync &
+    aw-qt &
+#   kitty -e (greenclip daemon & glances) &
+end
+
+emacs --daemon &
+xmodmap ~/.Xmodmap &
+nm-applet &
+pasystray &
+udiskie --tray &
+cbatticon &
+sleep 5 &
+# copyq & -- use greenclip instead
+# dunst & -- don't need in awesomeWM
+xmodmap ~/.Xmodmap

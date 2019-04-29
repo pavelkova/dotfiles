@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/gigi/.config/wpg/wallpapers/DSC_0955.JPG",
+    "alpha": "100",
+
+    "special": {
+        "background": "#0a0807",
+        "foreground": "#c7e1e9",
+        "cursor": "#c7e1e9"
+    },
+    "colors": {
+        "color0": "#0a0807",
+        "color1": "#ECBA4B",
+        "color2": "#EE8D72",
+        "color3": "#2D5C98",
+        "color4": "#4BB0CA",
+        "color5": "#F6A792",
+        "color6": "#FDCFAE",
+        "color7": "#c7e1e9",
+        "color8": "#8b9da3",
+        "color9": "#ECBA4B",
+        "color10": "#EE8D72",
+        "color11": "#2D5C98",
+        "color12": "#4BB0CA",
+        "color13": "#F6A792",
+        "color14": "#FDCFAE",
+        "color15": "#c7e1e9"
+    }
+}

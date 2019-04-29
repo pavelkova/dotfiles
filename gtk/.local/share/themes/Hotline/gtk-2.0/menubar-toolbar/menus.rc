@@ -1,0 +1,95 @@
+style "menubar" {
+    # Modificado
+	xthickness	= 3
+	ythickness	= 3
+
+	fg[PRELIGHT]	    = @theme_fg_dark_color
+	fg[ACTIVE]	      = @selected_fg_color
+	fg[SELECTED]	    = @selected_fg_color
+  fg[NORMAL]        = @theme_fg_dark_color
+  bg[NORMAL]        = @theme_bg_dark_color
+
+	engine "murrine" {
+		gradient_shades     = {1.00,0.97,0.97,0.94}
+    border_shades 			= {1.1, 0.9}
+		contrast            = 1.1
+		lightborderstyle		= 1
+		textstyle           = 1
+		text_shade				  = 0.8
+	}
+}
+
+
+style "menu"  {
+	xthickness	= 2
+	ythickness	= 2
+	GtkMenuItem::arrow-scaling	= 0.5
+
+	bg[NORMAL]	= @bg_color
+  bg[ACTIVE]	= @bg_color
+  bg[INSENSITIVE]	= @bg_color
+  bg[PRELIGHT] = @bg_color
+
+	engine "murrine" {
+		gradient_shades	= {1.0, 1.0, 1.0, 1.0}
+		roundness		    = 1 # 0 = squared
+	}
+
+  engine "pixmap" { # For menus that use horizontal lines rather than gtkseparator
+  image {
+    function = HLINE
+    file = "assets/null.png"
+    border = { 23, 23, 23, 0 }
+    stretch = TRUE
+  }
+}
+}
+style "menu_framed_box" {
+
+  engine "adwaita" {
+  }
+}
+
+style "menu_item_white" {
+	xthickness	= 2
+	ythickness	= 3
+
+	fg[NORMAL] 			  = @fg_color	              # menu item normal
+  fg[INSENSITIVE]   = shade(0.9, @text_color)	# menu item deshabilitados
+	fg[PRELIGHT]		  = @fg_color				        # menu item seleccionado
+
+	text[NORMAL]      = @text_color	            # Color check/radio menu
+	text[INSENSITIVE] = shade(0.9, @text_color)	# Color check/radio menu
+	text[PRELIGHT]    = @fg_color              	# Color check/radio menu
+
+  bg[PRELIGHT]    	= @bg_color
+  bg[SELECTED]    	= @selected_bg_color
+
+	engine "murrine" {
+    gradient_shades	= {0.90, 0.95, 0.95, 1.00}
+		border_shades 	= {1.40, 1.0}
+        roundness   = 1
+        contrast    = 0.8           # Contraste separadores
+		#textstyle      = 2
+		#text_shade			= 0.4
+	}
+}
+
+style "menu_item_dark" {
+	xthickness	= 2
+	ythickness	= 3
+
+  fg[NORMAL]        = @theme_fg_dark_color
+	fg[PRELIGHT]	    = @theme_fg_dark_color
+	fg[ACTIVE]	      = @selected_fg_color
+	fg[SELECTED]	    = @selected_fg_color
+
+	engine "murrine" {
+    gradient_shades	= {0.90, 0.95, 0.95, 1.00}
+		border_shades 	= {1.40, 1.0}
+        roundness   = 2
+        contrast    = 0.8           # Contraste separadores
+		textstyle       = 1
+		text_shade			= 0.8
+	}
+}

@@ -1,0 +1,28 @@
+{
+    "wallpaper": "tarkovsky.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#131712",
+        "foreground": "#f4fffa",
+        "cursor": "#f4fffa"
+    },
+    "colors": {
+        "color0": "#131712",
+        "color1": "#4D5F6B",
+        "color2": "#387083",
+        "color3": "#547784",
+        "color4": "#63907B",
+        "color5": "#66948E",
+        "color6": "#398787",
+        "color7": "#becfc3",
+        "color8": "#252d23",
+        "color9": "#587d97",
+        "color10": "#3c97b6",
+        "color11": "#5fa1b9",
+        "color12": "#70caa0",
+        "color13": "#74d0c4",
+        "color14": "#3dbcbc",
+        "color15": "#f4fffa"
+    }
+}

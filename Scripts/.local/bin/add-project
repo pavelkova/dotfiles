@@ -1,0 +1,5 @@
+#!/usr/bin/env fish
+
+#exec
+touch "~/Code/Current/$argv[1]/README.org"
+ln -s "/home/gigi/Code/Current/$argv[1]/README.org" "/home/gigi/Media/documentos/org/desarrollo/$argv[1].org"

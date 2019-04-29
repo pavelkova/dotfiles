@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+FILE=$1
+
+xclip -sel cli < $FILE

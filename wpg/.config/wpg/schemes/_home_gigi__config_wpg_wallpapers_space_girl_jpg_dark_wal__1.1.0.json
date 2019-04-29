@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/gigi/.config/wpg/wallpapers/space_girl.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#0f0d15",
+        "foreground": "#d7d7d7",
+        "cursor": "#d7d7d7"
+    },
+    "colors": {
+        "color0": "#0f0d15",
+        "color1": "#84475d",
+        "color2": "#544e58",
+        "color3": "#a78f89",
+        "color4": "#3b4156",
+        "color5": "#a85c6f",
+        "color6": "#4b4d5a",
+        "color7": "#a3a3a3",
+        "color8": "#201c2d",
+        "color9": "#c14f7a",
+        "color10": "#755d87",
+        "color11": "#c1a79d",
+        "color12": "#4a5580",
+        "color13": "#bf6682",
+        "color14": "#5a6189",
+        "color15": "#d7d7d7"
+    }
+}

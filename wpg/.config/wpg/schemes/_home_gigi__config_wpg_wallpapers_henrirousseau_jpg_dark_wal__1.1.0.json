@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/gigi/.config/wpg/wallpapers/henrirousseau.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#17261f",
+        "foreground": "#f8f8f8",
+        "cursor": "#f8f8f8"
+    },
+    "colors": {
+        "color0": "#17261f",
+        "color1": "#b5745f",
+        "color2": "#768977",
+        "color3": "#d6ae84",
+        "color4": "#6d9acc",
+        "color5": "#a3586e",
+        "color6": "#5292ad",
+        "color7": "#c3c7c8",
+        "color8": "#232513",
+        "color9": "#d49e87",
+        "color10": "#a5b59e",
+        "color11": "#f4e6c3",
+        "color12": "#b4c5e0",
+        "color13": "#c28274",
+        "color14": "#7fafc8",
+        "color15": "#f8f8f8"
+    }
+}

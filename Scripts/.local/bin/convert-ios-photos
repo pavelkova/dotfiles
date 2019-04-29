@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+FILES=~/Media/subidas_de_cámara/*.heic
+
+for f in $FILES
+do
+    tifig -q 100 -i "~/Media/subidas_de_cámara/$(basename $f).heic" "~/Media/subidas_de_cámara/$(basename $f).jpg"
+done
+
+    
+    

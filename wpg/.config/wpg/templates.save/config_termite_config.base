@@ -1,0 +1,86 @@
+[options]
+#allow_bold = true
+#audible_bell = false
+#bold_is_bright = true
+#clickable_url = true
+#dynamic_title = true
+font = Fira Code 12
+#fullscreen = true
+#icon_name = terminal
+#mouse_autohide = false
+#scroll_on_output = false
+#scroll_on_keystroke = true
+# Length of the scrollback buffer, 0 disabled the scrollback buffer
+# and setting it to a negative value means "infinite scrollback"
+scrollback_lines = 10000
+#search_wrap = true
+#urgent_on_bell = true
+#hyperlinks = false
+
+# $BROWSER is used by default if set, with xdg-open as a fallback
+#browser = xdg-open
+
+# "system", "on" or "off"
+#cursor_blink = system
+
+# "block", "underline" or "ibeam"
+#cursor_shape = block
+
+# Hide links that are no longer valid in url select overlay mode
+#filter_unmatched_urls = true
+
+# Emit escape sequences for extra modified keys
+#modify_other_keys = false
+
+# set size hints for the window
+#size_hints = false
+
+# "off", "left" or "right"
+#scrollbar = off
+
+[colors]
+# If both of these are unset, cursor falls back to the foreground color,
+# and cursor_foreground falls back to the background color.
+cursor = #<COLOR10>
+#cursor_foreground = #dcdccc
+
+foreground = #<COLOR15>
+#foreground_bold = #ffffff
+background = #<COLOR0>
+
+# 20% background transparency (requires a compositor)
+#background = rgba(63, 63, 63, 0.8)
+
+# If unset, will reverse foreground and background
+highlight = #<COLOR3>
+
+# Colors from color0 to color254 can be set
+color0 = #<COLOR0>
+color1 = #<COLOR1>
+color2 = #<COLOR2>
+color3 = #<COLOR3>
+color4 = #<COLOR4>
+color5 = #<COLOR5>
+color6 = #<COLOR6>
+color7 = #<COLOR7>
+color8 = #<COLOR8>
+color9 = #<COLOR9>
+color10 = #<COLOR10>
+color11 = #<COLOR11>
+color12 = #<COLOR12>
+color13 = #<COLOR13>
+color14 = #<COLOR14>
+color15 = #<COLOR15>
+
+[hints]
+font = Fira Code 10
+foreground = #<COLOR7>
+background = #<COLOR8>
+#active_foreground = #e68080
+#active_background = #3f3f3f
+padding = 5
+border = #<COLOR5>
+#border_width = 0.5
+#roundness = 2.0
+
+# vim: ft=dosini cms=#%s

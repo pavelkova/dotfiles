@@ -1,0 +1,1 @@
+/home/gigi/.config/awesome/themes/wpg.lua

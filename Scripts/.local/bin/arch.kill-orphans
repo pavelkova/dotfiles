@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Redmove orphaned packages in arch linux
+yay -Rns $(yay -Qtdq)

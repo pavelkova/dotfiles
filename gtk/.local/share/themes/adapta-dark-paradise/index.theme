@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=adapta-dark-paradise
+Comment=An adaptive Gtk+ theme based on Material Design
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+Type=X-GNOME-Metatheme
+GtkTheme=adapta-dark-paradise
+MetacityTheme=adapta-dark-paradise
+IconTheme=Pop
+CursorTheme=Pop
+CursorSize=24
+ButtonLayout=:close

@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/gigi/.config/wpg/wallpapers/gardenofearthlydelights.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#070907",
+        "foreground": "#fffff4",
+        "cursor": "#fffff4"
+    },
+    "colors": {
+        "color0": "#070907",
+        "color1": "#958F34",
+        "color2": "#A49B5D",
+        "color3": "#CDB06A",
+        "color4": "#A4AA9B",
+        "color5": "#BBBBAA",
+        "color6": "#6F949C",
+        "color7": "#e0ddcf",
+        "color8": "#181f18",
+        "color9": "#cec536",
+        "color10": "#e5d568",
+        "color11": "#ffed75",
+        "color12": "#d9f2b4",
+        "color13": "#ffffc5",
+        "color14": "#7ecbdc",
+        "color15": "#fffff4"
+    }
+}

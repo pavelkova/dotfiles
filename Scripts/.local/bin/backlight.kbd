@@ -1,0 +1,12 @@
+#!/usr/bin/env fish
+
+# exec
+switch "$argv[1]"
+    case "up"
+	      light -A 50% -s sysfs/leds/asus::kbd_backlight
+	case "down"
+	      light -U 50% -s sysfs/leds/asus::kbd_backlight
+	case "*"
+	      printf "bad argument"
+	      exit "1"
+end

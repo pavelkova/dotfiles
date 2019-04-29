@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/gigi/.config/wpg/wallpapers/red.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#000000",
+        "foreground": "#fffefb",
+        "cursor": "#fffefb"
+    },
+    "colors": {
+        "color0": "#000000",
+        "color1": "#9A7E84",
+        "color2": "#E3C6BB",
+        "color3": "#D2ACA0",
+        "color4": "#E9D6CC",
+        "color5": "#B3948C",
+        "color6": "#D8D0CC",
+        "color7": "#ece8e5",
+        "color8": "#141414",
+        "color9": "#da91a1",
+        "color10": "#ffe8cc",
+        "color11": "#ffd3b8",
+        "color12": "#fff1d4",
+        "color13": "#fdb4a1",
+        "color14": "#fff4de",
+        "color15": "#fffefb"
+    }
+}

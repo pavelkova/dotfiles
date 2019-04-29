@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/gigi/.config/wpg/wallpapers/haindltarot.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#29211b",
+        "foreground": "#fffdfd",
+        "cursor": "#fffdfd"
+    },
+    "colors": {
+        "color0": "#29211b",
+        "color1": "#C7BBB7",
+        "color2": "#D2CED1",
+        "color3": "#ABA19A",
+        "color4": "#54738B",
+        "color5": "#BD2D93",
+        "color6": "#6B8FA0",
+        "color7": "#e8e5e5",
+        "color8": "#41342a",
+        "color9": "#ffe6d5",
+        "color10": "#ffe3ff",
+        "color11": "#f3cdb3",
+        "color12": "#5e97c3",
+        "color13": "#ff2bc5",
+        "color14": "#79c0e1",
+        "color15": "#fffdfd"
+    }
+}
