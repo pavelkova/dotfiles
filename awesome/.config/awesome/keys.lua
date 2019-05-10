@@ -333,7 +333,7 @@ keys.globalkeys = gears.table.join(
     {description = "decrease the number of master clients", group = "layout"}),
 
     -- Increase number of columms
-    awful.key({ superkey, shiftkey, ctrlkey }, "Left",
+    awful.key({ superkey, ctrlkey }, "h",
        function ()
           local current_layout = awful.layout.getname(awful.layout.get(awful.screen.focused()))
           local c = client.focus
@@ -347,7 +347,7 @@ keys.globalkeys = gears.table.join(
        {description = "increase the number of columns", group = "layout"}),
 
     -- Decrease number of columns
-    awful.key({ superkey, shiftkey, ctrlkey }, "Right",
+    awful.key({ superkey, ctrlkey }, "l",
        function ()
           local current_layout = awful.layout.getname(awful.layout.get(awful.screen.focused()))
           local c = client.focus
@@ -389,58 +389,58 @@ keys.globalkeys = gears.table.join(
       function()
         awful.spawn.with_shell("rofi -show combi")
       end,
-      {description = "rofi launcher", group = "launcher"}),
+      {description = "rofi launcher", group = "rofi"}),
 
     -- Rofi-Tmux
     awful.key({ superkey, hyperkey}, "l",
       function()
         awful.spawn.with_shell("rofi-tmux lp")
       end,
-      {description = "load tmuxinator project", group = "launcher"}),
+      {description = "load tmuxinator project", group = "rofi: tmux"}),
     awful.key({ superkey, hyperkey }, "w",
       function()
         awful.spawn.with_shell("rofi-tmux sw")
       end,
-      {description = "switch tmux window", group = "launcher"}),
+      {description = "switch tmux window", group = "rofi: tmux"}),
     awful.key({ superkey, hyperkey }, "s",
       function()
         awful.spawn.with_shell("rofi-tmux ss")
       end,
-      {description = "switch tmux session", group = "launcher"}),
+      {description = "switch tmux session", group = "rofi: tmux"}),
     awful.key({ superkey, hyperkey }, "k",
       function()
         awful.spawn.with_shell("rofi-tmux kw")
       end,
-      {description = "kill tmux window", group = "launcher"}),
+      {description = "kill tmux window", group = "rofi: tmux"}),
     awful.key({ superkey, hyperkey }, "c",
       function()
         awful.spawn.with_shell("rofi-tmux ks")
       end,
-      {description = "kill tmux session", group = "launcher"}),
+      {description = "kill tmux session", group = "rofi: tmux"}),
     -- rofi youtube
     awful.key({ superkey, hyperkey }, "y",
       function()
         awful.spawn.with_shell("rofi.youtube")
       end,
-      {description = "search youtube", group = "launcher"}),
+      {description = "search youtube", group = "rofi"}),
     -- rofi greenclip
     awful.key({ superkey, hyperkey }, "x",
       function()
         awful.spawn.with_shell("rofi.greenclip")
       end,
-      {description = "view clipboard history", group = "launcher"}),
+      {description = "view clipboard history", group = "rofi"}),
     -- rofi browse files
     awful.key({ superkey, hyperkey }, "f",
       function()
         awful.spawn.with_shell("rofi.browse-files")
       end,
-      {description = "browse filesystem", group = "launcher"}),
+      {description = "browse filesystem", group = "rofi"}),
     -- rofi browse files
     awful.key({ superkey, hyperkey }, "p",
       function()
         awful.spawn.with_shell("rofi-pass")
       end,
-      {description = "access pass manager", group = "launcher"}),
+      {description = "access pass manager", group = "rofi"}),
 
     -- Dismiss notifications
     -- awful.key( { ctrlkey }, "space", function()
@@ -476,15 +476,15 @@ keys.globalkeys = gears.table.join(
 
     -- Screenshots
     awful.key( { }, "Print",
-       function() awful.spawn.with_shell("sshot.full") end,
+       function() awful.spawn.with_shell("sshot") end,
        {description = "take full screenshot", group = "screenshots"}),
 
     awful.key( { shiftkey }, "Print",
-       function() awful.spawn.with_shell("sshot.window") end,
+       function() awful.spawn.with_shell("sshot window") end,
        {description = "take screenshot of window", group = "screenshots"}),
 
     awful.key( { altkey }, "Print",
-       function() awful.spawn.with_shell("sshot.select") end,
+       function() awful.spawn.with_shell("sshot select") end,
        {description = "select area to capture", group = "screenshots"}),
 
     -- Media keys
@@ -571,8 +571,7 @@ for i = 1, 9 do
                         if tag then
                            tag:view_only()
                         end
-                  end,
-                  {description = "view tag #"..i, group = "tag"}),
+                  end),
         -- Move client to tag.
         awful.key({ superkey, shiftkey }, "#" .. i + 9,
                   function ()
@@ -582,8 +581,7 @@ for i = 1, 9 do
                               client.focus:move_to_tag(tag)
                           end
                      end
-                  end,
-                  {description = "move focused client to tag #"..i, group = "tag"})
+                  end)
     )
 end
 
