@@ -2,11 +2,11 @@
 
 # onearmedman is hostname of a Chromebook with Arch Linux ARM, and not all packages are available on ARM
 
-if test "$hostname" = "rosablanca"
-    ~/.local/lib/Nextcloud.AppImage &
-else
-    nextcloud &
-end
+#if test "$hostname" = "rosablanca"
+#    ~/.local/lib/Nextcloud.AppImage &
+#else
+#    nextcloud &
+#end
 
 if test "$hostname" = "onearmedman"
     redshift &

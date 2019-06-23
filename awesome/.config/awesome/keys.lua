@@ -556,7 +556,29 @@ keys.globalkeys = gears.table.join(
     -- Editor
     awful.key({ superkey, modkey }, "e",
         function() awful.spawn(editor_cmd) end,
-        {description = "editor", group = "launcher"}))
+        {description = "editor", group = "launcher"}),
+
+    -- like below but for tag 10
+        -- View tag only.
+        awful.key({ superkey }, "0",
+                  function ()
+                        local screen = awful.screen.focused()
+                        local tag = screen.tags[10]
+                        if tag then
+                           tag:view_only()
+                        end
+                  end),
+        -- Move client to tag.
+        awful.key({ superkey, shiftkey }, "0",
+                  function ()
+                      if client.focus then
+                          local tag = client.focus.screen.tags[10]
+                          if tag then
+                              client.focus:move_to_tag(tag)
+                          end
+                     end
+                  end)
+)
 
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it work on any keyboard layout.

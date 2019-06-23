@@ -36,7 +36,7 @@ window {{
     background-color: @background;
     border:           1;
     transparency:     "background";
-    padding:          30%;
+    padding:          25%;
 }}
 mainbox {{
     border:  2px 0 0;
