@@ -20,7 +20,7 @@ hyperkey = "Mod3"
 
 -- {{{ Mouse bindings on desktop
 keys.desktopbuttons = gears.table.join(
-    awful.button({ }, 1, function ()
+    awful.button({ superkey }, 1, function ()
         mymainmenu:hide()
         sidebar.visible = false
         naughty.destroy_all_notifications()
@@ -36,7 +36,7 @@ keys.desktopbuttons = gears.table.join(
         end
         helpers.single_double_tap(function() end, double_tap)
     end),
-    awful.button({ }, 3, function () mymainmenu:toggle() end),
+    awful.button({ superkey }, 3, function () mymainmenu:toggle() end),
 
     -- Middle button - Toggle start scren
     awful.button({ }, 2, function ()
@@ -453,11 +453,13 @@ keys.globalkeys = gears.table.join(
               --{description = "show the menubar", group = "launcher"}),
 
     -- Brightness
-    awful.key( { }, "XF86MonBrightnessDown",
+    -- awful.key( { }, "XF86MonBrightnessDown",
+    awful.key( { }, "F5",
       function() awful.spawn.with_shell("backlight.scr down") end,
       {description = "decrease brightness", group = "brightness"}),
 
-    awful.key( { }, "XF86MonBrightnessUp",
+    -- awful.key( { }, "XF86MonBrightnessUp",
+    awful.key( { }, "F6",
       function()  awful.spawn.with_shell("backlight.scr up") end,
       {description = "increase brightness", group = "brightness"}),
 
@@ -487,31 +489,7 @@ keys.globalkeys = gears.table.join(
        function() awful.spawn.with_shell("sshot select") end,
        {description = "select area to capture", group = "screenshots"}),
 
-    -- Media keys
-    awful.key({ }, "XF86AudioNext",
-       function() awful.spawn.with_shell("mpc next") end,
-       {description = "next song", group = "media"}),
-
-    awful.key({ }, "XF86AudioPrev",
-       function() awful.spawn.with_shell("mpc prev") end,
-       {description = "previous song", group = "media"}),
-
-    awful.key({ }, "XF86AudioPlay",
-       function() awful.spawn.with_shell("mpc toggle") end,
-       {description = "toggle pause/play", group = "media"}),
-
-    awful.key({ superkey }, "XF86AudioNext",
-       function() awful.spawn.with_shell("mpvc next") end,
-       {description = "mpv next song", group = "media"}),
-
-    awful.key({ superkey }, "XF86AudioPrev",
-       function() awful.spawn.with_shell("mpvc prev") end,
-       {description = "mpv previous song", group = "media"}),
-
-    awful.key({ superkey }, "XF86AudioPlay",
-       function() awful.spawn.with_shell("mpvc toggle") end,
-       {description = "mpv toggle pause/play", group = "media"}),
-
+    -- Layout keys
     -- Set max layout
     -- awful.key({ superkey }, "w",
     --    function() awful.layout.set(awful.layout.suit.max) end,
@@ -532,13 +510,14 @@ keys.globalkeys = gears.table.join(
        function() start_screen_show() end,
        {description = "show start screen", group = "awesome"}),
 
-    -- Spawn ncmpcpp in a terminal
-    awful.key({ superkey }, "F3",
-       function() awful.spawn(floating_terminal .. " -e ncmpcpp") end,
-       {description = "ncmpcpp", group = "launcher"}),
+
+    -- Spawn clipboard manager and system monitor in terminal
+    awful.key({ superkey }, "F12",
+       function() awful.spawn(floating_terminal .. " -e greenclip daemon & glances") end,
+       {description = "greenclip & glances", group = "launcher"}),
 
     -- Toggle sidebar
-    awful.key({ superkey }, "XF86Explorer",
+    awful.key({ superkey }, "XF86HomePage",
        function() sidebar.visible = not sidebar.visible end,
        {description = "show or hide sidebar", group = "awesome"}),
 

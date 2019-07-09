@@ -18,14 +18,14 @@ local paused_color = beautiful.mpd_song_paused_color or beautiful.normal_fg
 local notification_icon = beautiful.music_icon
 
 local mpd_title = wibox.widget{
-  text = "---------",
+  text = "",
   align = "center",
   valign = "center",
   widget = wibox.widget.textbox
 }
 
 local mpd_artist = wibox.widget{
-  text = "---------",
+  text = "",
   align = "center",
   valign = "center",
   widget = wibox.widget.textbox
