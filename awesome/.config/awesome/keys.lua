@@ -390,6 +390,13 @@ keys.globalkeys = gears.table.join(
         awful.spawn.with_shell("rofi -show combi")
       end,
       {description = "rofi launcher", group = "rofi"}),
+    
+    -- Rofi - open file in new emacsclient frame
+    awful.key({ superkey, hyperkey }, "space",
+      function()
+        awful.spawn.with_shell("rofi.emacs")
+      end,
+      {description = "rofi launcher", group = "rofi"}),
 
     -- Rofi-Tmux
     awful.key({ superkey, hyperkey}, "l",
@@ -454,12 +461,12 @@ keys.globalkeys = gears.table.join(
 
     -- Brightness
     -- awful.key( { }, "XF86MonBrightnessDown",
-    awful.key( { }, "F5",
+    awful.key( { superkey }, "F5",
       function() awful.spawn.with_shell("backlight.scr down") end,
       {description = "decrease brightness", group = "brightness"}),
 
     -- awful.key( { }, "XF86MonBrightnessUp",
-    awful.key( { }, "F6",
+    awful.key( { superkey }, "F6",
       function()  awful.spawn.with_shell("backlight.scr up") end,
       {description = "increase brightness", group = "brightness"}),
 

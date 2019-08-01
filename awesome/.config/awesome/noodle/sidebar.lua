@@ -386,7 +386,7 @@ sidebar = wibox({x = 0, y = 0, visible = false, ontop = true, type = "dock"})
 sidebar.bg = beautiful.sidebar_bg or beautiful.wibar_bg
 sidebar.fg = beautiful.sidebar_fg or beautiful.wibar_fg
 sidebar.opacity = beautiful.sidebar_opacity or 1
-sidebar.height = dpi(1080) or awful.screen.focused().geometry.height or beautiful.sidebar_height
+sidebar.height = awful.screen.focused().geometry.height or dpi(1080) or beautiful.sidebar_height
 sidebar.width = beautiful.sidebar_width or dpi(400)
 sidebar.y = beautiful.sidebar_y or 0
 local radius = beautiful.sidebar_border_radius or 0
