@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 #wpg -s flamingowall.jpg &
+autostart.common &
 compton --config $HOME/.config/compton/compton-dark-paradise.conf & 
 

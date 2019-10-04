@@ -96,7 +96,7 @@ local theme_collection = {
   -- }}}
 
   -- {{{ Variable definitions
-  emulator = "kitty"
+  emulator = "alacritty"
   terminal = emulator .. " -e fish"
   -- Some terminals do not respect spawn callbacks
   floating_terminal = "cool-retro-term -c fst" -- clients with class "fst" are set to be floating (check awful.rules below)
@@ -284,7 +284,8 @@ local theme_collection = {
              "fst",
           },
           name = {
-              "Event Tester",  -- xev
+             "Event Tester",  -- xev
+             "Todoist",
           },
           role = {
               "pop-up",
@@ -328,6 +329,17 @@ local theme_collection = {
       { rule_any = {
           class = {
               "Pavucontrol",
+          },
+      }, properties = { floating = true, dockable = true, width = screen_width * 0.35, height = screen_height * 0.3 },
+        callback = function (c)
+           awful.titlebar.show(c)
+        end
+      },
+
+       -- Todoist
+      { rule_any = {
+          name = {
+              "Todoist",
           },
       }, properties = { floating = true, width = screen_width * 0.35, height = screen_height * 0.5 }
       },

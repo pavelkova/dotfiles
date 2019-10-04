@@ -13,7 +13,7 @@ else
 #   kitty -e (greenclip daemon & glances) &
 end
 
-emacs --daemon &
+# emacs --daemon &
 xmodmap ~/.Xmodmap &
 nm-applet &
 pasystray &
@@ -21,6 +21,7 @@ syncthing-gtk &
 udiskie --tray &
 cbatticon &
 sleep 5 &
+~/.screenlayout/dual-large.sh &
 # copyq & -- use greenclip instead
 # dunst & -- don't need in awesomeWM
 xmodmap ~/.Xmodmap
