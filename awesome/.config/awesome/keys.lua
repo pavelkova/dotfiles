@@ -38,34 +38,10 @@ keys.desktopbuttons = gears.table.join(
     end),
     awful.button({ superkey }, 3, function () mymainmenu:toggle() end),
 
-    -- Middle button - Toggle start scren
-    awful.button({ }, 2, function ()
-        start_screen_show()
-        -- sidebar.visible = not sidebar.visible
-    end),
-
     -- Scrolling - Switch tags
     awful.button({ }, 4, awful.tag.viewprev),
-    awful.button({ }, 5, awful.tag.viewnext),
+    awful.button({ }, 5, awful.tag.viewnext)
 
-    -- Side buttons - Control volume
-    awful.button({ }, 9, function () awful.spawn.with_shell("vol up") end),
-    awful.button({ }, 8, function () awful.spawn.with_shell("vol down") end)
-
-    -- Side buttons - Minimize and restore minimized client
-    -- awful.button({ }, 8, function()
-    --     if client.focus ~= nil then
-    --         client.focus.minimized = true
-    --     end
-    -- end),
-    -- awful.button({ }, 9, function()
-    --       local c = awful.client.restore()
-    --       -- Focus restored client
-    --       if c then
-    --           client.focus = c
-    --           c:raise()
-    --       end
-    -- end)
 )
 -- }}}
 
@@ -76,7 +52,8 @@ keys.globalkeys = gears.table.join(
     --awful.key({ superkey,           }, "comma",   awful.tag.viewprev,
               --{description = "view previous", group = "tag"}),
     --awful.key({ superkey,           }, "period",  awful.tag.viewnext,
-              --{description = "view next", group = "tag"}),
+    --{description = "view next", group = "tag"}),
+
 
     -- Focus client by direction
     awful.key({ superkey }, "Down",
@@ -449,15 +426,13 @@ keys.globalkeys = gears.table.join(
       end,
       {description = "access pass manager", group = "rofi"}),
 
-    -- Dismiss notifications
-    -- awful.key( { ctrlkey }, "space", function()
-    --     naughty.destroy_all_notifications()
-    -- end,
-    --           {description = "dismiss notification", group = "notifications"}),
-
-    -- Menubar
-    --awful.key({ superkey, ctrlkey }, "b", function() menubar.show() end,
-              --{description = "show the menubar", group = "launcher"}),
+    -- Drop-down applications
+    awful.key({ superkey, hyperkey }, "Return",
+       function ()
+          -- awful.screen.focused().quake:toggle()
+          awful.spawn("tilda")
+       end,
+       {description = "drop", group="drop-down"}),
 
     -- Brightness
     -- awful.key( { }, "XF86MonBrightnessDown",
@@ -517,11 +492,6 @@ keys.globalkeys = gears.table.join(
        function() start_screen_show() end,
        {description = "show start screen", group = "awesome"}),
 
-
-    -- Spawn clipboard manager and system monitor in terminal
-    awful.key({ superkey }, "F12",
-       function() awful.spawn(floating_terminal .. " -e greenclip daemon & glances") end,
-       {description = "greenclip & glances", group = "launcher"}),
 
     -- Toggle sidebar
     awful.key({ superkey }, "XF86HomePage",

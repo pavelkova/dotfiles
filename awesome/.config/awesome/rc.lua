@@ -1,20 +1,6 @@
-local theme_collection = {
-      "paradise",        -- 1 --
-      "paradiselost",    -- 2 --
-  }
 
-  -- Change this number to use a different theme
-  local theme_name = theme_collection[2]
-
-  ----------------------------------------------
-
-  local bar_theme_collection = {
-      "paradise",     -- 1 -- Start button, taglist, layout
-      "paradiselost", -- 2 -- Weather, taglist, window buttons, pop-up tray
-  }
-
-  -- Change this number to use a different bar theme
-  local bar_theme_name = bar_theme_collection[2]
+  local theme_name = "paradise"
+  local bar_theme_name = "paradise"
 
   --------------------------------------------------------------------------------
 
@@ -28,7 +14,7 @@ local theme_collection = {
   -- Themes define colours, icons, font and wallpapers.
   local theme_dir = os.getenv("HOME") .. "/.config/awesome/themes/"
   beautiful.init( theme_dir .. theme_name .. "/theme.lua" )
-  --beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+
 
   -- Standard awesome library
   local gears = require("gears")
@@ -36,6 +22,8 @@ local theme_collection = {
   require("awful.autofocus")
   -- Widget and layout library
   local wibox = require("wibox")
+  local lain = require("lain")
+  local vicious = require("vicious")
   -- Default notification library
   local naughty = require("naughty")
   local menubar = require("menubar")
@@ -64,10 +52,6 @@ local theme_collection = {
   local exit_screen = require("noodle.text_exit_screen")
   -- local exit_screen = require("noodle.exit_screen")
   local start_screen = require("noodle.start_screen")
-  -- local tag_notifications = require("noodle.tag_notifications")
-
-  -- Third party
-  -- local radical = require("radical")
   -- }}}
 
   -- {{{ Error handling
@@ -130,6 +114,8 @@ local theme_collection = {
       --awful.layout.suit.corner.ne,
       --awful.layout.suit.corner.sw,
       --awful.layout.suit.corner.se,
+      lain.layout.centerwork,
+      lain.layout.centerwork.horizontal,
   }
   -- }}}
 
@@ -227,7 +213,10 @@ local theme_collection = {
 
   awful.screen.connect_for_each_screen(function(s)
       -- Wallpaper
-      set_wallpaper(s)
+        set_wallpaper(s)
+
+        -- Allow per-screen drop-down
+        s.quake = lain.util.quake({ extra = "-e glances", followtag = true, height = 0.3, width = 0.6, vert = "top", horiz = "center" })
 
       -- Each screen has its own tag table.
       -- Tag layouts
@@ -280,6 +269,8 @@ local theme_collection = {
              "vdpau",
              "feh",
              "sxiv",
+             "tilda",
+             "Tilda",
              "xv",
              "fst",
           },
