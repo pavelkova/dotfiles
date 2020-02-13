@@ -429,10 +429,15 @@ keys.globalkeys = gears.table.join(
     -- Drop-down applications
     awful.key({ superkey, hyperkey }, "Return",
        function ()
-          -- awful.screen.focused().quake:toggle()
           awful.spawn("tilda")
        end,
-       {description = "drop", group="drop-down"}),
+       {description = "tilda", group="drop-down"}),
+    awful.key({ superkey, hyperkey }, "t",
+       function ()
+          quake_todoist:toggle()
+       end,
+       {description = "todoist", group="drop-down"}),
+
 
     -- Brightness
     -- awful.key( { }, "XF86MonBrightnessDown",

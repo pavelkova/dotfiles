@@ -90,6 +90,7 @@
   editor = "micro"
   --editor = os.getenv("EDITOR") or "nano"
   editor_cmd = terminal.." -e "..editor.." "
+  quake_todoist = lain.util.quake { app = awful.spawn("todoist"), followtag = true, overlap = true, height = 0.4, width = 0.6, horiz = "center"}
 
   -- Get screen geometry
   screen_width = awful.screen.focused().geometry.width
@@ -216,7 +217,7 @@
         set_wallpaper(s)
 
         -- Allow per-screen drop-down
-        s.quake = lain.util.quake({ extra = "-e glances", followtag = true, height = 0.3, width = 0.6, vert = "top", horiz = "center" })
+        -- s.quake = lain.util.quake({ extra = "-e glances", followtag = true, height = 0.3, width = 0.6, vert = "top", horiz = "center" })
 
       -- Each screen has its own tag table.
       -- Tag layouts
@@ -276,7 +277,7 @@
           },
           name = {
              "Event Tester",  -- xev
-             "Todoist",
+             -- "Todoist",
           },
           role = {
               "pop-up",
@@ -332,7 +333,7 @@
           name = {
               "Todoist",
           },
-      }, properties = { floating = true, width = screen_width * 0.35, height = screen_height * 0.5 }
+      }, properties = { floating = true, width = screen_width * 0.35, height = screen_height * 0.5  }
       },
 
       -- Steam guard
