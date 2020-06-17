@@ -10,36 +10,36 @@ Xcursor.size: 2
 !##########
 
 !! black
-*color0:  #010113
-*color8:  #030123
+*color0:  #01091e
+*color8:  #01102e
 
 !! red
-*color1:  #9b655c
-*color9:  #d97767
+*color1:  #9A655D
+*color9:  #d87768
 
 !! green
-*color2 : #58694a
-*color10: #788b73
+*color2 : #535C67
+*color10: #5f7691
 
 !! yellow
-*color3:  #ba7b54
-*color11: #e0b57e
+*color3:  #9D8A70
+*color11: #ddb680
 
 !! blue
-*color4:  #4476a3
-*color12: #7aa5c7
+*color4:  #276491
+*color12: #2683c8
 
 !! magenta
-*color5:  #a05d76
-*color13: #bb8691
+*color5:  #2F506E
+*color13: #326899
 
 !! cyan
-*color6:  #1d8099
-*color14: #4d8997
+*color6:  #56738F
+*color14: #6095c8
 
 !! white
-*color7:  #a8bfcb
-*color15: #defcff
+*color7:  #a9bfcb
+*color15: #dffcff
 
 !#########
 !# URXVT #
@@ -57,8 +57,8 @@ URxvt.internalBorder:	25
 URxvt.depth:            30
 URxvt.saveLines:        10000
 
-URxvt.foreground:       #defcff
-URxvt.background:       #010113
+URxvt.foreground:       #dffcff
+URxvt.background:       #01091e
 
 URxvt.iconFile:         /home/gigi/.icons/Xenlism-Wildfire/Apps
 
