@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/gigi/.config/wpg/wallpapers/geo.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#1b241b",
+        "foreground": "#ffffe9",
+        "cursor": "#ffffe9"
+    },
+    "colors": {
+        "color0": "#1b241b",
+        "color1": "#CEA78C",
+        "color2": "#B1A18E",
+        "color3": "#CDA66A",
+        "color4": "#1B3A91",
+        "color5": "#AB7797",
+        "color6": "#5FAEDC",
+        "color7": "#eae1c5",
+        "color8": "#2c3a2c",
+        "color9": "#ffd59f",
+        "color10": "#fad3a3",
+        "color11": "#ffdc75",
+        "color12": "#1746c7",
+        "color13": "#f187c8",
+        "color14": "#67e7ff",
+        "color15": "#ffffe9"
+    }
+}

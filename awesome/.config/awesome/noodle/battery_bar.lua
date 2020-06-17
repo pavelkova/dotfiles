@@ -39,27 +39,9 @@ local battery_bar = wibox.widget{
    layout = wibox.layout.stack
 }
 
--- Mouse control
--- battery_bar:buttons(gears.table.join(
---     -- 
---     awful.button({ }, 1, function ()
---     end),
---     -- 
---     awful.button({ }, 2, function () 
---     end),
---     -- 
---     awful.button({ }, 3, function () 
---     end),
---     -- 
---     awful.button({ }, 4, function () 
---     end),
---     awful.button({ }, 5, function () 
---     end)
--- ))
 
 local function update_widget(bat)
    battery_bar:get_all_children()[1].value = tonumber(bat)
-   -- battery_bar:get_all_children()[2].text = '   BATTERY ' .. bat
 end
 
 local bat_script = [[

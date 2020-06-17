@@ -1,0 +1,80 @@
+!#####
+!# X #
+!#####
+
+! X config
+Xcursor.size: 2
+
+!##########
+!# COLORS #
+!##########
+
+!! black
+*color0:  #010113
+*color8:  #030123
+
+!! red
+*color1:  #9b655c
+*color9:  #d97767
+
+!! green
+*color2 : #58694a
+*color10: #788b73
+
+!! yellow
+*color3:  #ba7b54
+*color11: #e0b57e
+
+!! blue
+*color4:  #4476a3
+*color12: #7aa5c7
+
+!! magenta
+*color5:  #a05d76
+*color13: #bb8691
+
+!! cyan
+*color6:  #1d8099
+*color14: #4d8997
+
+!! white
+*color7:  #a8bfcb
+*color15: #defcff
+
+!#########
+!# URXVT #
+!#########
+
+! scrollbar
+URxvt.scrollBar:	false
+URxvt.scrollBar_right:	false
+URxvt.scrollstyle: 	plain
+URxvt.thickness:	0
+
+! padding
+URxvt.internalBorder:	25
+
+URxvt.depth:            30
+URxvt.saveLines:        10000
+
+URxvt.foreground:       #defcff
+URxvt.background:       #010113
+
+URxvt.iconFile:         /home/gigi/.icons/Xenlism-Wildfire/Apps
+
+!#########
+!# FONTS #
+!#########
+
+! fonts
+Xft.autohint:		1
+Xft.antialias:          1
+Xft.hinting:            true
+Xft.hintstyle:          hintfull
+Xft.lcdfilter:          lcddefault
+Xft.rgba:               rgb
+
+*URxvt.font:		xft:Fira Code:size=11
+URxvt.boldFont:         xft:Fira Code Bold:size=11
+!URxvt.lineSpace:	10
+!URxvt.letterSpace:	0

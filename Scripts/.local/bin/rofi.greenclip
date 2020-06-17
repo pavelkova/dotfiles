@@ -1,2 +1,0 @@
-#!/usr/bin/env fish
-rofi -modi "clipboard:greenclip print" -show clipboard  -p '📎' -run-command '{cmd}'

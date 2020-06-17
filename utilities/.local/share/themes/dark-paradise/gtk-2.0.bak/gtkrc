@@ -1,0 +1,139 @@
+# Night gtk-color-scheme:
+gtk-color-scheme = "base_color:#091f2c\nfg_color:#e6958b\ntooltip_fg_color:#e6958b\nselected_bg_color:#adbb6d\nselected_fg_color:#091f2c\ntext_color:#fefef7\nbg_color:#091f2c\ntooltip_bg_color:#203a3e\nlink_color:#8abeb7"
+gtk-color-scheme = "selected_base_color:#adbb6d"
+# gtk-color-scheme = "base_color:#091f2c\nfg_color:#e6958b\ntooltip_fg_color:#e6958b\nselected_bg_color:#e6aab4\nselected_fg_color:#091f2c\ntext_color:#fefef7\nbg_color:#091f2c\ntooltip_bg_color:#203a3e\nlink_color:#8abeb7"
+# gtk-color-scheme = "selected_base_color:#e6aab4"
+gtk-color-scheme = "selected_text_color:#091f2c"
+gtk-color-scheme = "dark_bg_color:#203a3a\ndark_text_color:#c9bdc4"
+
+include "gtk-widgets.rc"
+include "panel.rc"
+include "xfce.rc"
+
+style "button-nokto"
+{
+	bg[ACTIVE]			= mix(0.5, shade(0.8, @selected_bg_color), @bg_color)
+}
+
+widget_class "*<GtkButton>"			style "button-nokto"
+widget_class "*OptionMenu*"			style "button-nokto"
+class "*OptionMenu*"				style "button-nokto"
+widget_class "*<GtkToolbar>.*.<GtkButton>*" style:highest	"button-nokto"
+
+style "notebook-bg-nokto"
+{
+	bg[ACTIVE]			= shade(1.1, @bg_color) # Unfocused tab background.
+	bg[NORMAL]			= shade(0.8, @bg_color) # Tab background.
+	bg[PRELIGHT]		= shade(0.8, @bg_color)	# for radio and check button
+}
+
+widget_class "*<GtkNotebook>*<GtkEventBox>"			style "notebook-bg-nokto"
+widget_class "*<GtkNotebook>*<GtkDrawingArea>"		style "notebook-bg-nokto"
+widget_class "*<GtkNotebook>*<GtkLayout>"			style "notebook-bg-nokto"
+widget_class "*<GtkNotebook>*<GtkViewport>"			style "notebook-bg-nokto"
+widget_class "*<GtkNotebook>*<GtkScrolledWindow>"	style "notebook-bg-nokto"
+widget_class "*<GtkNotebook>*<GtkToolbar>"			style "notebook-bg-nokto"
+widget_class "*<GtkNotebook>*<GtkLabel>"			style "notebook-bg-nokto"
+widget_class "*<GtkNotebook>*<GtkRadioButton>"		style "notebook-bg-nokto"
+widget_class "*<GtkNotebook>*<GtkCheckButton>"		style "notebook-bg-nokto"
+
+style "notebook-nokto" = "notebook-bg-nokto"
+{
+	engine "clearlooks"
+	{
+		radius = 2.0 # Roundness of menu items.
+		style = CLASSIC
+		contrast = 1.1
+	}
+}
+
+widget_class "*<GtkNotebook>"		style "notebook-nokto"
+
+style "button-nokto"
+{
+	bg[SELECTED]		= shade(1.2,@selected_bg_color)
+}
+
+widget_class "*<GtkButton>"			style "button-nokto"
+widget_class "*OptionMenu*"			style "button-nokto"
+class "*OptionMenu*"				style "button-nokto"
+widget_class "*<GtkToolbar>.*.<GtkButton>*" style:highest	"button-nokto"
+
+style "radiocheck-nokto"
+{
+	base[NORMAL]	= "#000000"
+}
+
+class "GtkRadio*"									style "radiocheck-nokto"
+class "GtkCheck*"									style "radiocheck-nokto"
+widget_class "*<GtkRadioButton>*"					style "radiocheck-nokto"
+widget_class "*<GtkCheckButton>*"					style "radiocheck-nokto"
+
+style "scrollbar-nokto"
+{
+	bg[NORMAL]        = shade(1.5, @bg_color)
+}
+
+class "GtkScrollbar"				style "scrollbar-nokto"
+class "GtkVScrollbar"				style "scrollbar-nokto"
+class "GtkHScrollbar"				style "scrollbar-nokto"
+
+style "treeview_header-nokto" {
+	bg[NORMAL]			= shade(0.8, @bg_color)
+	bg[ACTIVE]			= shade(0.8, @bg_color)
+	bg[PRELIGHT]		= shade(0.7, @bg_color)
+
+	engine "murrine"	{	border_shades	= { 1.6, 1.0 }	}
+}
+
+widget_class "*.<GtkTreeView>.<GtkButton>"	style "treeview_header-nokto"
+widget_class "*.<GtkCTree>.<GtkButton>"		style "treeview_header-nokto"
+widget_class "*.<GtkList>.<GtkButton>"		style "treeview_header-nokto"
+widget_class "*.<GtkCList>.<GtkButton>"		style "treeview_header-nokto"
+
+# menu style = [adaptive, dark]
+widget_class "*<GtkMenu>*"		style "menu-adaptive"
+widget_class "*<GtkMenuItem>*"	style "menu-adaptive"
+class "GtkMenuItem"				style "menu-adaptive"
+
+# menubar style = [adaptive, dark]
+widget_class "*BonoboDockItem"		style "menubar-adaptive"
+class "*BonoboDockItem"				style "menubar-adaptive"
+widget_class "*<GtkMenuBar>*"		style "menubar-adaptive"
+
+# Xfce specific theming
+widget_class "*XfsmLogoutDialog*"				style "adaptive-dark"
+widget_class "*XfsmLogoutDialog*Button"	style 	"dark-button"
+widget_class "*XfsmLogoutDialog*RadioButton"	style "radiocheck-dark"
+widget_class "*XfsmLogoutDialog*CheckButton"	style "radiocheck-dark"
+# this prevent overwriting widgets style
+widget_class "*XfsmLogoutDialog*RadioButton"	style "radiocheck-nokto"
+widget_class "*XfsmLogoutDialog*CheckButton"	style "radiocheck-nokto"
+widget "xfwm"									style "titlebar-adaptive"
+class "MetaFrames"								style "titlebar-adaptive"
+widget_class "MetaFrames"						style "titlebar-adaptive"
+class"*XfceHeading*"	style"xfceheaders"
+widget "xfwm4-tabwin*"			style "adaptive-dark"
+#### Firefox text fix goes inside the theme name/gtk-2.0/gtkrc (or an app fix in the gtk-2.0/styles) This should work with all problematic dark themes in Firefox #########
+
+style "ff" {
+text[NORMAL] = "#091f2c"
+base[NORMAL] = "#f9f3f0"
+}
+class "GtkInvisible" style "ff"
+widget "GtkInvisible" style "ff"
+
+style "fff" {
+text[NORMAL] = "#fefef7"
+base[NORMAL] = "#203a3e"
+}
+class "GtkEntry" style "fff"
+widget "GtkEntry" style "fff"
+
+style "custom" {
+GtkWidget::cursor-color = "#d07c67"
+GtkWidget::secondary-cursor-color = "#dd8f9f"
+}
+widget_class "*" style "custom"
+
+###### End of Firefox fix ##########

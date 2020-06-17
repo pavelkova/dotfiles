@@ -1,0 +1,164 @@
+/**
+ * rofi -dump-theme output.
+ * Rofi version: 1.5.0-dev
+ **/
+* {{
+    red:           #717690;
+    blue:          #D9B659;
+    yellow:			   #474644;
+    beige:			   #ffffcf;
+    ltbeige:			 #D5C7B3;
+
+    foreground:                  #fffdfd;
+    background:                  #2f343f;
+    lightfg:                     #fffdfd;
+    lightbg:                     #404655;
+    
+    normal-foreground:           @foreground;
+    alternate-normal-foreground: @foreground;
+    normal-background:           @background;
+    alternate-normal-background: @background;
+
+    active-foreground:           @ltbeige;
+    alternate-active-foreground: @ltbeige;
+    active-background:           @background;
+    alternate-active-background: @background;
+
+    urgent-foreground:           @beige;
+    alternate-urgent-foreground: @beige;
+    urgent-background:           @background;
+    alternate-urgent-background: @background;
+    
+    selected-normal-foreground:  @red;
+    selected-normal-background:  @background;
+    
+    selected-active-foreground:  @blue;
+    selected-active-background:  @background;
+    
+    selected-urgent-foreground:  @yellow;
+    selected-urgent-background:  @background;
+        
+    border-color:                #fffdfd;
+    separatorcolor:              @lightbg;
+    background-color:            rgba ( 0, 0, 0, 0 % );
+
+    spacing:                     0;
+}}
+window {{
+    background-color: @background;
+    border:           0;
+    transparency:     "background";
+    padding:          0;
+}}
+mainbox {{
+    border:  20px 20px;
+    border-color: @border-color;
+    padding: 0;
+}}
+message {{
+    border:       2px 0px 0px ;
+    border-color: @separatorcolor;
+    padding:      10px ;
+}}
+textbox {{
+    text-color: @foreground;
+}}
+listview {{
+    fixed-height: 0;
+    border:       2px 0px 0px ;
+    border-color: @separatorcolor;
+    spacing:      2px;
+    scrollbar:    false;
+    padding:      2px 0px 0px ;
+}}
+element {{
+    border:  0;
+    padding: 10px ;
+}}
+element normal.normal {{
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}}
+element normal.urgent {{
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}}
+element normal.active {{
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}}
+element selected.normal {{
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}}
+element selected.urgent {{
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+}}
+element selected.active {{
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+}}
+element alternate.normal {{
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+}}
+element alternate.urgent {{
+    background-color: @alternate-urgent-background;
+    text-color:       @alternate-urgent-foreground;
+}}
+element alternate.active {{
+    background-color: @alternate-active-background;
+    text-color:       @alternate-active-foreground;
+}}
+scrollbar {{
+    width:        4px ;
+    border:       0;
+    handle-color: @normal-foreground;
+    handle-width: 8px ;
+    padding:      0;
+}}
+sidebar {{
+    border:       2px 0px 0px ;
+    border-color: @separatorcolor;
+}}
+button {{
+    spacing:    0;
+    margin:     0;
+    padding:	20px 0px;
+    font: 	"PermanentMarker 20";
+    text-color: @ltbeige;
+    background-color: @border-color;
+}}
+button selected {{ 
+    background-color: @border-color;
+    text-color:       @normal-background;
+}}
+inputbar {{
+    spacing:    0;
+    text-color: @normal-foreground;
+    padding:    0 10px;
+    children:   [ entry ];
+}}
+case-indicator {{
+    spacing:    0;
+    text-color: @normal-foreground;
+}}
+entry {{
+    padding:    5px;
+    spacing:    0;
+    text-color: @normal-foreground;
+}}
+
+prompt {{
+    spacing:    0;
+    padding:    10px 10px 0;
+    text-color: @separatorcolor;
+}}
+
+textbox-prompt-colon {{
+    expand:     false;
+    str:        "---";
+    margin:     0px 0.3000em 0.0000em 0.0000em ;
+    text-color: inherit;
+}}

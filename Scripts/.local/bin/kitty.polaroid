@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-# Launch kitty with shared config and custom theme 
-CONF="$HOME/.config/kitty"
-kitty -c $CONF/kitty.conf -c $CONF/kitty-polaroid.conf
-
-

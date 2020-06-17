@@ -1,0 +1,28 @@
+{
+    "wallpaper": "hustle.jpeg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#0e0c0e",
+        "foreground": "#fffdf9",
+        "cursor": "#fffdf9"
+    },
+    "colors": {
+        "color0": "#0e0c0e",
+        "color1": "#A59B99",
+        "color2": "#E8C8AC",
+        "color3": "#D0946D",
+        "color4": "#B9BFC8",
+        "color5": "#DAA899",
+        "color6": "#6A8E91",
+        "color7": "#e7e1dd",
+        "color8": "#231e23",
+        "color9": "#ebbbb2",
+        "color10": "#fffabf",
+        "color11": "#ffbc79",
+        "color12": "#d7f3ff",
+        "color13": "#ffcdae",
+        "color14": "#79c6cc",
+        "color15": "#fffdf9"
+    }
+}

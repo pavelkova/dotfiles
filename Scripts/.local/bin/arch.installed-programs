@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-# List all repo and aur packages that were manually installed by user
-comm -23 <(yay -Qqt | sort) <(yay -Qqg base | sort)

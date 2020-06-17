@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Inox
+GenericName=Web Browser
+Comment=Access the Internet
+Exec=inox %U
+Terminal=false
+Icon=/home/gigi/.icons/ACYLS/scalable/apps/chromium.svg
+Type=Application
+Categories=GTK;Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;text/mml;x-scheme-handler/http;x-scheme-handler/https;
+X-XFCE-Source=file:///usr/share/applications/inox.desktop
+Path=
+StartupNotify=false

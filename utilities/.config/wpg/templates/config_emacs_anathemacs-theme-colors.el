@@ -1,0 +1,1 @@
+/home/gigi/.config/emacs/anathemacs-theme-colors.el

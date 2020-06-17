@@ -1,0 +1,12 @@
+#!/usr/bin/env fish
+
+# exec
+switch "$argv[1]"
+    case "emacs"
+	      emacsclient -c --display=:1
+	case "firefox"
+	      firefox --display=:1
+	case "*"
+	      printf "bad argument"
+	      exit "1"
+end

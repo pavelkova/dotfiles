@@ -1,0 +1,7 @@
+#!/usr/bin/env fish
+
+#exec
+touch "~/Media/org/desarrollo/envs/$argv[1].org"
+mkdir "~/Code/Current/$argv[1]" && cd "~/Code/Current/$argv[1]"
+touch {.projectile,README.org,.envrc}
+ln -s "/home/gigi/Media/org/desarrollo/envs/$argv[1].org" "/home/gigi/Code/Current/$argv[1]/index.org"

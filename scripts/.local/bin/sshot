@@ -1,0 +1,19 @@
+#!/usr/bin/env fish
+
+# vars
+set str (date +%s)
+set timestamp (date +%Y%m%d)
+set path "$HOME/Media/capturas_de_pantalla/$timestamp_$str.png"
+
+#exec
+switch "$argv[1]"
+    case ""
+        maim $path
+        sxiv $path
+    case "window"
+        maim -i (xdotool getactivewindow) $path
+        sxiv $path
+    case "select"
+        maim -s $path | xclip -selection clipboard
+        sxiv $path
+end

@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/gigi/.config/wpg/wallpapers/flamingoflock.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#090E09",
+        "foreground": "#fffbf5",
+        "cursor": "#fffbf5"
+    },
+    "colors": {
+        "color0": "#090E09",
+        "color1": "#D46F57",
+        "color2": "#A48976",
+        "color3": "#D98B73",
+        "color4": "#A39D95",
+        "color5": "#DBA99C",
+        "color6": "#728781",
+        "color7": "#e4d9d4",
+        "color8": "#182618",
+        "color9": "#ff845d",
+        "color10": "#e7ae87",
+        "color11": "#ffa97f",
+        "color12": "#e8cead",
+        "color13": "#ffcdb2",
+        "color14": "#84bfae",
+        "color15": "#fffbf5"
+    }
+}

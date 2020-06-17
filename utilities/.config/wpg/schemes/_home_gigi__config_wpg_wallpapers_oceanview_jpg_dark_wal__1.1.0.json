@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/gigi/.config/wpg/wallpapers/oceanview.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#130a07",
+        "foreground": "#f4f4f4",
+        "cursor": "#f4f4f4"
+    },
+    "colors": {
+        "color0": "#130a07",
+        "color1": "#a07189",
+        "color2": "#cd8e99",
+        "color3": "#d8aaa7",
+        "color4": "#988bb7",
+        "color5": "#be8496",
+        "color6": "#4da6c9",
+        "color7": "#e0e0e0",
+        "color8": "#2f1812",
+        "color9": "#e281b1",
+        "color10": "#eb9fb3",
+        "color11": "#e9c1bc",
+        "color12": "#b99ceb",
+        "color13": "#eb93b6",
+        "color14": "#50dcef",
+        "color15": "#f4f4f4"
+    }
+}

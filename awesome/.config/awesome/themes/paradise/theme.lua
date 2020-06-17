@@ -1,4 +1,4 @@
-local theme_name = "paradiselost"
+local theme_name = "paradise"
 local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
@@ -27,7 +27,7 @@ local screen_height = awful.screen.focused().geometry.height
 theme.wallpaper = os.getenv("HOME") .. "/.config/awesome/themes/" .. theme_name .. "/wall.png"
 
 -- Set the theme font. This is the font that will be used by default in menus, bars, titlebars etc.
-theme.font          = "Lato 11"
+theme.font          = "Cantarell 11"
 
 -- Get colors from wpg
 theme.xbackground = xrdb.background
@@ -83,7 +83,7 @@ theme.border_radius = dpi(6)
 theme.titlebars_enabled = true
 theme.titlebar_size = dpi(15)
 theme.titlebar_title_enabled = true
-theme.titlebar_font = "Lato 9"
+theme.titlebar_font = "Cantarell 11"
 -- Window title alignment: left, right, center
 theme.titlebar_title_align = "center"
 -- Titlebar position: top, bottom, left, right
@@ -185,7 +185,7 @@ theme.hotkeys_fg = theme.xcolor15
 theme.hotkeys_modifiers_fg = theme.xcolor7
 theme.hotkeys_border_color = theme.xcolor8 .. "AA"
 theme.hotkeys_border_width = 10
-theme.description_font = "Lato 11"
+theme.description_font = "Cantarell 11"
 
  --Tasklist
 theme.tasklist_disable_icon = true
@@ -206,7 +206,7 @@ theme.tasklist_align = "center"
 theme.sidebar_bg = theme.xcolor0
 theme.sidebar_fg = theme.xcolor15
 theme.sidebar_opacity = 0.9
--- theme.sidebar_position = "left" -- left or right
+theme.sidebar_position = "left" -- left or right
 theme.sidebar_width = dpi(300)
 theme.sidebar_height = screen_height
 theme.sidebar_x = 0
@@ -219,7 +219,7 @@ theme.sidebar_show_on_mouse_edge = true
 -- Exit screen
 theme.exit_screen_bg = theme.xcolor0 .. "CC"
 theme.exit_screen_fg = theme.xcolor7
-theme.exit_screen_font = "Lato Light 24"
+theme.exit_screen_font = "Cantarell Light 24"
 theme.exit_screen_icon_size = dpi(180)
 
 -- Other icons (mostly used in sidebar and menu)

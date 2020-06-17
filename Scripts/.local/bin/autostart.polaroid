@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-THEME="$HOME/.local/sessions/polaroid"
-wpg -s prada.jpg &
-compton --config $HOME/.config/compton/compton-polaroid.conf &
-stalonetray &
-

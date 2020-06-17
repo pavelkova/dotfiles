@@ -88,7 +88,7 @@ local function update_widget()
       local artist = stdout:match('(.*)@@')
       local title = stdout:match('@@(.*)@')
       title = string.gsub(title, '^%s*(.-)%s*$', '%1')
-      local status = stdout:match('%[(.*)%]')
+local status = stdout:match('%[(.*)%]')
       status = string.gsub(status, '^%s*(.-)%s*$', '%1')
       if status == "paused" then
         artist_fg = paused_color

@@ -51,6 +51,7 @@ helpers.circle = function()
 end
 
 function helpers.colorize_text(txt, fg)
+   local txt = tostring(txt) or tostring(nil)
     return "<span foreground='" .. fg .."'>" .. txt .. "</span>"
 end
 

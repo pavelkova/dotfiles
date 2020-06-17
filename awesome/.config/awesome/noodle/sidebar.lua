@@ -20,7 +20,7 @@ exit_icon.resize = true
 exit_icon.forced_width = icon_size
 exit_icon.forced_height = icon_size
 local exit_text = wibox.widget.textbox("Exit")
-exit_text.font = "Lato Medium 10"
+exit_text.font = "Cantarell 11"
 
 local exit = wibox.widget{
   exit_icon,
@@ -41,7 +41,7 @@ weather_widget_icon.font = "Typicons 24"
 weather_widget_icon.forced_width = icon_size
 weather_widget_icon.forced_height = icon_size
 local weather_widget_text = text_weather:get_all_children()[2]
-weather_widget_text.font = "Lato 12"
+weather_widget_text.font = "Cantarell 11"
 
 local weather = wibox.widget{
     nil,
@@ -282,40 +282,40 @@ local playerctl_buttons = wibox.widget {
 local time = wibox.widget.textclock("%H %M")
 time.align = "center"
 time.valign = "center"
-time.font = "Lato Thin 75"
+time.font = "Cantarell Thin 75"
 
 local date = wibox.widget.textclock("%A, %d %B")
 date.align = "center"
 date.valign = "center"
 date.font = "EtBembo Italic 18"
 
-local mpd_song = require("noodle.mpd_song")
-local mpd_widget_children = mpd_song:get_all_children()
-local mpd_title = mpd_widget_children[1]
-local mpd_artist = mpd_widget_children[2]
-mpd_title.font = "Lato 12"
-mpd_artist.font = "Lato 10"
+-- local mpd_song = require("noodle.mpd_song")
+-- local mpd_widget_children = mpd_song:get_all_children()
+-- local mpd_title = mpd_widget_children[1]
+-- local mpd_artist = mpd_widget_children[2]
+-- mpd_title.font = "Cantarell 12"
+-- mpd_artist.font = "Cantarell 10"
 
--- Set forced height in order to limit the widgets to one line.
--- Might need to be adjusted depending on the font.
-mpd_title.forced_height = dpi(24)
-mpd_artist.forced_height = dpi(16)
+-- -- Set forced height in order to limit the widgets to one line.
+-- -- Might need to be adjusted depending on the font.
+-- mpd_title.forced_height = dpi(24)
+-- mpd_artist.forced_height = dpi(16)
 
-mpd_song:buttons(gears.table.join(
-                awful.button({ }, 1, function ()
-                    awful.spawn.with_shell("mpc toggle")
-                end),
-                awful.button({ }, 3, function ()
-                    -- Spawn music terminal
-                    awful.spawn("music_terminal")
-                end),
-                awful.button({ }, 4, function ()
-                    awful.spawn.with_shell("mpc prev")
-                end),
-                awful.button({ }, 5, function ()
-                    awful.spawn.with_shell("mpc next")
-                end)
-))
+-- mpd_song:buttons(gears.table.join(
+--                 awful.button({ }, 1, function ()
+--                     awful.spawn.with_shell("mpc toggle")
+--                 end),
+--                 awful.button({ }, 3, function ()
+--                     -- Spawn music terminal
+--                     awful.spawn("music_terminal")
+--                 end),
+--                 awful.button({ }, 4, function ()
+--                     awful.spawn.with_shell("mpc prev")
+--                 end),
+--                 awful.button({ }, 5, function ()
+--                     awful.spawn.with_shell("mpc next")
+--                 end)
+-- ))
 
 
 
@@ -324,7 +324,7 @@ search_icon.resize = true
 search_icon.forced_width = icon_size
 search_icon.forced_height = icon_size
 local search_text = wibox.widget.textbox("Search")
-search_text.font = "Lato 12"
+search_text.font = "Cantarell 12"
 
 -- local volume_icon = wibox.widget.imagebox(beautiful.volume_icon)
 -- volume_icon.resize = true
@@ -465,12 +465,12 @@ sidebar:setup {
     date,
     pad(1),
     pad(1),
-    playerctl_buttons,
+    -- playerctl_buttons,
     {
       -- Put some padding at the left and right edge so that
       -- it looks better with extremely long titles/artists
       pad(2),
-      mpd_song,
+      -- mpd_song,
       pad(2),
       layout = wibox.layout.align.horizontal,
     },

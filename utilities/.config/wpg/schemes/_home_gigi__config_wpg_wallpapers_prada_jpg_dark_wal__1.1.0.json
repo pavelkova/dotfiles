@@ -1,0 +1,28 @@
+{
+    "wallpaper": "prada.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#2f343f",
+        "foreground": "#fffdfd",
+        "cursor": "#fffdfd"
+    },
+    "colors": {
+        "color0": "#2f343f",
+        "color1": "#717690",
+        "color2": "#CFB497",
+        "color3": "#474644",
+        "color4": "#D9B659",
+        "color5": "#CE9A69",
+        "color6": "#D5C7B3",
+        "color7": "#e2e0e0",
+        "color8": "#404655",
+        "color9": "#828ecb",
+        "color10": "#ffeaad",
+        "color11": "#655d4f",
+        "color12": "#fff55f",
+        "color13": "#ffc774",
+        "color14": "#ffffcf",
+        "color15": "#fffdfd"
+    }
+}
