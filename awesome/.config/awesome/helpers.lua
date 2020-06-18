@@ -17,23 +17,23 @@ helpers.rrect = function(radius)
 end
 
 helpers.rbar = function()
-  return function(cr, width, height)
-    gears.shape.rounded_bar(cr, width, height)
-  end
+    return function(cr, width, height)
+        gears.shape.rounded_bar(cr, width, height)
+    end
 end
 
 helpers.prrect = function(radius, tl, tr, br, bl)
-  return function(cr, width, height)
-    gears.shape.partially_rounded_rect(cr, width, height, tl, tr, br, bl, radius)
-  end
+    return function(cr, width, height)
+        gears.shape.partially_rounded_rect(cr, width, height, tl, tr, br, bl, radius)
+    end
 end
 
 -- Create info bubble shape
 -- TODO
 helpers.infobubble = function(radius)
-  return function(cr, width, height)
-    gears.shape.infobubble(cr, width, height, radius)
-  end
+    return function(cr, width, height)
+        gears.shape.infobubble(cr, width, height, radius)
+    end
 end
 
 -- Create rectangle shape
@@ -51,19 +51,19 @@ helpers.circle = function()
 end
 
 function helpers.colorize_text(txt, fg)
-   local txt = tostring(txt) or tostring(nil)
-    return "<span foreground='" .. fg .."'>" .. txt .. "</span>"
+    local txt = tostring(txt) or tostring(nil)
+    return "<span foreground='" .. fg .. "'>" .. txt .. "</span>"
 end
 
 function helpers.client_menu_toggle()
     local instance = nil
 
-    return function ()
+    return function()
         if instance and instance.wibox.visible then
             instance:hide()
             instance = nil
         else
-            instance = awful.menu.clients({ theme = { width = dpi(250) } })
+            instance = awful.menu.clients({theme = {width = dpi(250)}})
         end
     end
 end
@@ -81,25 +81,41 @@ function helpers.move_to_edge(c, direction)
     local workarea = awful.screen.focused().workarea
     local client_geometry = c:geometry()
     if direction == "up" then
-        c:geometry({ nil, y = workarea.y + beautiful.screen_margin * 2, nil, nil })
-    elseif direction == "down" then 
-        c:geometry({ nil, y = workarea.height + workarea.y - client_geometry.height - beautiful.screen_margin * 2 - beautiful.border_width * 2, nil, nil })
-    elseif direction == "left" then 
-        c:geometry({ x = workarea.x + beautiful.screen_margin * 2, nil, nil, nil })
-    elseif direction == "right" then 
-        c:geometry({ x = workarea.width + workarea.x - client_geometry.width - beautiful.screen_margin * 2 - beautiful.border_width * 2, nil, nil, nil })
+        c:geometry({nil, y = workarea.y + beautiful.screen_margin * 2, nil, nil})
+    elseif direction == "down" then
+        c:geometry(
+            {
+                nil,
+                y = workarea.height + workarea.y - client_geometry.height - beautiful.screen_margin * 2 -
+                    beautiful.border_width * 2,
+                nil,
+                nil
+            }
+        )
+    elseif direction == "left" then
+        c:geometry({x = workarea.x + beautiful.screen_margin * 2, nil, nil, nil})
+    elseif direction == "right" then
+        c:geometry(
+            {
+                x = workarea.width + workarea.x - client_geometry.width - beautiful.screen_margin * 2 -
+                    beautiful.border_width * 2,
+                nil,
+                nil,
+                nil
+            }
+        )
     end
 end
 
 function helpers.create_titlebar(c, titlebar_buttons, titlebar_position, titlebar_size)
-    awful.titlebar(c, {font = beautiful.titlebar_font, position = titlebar_position, size = titlebar_size}) : setup {
-        { 
+    awful.titlebar(c, {font = beautiful.titlebar_font, position = titlebar_position, size = titlebar_size}):setup {
+        {
             buttons = titlebar_buttons,
-            layout  = wibox.layout.fixed.horizontal
+            layout = wibox.layout.fixed.horizontal
         },
-        { 
+        {
             buttons = titlebar_buttons,
-            layout  = wibox.layout.fixed.horizontal
+            layout = wibox.layout.fixed.horizontal
         },
         {
             buttons = titlebar_buttons,
@@ -109,24 +125,26 @@ function helpers.create_titlebar(c, titlebar_buttons, titlebar_position, titleba
     }
 end
 
-
 local double_tap_timer = nil
 function helpers.single_double_tap(single_tap_function, double_tap_function)
-  if double_tap_timer then
-    double_tap_timer:stop()
-    double_tap_timer = nil
-    double_tap_function()
-    -- naughty.notify({text = "We got a double tap"})
-    return
-  end
-  
-  double_tap_timer =
-    gears.timer.start_new(0.20, function()
-                            double_tap_timer = nil
-                            -- naughty.notify({text = "We got a single tap"})
-                            single_tap_function()
-                            return false
-    end)
+    if double_tap_timer then
+        double_tap_timer:stop()
+        double_tap_timer = nil
+        double_tap_function()
+        -- naughty.notify({text = "We got a double tap"})
+        return
+    end
+
+    double_tap_timer =
+        gears.timer.start_new(
+        0.20,
+        function()
+            double_tap_timer = nil
+            -- naughty.notify({text = "We got a single tap"})
+            single_tap_function()
+            return false
+        end
+    )
 end
 
 function helpers.toggle_scratchpad()
@@ -147,14 +165,14 @@ function helpers.toggle_scratchpad()
 
     -- Move scratchpad to current tag
     local current_tag = screen.selected_tag
-    local scratchpad_client = function (c)
-      return awful.rules.match(c, {class = "scratchpad"})
+    local scratchpad_client = function(c)
+        return awful.rules.match(c, {class = "scratchpad"})
     end
     for c in awful.client.iterate(scratchpad_client) do
-      c.minimized = false
-      c:move_to_tag(current_tag)
-      client.focus = c
-      c:raise()
+        c.minimized = false
+        c:move_to_tag(current_tag)
+        client.focus = c
+        c:raise()
     end
 
     -- if client.focus ~= nil and client.focus.class == "scratchpad" then
@@ -172,19 +190,90 @@ function helpers.add_clickable_effect(w)
     local original_cursor = "left_ptr"
     local hover_cursor = "hand1"
 
-    w:connect_signal("mouse::enter", function ()
-        local w = _G.mouse.current_wibox
-        if w then
-            w.cursor = hover_cursor
+    w:connect_signal(
+        "mouse::enter",
+        function()
+            local w = _G.mouse.current_wibox
+            if w then
+                w.cursor = hover_cursor
+            end
         end
-    end)
+    )
 
-    w:connect_signal("mouse::leave", function ()
-        local w = _G.mouse.current_wibox
-        if w then
-            w.cursor = original_cursor
+    w:connect_signal(
+        "mouse::leave",
+        function()
+            local w = _G.mouse.current_wibox
+            if w then
+                w.cursor = original_cursor
+            end
         end
-    end)
+    )
 end
 
+-- WIDGET HELPERS --
+
+function helpers.create_widget_stack(widget, text, fg_color, bg_color)
+   local widget_stack = wibox.widget{
+   {
+      max_value     = 1,
+      forced_height = dpi(10),
+      margins       = {
+         top = dpi(8),
+         bottom = dpi(8),
+      },
+      forced_width  = dpi(200),
+      shape         = gears.shape.rounded_bar,
+      bar_shape     = gears.shape.rounded_bar,
+      color         = fg_color,
+      background_color = bg_color,
+      border_width  = 0,
+      border_color  = beautiful.border_color,
+      widget        = widget,
+   },
+   {
+      text = text,
+      font = "Cantarell Medium 7",
+      valign = "center",
+      widget = wibox.widget.textbox,
+   },
+   layout = wibox.layout.stack
+   }
+   widget_stack.forced_width = dpi(215)
+   return widget_stack
+end
+
+
+function helpers.create_text_icon(icon_text)
+   local text_icon = wibox.widget.textbox()
+   local text_icon = wibox.widget{
+      text = icon_text,
+      valign = 'center',
+      widget = wibox.widget.textbox
+   }
+
+   text_icon.forced_width = dpi(36)
+   text_icon.forced_height = dpi(36)
+   text_icon.font = "voidcorp 24"
+   return text_icon
+end
+
+function helpers.create_status_bar(widget_icon, widget_stack)
+   widget_stack.forced_width = dpi(215)
+
+   return wibox.widget{
+  nil,
+  {
+    widget_icon,
+    helpers.pad(1),
+    widget_stack,
+    helpers.pad(1),
+    layout = wibox.layout.fixed.horizontal
+  },
+  nil,
+  expand = "none",
+  layout = wibox.layout.align.horizontal
+}
+end
+--
 return helpers

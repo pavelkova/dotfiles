@@ -18,43 +18,40 @@ awful.screen.connect_for_each_screen(
         -- Create a custom text taglist
         local text_taglist = require("noodle.text_taglist")
 
-        -- Create a promptbox for each screen
-        s.mypromptbox = awful.widget.prompt()
-
         -- We need one layoutbox per screen.
-        s.mylayoutbox = awful.widget.layoutbox(s)
-        s.mylayoutbox:buttons(
-            gears.table.join(
-                awful.button(
-                    {},
-                    1,
-                    function()
-                        awful.layout.inc(1)
-                    end
-                ),
-                awful.button(
-                    {},
-                    3,
-                    function()
-                        awful.layout.inc(-1)
-                    end
-                ),
-                awful.button(
-                    {},
-                    4,
-                    function()
-                        awful.layout.inc(1)
-                    end
-                ),
-                awful.button(
-                    {},
-                    5,
-                    function()
-                        awful.layout.inc(-1)
-                    end
-                )
-            )
-        )
+        -- s.mylayoutbox = awful.widget.layoutbox(s)
+        -- s.mylayoutbox:buttons(
+        --     gears.table.join(
+        --         awful.button(
+        --             {},
+        --             1,
+        --             function()
+        --                 awful.layout.inc(1)
+        --             end
+        --         ),
+        --         awful.button(
+        --             {},
+        --             3,
+        --             function()
+        --                 awful.layout.inc(-1)
+        --             end
+        --         ),
+        --         awful.button(
+        --             {},
+        --             4,
+        --             function()
+        --                 awful.layout.inc(1)
+        --             end
+        --         ),
+        --         awful.button(
+        --             {},
+        --             5,
+        --             function()
+        --                 awful.layout.inc(-1)
+        --             end
+        --         )
+        --     )
+        -- )
 
         -- Create the wibox
         s.mywibox =
@@ -82,8 +79,8 @@ awful.screen.connect_for_each_screen(
             expand = "none",
             -- minimal_tasklist,
             -- s.mytasklist,
-            s.mylayoutbox,
-            s.mypromptbox,
+            -- s.mylayoutbox,
+            -- s.mypromptbox,
             layout = wibox.layout.align.horizontal
         }
     end

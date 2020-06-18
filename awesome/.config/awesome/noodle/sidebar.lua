@@ -4,7 +4,8 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
-
+local vicious = require("vicious")
+local widgets = require("widgets.sidebar")
 local helpers = require("helpers")
 local pad = helpers.pad
 
@@ -52,232 +53,15 @@ local weather = wibox.widget{
     expand = "outside"
 }
 
-local temperature_icon = wibox.widget.textbox()
-local temperature_icon = wibox.widget{
-   text = "",
-   valign = 'center',
-   widget = wibox.widget.textbox
-}
-temperature_icon.font = "voidcorp 24"
+local battery = require("widgets.sidebar.battery_bar")
 
-local temperature_bar = require("noodle.temperature_bar")
-temperature_bar.forced_width = progress_bar_width
-local temperature = wibox.widget{
-  nil,
-  {
-    temperature_icon,
-    pad(1),
-    temperature_bar,
-    pad(1),
-    layout = wibox.layout.fixed.horizontal
-  },
-  nil,
-  expand = "none",
-  layout = wibox.layout.align.horizontal
-}
-temperature:buttons(
-  gears.table.join(
-    awful.button({ }, 1, function ()
-        -- local matcher = function (c)
-        --   return awful.rules.match(c, {name = 'watch sensors'})
-        -- end
-        -- awful.client.run_or_raise(terminal .." -e 'watch sensors'", matcher)
-        awful.spawn(terminal .. " -e 'watch sensors'", {floating = true})
-    end)
-))
+local cpu = require("widgets.sidebar.cpu_bar")
 
-local battery_icon = wibox.widget.textbox()
-local battery_icon = wibox.widget{
-   text = "",
-   align = 'center',
-   valign = 'center',
-   widget = wibox.widget.textbox
-}
+local ram = require("widgets.sidebar.ram_bar")
 
-battery_icon.forced_width = icon_size
-battery_icon.forced_height = icon_size
-battery_icon.font = "voidcorp 24"
+local temperature = require("widgets.sidebar.temperature_bar")
 
-local battery_bar = require("noodle.battery_bar")
-battery_bar.forced_width = progress_bar_width
--- battery_bar.margins.top = progress_bar_margins
--- battery_bar.margins.bottom = progress_bar_margins
-local battery = wibox.widget{
-   nil,
-  {
-    battery_icon,
-    pad(1),
-    battery_bar,
-    pad(1),
-    layout = wibox.layout.fixed.horizontal
-  },
-  nil,
-  expand = "none",
-  layout = wibox.layout.align.horizontal
-}
-
-local cpu_icon = wibox.widget.textbox()
-local cpu_icon = wibox.widget{
-   text = "",
-   valign = 'center',
-   widget = wibox.widget.textbox
-}
-cpu_icon.forced_width = icon_size
-cpu_icon.forced_height = icon_size
-cpu_icon.font = "voidcorp 24"
-
-local cpu_bar = require("noodle.cpu_bar")
-cpu_bar.forced_width = progress_bar_width
-local cpu = wibox.widget{
-  nil,
-  {
-    cpu_icon,
-    pad(1),
-    cpu_bar,
-    pad(1),
-    layout = wibox.layout.fixed.horizontal
-  },
-  nil,
-  expand = "none",
-  layout = wibox.layout.align.horizontal
-}
-
-cpu:buttons(
-  gears.table.join(
-    awful.button({ }, 1, function ()
-        local matcher = function (c)
-          return awful.rules.match(c, {name = 'htop'})
-        end
-        awful.client.run_or_raise(terminal .." -e htop", matcher)
-    end),
-    awful.button({ }, 3, function ()
-        local matcher = function (c)
-          return awful.rules.match(c, {class = 'Lxtask'})
-        end
-        awful.client.run_or_raise("lxtask", matcher)
-    end)
-))
-
-local ram_icon = wibox.widget.textbox()
-local ram_icon = wibox.widget{
-   text = "",
-   valign = 'center',
-   widget = wibox.widget.textbox
-}
-ram_icon.forced_width = icon_size
-ram_icon.forced_height = icon_size
-ram_icon.font = "voidcorp 24"
-
-local ram_bar = require("noodle.ram_bar")
-ram_bar.forced_width = progress_bar_width
--- ram_bar.margins.top = progress_bar_margins
--- ram_bar.margins.bottom = progress_bar_margins
-local ram = wibox.widget{
-  nil,
-  {
-    ram_icon,
-    pad(1),
-    ram_bar,
-    pad(1),
-    layout = wibox.layout.fixed.horizontal
-  },
-  nil,
-  expand = "none",
-  layout = wibox.layout.align.horizontal
-}
-
-ram:buttons(
-  gears.table.join(
-    awful.button({ }, 1, function ()
-        local matcher = function (c)
-          return awful.rules.match(c, {name = 'htop'})
-        end
-        awful.client.run_or_raise(terminal .." -e htop", matcher)
-    end),
-    awful.button({ }, 3, function ()
-        local matcher = function (c)
-          return awful.rules.match(c, {class = 'Lxtask'})
-        end
-        awful.client.run_or_raise("lxtask", matcher)
-    end)
-))
-
-local playerctl_toggle_icon = wibox.widget.textbox()
-local playerctl_toggle_icon = wibox.widget{
-   text = "",
-   align = 'center',
-   valign = 'center',
-   widget = wibox.widget.textbox
-}
-playerctl_toggle_icon.forced_width = playerctl_button_size
-playerctl_toggle_icon.forced_height = playerctl_button_size
-playerctl_toggle_icon.font = "voidcorp 42"
-
-
-
-playerctl_toggle_icon:buttons(gears.table.join(
-                         awful.button({ }, 1, function ()
-                             awful.spawn.with_shell("mpc toggle")
-                         end),
-                         awful.button({ }, 3, function ()
-                             awful.spawn.with_shell("mpvc toggle")
-                         end)
-))
-
-local playerctl_prev_icon = wibox.widget.textbox()
-local playerctl_prev_icon = wibox.widget{
-   text = "",
-   align = 'center',
-   valign = 'center',
-   widget = wibox.widget.textbox
-}
-playerctl_prev_icon.forced_width = playerctl_button_size
-playerctl_prev_icon.forced_height = playerctl_button_size
-playerctl_prev_icon.font = "voidcorp 18"
-
-playerctl_prev_icon:buttons(gears.table.join(
-                         awful.button({ }, 1, function ()
-                             awful.spawn.with_shell("mpc prev")
-                         end),
-                         awful.button({ }, 3, function ()
-                             awful.spawn.with_shell("mpvc prev")
-                         end)
-))
-
-local playerctl_next_icon = wibox.widget.textbox()
-local playerctl_next_icon = wibox.widget{
-   text = "",
-   align = 'center',
-   valign = 'center',
-   widget = wibox.widget.textbox
-}
-playerctl_next_icon.forced_width = playerctl_button_size
-playerctl_next_icon.forced_height = playerctl_button_size
-playerctl_next_icon.font = "voidcorp 18"
-
-playerctl_next_icon:buttons(gears.table.join(
-                         awful.button({ }, 1, function ()
-                             awful.spawn.with_shell("mpc next")
-                         end),
-                         awful.button({ }, 3, function ()
-                             awful.spawn.with_shell("mpvc next")
-                         end)
-))
-
-local playerctl_buttons = wibox.widget {
-  nil,
-  {
-    playerctl_prev_icon,
-    pad(1),
-    playerctl_toggle_icon,
-    pad(1),
-    playerctl_next_icon,
-    layout  = wibox.layout.fixed.horizontal
-  },
-  nil,
-  expand = "none",
-  layout = wibox.layout.align.horizontal,
-}
+local volume_bar = require("widgets.sidebar.volume_bar")
 
 local time = wibox.widget.textclock("%H %M")
 time.align = "center"
@@ -289,34 +73,6 @@ date.align = "center"
 date.valign = "center"
 date.font = "EtBembo Italic 18"
 
--- local mpd_song = require("noodle.mpd_song")
--- local mpd_widget_children = mpd_song:get_all_children()
--- local mpd_title = mpd_widget_children[1]
--- local mpd_artist = mpd_widget_children[2]
--- mpd_title.font = "Cantarell 12"
--- mpd_artist.font = "Cantarell 10"
-
--- -- Set forced height in order to limit the widgets to one line.
--- -- Might need to be adjusted depending on the font.
--- mpd_title.forced_height = dpi(24)
--- mpd_artist.forced_height = dpi(16)
-
--- mpd_song:buttons(gears.table.join(
---                 awful.button({ }, 1, function ()
---                     awful.spawn.with_shell("mpc toggle")
---                 end),
---                 awful.button({ }, 3, function ()
---                     -- Spawn music terminal
---                     awful.spawn("music_terminal")
---                 end),
---                 awful.button({ }, 4, function ()
---                     awful.spawn.with_shell("mpc prev")
---                 end),
---                 awful.button({ }, 5, function ()
---                     awful.spawn.with_shell("mpc next")
---                 end)
--- ))
-
 
 
 local search_icon = wibox.widget.imagebox(beautiful.search_icon)
@@ -326,60 +82,7 @@ search_icon.forced_height = icon_size
 local search_text = wibox.widget.textbox("Search")
 search_text.font = "Cantarell 12"
 
--- local volume_icon = wibox.widget.imagebox(beautiful.volume_icon)
--- volume_icon.resize = true
--- volume_icon.forced_width = icon_size
--- volume_icon.forced_height = icon_size
-local volume_icon = wibox.widget.textbox()
-local volume_icon = wibox.widget{
-   text = "",
-   align = 'center',
-   valign = 'center',
-   widget = wibox.widget.textbox
-}
-volume_icon.forced_width = icon_size
-volume_icon.forced_height = icon_size
-volume_icon.font = "voidcorp 24"
 
-local volume_bar = require("noodle.volume_bar")
-volume_bar.forced_width = progress_bar_width
--- volume_bar.shape = gears.shape.circle
--- volume_bar.margins.top = progress_bar_margins
--- volume_bar.margins.bottom = progress_bar_margins
-local volume = wibox.widget{
-  nil,
-  {
-    volume_icon,
-    pad(1),
-    volume_bar,
-    pad(1),
-    layout = wibox.layout.fixed.horizontal
-  },
-  nil,
-  expand = "none",
-  layout = wibox.layout.align.horizontal
-}
-
-volume:buttons(gears.table.join(
-                 -- Left click - Mute / Unmute
-                 awful.button({ }, 1, function ()
-                     awful.spawn.with_shell("vol toggle")
-                 end),
-                 -- Right click - Run or raise pavucontrol
-                 awful.button({ }, 3, function () 
-                     local matcher = function (c)
-                       return awful.rules.match(c, {class = 'Pavucontrol'})
-                     end
-                     awful.client.run_or_raise("pavucontrol", matcher)
-                 end),
-                 -- Scroll - Increase / Decrease volume
-                 awful.button({ }, 4, function () 
-                     awful.spawn.with_shell("vol up")
-                 end),
-                 awful.button({ }, 5, function () 
-                     awful.spawn.with_shell("vol down")
-                 end)
-))
 
 -- Create the sidebar
 sidebar = wibox({x = 0, y = 0, visible = false, ontop = true, type = "dock"})
