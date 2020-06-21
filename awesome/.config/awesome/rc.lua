@@ -48,7 +48,7 @@ local titlebars = require("titlebars")
 
 -- Extra features
 local bars = require("bar_themes." .. bar_theme_name)
-local sidebar = require("noodle.sidebar")
+local sidebar = require("components.sidebar")
 local exit_screen = require("noodle.text_exit_screen")
 -- local start_screen = require("noodle.start_screen")
 -- }}}
@@ -180,28 +180,30 @@ naughty.config.presets.critical = {
 
 -- {{{ Menu
 -- Create a launcher widget and a main menu
+
+local freedesktop = require("freedesktop")
+
 myawesomemenu = {
-    {"hotkeys", function()
-            return false, hotkeys_popup.show_help
-        end, beautiful.keyboard_icon},
-    {"restart", awesome.restart, beautiful.reboot_icon},
-    {"quit", function()
-            exit_screen_show()
-        end, beautiful.poweroff_icon}
+    { "hotkeys", function() return false, hotkeys_popup.show_help end },
+    { "manual", terminal .. " -e man awesome" },
+    { "edit config", string.format("%s -e %s %s", terminal, editor, awesome.conffile) },
+    { "restart", awesome.restart },
+    { "quit", function() awesome.quit() end }
 }
 
-mymainmenu =
-    awful.menu(
-    {
-        items = {
-            {"awesome", myawesomemenu, beautiful.home_icon},
+mymainmenu = freedesktop.menu.build({
+    before = {
+        { "Awesome", myawesomemenu, beautiful.awesome_icon },
+        -- other triads can be put here
+    },
+    after = {
+        { "Open terminal", terminal },
             {"firefox", browser, beautiful.firefox_icon},
             {"terminal", terminal, beautiful.terminal_icon},
             {"files", filemanager, beautiful.files_icon},
             {"search", "rofi", beautiful.search_icon}
-        }
     }
-)
+})
 
 mylauncher =
     awful.widget.launcher(

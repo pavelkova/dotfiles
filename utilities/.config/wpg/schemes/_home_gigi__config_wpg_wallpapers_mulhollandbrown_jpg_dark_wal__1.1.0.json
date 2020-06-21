@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/gigi/.config/wpg/wallpapers/mulhollandbrown.jpg",
+    "alpha": "90",
+
+    "special": {
+        "background": "#050404",
+        "foreground": "#fdfdfc",
+        "cursor": "#fdfdfc"
+    },
+    "colors": {
+        "color0": "#050404",
+        "color1": "#ae604e",
+        "color2": "#658f62",
+        "color3": "#d1ba67",
+        "color4": "#5a5139",
+        "color5": "#8a7988",
+        "color6": "#7ab395",
+        "color7": "#d7d7d5",
+        "color8": "#211919",
+        "color9": "#f2bea6",
+        "color10": "#b3a57a",
+        "color11": "#fefebb",
+        "color12": "#8a7e79",
+        "color13": "#aaaf9d",
+        "color14": "#d4d0c2",
+        "color15": "#fdfdfc"
+    }
+}

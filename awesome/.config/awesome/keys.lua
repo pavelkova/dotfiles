@@ -346,44 +346,7 @@ keys.globalkeys =
         {description = "increase master width factor", group = "awesome : client : resize"}
     ),
 
- -- Minimize
-    awful.key(
-        {superkey},
-        "n",
-        -- The client currently has the input focus, so it cannot be
-        -- minimized, since minimized clients can't have the focus.
-        function(c)
-            c.minimized = true
-        end,
-        {description = "minimize", group = "awesome : client : resize"}
-    ),
-    awful.key(
-        {superkey},
-        "m",
-        function(c)
-            c.maximized = not c.maximized
-            c:raise()
-        end,
-        {description = "(un)maximize", group = "awesome : client : resize"}
-    ),
-    awful.key(
-        {superkey, ctrlkey},
-        "m",
-        function(c)
-            c.maximized_vertical = not c.maximized_vertical
-            c:raise()
-        end,
-        {description = "(un)maximize vertically", group = "awesome : client : resize"}
-    ),
-    awful.key(
-        {superkey, shiftkey},
-        "m",
-        function(c)
-            c.maximized_horizontal = not c.maximized_horizontal
-            c:raise()
-        end,
-        {description = "(un)maximize horizontally", group = "awesome : client : resize"}
-    ),
+
 
     ------------
 
@@ -804,7 +767,8 @@ end
 
 keys.clientkeys =
    gears.table.join(
-       ------------
+
+      ------------
     -- AWESOME : CLIENT --
 
         -- Toggle titlebar (for focused client only)
@@ -1015,6 +979,47 @@ keys.clientkeys =
             c:relative_move(0, dpi(-20), 0, 0)
         end--,
         --{description = "focus mode", group = "client"}
+    ),
+    ------------
+    -- AWESOME : CLIENT --
+
+     -- Minimize
+    awful.key(
+        {superkey},
+        "n",
+        -- The client currently has the input focus, so it cannot be
+        -- minimized, since minimized clients can't have the focus.
+        function(c)
+            c.minimized = true
+        end,
+        {description = "minimize", group = "awesome : client : resize"}
+    ),
+    awful.key(
+        {superkey},
+        "m",
+        function(c)
+            c.maximized = not c.maximized
+            c:raise()
+        end,
+        {description = "(un)maximize", group = "awesome : client : resize"}
+    ),
+    awful.key(
+        {superkey, ctrlkey},
+        "m",
+        function(c)
+            c.maximized_vertical = not c.maximized_vertical
+            c:raise()
+        end,
+        {description = "(un)maximize vertically", group = "awesome : client : resize"}
+    ),
+    awful.key(
+        {superkey, shiftkey},
+        "m",
+        function(c)
+            c.maximized_horizontal = not c.maximized_horizontal
+            c:raise()
+        end,
+        {description = "(un)maximize horizontally", group = "awesome : client : resize"}
     )
 )
 
