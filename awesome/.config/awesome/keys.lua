@@ -61,8 +61,7 @@ keys.desktopbuttons =
 -- {{{ Key bindings
 keys.globalkeys =
     gears.table.join(
-
-      -- AWESOME
+    -- AWESOME
 
     -- Super + ALT + k
     awful.key({superkey, altkey}, "k", hotkeys_popup.show_help, {description = "show help", group = "awesome"}),
@@ -124,7 +123,6 @@ keys.globalkeys =
     -- Super + CTRL + q
     -- Quit awesome
     awful.key({superkey, ctrlkey}, "q", awesome.quit, {description = "quit awesome", group = "awesome"}),
-
     -- Prompt
     awful.key(
         {superkey},
@@ -134,8 +132,6 @@ keys.globalkeys =
         end,
         {description = "run prompt", group = "awesome"}
     ),
-
-
     ------------
 
     -- AWESOME : CLIENT : FOCUS --
@@ -345,9 +341,6 @@ keys.globalkeys =
         end,
         {description = "increase master width factor", group = "awesome : client : resize"}
     ),
-
-
-
     ------------
 
     -- AWESOME: LAYOUTS
@@ -410,19 +403,21 @@ keys.globalkeys =
     -- Switch to next layout
     awful.key(
         {superkey, shiftkey},
-        "t",
+        "l",
         function()
             awful.layout.inc(1)
         end,
         {description = "select next layout", group = "awesome : layout"}
     ),
-
-
     -- Set max layout
-    awful.key({ superkey, shiftkey }, "w",
-       function() awful.layout.set(awful.layout.suit.max) end,
-       {description = "set max layout", group = "awesome : layout"}),
-
+    awful.key(
+        {superkey, shiftkey},
+        "w",
+        function()
+            awful.layout.set(awful.layout.suit.max)
+        end,
+        {description = "set max layout", group = "awesome : layout"}
+    ),
     -- Set tiled layout
     awful.key(
         {superkey},
@@ -441,7 +436,6 @@ keys.globalkeys =
         end,
         {description = "set floating layout", group = "awesome : layout"}
     ),
-
     ------------
 
     -- AWESOME: TAGS
@@ -673,21 +667,19 @@ keys.globalkeys =
         end,
         {description = "select area to capture", group = "utilities : screenshot"}
     ),
-
     ------------
 
     -- APPLICATIONS --
 
-    -- Editor
+    -- Emacs
     awful.key(
-        {superkey, modkey},
+        {superkey},
         "e",
         function()
-            awful.spawn(editor_cmd)
+            awful.spawn("emacsclient -c -a ''")
         end,
-        {description = "editor", group = "applications"}
+        {description = "emacs", group = "*"}
     ),
-
     -- Terminal
     awful.key(
         {superkey},
@@ -695,12 +687,22 @@ keys.globalkeys =
         function()
             awful.spawn(terminal)
         end,
-        {description = "open a terminal", group = "applications"}
+        {description = "alacritty", group = "*"}
+    ),
+    -- Trilium
+    awful.key(
+        {superkey},
+        "t",
+        function()
+            local matcher = function(c)
+                return awful.rules.match(c, {class = "trilium notes"})
+            end
+            awful.client.run_or_raise("trilium", matcher)
+        end,
+        {description = "trilium", group = "*"}
     ),
 
     ----------------------
-
-
 
     -- like below but for tag 10
     -- View tag only.
@@ -766,14 +768,13 @@ for i = 1, 9 do
 end
 
 keys.clientkeys =
-   gears.table.join(
-
-      ------------
+    gears.table.join(
+    ------------
     -- AWESOME : CLIENT --
 
-        -- Toggle titlebar (for focused client only)
+    -- Toggle titlebar (for focused client only)
     awful.key(
-        {superkey},
+        {superkey, shiftkey},
         "t",
         function(c)
             -- Don't toggle if titlebars are used as borders
@@ -902,7 +903,6 @@ keys.clientkeys =
         end,
         {description = "toggle sticky", group = "awesome : client"}
     ),
-
     -- Move floating client (relative)
     awful.key(
         {superkey, shiftkey},
@@ -977,13 +977,14 @@ keys.clientkeys =
         "Up",
         function(c)
             c:relative_move(0, dpi(-20), 0, 0)
-        end--,
+        end
+         --,
         --{description = "focus mode", group = "client"}
     ),
     ------------
     -- AWESOME : CLIENT --
 
-     -- Minimize
+    -- Minimize
     awful.key(
         {superkey},
         "n",

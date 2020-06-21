@@ -92,15 +92,14 @@ end
 -- }}}
 
 -- {{{ Variable definitions
-emulator = "alacritty"
-terminal = emulator .. " -e fish"
+terminal = "alacritty"
 -- Some terminals do not respect spawn callbacks
 floating_terminal = "cool-retro-term -c fst" -- clients with class "fst" are set to be floating (check awful.rules below)
 browser = "firefox"
 filemanager = "Thunar"
 tmux = terminal .. " -e tmux new "
-editor = "emacsclient -c" or os.getenv("EDITOR") or "jmacs" or "nano"
-editor_cmd = terminal .. " -e " .. editor .. " "
+editor = "emacsclient -nw -a ''" or os.getenv("EDITOR") or "jmacs" or "nano"
+editor_cmd = terminal .. " -e " .. editor .. ""
 
 -- Get screen geometry
 screen_width = awful.screen.focused().geometry.width
