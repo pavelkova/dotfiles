@@ -22,7 +22,6 @@ local awful = require("awful")
 require("awful.autofocus")
 -- Widget and layout library
 local wibox = require("wibox")
--- local lain = require("lain")
 local vicious = require("vicious")
 -- Default notification library
 local naughty = require("naughty")
@@ -31,70 +30,27 @@ local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 require("awful.hotkeys_popup.keys")
 
--- ~~ Noodle Cleanup Script ~~
--- Some of my widgets (mpd, volume) rely on scripts that have to be
--- run persistently in the background.
--- They sleep until mpd/volume state changes, in an infinite loop.
--- As a result when awesome restarts, they keep running in background, along with the new ones that are created after the restart.
--- This script cleans up the old processes.
-awful.spawn.with_shell("~/.config/awesome/awesome-cleanup.sh")
-
 -- {{{ Initialize stuff
 
 -- Basic (required)
 local helpers = require("helpers")
 local keys = require("keys")
-local titlebars = require("titlebars")
 
 -- Extra features
-local bars = require("bar_themes." .. bar_theme_name)
+local topbar = require("components.topbar")
 local sidebar = require("components.sidebar")
 local exit_screen = require("noodle.text_exit_screen")
 -- local start_screen = require("noodle.start_screen")
 -- }}}
 
--- {{{ Error handling
--- Check if awesome encountered an error during startup and fell back to
--- another config (This code will only ever execute for the fallback config)
-if awesome.startup_errors then
-    naughty.notify(
-        {
-            preset = naughty.config.presets.critical,
-            title = "Oops, there were errors during startup!",
-            text = awesome.startup_errors
-        }
-    )
-end
 
--- Handle runtime errors after startup
-do
-    local in_error = false
-    awesome.connect_signal(
-        "debug::error",
-        function(err)
-            -- Make sure we don't go into an endless error loop
-            if in_error then
-                return
-            end
-            in_error = true
-
-            naughty.notify(
-                {
-                    preset = naughty.config.presets.critical,
-                    title = "Oops, an error happened!",
-                    text = tostring(err)
-                }
-            )
-            in_error = false
-        end
-    )
-end
--- }}}
+------------------
+-- APPLICATIONS --
+------------------
 
 -- {{{ Variable definitions
 terminal = "alacritty"
 -- Some terminals do not respect spawn callbacks
-floating_terminal = "cool-retro-term -c fst" -- clients with class "fst" are set to be floating (check awful.rules below)
 browser = "firefox"
 filemanager = "Thunar"
 tmux = terminal .. " -e tmux new "
@@ -126,56 +82,9 @@ awful.layout.layouts = {
 }
 -- }}}
 
--- {{{ Notifications
--- TODO: some options are not respected when the notification is created
--- through lib-notify. Naughty works as expected.
-
--- Icon size
-naughty.config.defaults["icon_size"] = beautiful.notification_icon_size
-
--- Timeouts
-naughty.config.defaults.timeout = 5
-naughty.config.presets.low.timeout = 2
-naughty.config.presets.critical.timeout = 12
-
--- Apply theme variables
-naughty.config.padding = beautiful.notification_padding
-naughty.config.spacing = beautiful.notification_spacing
-naughty.config.defaults.margin = beautiful.notification_margin
-naughty.config.defaults.border_width = beautiful.notification_border_width
-
-naughty.config.presets.normal = {
-    font = beautiful.notification_font,
-    fg = beautiful.notification_fg,
-    bg = beautiful.notification_bg,
-    border_width = beautiful.notification_border_width,
-    margin = beautiful.notification_margin,
-    position = beautiful.notification_position
-}
-
-naughty.config.presets.low = {
-    font = beautiful.notification_font,
-    fg = beautiful.notification_fg,
-    bg = beautiful.notification_bg,
-    border_width = beautiful.notification_border_width,
-    margin = beautiful.notification_margin,
-    position = beautiful.notification_position
-}
-
-naughty.config.presets.ok = naughty.config.presets.low
-naughty.config.presets.info = naughty.config.presets.low
-naughty.config.presets.warn = naughty.config.presets.normal
-
-naughty.config.presets.critical = {
-    font = beautiful.notification_font,
-    fg = beautiful.notification_crit_fg,
-    bg = beautiful.notification_crit_bg,
-    border_width = beautiful.notification_border_width,
-    margin = beautiful.notification_margin,
-    position = beautiful.notification_position
-}
-
--- }}}
+----------
+-- MENU --
+----------
 
 -- {{{ Menu
 -- Create a launcher widget and a main menu
@@ -183,26 +92,32 @@ naughty.config.presets.critical = {
 local freedesktop = require("freedesktop")
 
 myawesomemenu = {
-    { "hotkeys", function() return false, hotkeys_popup.show_help end },
-    { "manual", terminal .. " -e man awesome" },
-    { "edit config", string.format("%s -e %s %s", terminal, editor, awesome.conffile) },
-    { "restart", awesome.restart },
-    { "quit", function() awesome.quit() end }
+    {"hotkeys", function()
+            return false, hotkeys_popup.show_help
+        end},
+    {"manual", terminal .. " -e man awesome"},
+    {"edit config", string.format("%s -e %s %s", terminal, editor, awesome.conffile)},
+    {"restart", awesome.restart},
+    {"quit", function()
+            awesome.quit()
+        end}
 }
 
-mymainmenu = freedesktop.menu.build({
-    before = {
-        { "Awesome", myawesomemenu, beautiful.awesome_icon },
-        -- other triads can be put here
-    },
-    after = {
-        { "Open terminal", terminal },
+mymainmenu =
+    freedesktop.menu.build(
+    {
+        before = {
+            {"Awesome", myawesomemenu, beautiful.awesome_icon}
+            -- other triads can be put here
+        },
+        after = {
             {"firefox", browser, beautiful.firefox_icon},
             {"terminal", terminal, beautiful.terminal_icon},
             {"files", filemanager, beautiful.files_icon},
             {"search", "rofi", beautiful.search_icon}
+        }
     }
-})
+)
 
 mylauncher =
     awful.widget.launcher(
@@ -231,6 +146,11 @@ end
 
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
+
+
+-------------
+-- LAYOUTS --
+-------------
 
 awful.screen.connect_for_each_screen(
     function(s)
@@ -261,6 +181,10 @@ awful.screen.connect_for_each_screen(
     end
 )
 
+------------------
+-- CLIENT RULES --
+------------------
+
 -- {{{ Rules
 -- Rules to apply to new clients (through the "manage" signal).
 awful.rules.rules = {
@@ -268,6 +192,7 @@ awful.rules.rules = {
     {
         rule = {},
         properties = {
+            -- defaults
             border_width = beautiful.border_width,
             border_color = beautiful.border_normal,
             focus = awful.client.focus.filter,
@@ -275,18 +200,12 @@ awful.rules.rules = {
             keys = keys.clientkeys,
             buttons = keys.clientbuttons,
             screen = awful.screen.preferred,
+            placement = awful.placement.no_overlap + awful.placement.no_offscreen,
+            -- added
             size_hints_honor = false,
             honor_workarea = true,
-            honor_padding = true,
-            placement = awful.placement.no_overlap + awful.placement.no_offscreen
+            honor_padding = true
         }
-    },
-    -- Add titlebars to normal clients and dialogs
-    {
-        rule_any = {
-            type = {"normal", "dialog"}
-        },
-        properties = {titlebars_enabled = true}
     },
     -- Floating clients
     {
@@ -295,88 +214,113 @@ awful.rules.rules = {
                 "copyq" -- Includes session name in class.
             },
             class = {
+                "Arandr",
+                "Blueman-manager",
                 "cool-retro-term",
-                "mpv",
-                "Lxappearance",
-                "Nm-connection-editor",
-                "MPlayer",
-                "vdpau",
                 "feh",
-                "sxiv",
-                "tilda",
-                "Tilda",
-                "xv",
-                "fst"
+                "fst",
+                "Lxappearance",
+                "MPlayer",
+                "mpv",
+                "Nm-connection-editor",
+                "planner", "Planner",
+                "Sxiv",
+                "tilda", "Tilda",
+                "vdpau",
+                "xv"
             },
             name = {
-                "Event Tester" -- xev
-                -- "Todoist",
+                "Event Tester", -- xev
+                "Todoist"
             },
             role = {
+                "AlarmWindow", -- Thunderbird's calendar.
+                "ConfigManager", -- Thunderbird's about:config.
                 "pop-up"
             },
             type = {
                 "dialog"
             }
         },
-        properties = {floating = true, ontop = false}
+        properties = {floating = true}
     },
-    -- "Switch to tag"
-    -- These clients make you switch to their tag when they appear
+    -- Add titlebars to normal clients and dialogs
     {
         rule_any = {
-            class = {}
+            type = {"normal", "dialog"}
         },
-        properties = {switchtotag = true}
+        properties = {titlebars_enabled = true}
     },
-    -- Titlebars ON (explicitly)
-    -- Titlebars of these clients will be shown regardless of the theme setting
+    -- Always spawn certain applications on specific tags
     {
-        rule_any = {
-            class = {},
-            type = {
-                "dialog"
-            },
-            role = {
-                "conversation"
-            }
-        },
-        properties = {},
-        callback = function(c)
-            awful.titlebar.show(c)
-        end
-    },
-    -- Cawbird
-    {
-        rule_any = {
-            class = {
-                "cawbird",
-                "Cawbird"
-            }
-        },
-        properties = {
-            type = "dock",
-            width = dpi(220),
-            height = awful.screen.focused().geometry.height,
-            x = 1700,
-            y = 0,
-            titlebars_enabled = false
-        }
-    },
-    -- Pavucontrol
-    {
-        rule_any = {
-            class = {
-                "Pavucontrol"
-            }
-        },
-        properties = {floating = true, dockable = true, width = screen_width * 0.35, height = screen_height * 0.3},
-        callback = function(c)
-            awful.titlebar.show(c)
-        end
+        rule = {class = "trilium notes"},
+        properties = {screen = 1, tag = "10"}
     }
 }
 -- }}}
+
+
+-------------------
+-- SMART BORDERS --
+-------------------
+
+require("smart_borders") {
+    show_button_tooltips = true,
+    button_positions = {"top"},
+    buttons = {"floating", "minimize", "maximize", "close"},
+    layout = "fixed",
+    button_ratio = 0.3,
+    align_horizontal = "center",
+    button_size = 40,
+    button_floating_size = 60,
+    button_close_size = 60,
+    border_width = 10,
+    color_close_normal = {
+        type = "linear",
+        from = {0, 0},
+        to = {60, 0},
+        stops = {{0, "#fd8489"}, {1, "#56666f"}}
+    },
+    color_close_focus = {
+        type = "linear",
+        from = {0, 0},
+        to = {60, 0},
+        stops = {{0, "#fd8489"}, {1, "#a1bfcf"}}
+    },
+    color_close_hover = {
+        type = "linear",
+        from = {0, 0},
+        to = {60, 0},
+        stops = {{0, "#FF9EA3"}, {1, "#a1bfcf"}}
+    },
+    color_floating_normal = {
+        type = "linear",
+        from = {0, 0},
+        to = {40, 0},
+        stops = {{0, "#56666f"}, {1, "#ddace7"}}
+    },
+    color_floating_focus = {
+        type = "linear",
+        from = {0, 0},
+        to = {40, 0},
+        stops = {{0, "#a1bfcf"}, {1, "#ddace7"}}
+    },
+    color_floating_hover = {
+        type = "linear",
+        from = {0, 0},
+        to = {40, 0},
+        stops = {{0, "#a1bfcf"}, {1, "#F7C6FF"}}
+    },
+    -- custom control example:
+    button_back = function(c)
+        -- set client as master
+        c:swap(awful.client.getmaster())
+    end
+                         }
+
+-------------
+-- SIGNALS --
+-------------
 
 -- {{{ Signals
 -- Signal function to execute when a new client appears.
@@ -392,16 +336,6 @@ client.connect_signal(
         if awesome.startup and not c.size_hints.user_position and not c.size_hints.program_position then
             -- Prevent clients from being unreachable after screen count changes.
             awful.placement.no_offscreen(c)
-        end
-    end
-)
-
--- Hide titlebars if required by the theme
-client.connect_signal(
-    "manage",
-    function(c)
-        if not beautiful.titlebars_enabled then
-            awful.titlebar.hide(c)
         end
     end
 )
@@ -457,31 +391,12 @@ if beautiful.border_radius ~= 0 then
     )
 end
 
--- When a client starts up in fullscreen, resize it to cover the fullscreen a short moment later
--- Fixes wrong geometry when titlebars are enabled
---client.connect_signal("property::fullscreen", function(c)
-client.connect_signal(
-    "manage",
-    function(c)
-        if c.fullscreen then
-            gears.timer.delayed_call(
-                function()
-                    if c.valid then
-                        c:geometry(c.screen.geometry)
-                    end
-                end
-            )
-        end
-    end
-)
-
 -- Center client when floating property changes
 --client.connect_signal("property::floating", function(c)
 --awful.placement.centered(c,{honor_workarea=true})
 --end)
 
 -- Apply shapes
--- beautiful.notification_shape = helpers.infobubble(beautiful.notification_border_radius)
 beautiful.notification_shape = helpers.rrect(beautiful.notification_border_radius)
 beautiful.snap_shape = helpers.rrect(beautiful.border_radius * 2)
 beautiful.taglist_shape = helpers.rrect(beautiful.taglist_item_roundness)
@@ -555,7 +470,101 @@ client.connect_signal(
     end
 )
 
--- Startup applications
---awful.spawn.with_shell("autostart.common")
---awful.spawn.with_shell("autostart.dark-paradise")
+-- }}}
+
+-------------------
+-- NOTIFICATIONS --
+-------------------
+
+-- {{{ Notifications
+-- TODO: some options are not respected when the notification is created
+-- through lib-notify. Naughty works as expected.
+
+-- Icon size
+naughty.config.defaults["icon_size"] = beautiful.notification_icon_size
+
+-- Timeouts
+naughty.config.defaults.timeout = 5
+naughty.config.presets.low.timeout = 2
+naughty.config.presets.critical.timeout = 12
+
+-- Apply theme variables
+naughty.config.padding = beautiful.notification_padding
+naughty.config.spacing = beautiful.notification_spacing
+naughty.config.defaults.margin = beautiful.notification_margin
+naughty.config.defaults.border_width = beautiful.notification_border_width
+
+naughty.config.presets.normal = {
+    font = beautiful.notification_font,
+    fg = beautiful.notification_fg,
+    bg = beautiful.notification_bg,
+    border_width = beautiful.notification_border_width,
+    margin = beautiful.notification_margin,
+    position = beautiful.notification_position
+}
+
+naughty.config.presets.low = {
+    font = beautiful.notification_font,
+    fg = beautiful.notification_fg,
+    bg = beautiful.notification_bg,
+    border_width = beautiful.notification_border_width,
+    margin = beautiful.notification_margin,
+    position = beautiful.notification_position
+}
+
+naughty.config.presets.ok = naughty.config.presets.low
+naughty.config.presets.info = naughty.config.presets.low
+naughty.config.presets.warn = naughty.config.presets.normal
+
+naughty.config.presets.critical = {
+    font = beautiful.notification_font,
+    fg = beautiful.notification_crit_fg,
+    bg = beautiful.notification_crit_bg,
+    border_width = beautiful.notification_border_width,
+    margin = beautiful.notification_margin,
+    position = beautiful.notification_position
+}
+
+-- }}}
+
+------------
+-- ERRORS --
+------------
+
+-- {{{ Error handling
+-- Check if awesome encountered an error during startup and fell back to
+-- another config (This code will only ever execute for the fallback config)
+if awesome.startup_errors then
+    naughty.notify(
+        {
+            preset = naughty.config.presets.critical,
+            title = "Oops, there were errors during startup!",
+            text = awesome.startup_errors
+        }
+    )
+end
+
+-- Handle runtime errors after startup
+do
+    local in_error = false
+    awesome.connect_signal(
+        "debug::error",
+        function(err)
+            -- Make sure we don't go into an endless error loop
+            if in_error then
+                return
+            end
+            in_error = true
+
+            naughty.notify(
+                {
+                    preset = naughty.config.presets.critical,
+                    title = "Oops, an error happened!",
+                    text = tostring(err)
+                }
+            )
+            in_error = false
+        end
+    )
+end
 -- }}}

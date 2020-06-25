@@ -16,13 +16,12 @@ end
 emacs --daemon &
 xmodmap ~/.Xmodmap &
 nm-applet &
-pasystray &
 syncthing-gtk &
 udiskie -tan &
 cbatticon &
 copyq &
 pg_ctl start &
 sleep 5 &
-picom --experimental-backends -b &
+# picom --experimental-backends -b &
 
 # dunst & -- don't need in awesomeWM

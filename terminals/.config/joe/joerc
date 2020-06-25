@@ -31,16 +31,16 @@
 
  -force		Force final newline when files are saved
 
- -nolocks	If you don't want file locks to be used
+-nolocks	If you don't want file locks to be used
 
  -nomodcheck	Disable periodic checking of disk file newer than buffer
 		(this checking happens on save even with this option).
 
  -nocurdir	Do not prompt with current directory
 
- -nobackups	If you don't want backup files to be created
+-nobackups	If you don't want backup files to be created
 
- -nodeadjoe	If you don't want DEADJOE files to be created
+-nodeadjoe	If you don't want DEADJOE files to be created
 
  -break_hardlinks
 		Delete file before writing, to break hard links

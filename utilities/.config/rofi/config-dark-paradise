@@ -18,7 +18,7 @@ rofi.icon-theme: candy-icons
 rofi.width: 400
 ! rofi.lines: 5
 rofi.columns: 1
-rofi.font: Lato 12
+rofi.font: Cantarell 12
 ! rofi.eh: 1.9
 ! rofi.bw: 1
 ! rofi.location: 0
@@ -36,7 +36,7 @@ rofi.hide-scrollbar: true
 ! Scrolling method. (0: Page, 1: Centered)
 ! rofi.scroll-method: 1
 
-rofi.terminal: "kitty"
+rofi.terminal: "alacritty"
 ! rofi.ssh-client: ssh
 ! rofi.ssh-command: {terminal} -e {ssh-client} {host}
 rofi.run-command: fish -c '{cmd}'

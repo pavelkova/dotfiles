@@ -25,7 +25,7 @@ local screen_height = awful.screen.focused().geometry.height
 -- Set theme wallpaper.
 -- It won't change anything if you are using feh to set the wallpaper like I do.
 theme.wallpaper = os.getenv("HOME") .. "/.config/awesome/themes/" .. theme_name .. "/wall.png"
-
+theme.icon_theme = "oomox-mulhollandbrown"
 -- Set the theme font. This is the font that will be used by default in menus, bars, titlebars etc.
 theme.font          = "Cantarell 11"
 
@@ -80,21 +80,21 @@ theme.border_radius = dpi(6)
 
 -- Titlebars
 -- (Titlebar items can be customized in titlebars.lua)
-theme.titlebars_enabled = true
-theme.titlebar_size = dpi(15)
-theme.titlebar_title_enabled = true
-theme.titlebar_font = "Cantarell 11"
+-- theme.titlebars_enabled = true
+-- theme.titlebar_size = dpi(15)
+-- theme.titlebar_title_enabled = true
+-- theme.titlebar_font = "Cantarell 11"
 -- Window title alignment: left, right, center
-theme.titlebar_title_align = "center"
+-- theme.titlebar_title_align = "center"
 -- Titlebar position: top, bottom, left, right
-theme.titlebar_position = "top"
+-- theme.titlebar_position = "top"
 -- Use 4 titlebars around the window to imitate borders
-theme.titlebars_imitate_borders = true
-theme.titlebar_bg = theme.xcolor0
+-- theme.titlebars_imitate_borders = true
+-- theme.titlebar_bg = theme.xcolor0
 -- theme.titlebar_bg_focus = theme.xcolor5
 -- theme.titlebar_bg_normal = theme.xcolor13
-theme.titlebar_fg_focus = theme.xcolor7
-theme.titlebar_fg_normal = theme.xcolor8
+-- theme.titlebar_fg_focus = theme.xcolor7
+-- theme.titlebar_fg_normal = theme.xcolor8
 --theme.titlebar_fg = theme.xcolor7
 
 -- Notifications
@@ -112,7 +112,7 @@ theme.notification_icon_size = dpi(60)
 -- theme.notification_height = dpi(80)
 -- theme.notification_width = dpi(300)
 theme.notification_margin = dpi(15)
-theme.notification_opacity = 1
+theme.notification_opacity = 0.8
 theme.notification_font = theme.font
 theme.notification_padding = theme.screen_margin * 2
 theme.notification_spacing = theme.screen_margin * 2
@@ -261,25 +261,6 @@ theme.alarm_icon = icon_path .. "alarm.png"
 theme.alarm_off_icon = icon_path .. "alarm_off.png"
 theme.alert_icon = icon_path .. "alert.png"
 
--- Weather icons
-theme.cloud_icon = weather_icon_path .. "cloud.png"
-theme.dcloud_icon = weather_icon_path .. "dcloud.png"
-theme.ncloud_icon = weather_icon_path .. "ncloud.png"
-theme.sun_icon = weather_icon_path .. "sun.png"
-theme.star_icon = weather_icon_path .. "star.png"
-theme.rain_icon = weather_icon_path .. "rain.png"
-theme.snow_icon = weather_icon_path .. "snow.png"
-theme.mist_icon = weather_icon_path .. "mist.png"
-theme.storm_icon = weather_icon_path .. "storm.png"
-theme.whatever_icon = weather_icon_path .. "whatever.png"
-
--- Exit screen icons
-theme.exit_icon = icon_path .. "exit.png"
-theme.poweroff_icon = icon_path .. "poweroff.png"
-theme.reboot_icon = icon_path .. "reboot.png"
-theme.suspend_icon = icon_path .. "suspend.png"
-theme.lock_icon = icon_path .. "lock.png"
--- theme.hibernate_icon = icon_path .. "hibernate.png"
 
 -- Noodle Text Taglist
 theme.taglist_text_font = "Fira Code Symbols 16"
@@ -339,49 +320,6 @@ theme.menu_border_color = theme.xcolor0
 -- beautiful.variable in your rc.lua
 --theme.bg_widget = "#cc0000"
 
--- Titlebar buttons
--- Define the images to load
-theme.titlebar_close_button_normal = tip .. "close_normal.svg"
-theme.titlebar_close_button_focus  = tip .. "close_focus.svg"
-theme.titlebar_minimize_button_normal = tip .. "minimize_normal.svg"
-theme.titlebar_minimize_button_focus  = tip .. "minimize_focus.svg"
-theme.titlebar_ontop_button_normal_inactive = tip .. "ontop_normal_inactive.svg"
-theme.titlebar_ontop_button_focus_inactive  = tip .. "ontop_focus_inactive.svg"
-theme.titlebar_ontop_button_normal_active = tip .. "ontop_normal_active.svg"
-theme.titlebar_ontop_button_focus_active  = tip .. "ontop_focus_active.svg"
-theme.titlebar_sticky_button_normal_inactive = tip .. "sticky_normal_inactive.svg"
-theme.titlebar_sticky_button_focus_inactive  = tip .. "sticky_focus_inactive.svg"
-theme.titlebar_sticky_button_normal_active = tip .. "sticky_normal_active.svg"
-theme.titlebar_sticky_button_focus_active  = tip .. "sticky_focus_active.svg"
-theme.titlebar_floating_button_normal_inactive = tip .. "floating_normal_inactive.svg"
-theme.titlebar_floating_button_focus_inactive  = tip .. "floating_focus_inactive.svg"
-theme.titlebar_floating_button_normal_active = tip .. "floating_normal_active.svg"
-theme.titlebar_floating_button_focus_active  = tip .. "floating_focus_active.svg"
-theme.titlebar_maximized_button_normal_inactive = tip .. "maximized_normal_inactive.svg"
-theme.titlebar_maximized_button_focus_inactive  = tip .. "maximized_focus_inactive.svg"
-theme.titlebar_maximized_button_normal_active = tip .. "maximized_normal_active.svg"
-theme.titlebar_maximized_button_focus_active  = tip .. "maximized_focus_active.svg"
--- (hover)
-theme.titlebar_close_button_normal_hover = tip .. "close_normal_hover.svg"
-theme.titlebar_close_button_focus_hover  = tip .. "close_focus_hover.svg"
-theme.titlebar_minimize_button_normal_hover = tip .. "minimize_normal_hover.svg"
-theme.titlebar_minimize_button_focus_hover  = tip .. "minimize_focus_hover.svg"
-theme.titlebar_ontop_button_normal_inactive_hover = tip .. "ontop_normal_inactive_hover.svg"
-theme.titlebar_ontop_button_focus_inactive_hover  = tip .. "ontop_focus_inactive_hover.svg"
-theme.titlebar_ontop_button_normal_active_hover = tip .. "ontop_normal_active_hover.svg"
-theme.titlebar_ontop_button_focus_active_hover  = tip .. "ontop_focus_active_hover.svg"
-theme.titlebar_sticky_button_normal_inactive_hover = tip .. "sticky_normal_inactive_hover.svg"
-theme.titlebar_sticky_button_focus_inactive_hover  = tip .. "sticky_focus_inactive_hover.svg"
-theme.titlebar_sticky_button_normal_active_hover = tip .. "sticky_normal_active_hover.svg"
-theme.titlebar_sticky_button_focus_active_hover  = tip .. "sticky_focus_active_hover.svg"
-theme.titlebar_floating_button_normal_inactive_hover = tip .. "floating_normal_inactive_hover.svg"
-theme.titlebar_floating_button_focus_inactive_hover  = tip .. "floating_focus_inactive_hover.svg"
-theme.titlebar_floating_button_normal_active_hover = tip .. "floating_normal_active_hover.svg"
-theme.titlebar_floating_button_focus_active_hover  = tip .. "floating_focus_active_hover.svg"
-theme.titlebar_maximized_button_normal_inactive_hover = tip .. "maximized_normal_inactive_hover.svg"
-theme.titlebar_maximized_button_focus_inactive_hover  = tip .. "maximized_focus_inactive_hover.svg"
-theme.titlebar_maximized_button_normal_active_hover = tip .. "maximized_normal_active_hover.svg"
-theme.titlebar_maximized_button_focus_active_hover  = tip .. "maximized_focus_active_hover.svg"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = layout_icon_path .. "fairh.png"
@@ -455,9 +393,6 @@ theme.awesome_icon = theme_assets.awesome_icon(
     theme.menu_height, theme.bg_focus, theme.fg_focus
 )
 
--- Define the icon theme for application icons. If not set then the icons
--- from /usr/share/icons and /usr/share/icons/hicolor will be used.
-theme.icon_theme = "/usr/share/icons/flattricons"
 
 return theme
 

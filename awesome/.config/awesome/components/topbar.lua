@@ -16,7 +16,7 @@ local pad = helpers.pad
 awful.screen.connect_for_each_screen(
     function(s)
         -- Create a custom text taglist
-        local text_taglist = require("noodle.text_taglist")
+        local taglist = require("widgets.topbar.taglist")
 
         -- We need one layoutbox per screen.
         -- s.mylayoutbox = awful.widget.layoutbox(s)
@@ -75,7 +75,7 @@ awful.screen.connect_for_each_screen(
                 spacing = dpi(12),
                 layout = wibox.layout.fixed.horizontal
             },
-            text_taglist,
+            taglist,
             expand = "none",
             -- minimal_tasklist,
             -- s.mytasklist,

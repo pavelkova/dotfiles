@@ -46,15 +46,12 @@ keys.desktopbuttons =
         end
     ),
     awful.button(
-        {superkey},
+        {},
         3,
         function()
             mymainmenu:toggle()
         end
-    ),
-    -- Scrolling - Switch tags
-    awful.button({}, 4, awful.tag.viewprev),
-    awful.button({}, 5, awful.tag.viewnext)
+    )
 )
 -- }}}
 
@@ -515,7 +512,7 @@ keys.globalkeys =
         function()
             awful.spawn.with_shell("rofi.emacs")
         end,
-        {description = "rofi launcher", group = "rofi"}
+        {description = "rofi emacs", group = "rofi"}
     ),
     -- Rofi-Tmux
     awful.key(
@@ -770,20 +767,8 @@ end
 keys.clientkeys =
     gears.table.join(
     ------------
-    -- AWESOME : CLIENT --
+      -- AWESOME : CLIENT --
 
-    -- Toggle titlebar (for focused client only)
-    awful.key(
-        {superkey, shiftkey},
-        "t",
-        function(c)
-            -- Don't toggle if titlebars are used as borders
-            if not beautiful.titlebars_imitate_borders then
-                awful.titlebar.toggle(c)
-            end
-        end,
-        {description = "toggle titlebar", group = "awesome : client"}
-    ),
     -- Toggle fullscreen
     awful.key(
         {superkey},
