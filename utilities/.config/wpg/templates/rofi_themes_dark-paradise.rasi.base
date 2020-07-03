@@ -34,7 +34,7 @@
 }}
 window {{
     background-color: @background;
-    border:           1;
+    border:           0;
     transparency:     "background";
     padding:          25%;
 }}

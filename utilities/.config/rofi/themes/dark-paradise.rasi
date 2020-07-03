@@ -3,27 +3,27 @@
  * Rofi version: 1.5.0-dev
  **/
 * {
-    selected-normal-foreground:  #fdfdfcFF;
-    foreground:                  #d7d7d5FF;
+    selected-normal-foreground:  #ffffdfFF;
+    foreground:                  #d9c9abFF;
     normal-foreground:           @foreground;
     alternate-normal-background: #0504042f;
-    red:                         #ae604e79;
+    red:                         #8E705279;
     selected-urgent-foreground:  @selected-urgent-foreground;
-    blue:                        #658f62FF;
+    blue:                        #6D634EFF;
     urgent-foreground:           @red;
     alternate-urgent-background: @lightbg;
     active-foreground:           @blue;
-    lightbg:                     #f2bea6FF;
+    lightbg:                     #c7915cFF;
     selected-active-foreground:  @background;
     alternate-active-background: @lightbg;
     background:                  #050404AA;
     alternate-normal-foreground: @foreground;
     normal-background:           #211919AA;
-    lightfg:                     #8a7e79FF;
-    selected-normal-background:  #d4d0c29B;
-    border-color:                #fefebbFF;
+    lightfg:                     #755f39FF;
+    selected-normal-background:  #9dc58b9B;
+    border-color:                #dbc478FF;
     spacing:                     2;
-    separatorcolor:              #fefebbFF;
+    separatorcolor:              #dbc478FF;
     urgent-background:           @background;
     selected-urgent-background:  @red;
     alternate-urgent-foreground: @red;
@@ -34,7 +34,7 @@
 }
 window {
     background-color: @background;
-    border:           1;
+    border:           0;
     transparency:     "background";
     padding:          25%;
 }
