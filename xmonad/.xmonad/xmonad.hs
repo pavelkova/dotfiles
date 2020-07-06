@@ -21,7 +21,6 @@ import           XMonad.Hooks.UrgencyHook
 
 -- actions
 import           XMonad.Actions.CycleWS
--- import           XMonad.Actions.WindowGo
 
 -- utils
 import           XMonad.Util.EZConfig
@@ -46,7 +45,6 @@ import qualified XMonad.Layout.WindowNavigation as N
 
 myLayouts = N.windowNavigation
   $ avoidStruts
-
   $ smartBorders
   $ smartSpacingWithEdge 5
   $ ( emptyBSP
@@ -65,26 +63,26 @@ myLayouts = N.windowNavigation
     threeCol = named "threeCol" $ ThreeCol 1 (3/100) (1/2)
     threeMid = named "threeMid" $ ThreeColMid 1 (3/100) (1/2)
 
-main = xmonad xfceConfig
+main = xmonad $ docks $ xfceConfig
   { modMask           = mod4Mask
   , focusFollowsMouse = True
-  , borderWidth       = 4
+  , borderWidth       = 0
   , workspaces        = myWorkspaces
   , keys              = myKeys
-  -- , mouseBindings     = myMouseBindings
   , layoutHook        = myLayouts
-  , manageHook        = myManageHook
+  , manageHook        = myManageHook <+> manageHook defaultConfig
   , terminal          = "alacritty"
   }
 
-myWorkspaces = ["navegando", "desarrollo [1]", "desarrollo [2]", "español", "diseño", "mensajes", "notas", "sistema", "otro"]
+myWorkspaces = ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix"]
 
-myManageHook = composeAll . concat $
-  [ [ className  =? "Xmessage"        --> doFloat       ]
-  , [ className  =? "xfce4-appfinder" --> doFloat       ]
-  , [ isDialog                        --> doCenterFloat ]
-  , [ isFullscreen                    --> doFullFloat   ]
-  , [ manageDocks                                      ]
+
+myManageHook = composeAll
+  [ className  =? "Xmessage"        --> doFloat
+  , className  =? "xfce4-appfinder" --> doFloat
+  , isDialog                        --> doCenterFloat
+  , isFullscreen                    --> doFullFloat
+  , manageDocks
   ]
 
 myKeys = \conf -> mkKeymap conf $
