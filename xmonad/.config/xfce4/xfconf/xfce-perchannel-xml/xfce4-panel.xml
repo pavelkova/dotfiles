@@ -9,9 +9,10 @@
       <property name="position" type="string" value="p=6;x=0;y=0"/>
       <property name="length" type="uint" value="100"/>
       <property name="position-locked" type="bool" value="true"/>
-      <property name="icon-size" type="uint" value="0"/>
-      <property name="size" type="uint" value="26"/>
+      <property name="icon-size" type="uint" value="18"/>
+      <property name="size" type="uint" value="20"/>
       <property name="plugin-ids" type="array">
+        <value type="int" value="20"/>
         <value type="int" value="1"/>
         <value type="int" value="10"/>
         <value type="int" value="2"/>
@@ -30,18 +31,21 @@
         <value type="double" value="0.087733"/>
         <value type="double" value="0.630872"/>
       </property>
+      <property name="mode" type="uint" value="0"/>
     </property>
     <property name="panel-2" type="empty">
       <property name="autohide-behavior" type="uint" value="0"/>
-      <property name="position" type="string" value="p=10;x=0;y=0"/>
+      <property name="position" type="string" value="p=10;x=677;y=748"/>
       <property name="position-locked" type="bool" value="true"/>
-      <property name="size" type="uint" value="30"/>
+      <property name="size" type="uint" value="26"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="15"/>
         <value type="int" value="22"/>
         <value type="int" value="16"/>
         <value type="int" value="9"/>
         <value type="int" value="24"/>
+        <value type="int" value="32"/>
+        <value type="int" value="14"/>
         <value type="int" value="26"/>
         <value type="int" value="30"/>
         <value type="int" value="33"/>
@@ -49,15 +53,16 @@
         <value type="int" value="28"/>
         <value type="int" value="35"/>
         <value type="int" value="31"/>
-        <value type="int" value="32"/>
         <value type="int" value="27"/>
         <value type="int" value="29"/>
         <value type="int" value="36"/>
+        <value type="int" value="6"/>
+        <value type="int" value="18"/>
         <value type="int" value="17"/>
         <value type="int" value="23"/>
         <value type="int" value="7"/>
       </property>
-      <property name="icon-size" type="uint" value="16"/>
+      <property name="icon-size" type="uint" value="0"/>
       <property name="disable-struts" type="bool" value="false"/>
       <property name="background-style" type="uint" value="1"/>
       <property name="background-rgba" type="array">
@@ -66,6 +71,8 @@
         <value type="double" value="0.087733"/>
         <value type="double" value="0.630872"/>
       </property>
+      <property name="mode" type="uint" value="0"/>
+      <property name="length" type="uint" value="47"/>
     </property>
   </property>
   <property name="plugins" type="empty">
@@ -90,6 +97,7 @@
     </property>
     <property name="plugin-12" type="string" value="clock">
       <property name="digital-format" type="string" value="%R   |  %A | %d %B"/>
+      <property name="mode" type="uint" value="2"/>
     </property>
     <property name="plugin-13" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
@@ -97,7 +105,7 @@
     <property name="plugin-15" type="string" value="showdesktop"/>
     <property name="plugin-16" type="string" value="separator">
       <property name="style" type="uint" value="1"/>
-      <property name="expand" type="bool" value="false"/>
+      <property name="expand" type="bool" value="true"/>
     </property>
     <property name="plugin-22" type="string" value="directorymenu">
       <property name="base-directory" type="string" value="/home/gigi"/>
@@ -108,7 +116,7 @@
         <property name="plugin-2" type="empty">
           <property name="compact-mode" type="bool" value="false"/>
           <property name="bold-application-name" type="bool" value="false"/>
-          <property name="expand" type="bool" value="false"/>
+          <property name="expand" type="bool" value="true"/>
         </property>
       </property>
     </property>
@@ -140,11 +148,13 @@
     </property>
     <property name="plugin-9" type="string" value="launcher">
       <property name="items" type="array">
+        <value type="string" value="15940207932.desktop"/>
       </property>
       <property name="show-label" type="bool" value="false"/>
     </property>
     <property name="plugin-17" type="string" value="separator">
       <property name="style" type="uint" value="1"/>
+      <property name="expand" type="bool" value="true"/>
     </property>
     <property name="plugin-23" type="string" value="systray">
       <property name="names-ordered" type="array">
@@ -163,47 +173,76 @@
     </property>
     <property name="plugin-26" type="string" value="launcher">
       <property name="items" type="array">
+        <value type="string" value="15940208863.desktop"/>
       </property>
     </property>
     <property name="plugin-27" type="string" value="launcher">
       <property name="items" type="array">
+        <value type="string" value="159402111810.desktop"/>
       </property>
     </property>
     <property name="plugin-28" type="string" value="launcher">
       <property name="items" type="array">
+        <value type="string" value="159402235116.desktop"/>
       </property>
     </property>
     <property name="plugin-29" type="string" value="launcher">
       <property name="items" type="array">
+        <value type="string" value="159402113011.desktop"/>
       </property>
     </property>
     <property name="plugin-30" type="string" value="launcher">
       <property name="items" type="array">
+        <value type="string" value="15940209064.desktop"/>
       </property>
     </property>
     <property name="plugin-31" type="string" value="launcher">
       <property name="items" type="array">
+        <value type="string" value="15940210678.desktop"/>
       </property>
     </property>
     <property name="plugin-32" type="string" value="launcher">
       <property name="items" type="array">
+        <value type="string" value="15940210909.desktop"/>
       </property>
     </property>
     <property name="plugin-33" type="string" value="launcher">
       <property name="items" type="array">
+        <value type="string" value="15940209365.desktop"/>
       </property>
     </property>
     <property name="plugin-35" type="string" value="launcher">
       <property name="items" type="array">
+        <value type="string" value="15940210407.desktop"/>
       </property>
     </property>
     <property name="plugin-36" type="string" value="launcher">
       <property name="items" type="array">
+        <value type="string" value="159402113812.desktop"/>
       </property>
     </property>
     <property name="plugin-37" type="string" value="launcher">
       <property name="items" type="array">
+        <value type="string" value="15940209646.desktop"/>
       </property>
+    </property>
+    <property name="plugin-6" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="159402208413.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-14" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="159402213714.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-18" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="159402256117.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-20" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
     </property>
   </property>
 </channel>
