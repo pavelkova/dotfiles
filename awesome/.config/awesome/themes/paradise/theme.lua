@@ -79,7 +79,6 @@ theme.border_focus  = theme.xcolor0
 theme.border_radius = dpi(6)
 
 -- Titlebars
--- (Titlebar items can be customized in titlebars.lua)
 -- theme.titlebars_enabled = true
 -- theme.titlebar_size = dpi(15)
 -- theme.titlebar_title_enabled = true
@@ -312,7 +311,7 @@ theme.menu_bg_normal = theme.xcolor0
 theme.menu_fg_normal= theme.xcolor7
 theme.menu_bg_focus = theme.xcolor8 .. "55"
 theme.menu_fg_focus= theme.xcolor7
-theme.menu_border_width = dpi(0)
+theme.menu_border_width = dpi(10)
 theme.menu_border_color = theme.xcolor0
 
 -- You can add as many variables as

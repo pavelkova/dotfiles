@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/gigi/.config/wpg/wallpapers/tvedit.jpg",
+    "alpha": "90",
+
+    "special": {
+        "background": "#1a261d",
+        "foreground": "#a0b8a1",
+        "cursor": "#a0b8a1"
+    },
+    "colors": {
+        "color0": "#1a261d",
+        "color1": "#a6896c",
+        "color2": "#89a66c",
+        "color3": "#a6a66c",
+        "color4": "#6ca689",
+        "color5": "#6ca6a6",
+        "color6": "#6ca66c",
+        "color7": "#a6a48b",
+        "color8": "#2c4742",
+        "color9": "#a6966c",
+        "color10": "#7ba66c",
+        "color11": "#96a66c",
+        "color12": "#6ca696",
+        "color13": "#6c96a6",
+        "color14": "#6ca67b",
+        "color15": "#a0b8a1"
+    }
+}

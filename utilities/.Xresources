@@ -10,7 +10,7 @@ Xcursor.size: 2
 !##########
 
 !! black
-*color0:  #050404
+*color0:  #000000
 *color8:  #211919
 
 !! red
@@ -58,7 +58,7 @@ URxvt.depth:            30
 URxvt.saveLines:        10000
 
 URxvt.foreground:       #fdfdfc
-URxvt.background:       #050404
+URxvt.background:       #000000
 
 URxvt.iconFile:         /home/gigi/.icons/Xenlism-Wildfire/Apps
 

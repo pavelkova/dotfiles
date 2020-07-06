@@ -1,8 +1,8 @@
 wpg = {}
 
-wpg.background = "#050404"
+wpg.background = "#000000"
 wpg.foreground = "#fdfdfc"
-wpg.color0 = "#050404"
+wpg.color0 = "#000000"
 wpg.color1 = "#ae604e"
 wpg.color2 = "#658f62"
 wpg.color3 = "#d1ba67"

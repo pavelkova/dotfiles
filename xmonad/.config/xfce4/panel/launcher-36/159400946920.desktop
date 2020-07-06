@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=nnn
+Comment=nnn
+Exec=nnn
+Icon=file-manager
+Path=/home/gigi
+Terminal=true
+StartupNotify=false

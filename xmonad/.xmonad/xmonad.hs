@@ -1,160 +1,142 @@
-import XMonad
-import XMonad.Config
-
-import XMonad.Actions.CycleWS
-import XMonad.Actions.Navigation2D
-
-import XMonad.Hooks.DynamicLog
-import XMonad.Hooks.EwmhDesktops (ewmh)
-import XMonad.Hooks.ManageDocks
-import XMonad.Hooks.Minimize
-
-import XMonad.Layout.BinarySpacePartition
-import XMonad.Layout.Circle
-import XMonad.Layout.Cross
-import XMonad.Layout.Gaps
-import XMonad.Layout.Grid
-import XMonad.Layout.Minimize
-import XMonad.Layout.ResizableTile
-import XMonad.Layout.SimpleDecoration
-import XMonad.Layout.Spacing
-import XMonad.Layout.Spiral
-import XMonad.Layout.ThreeColumns
-import XMonad.Layout.Tabbed
-
-import XMonad.Util.CustomKeys
-import XMonad.Util.SpawnOnce
-import XMonad.Util.Run
-
 import Graphics.X11.ExtraTypes.XF86
-import Data.List
+import XMonad
+import XMonad.Config.Xfce
+
+import           System.Exit
+import qualified System.IO
+
 import qualified XMonad.StackSet as W
 
--- LOCAL
-import Colors
+-- prompts
+import           XMonad.Prompt
+-- import           XMonad.Prompt.ConfirmPrompt
+import           XMonad.Prompt.Shell
 
--- LAYOUT & THEME
-altMask           = mod1Mask
+-- hooks
+import           XMonad.Hooks.DynamicLog
+-- import           XMonad.Hooks.InsertPosition
+import           XMonad.Hooks.ManageDocks
+import           XMonad.Hooks.ManageHelpers
+import           XMonad.Hooks.UrgencyHook
 
-myLayout = avoidStruts $ minimize $ spacingRaw True (Border 0 10 10 10) True (Border 10 10 10 10) True $
-  emptyBSP ||| Circle -- ||| tabbed shrinkText myTheme
+-- actions
+import           XMonad.Actions.CycleWS
+-- import           XMonad.Actions.WindowGo
 
--- STARTUP PROGRAMS
+-- utils
+import           XMonad.Util.EZConfig
+import           XMonad.Util.Run
+import           XMonad.Util.Scratchpad
 
-myStartupHook :: X ()
-myStartupHook = do
-  spawnOnce "autostart.dark-paradise"
-  spawnOnce "autostart.common"
-  spawnOnce "tint2"
+import           XMonad.Layout.BinarySpacePartition
+import           XMonad.Layout.Circle
+import           XMonad.Layout.MouseResizableTile
+import           XMonad.Layout.Named                (named)
+import           XMonad.Layout.NoBorders            (noBorders, smartBorders)
+-- import           XMonad.Layout.ResizableTile
+import           XMonad.Layout.Roledex
+import           XMonad.Layout.SimpleDecoration
+import           XMonad.Layout.SimpleFloat
+import           XMonad.Layout.SimplestFloat
+import           XMonad.Layout.Spacing
+import           XMonad.Layout.Spiral
+import           XMonad.Layout.ThreeColumns
+import           XMonad.Layout.ToggleLayouts
+import qualified XMonad.Layout.WindowNavigation as N
 
--- MAIN CONFIG
+myLayouts = N.windowNavigation
+  $ avoidStruts
+  $ smartBorders
+  $ smartSpacingWithEdge 5
+  $ ( emptyBSP
+   ||| mouseResizableTile
+   ||| simpleFloat
+   ||| simplestFloat
+   ||| threeCol
+   ||| threeMid
+   ||| full
+   ||| Circle
+   ||| spiral (6/7)
+   ||| Roledex
+    )
+  where
+    full     = named "full" $ noBorders Full
+    threeCol = named "threeCol" $ ThreeCol 1 (3/100) (1/2)
+    threeMid = named "threeMid" $ ThreeColMid 1 (3/100) (1/2)
 
-main :: IO ()
-main =
-  xmonad
-    $ withNavigation2DConfig def { defaultTiledNavigation = hybridNavigation }
-    $ docks
-    -- $ ewmh $ pagerHints
-    $ myConfig
-
-myTheme = def
-  { activeColor         = middleColor
-  , inactiveColor       = backgroundColor
-  , activeBorderColor   = middleColor
-  , inactiveBorderColor = backgroundColor
-  , decoWidth           = 500
-  , decoHeight          = 22
-  , windowTitleAddons   = []
-  , fontName            = "Lato 10"
+main = xmonad $ docks $ xfceConfig
+  { modMask           = mod4Mask
+  , focusFollowsMouse = True
+  , borderWidth       = 1
+  , workspaces        = myWorkspaces
+  , keys              = myKeys
+  , layoutHook        = myLayouts
+  , manageHook        = myManageHook <+> manageHook defaultConfig
+  , terminal          = "alacritty"
   }
 
-myConfig = def
-  { borderWidth         = 2
-  , focusedBorderColor  = middleColor
-  , focusFollowsMouse   = False
-  , handleEventHook     = docksEventHook <+> minimizeEventHook
-  , keys                = myKeys
-  , layoutHook          = myLayout
-  , manageHook          = manageDocks
-  , modMask             = mod4Mask
-  , normalBorderColor   = middleColor
-  , startupHook         = myStartupHook
-  , terminal            = "urxvt"
-  , workspaces          = ["navegando", "desarrollo [1]", "desarrollo [2]", "español", "diseño", "mensajes", "notas", "sistema", "otro"]
-  }
+myWorkspaces = ["navegando", "desarrollo [1]", "desarrollo [2]", "español", "diseño", "mensajes", "notas", "sistema", "otro"]
 
--- KEYS
-myKeys = customKeys removedKeys addedKeys
+myManageHook = composeAll
+  [ className  =? "Xmessage"        --> doFloat
+  , className  =? "xfce4-appfinder" --> doFloat
+  , isDialog                        --> doCenterFloat
+  , isFullscreen                    --> doFullFloat
+  , manageDocks
+  ]
 
-removedKeys :: XConfig l -> [(KeyMask, KeySym)]
-removedKeys XConfig {modMask = modm} =
-    [ (modm              , xK_space)  -- Default for layout switching
-    , (modm .|. shiftMask, xK_Return) -- Default for opening a terminal
-    , (modm .|. shiftMask, xK_c)      -- Default for closing the focused window
-    ]
+myKeys = \conf -> mkKeymap conf $
+    -- programs
+  [ ("M-<Return>",  spawn $ XMonad.terminal conf)
+  , ("M-e",         spawn "emacsclient -a '' -c")
 
-addedKeys :: XConfig l -> [((KeyMask, KeySym), X ())]
-addedKeys conf @ XConfig {modMask = modm} =
-  [ -- SERVICES
-    ((modm, xK_space) , spawn "rofi.dark-paradise")
-  , ((modm, xK_Return), spawn $ XMonad.terminal conf)
-  , ((modm, xK_Home), spawn "Thunar")
-  , ((modm, xK_Print), spawn "sshot.full")
-  , ((modm .|. shiftMask, xK_Print), spawn "sshot.window")
-  , ((altMask, xK_Print), spawn "sshot.select")
-  , ((modm, xK_q), recompile True >> restart "xmonad" True)
-  , ((0, xF86XK_AudioRaiseVolume), spawn "vol up")
-  , ((0, xF86XK_AudioLowerVolume), spawn "vol down")
-  , ((0, xF86XK_AudioMute), spawn "vol toggle")
-  , ((0, xF86XK_MonBrightnessUp), spawn "backlight.scr up")
-  , ((0, xF86XK_MonBrightnessDown), spawn "backlight.scr down")
-  , ((0, xF86XK_KbdBrightnessUp), spawn "backlight.kbd up")
-  , ((0, xF86XK_KbdBrightnessDown), spawn "backlight.kbd down")
-  , ((modm .|. controlMask, xK_r), spawn "pkill -USR1 redshift")
-  
-    -- WINDOWS
-  , ((modm, xK_w), kill)
-  , ((modm, xK_r), sendMessage Rotate)
-  , ((modm, xK_t), sendMessage Swap)
-  , ((modm,               xK_a),     sendMessage Balance)
-  , ((modm .|. shiftMask, xK_a),     sendMessage Equalize)
-  , ((modm .|. shiftMask, xK_f), withFocused $ windows . W.sink) 
+    -- rofi
+  , ("M-<Space>",   spawn "rofi -show combi")
+  , ("M-=",         spawn "rofi -modi calc -show")
 
-    -- Directional navigation of windows
-  , ((modm, xK_Right), windowGo R False)
-  , ((modm, xK_Left), windowGo L False)
-  , ((modm, xK_Up), windowGo U False)
-  , ((modm, xK_Down), windowGo D False)
+    -- layout
+  , ("M-<Right>",     sendMessage $ N.Go R)
+  , ("M-<Left>",      sendMessage $ N.Go L)
+  , ("M-<Up>",        sendMessage $ N.Go U)
+  , ("M-<Down>",      sendMessage $ N.Go D)
+  , ("M-S-<Right>",   sendMessage $ N.Swap R)
+  , ("M-S-<Left>",    sendMessage $ N.Swap L)
+  , ("M-S-<Up>",      sendMessage $ N.Swap U)
+  , ("M-S-<Down>",    sendMessage $ N.Swap D)
+  , ("M-C-<Right>",   sendMessage $ ExpandTowards R)
+  , ("M-C-<Left>",    sendMessage $ ExpandTowards L)
+  , ("M-C-<Up>",      sendMessage $ ExpandTowards U)
+  , ("M-C-<Down>",    sendMessage $ ExpandTowards D)
+  , ("M-C-S-<Right>", sendMessage $ ShrinkFrom R)
+  , ("M-C-S-<Left>",  sendMessage $ ShrinkFrom L)
+  , ("M-C-S-<Up>",    sendMessage $ ShrinkFrom U)
+  , ("M-C-S-<Down>",  sendMessage $ ShrinkFrom D)
+  , ("M-S-t",         sendMessage NextLayout)
 
-    -- Expand and shrink windows
-  , ((modm .|. controlMask,                xK_Right), sendMessage $ ExpandTowards R)
-  , ((modm .|. controlMask,                xK_Left), sendMessage $ ExpandTowards L)
-  , ((modm .|. controlMask,                xK_Down), sendMessage $ ExpandTowards D)
-  , ((modm .|. controlMask,                xK_Up), sendMessage $ ExpandTowards U)
-  , ((modm .|. controlMask .|. shiftMask , xK_Right), sendMessage $ ShrinkFrom R)
-  , ((modm .|. controlMask .|. shiftMask , xK_Left), sendMessage $ ShrinkFrom L)
-  , ((modm .|. controlMask .|. shiftMask , xK_Down), sendMessage $ ShrinkFrom D)
-  , ((modm .|. controlMask .|. shiftMask , xK_Up), sendMessage $ ShrinkFrom U)
+  -- windows
+  , ("M-w",         kill)
+  -- , ("M-n",         withFocused minimizeWindow)
+  -- , ("M-S-n",       sendMessage RestoreNextMinimized)
 
-    -- Minimize
-  --  , ((modm,               xK_m), withFocused minimizeWindow)
-  --  , ((modm .|. shiftMask, xK_m), sendMessage RestoreNextMinimizedWin)
-
-    -- LAYOUT
-  , ((modm .|. shiftMask, xK_t), sendMessage NextLayout)
-
-    -- WORKSPACE
-  , ((modm, xK_1), sequence_ [toggleOrView "navegando", spawn "notify-send \"navegando\""])
-  , ((modm, xK_2), sequence_ [toggleOrView "desarrollo [1]"  , spawn "notify-send \"desarrollo [1]\""  ])
-  , ((modm, xK_3), sequence_ [toggleOrView "desarrollo [2]"  , spawn "notify-send \"desarrollo [2]\""  ])
-  , ((modm, xK_4), sequence_ [toggleOrView "español"  , spawn "notify-send \"español\""  ])
-  , ((modm, xK_5), sequence_ [toggleOrView "diseño"  , spawn "notify-send \"diseño\""  ])
-  , ((modm, xK_6), sequence_ [toggleOrView "mensajes"   , spawn "notify-send \"mensajes\""   ])
-  , ((modm, xK_7), sequence_ [toggleOrView "notas"   , spawn "notify-send \"notas\""   ])
-  , ((modm, xK_8), sequence_ [toggleOrView "sistema"   , spawn "notify-send \"sistema\""   ])
-  , ((modm, xK_9), sequence_ [toggleOrView "otro"   , spawn "notify-send \"otro\""   ])
-
-  -- SESSION
-  , ((0, xF86XK_Sleep), spawn "light-locker-command --activate")
-
+  -- workspaces
+  , ("M-1",         sequence_ [toggleOrView "navegando"
+                              , spawn "notify-send 'navegando'"])
+  , ("M-2",         sequence_ [toggleOrView "desarrollo [1]"
+                              , spawn "notify-send 'desarrollo [1]'"])
+  , ("M-3",         sequence_ [toggleOrView "desarrollo [2]"
+                              , spawn "notify-send 'desarrollo [2]'"])
+  , ("M-4",         sequence_ [toggleOrView "español"
+                              , spawn "notify-send 'español'"])
+  , ("M-5",         sequence_ [toggleOrView "diseño"
+                              , spawn "notify-send 'diseño'"])
+  , ("M-6",         sequence_ [toggleOrView "mensajes"
+                              , spawn "notify-send 'mensajes'"])
+  , ("M-7",         sequence_ [toggleOrView "notas"
+                              , spawn "notify-send 'notas'"])
+  , ("M-8",         sequence_ [toggleOrView "sistema"
+                              , spawn "notify-send 'sistema'"])
+  , ("M-9",         sequence_ [toggleOrView "otro"
+                              , spawn "notify-send 'otro'"])
+  -- sys
+  -- , ("M-q"          recompile True >> restart "xmonad" True)
   ]
