@@ -1,0 +1,21 @@
+set $wallpaper /home/gigi/.config/wpg/wallpapers/flamingowall.jpg
+
+set $background #091f2c
+set $foreground #fefef7
+
+set $color0 #091f2c
+set $color1 #d07c67
+set $color2 #617c42
+set $color3 #797543
+set $color4 #30a490
+set $color5 #ae7583
+set $color6 #488776
+set $color7 #ecccc2
+set $color8 #203a3e
+set $color9 #e6958b
+set $color10 #9CA259
+set $color11 #cac46e
+set $color12 #8abeb7
+set $color13 #bc94a3
+set $color14 #b2d5b7
+set $color15 #fefef7

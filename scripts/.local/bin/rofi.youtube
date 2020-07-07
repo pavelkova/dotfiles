@@ -1,3 +1,0 @@
-#!/usr/bin/env fish
-
-echo "" | rofi -dmenu -p "📺" | xargs -I{} kitty -e youtube-viewer {}
