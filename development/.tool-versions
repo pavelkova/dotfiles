@@ -1,0 +1,12 @@
+direnv 2.21.2
+elixir 1.10.3
+erlang 23.0.2
+golang 1.12.5
+nodejs 13.12.0
+php 7.3.11
+python 3.8.0
+ruby 2.6.2
+sqlite 3.27.2
+#postgres 12.0
+postgres 11.3
+

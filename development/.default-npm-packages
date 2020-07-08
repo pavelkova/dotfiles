@@ -1,0 +1,10 @@
+bash-language-server
+vscode-css-languageserver-bin
+vscode-html-languageserver-bin
+vscode-json-languageserver
+intelephense
+jshint
+prettier
+typescript-language-server
+vls
+yarn
