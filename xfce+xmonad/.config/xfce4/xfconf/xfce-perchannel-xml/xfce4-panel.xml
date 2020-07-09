@@ -59,6 +59,7 @@
         <value type="int" value="18"/>
         <value type="int" value="17"/>
         <value type="int" value="23"/>
+        <value type="int" value="12"/>
         <value type="int" value="7"/>
       </property>
       <property name="icon-size" type="uint" value="0"/>
@@ -86,7 +87,7 @@
     </property>
     <property name="plugin-4" type="string" value="pager">
       <property name="rows" type="uint" value="1"/>
-      <property name="miniature-view" type="bool" value="false"/>
+      <property name="miniature-view" type="bool" value="true"/>
     </property>
     <property name="plugin-5" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
@@ -105,15 +106,6 @@
     <property name="plugin-22" type="string" value="directorymenu">
       <property name="base-directory" type="string" value="/home/gigi"/>
       <property name="icon-name" type="string" value="user-home"/>
-    </property>
-    <property name="plugin-2" type="string" value="appmenu">
-      <property name="plugins" type="empty">
-        <property name="plugin-2" type="empty">
-          <property name="compact-mode" type="bool" value="false"/>
-          <property name="bold-application-name" type="bool" value="false"/>
-          <property name="expand" type="bool" value="true"/>
-        </property>
-      </property>
     </property>
     <property name="plugin-8" type="string" value="windowmenu">
       <property name="style" type="uint" value="1"/>
@@ -243,6 +235,21 @@
     </property>
     <property name="plugin-20" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-2" type="string" value="appmenu">
+      <property name="plugins" type="empty">
+        <property name="plugin-2" type="empty">
+          <property name="compact-mode" type="bool" value="false"/>
+          <property name="bold-application-name" type="bool" value="false"/>
+          <property name="expand" type="bool" value="true"/>
+        </property>
+      </property>
+    </property>
+    <property name="plugin-12" type="string" value="clock">
+      <property name="tooltip-format" type="string" value="%A %d %B %Y"/>
+      <property name="mode" type="uint" value="3"/>
+      <property name="show-seconds" type="bool" value="false"/>
+      <property name="fuzziness" type="uint" value="0"/>
     </property>
   </property>
 </channel>

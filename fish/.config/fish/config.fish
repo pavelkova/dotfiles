@@ -2,24 +2,6 @@
 alias jmacs="jmacs -nobackups"
 alias em="emacsclient -a '' -c"
 
-# BOBTHEFISH THEME CONFIG
-# prompt
-set -g theme_display_git_dirty yes
-set -g theme_display_git_untracked yes
-set -g theme_display_git_ahead_verbose no
-set -g theme_display_git_dirty_verbose no
-set -g theme_display_git_stashed_verbose no
-set -g theme_display_virtualenv yes
-set -g theme_powerline_fonts no
-set -g theme_nerd_fonts yes
-set -g theme_color_scheme terminal
-set -g fish_prompt_pwd_dir_length 1
-set -g theme_project_dir_length 1
-set -g theme_newline_cursor yes
-# right prompt
-set -g theme_date_format "+%H:%M %A | %d %B %Y | %W/52"
-set -g theme_date_timezone America/New_York
-
 # SPACEFISH PROMPT CONFIG
 set -g SPACEFISH_TIME_SHOW true
 set -g SPACEFISH_USER_SHOW always

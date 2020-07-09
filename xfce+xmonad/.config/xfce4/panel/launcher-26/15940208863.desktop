@@ -2,9 +2,10 @@
 Type=Application
 Name=TigerVNC Viewer
 Comment=VNC client
-Exec=/usr/bin/vncviewer
+Exec=vncviewer
 Icon=tigervnc
 Terminal=false
 StartupNotify=false
 Categories=Network;RemoteAccess;
 X-XFCE-Source=file:///usr/share/applications/vncviewer.desktop
+Path=
