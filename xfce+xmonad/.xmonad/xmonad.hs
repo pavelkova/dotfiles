@@ -43,25 +43,25 @@ import           XMonad.Layout.ThreeColumns
 import           XMonad.Layout.ToggleLayouts
 import qualified XMonad.Layout.WindowNavigation as N
 
-myLayouts = N.windowNavigation
-  $ avoidStruts
-  $ smartBorders
-  $ smartSpacingWithEdge 5
-  $ ( emptyBSP
-   ||| mouseResizableTile
-   ||| simpleFloat
-   ||| simplestFloat
-   ||| threeCol
-   ||| threeMid
-   ||| full
-   ||| Circle
-   ||| spiral (6/7)
-   ||| Roledex
-    )
-  where
-    full     = named "full" $ noBorders Full
-    threeCol = named "threeCol" $ ThreeCol 1 (3/100) (1/2)
-    threeMid = named "threeMid" $ ThreeColMid 1 (3/100) (1/2)
+-- myLayouts = N.windowNavigation
+--   $ avoidStruts
+--   $ smartBorders
+--   $ smartSpacingWithEdge 5
+--   $ ( emptyBSP
+--    ||| mouseResizableTile
+--    ||| simpleFloat
+--    ||| simplestFloat
+--    ||| threeCol
+--    ||| threeMid
+--    ||| full
+--    ||| Circle
+--    ||| spiral (6/7)
+--    ||| Roledex
+--     )
+--   where
+--     full     = named "full" $ noBorders Full
+--     threeCol = named "threeCol" $ ThreeCol 1 (3/100) (1/2)
+--     threeMid = named "threeMid" $ ThreeColMid 1 (3/100) (1/2)
 
 main = xmonad $ docks $ xfceConfig
   { modMask           = mod4Mask
