@@ -1,3 +1,4 @@
+/*-*- mode: css; -*-*/
 /**
  * rofi -dump-theme output.
  * Rofi version: 1.5.0-dev
@@ -36,7 +37,7 @@ window {
     background-color: @background;
     border:           0;
     transparency:     "background";
-    padding:          25%;
+    padding:          15%;
 }
 mainbox {
     border:  2px 0 0;

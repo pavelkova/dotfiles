@@ -30,11 +30,12 @@ myKeys = \conf -> mkKeymap conf $
   , ("M-x a",       spawn "emacsclient -a '' -c -e '(org-agenda-list)'")
   , ("M-x c",       spawn "emacsclient -a '' -c -e '(org-capture)'")
   , ("M-x t",       spawn "emacsclient -a '' -c -e '(org-todo-list)'")
-
+  , ("M-M3-r",      spawn "emacsclient -a '' -c -e '(org-roam-dailies-today)'")
     -- rofi
   , ("M-<Space>",   spawn "rofi -show combi")
   , ("M-=",         spawn "rofi -modi calc -show")
   , ("M-M3-p",      spawn "rofi-pass")
+  , ("M-M3-s",      spawn "~/.local/bin/rofi/rofi-web-search")
 
     -- layout
     -- "M-<arrow>" Go and "M-S-<arrow>" Swap bindings from Navigation2D
@@ -51,7 +52,7 @@ myKeys = \conf -> mkKeymap conf $
   -- windows
   , ("M-w",         kill)
   , ("M-c f",       withFocused $ float)
-  , ("M-c t",        withFocused $ windows . W.sink )
+  , ("M-c t",       withFocused $ windows . W.sink )
   -- , ("M-n",         withFocused minimizeWindow)
   -- , ("M-S-n",       sendMessage RestoreNextMinimized)
   ] ++

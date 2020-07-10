@@ -1,6 +1,6 @@
 # EDITOR ALIASES
 alias jmacs="jmacs -nobackups"
-alias em="emacsclient -a '' -c"
+alias em="emacsclient -a '' -nw"
 
 # SPACEFISH PROMPT CONFIG
 set -g SPACEFISH_TIME_SHOW true
@@ -42,7 +42,5 @@ function autotmux --on-variable TMUX_SESSION_NAME
     end
   end
 end
-
-set -U fish_user_paths ~/.asdf/bin $fish_user_path
 
 eval (asdf exec direnv hook fish)
