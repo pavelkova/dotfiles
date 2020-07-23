@@ -1,0 +1,10 @@
+python-language-server[all]
+beautifulsoup4
+black
+numpy
+pandas
+pyls
+pyls-black
+pytest
+requests
+wheel
