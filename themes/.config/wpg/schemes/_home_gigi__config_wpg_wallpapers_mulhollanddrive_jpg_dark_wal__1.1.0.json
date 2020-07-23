@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/gigi/.config/wpg/wallpapers/mulhollanddrive.jpg",
+    "alpha": "90",
+
+    "special": {
+        "background": "#0e1929",
+        "foreground": "#e9ecf1",
+        "cursor": "#e9ecf1"
+    },
+    "colors": {
+        "color0": "#0e1929",
+        "color1": "#c74539",
+        "color2": "#3c9199",
+        "color3": "#c78437",
+        "color4": "#3c7298",
+        "color5": "#db7979",
+        "color6": "#5283a4",
+        "color7": "#d1cad2",
+        "color8": "#162238",
+        "color9": "#c75d3a",
+        "color10": "#3c8299",
+        "color11": "#c79738",
+        "color12": "#5299cc",
+        "color13": "#e0a2a2",
+        "color14": "#a5b0ce",
+        "color15": "#e9ecf1"
+    }
+}

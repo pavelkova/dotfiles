@@ -162,24 +162,24 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: '#000000'
-    foreground: '#fdfdfc'
+    background: '#1a261d'
+    foreground: '#a0b8a1'
 
     # Bright and dim foreground colors
     #
     # The dimmed foreground color is calculated automatically if it is not present.
     # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
     # is `false`, the normal foreground color will be used.
-    #dim_foreground: '#d7d7d5'
-    #bright_foreground: '#fdfdfc'
+    #dim_foreground: '#a6a48b'
+    #bright_foreground: '#a0b8a1'
 
   # Cursor colors
   #
   # Colors which should be used to draw the terminal cursor. If these are unset,
   # the cursor color will be the inverse of the cell color.
   cursor:
-    text: '#000000'
-    cursor: '#aaaf9d'
+    text: '#1a261d'
+    cursor: '#6c96a6'
 
   # Selection colors
   #
@@ -187,30 +187,30 @@ colors:
   # background is unset, selection color will be the inverse of the cell colors.
   # If only text is unset the cell text color will remain the same.
   selection:
-    text: '#000000'
-    background: '#fefebb'
+    text: '#1a261d'
+    background: '#96a66c'
 
   # Normal colors
   normal:
-    black:   '#000000'
-    red:     '#ae604e'
-    green:   '#658f62'
-    yellow:  '#d1ba67'
-    blue:    '#5a5139'
-    magenta: '#8a7988'
-    cyan:    '#7ab395'
-    white:   '#d7d7d5'
+    black:   '#1a261d'
+    red:     '#a6896c'
+    green:   '#89a66c'
+    yellow:  '#a6a66c'
+    blue:    '#6ca689'
+    magenta: '#6ca6a6'
+    cyan:    '#6ca66c'
+    white:   '#a6a48b'
 
   # Bright colors
   bright:
-    black:   '#211919'
-    red:     '#f2bea6'
-    green:   '#b3a57a'
-    yellow:  '#fefebb'
-    blue:    '#8a7e79'
-    magenta: '#aaaf9d'
-    cyan:    '#d4d0c2'
-    white:   '#fdfdfc'
+    black:   '#2c4742'
+    red:     '#a6966c'
+    green:   '#7ba66c'
+    yellow:  '#96a66c'
+    blue:    '#6ca696'
+    magenta: '#6c96a6'
+    cyan:    '#6ca67b'
+    white:   '#a0b8a1'
 
   # Dim colors
   #

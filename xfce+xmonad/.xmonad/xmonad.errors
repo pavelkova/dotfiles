@@ -1,0 +1,32 @@
+
+lib/Layouts.hs:41:15: warning: [-Wdeprecations]
+    In the use of ‘smartSpacingWithEdge’
+    (imported from XMonad.Layout.Spacing):
+    Deprecated: "Use spacingRaw instead."
+   |
+41 |     smSpace = smartSpacingWithEdge 5
+   |               ^^^^^^^^^^^^^^^^^^^^
+
+lib/Layouts.hs:42:15: warning: [-Wdeprecations]
+    In the use of ‘smartSpacingWithEdge’
+    (imported from XMonad.Layout.Spacing):
+    Deprecated: "Use spacingRaw instead."
+   |
+42 |     lgSpace = smartSpacingWithEdge 25
+   |               ^^^^^^^^^^^^^^^^^^^^
+
+lib/Layouts.hs:43:15: warning: [-Wdeprecations]
+    In the use of ‘smartSpacingWithEdge’
+    (imported from XMonad.Layout.Spacing):
+    Deprecated: "Use spacingRaw instead."
+   |
+43 |     xlSpace = smartSpacingWithEdge 55
+   |               ^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:51:53: warning: [-Wdeprecations]
+    In the use of ‘defaultConfig’
+    (imported from XMonad, but defined in XMonad.Config):
+    Deprecated: "Use def (from Data.Default, and re-exported by XMonad and XMonad.Config) instead."
+   |
+51 |   , manageHook        = myManageHook <+> manageHook defaultConfig
+   |                                                     ^^^^^^^^^^^^^

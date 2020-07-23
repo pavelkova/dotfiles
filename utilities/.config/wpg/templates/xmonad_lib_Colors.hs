@@ -1,1 +1,0 @@
-/home/gigi/.xmonad/lib/Colors.hs

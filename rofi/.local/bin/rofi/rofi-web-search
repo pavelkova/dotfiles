@@ -1,0 +1,7 @@
+#!/bin/bash
+export DDG_ARGS='["-n", 3]'
+export GOOGLE_ARGS='["--count", 10]'
+export ROFI_SEARCH='googler' #or 'cse,ddgr'
+
+rofi -modi blocks -blocks-wrap /usr/bin/rofi-search -show blocks \
+-lines 4 -eh 4 -kb-custom-1 'Alt+w' -theme ~/.config/rofi/themes/dark-paradise.rasi

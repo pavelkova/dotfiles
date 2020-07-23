@@ -1,0 +1,23 @@
+" Special
+let wallpaper  = "/home/gigi/.config/wpg/wallpapers/flamingowall.jpg"
+let background = "#091f2c"
+let foreground = "#fefef7"
+let cursor     = "#fefef7"
+
+" Colors
+let color0  = "#091f2c"
+let color1  = "#d07c67"
+let color2  = "#617c42"
+let color3  = "#797543"
+let color4  = "#30a490"
+let color5  = "#ae7583"
+let color6  = "#488776"
+let color7  = "#ecccc2"
+let color8  = "#203a3e"
+let color9  = "#e6958b"
+let color10 = "#9CA259"
+let color11 = "#cac46e"
+let color12 = "#8abeb7"
+let color13 = "#bc94a3"
+let color14 = "#b2d5b7"
+let color15 = "#fefef7"

@@ -1,27 +1,12 @@
 #!/usr/bin/env fish
-
-# onearmedman is hostname of a Chromebook with Arch Linux ARM, and not all packages are available on ARM
-
-if test "$hostname" = "onearmedman"
-    redshift &
-else
-#   pulseaudio --start &
-    redshift-gtk &
-    sleep 10 &
-    megasync &
-    aw-qt &
-#   kitty -e (greenclip daemon & glances) &
-end
-
+wpg -S oldTV.jpg &
+feh --bg-scale ~/.local/share/backgrounds/oldTV.jpg &
+xmonad --replace &
+picom -b &
+# picom --experimental-backends -b &
 emacs --daemon &
 xmodmap ~/.Xmodmap &
-nm-applet &
 syncthing-gtk &
-udiskie -tan &
-cbatticon &
 copyq &
 pg_ctl start &
-sleep 5 &
-# picom --experimental-backends -b &
-
-# dunst & -- don't need in awesomeWM
+aw-qt
