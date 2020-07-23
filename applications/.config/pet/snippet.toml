@@ -19,9 +19,12 @@
   description = "visidata | CLI tool for tabular data"
   command = "vd"
   output = ""
+<<<<<<< HEAD
 
 [[snippets]]
   description = "-k, --check | check that all files owned by the given package(s) are present on the system"
   command = "pacman -Qk"
   tag = ["pacman", "yay", "arch"]
   output = ""
+=======
+>>>>>>> 8dbd631a6d9c1c93dd23c62201cfff3109e55573

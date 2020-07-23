@@ -164,7 +164,7 @@
     </property>
     <property name="plugin-24" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="15940068743.desktop"/>
+        <value type="string" value="15940177661.desktop"/>
       </property>
     </property>
     <property name="plugin-26" type="string" value="launcher">
@@ -224,7 +224,7 @@
     </property>
     <property name="plugin-6" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="15944925171.desktop"/>
+        <value type="string" value="159402208413.desktop"/>
       </property>
     </property>
     <property name="plugin-14" type="string" value="launcher">

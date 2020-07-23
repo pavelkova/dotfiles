@@ -41,38 +41,41 @@ scrollback_lines = 10000
 [colors]
 # If both of these are unset, cursor falls back to the foreground color,
 # and cursor_foreground falls back to the background color.
-cursor = {color13}
+cursor = #637e9d
 #cursor_foreground = #dcdccc
 
-foreground = {color15}
+foreground = #e8e8e8
 #foreground_bold = #ffffff
-background = {color0}
+background = #03122b
+
+# 20% background transparency (requires a compositor)
+#background = rgba(63, 63, 63, 0.8)
 
 # If unset, will reverse foreground and background
-highlight = {color11}
+highlight = #7e7974
 
 # Colors from color0 to color254 can be set
-color0 = {color0}
-color1 = {color1}
-color2 = {color2}
-color3 = {color3}
-color4 = {color4}
-color5 = {color5}
-color6 = {color6}
-color7 = {color7}
-color8 = {color8}
-color9 = {color9}
-color10 = {color10}
-color11 = {color11}
-color12 = {color12}
-color13 = {color13}
-color14 = {color14}
-color15 = {color15}
+color0 = #03122b
+color1 = #786462
+color2 = #56626f
+color3 = #7e7974
+color4 = #2c516c
+color5 = #525050
+color6 = #2d3f53
+color7 = #adadad
+color8 = #021432
+color9 = #aa7671
+color10 = #637e9d
+color11 = #b2a186
+color12 = #2f6b97
+color13 = #735d5d
+color14 = #325174
+color15 = #e8e8e8
 
 [hints]
 font = Cascadia Code 10
-foreground = {color8}
-background = {color0}
+foreground = #adadad
+background = #021432
 #active_foreground = #e68080
 #active_background = #3f3f3f
 padding = 5

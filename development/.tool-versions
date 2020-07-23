@@ -5,7 +5,11 @@ golang 1.12.5
 nodejs 13.12.0
 php 7.3.11
 python 3.8.0
+<<<<<<< HEAD
 ruby 2.7.0
+=======
+ruby 2.6.2
+>>>>>>> 8dbd631a6d9c1c93dd23c62201cfff3109e55573
 sqlite 3.27.2
 #postgres 12.0
 postgres 11.3
