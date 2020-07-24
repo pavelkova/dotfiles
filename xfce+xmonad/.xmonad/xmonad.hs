@@ -34,6 +34,7 @@ import           XMonad.Layout.SimpleDecoration
 -- local modules
 import           Layouts (myLayouts)
 import           Keys    (myKeys)
+import           Colors  (myActiveBorderColor, myInactiveBorderColor)
 import           Config
 
 main = xmonad $ navigation2D def
@@ -42,14 +43,16 @@ main = xmonad $ navigation2D def
                               (mod4Mask .|. shiftMask, windowSwap)]
                              False
   $ docks $ xfceConfig
-  { modMask           = mod4Mask
-  , focusFollowsMouse = True
-  , borderWidth       = 0
-  , workspaces        = myWorkspaces
-  , keys              = myKeys
-  , layoutHook        = myLayouts
-  , manageHook        = myManageHook <+> manageHook defaultConfig
-  , terminal          = myTerminal
+  { modMask            = mod4Mask
+  , focusFollowsMouse  = True
+  , borderWidth        = 2
+  , normalBorderColor  = myInactiveBorderColor
+  , focusedBorderColor = myActiveBorderColor
+  , workspaces         = myWorkspaces
+  , keys               = myKeys
+  , layoutHook         = myLayouts
+  , manageHook         = myManageHook <+> manageHook defaultConfig
+  , terminal           = myTerminal
   }
 
 myManageHook = composeAll

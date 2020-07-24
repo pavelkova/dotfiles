@@ -15,6 +15,8 @@ import           XMonad.Layout.Tabbed
 import           XMonad.Layout.ThreeColumns
 
 import           XMonad.Layout.Decoration
+import           XMonad.Layout.Maximize
+import           XMonad.Layout.Minimize
 import           XMonad.Layout.Named
 import           XMonad.Layout.NoBorders
 import           XMonad.Layout.Spacing
@@ -22,6 +24,8 @@ import           XMonad.Layout.Spacing
 import qualified XMonad.Layout.WindowNavigation as N
 
 myLayouts = N.windowNavigation
+  $ maximize
+  $ minimize
   $ avoidStruts
   $ smartBorders
   -- $ smartSpacingWithEdge 5

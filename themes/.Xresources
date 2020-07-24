@@ -60,8 +60,6 @@ URxvt.saveLines:        10000
 URxvt.foreground:       #a0b8a1
 URxvt.background:       #1a261d
 
-URxvt.iconFile:         /home/gigi/.icons/Xenlism-Wildfire/Apps
-
 !#########
 !# FONTS #
 !#########
@@ -74,7 +72,7 @@ Xft.hintstyle:          hintfull
 Xft.lcdfilter:          lcddefault
 Xft.rgba:               rgb
 
-*URxvt.font:		xft:Fira Code:size=11
-URxvt.boldFont:         xft:Fira Code Bold:size=11
+*URxvt.font:		xft:Cascadia Code:size=11
+URxvt.boldFont:         xft:Cascadia Code Bold:size=11
 !URxvt.lineSpace:	10
 !URxvt.letterSpace:	0

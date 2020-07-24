@@ -3,12 +3,16 @@ module Keys
 
 import           XMonad
 import           XMonad.Util.EZConfig
---import           XMonad.Actions.Submap
--- import           XMonad.Actions.CycleWS
 import           XMonad.Layout.BinarySpacePartition
+import           XMonad.Layout.Maximize
 import           XMonad.Layout.ToggleLayouts
 import qualified XMonad.StackSet as W
 -- import qualified XMonad.Layout.WindowNavigation as N
+
+import           XMonad.Actions.FloatKeys
+import           XMonad.Actions.FloatSnap
+import           XMonad.Actions.Minimize
+import           XMonad.Actions.WindowMenu
 
 import qualified Data.Map as M -- For keybindings.
 import           Data.Maybe
@@ -43,18 +47,24 @@ myKeys = \conf -> mkKeymap conf $
   , ("M-C-<Left>",    sendMessage $ ExpandTowards L)
   , ("M-C-<Up>",      sendMessage $ ExpandTowards U)
   , ("M-C-<Down>",    sendMessage $ ExpandTowards D)
-  , ("M-C-S-<Right>", sendMessage $ ShrinkFrom R)
-  , ("M-C-S-<Left>",  sendMessage $ ShrinkFrom L)
-  , ("M-C-S-<Up>",    sendMessage $ ShrinkFrom U)
-  , ("M-C-S-<Down>",  sendMessage $ ShrinkFrom D)
+  -- , ("M-C-S-<Right>", sendMessage $ ShrinkFrom R)
+  -- , ("M-C-S-<Left>",  sendMessage $ ShrinkFrom L)
+  -- , ("M-C-S-<Up>",    sendMessage $ ShrinkFrom U)
+  -- , ("M-C-S-<Down>",  sendMessage $ ShrinkFrom D)
+  , ("M-C-S-<Left>",  withFocused (keysResizeWindow (-50,0) (0,0)))
+  , ("M-C-S-<Right>", withFocused (keysResizeWindow (50,0) (0,0)))
+  , ("M-C-S-<Up>",    withFocused (keysResizeWindow (0,-50) (0,0)))
+  , ("M-C-S-<Down>",  withFocused (keysResizeWindow (0,50) (0,0)))
   , ("M-S-t",         sendMessage NextLayout)
 
   -- windows
   , ("M-w",         kill)
+  , ("M-c <Space>", windowMenu)
   , ("M-c f",       withFocused $ float)
   , ("M-c t",       withFocused $ windows . W.sink )
-  -- , ("M-n",         withFocused minimizeWindow)
-  -- , ("M-S-n",       sendMessage RestoreNextMinimized)
+  , ("M-c z",       withFocused $ minimizeWindow)
+  , ("M-c S-z",     withLastMinimized maximizeWindowAndFocus)
+  , ("M-c x",       withFocused (sendMessage . maximizeRestore))
   ] ++
   [ (otherModMasks ++ "M-" ++ [key], action tag)
   | (tag, key)  <- zip myWorkspaces "123456789"

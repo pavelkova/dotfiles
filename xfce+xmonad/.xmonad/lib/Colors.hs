@@ -1,10 +1,11 @@
-module Colors where
-
--- XMonad modules
-import XMonad
-
+module Colors
+  ( myBackgroundColor
+  , myForegroundColor
+  , myActiveBorderColor
+  , myInactiveBorderColor ) where
 
 -- wpgtk-defined
-backgroundColor = "{color1}"
-middleColor     = "{color11}"
-foregroundColor = "{color15}"
+myBackgroundColor     = "#a6896c"
+myForegroundColor     = "#a0b8a1"
+myActiveBorderColor   = "#6c96a6"
+myInactiveBorderColor = "#2c4742"
