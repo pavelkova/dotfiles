@@ -28,6 +28,7 @@ myLayouts = N.windowNavigation
   $ minimize
   $ avoidStruts
   $ smartBorders
+  -- $ buttonDeco shrinkText defaultThemeWithButtons
   -- $ smartSpacingWithEdge 5
   $ ( smBSP
    ||| xlBSP

@@ -1,23 +1,26 @@
-module Keys
-  ( myKeys ) where
+module Bindings
+  ( myKeys
+  , myMouseBindings) where
+
+import qualified Data.Map as M -- For keybindings.
+import           Data.Maybe
+import           Graphics.X11.ExtraTypes.XF86
 
 import           XMonad
-import           XMonad.Util.EZConfig
-import           XMonad.Layout.BinarySpacePartition
-import           XMonad.Layout.Maximize
-import           XMonad.Layout.ToggleLayouts
 import qualified XMonad.StackSet as W
--- import qualified XMonad.Layout.WindowNavigation as N
 
+import qualified XMonad.Actions.FlexibleResize as Flex
 import           XMonad.Actions.FloatKeys
 import           XMonad.Actions.FloatSnap
 import           XMonad.Actions.Minimize
 import           XMonad.Actions.WindowMenu
 
-import qualified Data.Map as M -- For keybindings.
-import           Data.Maybe
+import           XMonad.Layout.BinarySpacePartition
+import           XMonad.Layout.Maximize
+import           XMonad.Layout.ToggleLayouts
+-- import qualified XMonad.Layout.WindowNavigation as N
 
-import           Graphics.X11.ExtraTypes.XF86
+import           XMonad.Util.EZConfig
 
 import           Config ( myWorkspaces )
 
@@ -71,3 +74,9 @@ myKeys = \conf -> mkKeymap conf $
   , (otherModMasks, action) <- [ ("", windows . W.view) -- was W.greedyView
                                , ("S-", windows . W.shift)]
   ]
+
+myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
+    [
+      ((modMask, button1), (\w -> focus w >> mouseMoveWindow w >> windows W.shiftMaster)) -- set the window to floating mode and move by dragging
+    , ((modMask, button3), (\w -> focus w >> Flex.mouseResizeWindow w)) -- set the window to floating mode and resize by dragging
+    ]

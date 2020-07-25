@@ -73,7 +73,7 @@
         <value type="double" value="0.230000"/>
       </property>
       <property name="mode" type="uint" value="0"/>
-      <property name="length" type="uint" value="47"/>
+      <property name="length" type="uint" value="34"/>
     </property>
   </property>
   <property name="plugins" type="empty">

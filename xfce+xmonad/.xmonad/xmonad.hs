@@ -32,9 +32,9 @@ import           XMonad.Layout.SimpleDecoration
 
 
 -- local modules
-import           Layouts (myLayouts)
-import           Keys    (myKeys)
-import           Colors  (myActiveBorderColor, myInactiveBorderColor)
+import           Layouts  (myLayouts)
+import           Bindings (myKeys, myMouseBindings)
+import           Colors   (myActiveBorderColor, myInactiveBorderColor)
 import           Config
 
 main = xmonad $ navigation2D def
@@ -50,6 +50,7 @@ main = xmonad $ navigation2D def
   , focusedBorderColor = myActiveBorderColor
   , workspaces         = myWorkspaces
   , keys               = myKeys
+  , mouseBindings      = myMouseBindings
   , layoutHook         = myLayouts
   , manageHook         = myManageHook <+> manageHook defaultConfig
   , terminal           = myTerminal
