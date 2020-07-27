@@ -2,7 +2,7 @@
 Name=Thunderbird
 Comment=Send and receive mail with Thunderbird
 GenericName=Mail Client
-Exec=/usr/lib/thunderbird/thunderbird %u
+Exec=thunderbird %u
 Terminal=false
 Type=Application
 Icon=thunderbird
@@ -11,6 +11,8 @@ MimeType=message/rfc822;x-scheme-handler/mailto;application/x-xpinstall;
 StartupNotify=true
 Actions=ComposeMessage;OpenAddressBook;
 X-XFCE-Source=file:///usr/share/applications/thunderbird.desktop
+
+Path=
 
 [Desktop Action ComposeMessage]
 Name=Write new message

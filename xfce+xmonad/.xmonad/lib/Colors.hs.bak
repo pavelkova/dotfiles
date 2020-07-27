@@ -1,0 +1,11 @@
+module Colors where
+
+-- XMonad modules
+import XMonad
+
+
+-- wpgtk-defined
+backgroundColor     = "{color1}"
+foregroundColor     = "{color15}"
+activeBorderColor   = "{color13}"
+inactiveBorderColor = "{color8}"

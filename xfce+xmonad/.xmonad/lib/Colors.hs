@@ -1,8 +1,8 @@
-module Colors
-  ( myBackgroundColor
-  , myForegroundColor
-  , myActiveBorderColor
-  , myInactiveBorderColor ) where
+module Colors where
+
+-- XMonad modules
+import XMonad
+
 
 -- wpgtk-defined
 myBackgroundColor     = "#a6896c"

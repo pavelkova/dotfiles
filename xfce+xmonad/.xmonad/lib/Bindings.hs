@@ -13,6 +13,7 @@ import qualified XMonad.Actions.FlexibleResize as Flex
 import           XMonad.Actions.FloatKeys
 import           XMonad.Actions.FloatSnap
 import           XMonad.Actions.Minimize
+import           XMonad.Actions.TopicSpace
 import           XMonad.Actions.WindowMenu
 
 import           XMonad.Layout.BinarySpacePartition
@@ -20,9 +21,13 @@ import           XMonad.Layout.Maximize
 import           XMonad.Layout.ToggleLayouts
 -- import qualified XMonad.Layout.WindowNavigation as N
 
+--import           XMonad.Prompt
+
 import           XMonad.Util.EZConfig
 
-import           Config ( myWorkspaces )
+import           Config
+import           Topics
+
 
 myKeys = \conf -> mkKeymap conf $
   -- keep some defaults
@@ -32,12 +37,12 @@ myKeys = \conf -> mkKeymap conf $
     -- programs
   , ("M-<Return>",  spawn $ XMonad.terminal conf)
 
-  -- emacs
-  , ("M-e",         spawn "emacsclient -a '' -c")
-  , ("M-x a",       spawn "emacsclient -a '' -c -e '(org-agenda-list)'")
-  , ("M-x c",       spawn "emacsclient -a '' -c -e '(org-capture)'")
-  , ("M-x t",       spawn "emacsclient -a '' -c -e '(org-todo-list)'")
-  , ("M-M3-r",      spawn "emacsclient -a '' -c -e '(org-roam-dailies-today)'")
+    -- emacs
+  , ("M-e",         spawnEmacs "")
+  , ("M-x a",       spawnEmacs "-e '(org-agenda-list)'")
+  , ("M-x c",       spawnEmacs "-e '(org-capture)'")
+  , ("M-x t",       spawnEmacs "-e '(org-todo-list)'")
+  , ("M-<Tab>",     spawnEmacs "-e '(org-roam-dailies-today)'")
     -- rofi
   , ("M-<Space>",   spawn "rofi -show combi")
   , ("M-=",         spawn "rofi -modi calc -show")
@@ -54,10 +59,10 @@ myKeys = \conf -> mkKeymap conf $
   -- , ("M-C-S-<Left>",  sendMessage $ ShrinkFrom L)
   -- , ("M-C-S-<Up>",    sendMessage $ ShrinkFrom U)
   -- , ("M-C-S-<Down>",  sendMessage $ ShrinkFrom D)
-  , ("M-C-S-<Left>",  withFocused (keysResizeWindow (-50,0) (0,0)))
-  , ("M-C-S-<Right>", withFocused (keysResizeWindow (50,0) (0,0)))
-  , ("M-C-S-<Up>",    withFocused (keysResizeWindow (0,-50) (0,0)))
-  , ("M-C-S-<Down>",  withFocused (keysResizeWindow (0,50) (0,0)))
+  -- , ("M-C-S-<Left>",  withFocused (keysResizeWindow (-50,0) (0,0)))
+  -- , ("M-C-S-<Right>", withFocused (keysResizeWindow (50,0) (0,0)))
+  -- , ("M-C-S-<Up>",    withFocused (keysResizeWindow (0,-50) (0,0)))
+  -- , ("M-C-S-<Down>",  withFocused (keysResizeWindow (0,50) (0,0)))
   , ("M-S-t",         sendMessage NextLayout)
 
   -- windows
@@ -68,9 +73,14 @@ myKeys = \conf -> mkKeymap conf $
   , ("M-c z",       withFocused $ minimizeWindow)
   , ("M-c S-z",     withLastMinimized maximizeWindowAndFocus)
   , ("M-c x",       withFocused (sendMessage . maximizeRestore))
+
+  -- workspaces / topics
+  , ("M-M3-[",      promptedGoto)
+  , ("M-M3-]",      promptedShift)
+  , ("M-M3-;",      currentTopicAction myTopicConfig)
   ] ++
   [ (otherModMasks ++ "M-" ++ [key], action tag)
-  | (tag, key)  <- zip myWorkspaces "123456789"
+  | (tag, key)  <- zip myTopics "0123456789"
   , (otherModMasks, action) <- [ ("", windows . W.view) -- was W.greedyView
                                , ("S-", windows . W.shift)]
   ]
