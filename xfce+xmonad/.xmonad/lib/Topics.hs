@@ -63,7 +63,7 @@ myTopicConfig = def
     , ("notas",       spawnEmacsInTopic "")
     , ("correo",      spawn "thunderbird")
     , ("aprendizaje", spawnEmacsInTopic "index.org")
-    , ("español",     spawnEmacsInTopic "cien_años_de_soledad.org")
+    , ("español",     spawnEmacs "cien_años_de_soledad.org")
     , ("sistema",     runInTerm "" "gotop")
     ]
   }
@@ -76,10 +76,11 @@ spawnShellIn :: Dir -> X ()
 -- spawnShellIn dir = spawn $ "urxvt '(cd ''" ++ dir ++ "'' && " ++ myShell ++ " )'"
 spawnShellIn dir = spawn $ myTerminal ++ " --working-directory " ++ dir
 
+spawnEmacsInTopic :: String -> X ()
 spawnEmacsInTopic endpoint = currentTopicDir myTopicConfig >>= spawnEmacsIn endpoint
 
 spawnEmacsIn :: String -> String -> X ()
-spawnEmacsIn dir endpoint = spawn $ "emacs -a '' -c " ++ dir ++ "/" ++ endpoint
+spawnEmacsIn dir endpoint = spawn $ "emacsclient -a '' -c " ++ dir ++ "/" ++ endpoint
 
 goto :: Topic -> X ()
 goto = switchTopic myTopicConfig

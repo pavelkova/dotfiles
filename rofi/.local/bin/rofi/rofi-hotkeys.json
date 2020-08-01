@@ -1,0 +1,67 @@
+[
+    {
+        "keybinding": "Super+w",
+        "description": "Kill window"
+    },
+    {
+        "keybinding": "Super+c Space",
+        "description": "Open window menu"
+    },
+    {
+        "keybinding": "Super+c f",
+        "description": "Float focused window"
+    },
+    {
+        "keybinding": "Super+c t",
+        "description": "Tile focused window"
+    },
+    {
+        "keybinding": "Super+c z",
+        "description": "Minimize focused window"
+    },
+    {
+        "keybinding": "Super+c Z",
+        "description": "Restore last minimized window"
+    },
+    {
+        "keybinding": "Super+c x",
+        "description": "Maximize focused window"
+    },
+    {
+        "keybinding": "Super+Return",
+        "description": "Open new terminal (alacritty)"
+    },
+    {
+        "keybinding": "Super+Space",
+        "description": "Open rofi combi launcher"
+    },
+    {
+        "keybinding": "Super+=",
+        "description": "Open rofi-calculator"
+    },
+    {
+        "keybinding": "Super+Hyper+p",
+        "description": "Open rofi-pass"
+    },
+    {
+        "keybinding": "Super+e",
+        "description": "Open new emacsclient frame, spawning daemon if necessary"
+    },
+    {
+        "keybinding": "Super+Tab",
+        "description": "Execute org-roam-dailies-today in new emacsclient frame"
+    },
+    {
+        "keybinding": "Super+x a",
+        "description": "Execute org-agenda-list in new emacsclient frame"
+    },
+    {
+        "keybinding": "Super+x c",
+        "description": "Execute org-capture in new emacsclient frame"
+    },
+    {
+        "keybinding": "Super+x t",
+        "description": "Execute org-todo-list in new emacsclient frame"
+    }
+
+]

@@ -80,7 +80,7 @@ myKeys = \conf -> mkKeymap conf $
   , ("M-M3-;",      currentTopicAction myTopicConfig)
   ] ++
   [ (otherModMasks ++ "M-" ++ [key], action tag)
-  | (tag, key)  <- zip myTopics "0123456789"
+  | (tag, key)  <- zip myTopics "1234567890"
   , (otherModMasks, action) <- [ ("", windows . W.view) -- was W.greedyView
                                , ("S-", windows . W.shift)]
   ]

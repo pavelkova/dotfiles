@@ -1,0 +1,59 @@
+#!/home/gigi/.asdf/shims/python
+
+import json
+import subprocess
+from rofi import Rofi
+
+hotkey_dict = json.load(open("rofi-hotkeys.json", "r"))
+
+key_replacements = [
+    ("Space", "space"),
+    ("Hyper", "Alt_R"),
+    (";", "semicolon"),
+    (",", "comma"),
+    (".", "period"),
+]
+
+rofi = Rofi()
+
+
+def convert_sequence(keybinding):
+    '''
+    Replace certain characters in keybindings when they are sent to xdotool
+    '''
+    for i in key_replacements:
+        keybinding = keybinding.replace(i[0], i[1])
+    return keybinding
+
+
+def send_key(keybinding):
+    key_sequence = convert_sequence(keybinding).split()
+    subprocess.call(["xdotool", "key"] + key_sequence)
+
+
+def create_menu():
+    menu_items = []
+    for k in hotkey_dict:
+        kb, desc = k.values()
+    # make
+        if len(kb) < 30:
+            kb += "." * (30 - len(kb))
+
+        menu_items.append(kb + desc)
+
+    return menu_items
+
+
+def run_rofi(prompt, menu_options, options_list, action_value):
+    prompt = "⌨"
+    index, key = rofi.select(prompt, menu_options)
+    if key == 0:
+        out, err = subprocess.Popen(
+            send_key(options_list[index][action_value]),
+            shell=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE).communicate()
+
+
+if __name__ == '__main__':
+    run_rofi('shortcut:', create_menu(), hotkey_dict, 'keybinding')
