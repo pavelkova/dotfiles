@@ -21,7 +21,9 @@ import           XMonad.Layout.Maximize
 import           XMonad.Layout.ToggleLayouts
 -- import qualified XMonad.Layout.WindowNavigation as N
 
---import           XMonad.Prompt
+import           XMonad.Prompt
+import           XMonad.Prompt.Layout
+import           XMonad.Prompt.Workspace
 
 import           XMonad.Util.EZConfig
 
@@ -47,6 +49,7 @@ myKeys = \conf -> mkKeymap conf $
   , ("M-<Space>",   spawn "rofi -show combi")
   , ("M-=",         spawn "rofi -modi calc -show")
   , ("M-M3-p",      spawn "rofi-pass")
+  , ("M-M3-k",      spawn "~/.local/bin/rofi/rofi-hotkeys")
   , ("M-M3-s",      spawn "~/.local/bin/rofi/rofi-web-search")
 
     -- layout
@@ -64,6 +67,7 @@ myKeys = \conf -> mkKeymap conf $
   -- , ("M-C-S-<Up>",    withFocused (keysResizeWindow (0,-50) (0,0)))
   -- , ("M-C-S-<Down>",  withFocused (keysResizeWindow (0,50) (0,0)))
   , ("M-S-t",         sendMessage NextLayout)
+  , ("M-c l",         layoutPrompt def)
 
   -- windows
   , ("M-w",         kill)

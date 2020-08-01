@@ -59,11 +59,12 @@ myTopicConfig = def
     , ("vidal",       spawnShell >>
         spawnEmacsInTopic "index.org" >>
         spawn "firefox")
-    , ("la torre",    spawnEmacsInTopic "la_torre.org")
+    , ("la torre",    spawn "manuskript" >>
+        spawnEmacsInTopic "la_torre.org")
     , ("notas",       spawnEmacsInTopic "")
     , ("correo",      spawn "thunderbird")
     , ("aprendizaje", spawnEmacsInTopic "index.org")
-    , ("español",     spawnEmacs "cien_años_de_soledad.org")
+    , ("español",     spawnEmacsInTopic "cien_años_de_soledad.org")
     , ("sistema",     runInTerm "" "gotop")
     ]
   }
@@ -80,13 +81,13 @@ spawnEmacsInTopic :: String -> X ()
 spawnEmacsInTopic endpoint = currentTopicDir myTopicConfig >>= spawnEmacsIn endpoint
 
 spawnEmacsIn :: String -> String -> X ()
-spawnEmacsIn dir endpoint = spawn $ "emacsclient -a '' -c " ++ dir ++ "/" ++ endpoint
+spawnEmacsIn endpoint dir = spawn $ "emacsclient -a '' -c " ++ dir ++ "/" ++ endpoint
 
 goto :: Topic -> X ()
 goto = switchTopic myTopicConfig
 
 promptedGoto :: X ()
-promptedGoto = workspacePrompt myXPConfig goto
+promptedGoto = workspacePrompt def goto
 
 promptedShift :: X ()
-promptedShift = workspacePrompt myXPConfig $ windows . W.shift
+promptedShift = workspacePrompt def $ windows . W.shift

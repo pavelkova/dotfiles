@@ -52,7 +52,7 @@ main = do
     $ docks
     $ xfceConfig { modMask            = mod4Mask
                  , focusFollowsMouse  = True
-                 , borderWidth        = 2
+                 , borderWidth        = 3
                  , normalBorderColor  = myInactiveBorderColor
                  , focusedBorderColor = myActiveBorderColor
                  , workspaces         = myTopics

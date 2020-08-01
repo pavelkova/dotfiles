@@ -1,10 +1,10 @@
-#!/home/gigi/.asdf/shims/python
+#!/usr/bin/env python
 
 import json
 import subprocess
 from rofi import Rofi
 
-hotkey_dict = json.load(open("rofi-hotkeys.json", "r"))
+hotkey_dict = json.load(open("/home/gigi/.local/bin/rofi/rofi-hotkeys.json", "r"))
 
 key_replacements = [
     ("Space", "space"),
@@ -35,11 +35,11 @@ def create_menu():
     menu_items = []
     for k in hotkey_dict:
         kb, desc = k.values()
-    # make
+        spacer = '..'
         if len(kb) < 30:
-            kb += "." * (30 - len(kb))
+            spacer += "." * (30 - len(kb))
 
-        menu_items.append(kb + desc)
+        menu_items.append(kb + ' ' + spacer + ' ' + desc)
 
     return menu_items
 
