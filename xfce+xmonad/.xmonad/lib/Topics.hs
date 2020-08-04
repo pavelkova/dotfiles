@@ -51,7 +51,7 @@ myTopicConfig = def
   , defaultTopicAction = const $ spawnShell -- >*> 3
   , defaultTopic       = "hoy"
   , topicActions       = M.fromList $
-    [ ("hoy",         spawnEmacs "-e '(org-roam-dailies)'")
+    [ ("hoy",         spawnEmacs "-e '(org-roam-dailies-today)'")
     , ("navegar",     spawn "firefox")
     , ("dgar",        spawnShell >>
         spawnEmacsInTopic "index.org" >>
