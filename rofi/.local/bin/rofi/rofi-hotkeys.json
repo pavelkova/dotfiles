@@ -1,75 +1,78 @@
 [
-    {
-        "keybinding": "Super+w",
-        "description": "kill window"
-    },
-    {
-        "keybinding": "Super+c Space",
-        "description": "open window menu"
-    },
-    {
-        "keybinding": "Super+c f",
-        "description": "float focused window"
-    },
-    {
-        "keybinding": "Super+c t",
-        "description": "tile focused window"
-    },
-    {
-        "keybinding": "Super+c z",
-        "description": "minimize focused window"
-    },
-    {
-        "keybinding": "Super+c Z",
-        "description": "restore last minimized window"
-    },
-    {
-        "keybinding": "Super+c x",
-        "description": "maximize focused window"
-    },
-    {
-        "keybinding": "Super+Return",
-        "description": "open new terminal (alacritty)"
-    },
-    {
-        "keybinding": "Super+Space",
-        "description": "open rofi combi launcher"
-    },
-    {
-        "keybinding": "Super+=",
-        "description": "open rofi-calculator"
-    },
-    {
-        "keybinding": "Super+Hyper+p",
-        "description": "open rofi-pass"
-    },
-    {
-        "keybinding": "Super+Hyper+;",
-        "description": "open xmonad topic (workspace) actions"
-    },
-    {
-        "keybinding": "Super+c l",
-        "description": "prompt to switch xmonad layout"
-    },
-    {
-        "keybinding": "Super+e",
-        "description": "open new emacsclient frame"
-    },
-    {
-        "keybinding": "Super+Tab",
-        "description": "execute org-roam-dailies-today in new emacsclient frame"
-    },
-    {
-        "keybinding": "Super+x a",
-        "description": "execute org-agenda-list in new emacsclient frame"
-    },
-    {
-        "keybinding": "Super+x c",
-        "description": "execute org-capture in new emacsclient frame"
-    },
-    {
-        "keybinding": "Super+x t",
-        "description": "execute org-todo-list in new emacsclient frame"
-    }
-
+  {
+    "keybinding": "Super+w",
+    "description": "kill window"
+  },
+  {
+    "keybinding": "Super+c Space",
+    "description": "open window menu"
+  },
+  {
+    "keybinding": "Super+c f",
+    "description": "float focused window"
+  },
+  {
+    "keybinding": "Super+c t",
+    "description": "tile focused window"
+  },
+  {
+    "keybinding": "Super+c z",
+    "description": "minimize focused window"
+  },
+  {
+    "keybinding": "Super+c Z",
+    "description": "restore last minimized window"
+  },
+  {
+    "keybinding": "Super+c x",
+    "description": "maximize focused window"
+  },
+  {
+    "keybinding": "Super+Return",
+    "description": "open new terminal (alacritty)"
+  },
+  {
+    "keybinding": "Super+Space",
+    "description": "open rofi combi launcher"
+  },
+  {
+    "keybinding": "Super+=",
+    "description": "open rofi-calculator"
+  },
+  {
+    "keybinding": "Super+Hyper+p",
+    "description": "open rofi-pass"
+  },
+  {
+    "keybinding": "Super+Hyper+;",
+    "description": "open xmonad topic (workspace) actions"
+  },
+  {
+    "keybinding": "Super+c l",
+    "description": "prompt to switch xmonad layout"
+  },
+  {
+    "keybinding": "Super+e",
+    "description": "open new emacsclient frame"
+  },
+  {
+    "keybinding": "Super+Tab",
+    "description": "execute org-roam-dailies-today in new emacsclient frame"
+  },
+  {
+    "keybinding": "Super+x a",
+    "description": "execute org-agenda-list in new emacsclient frame"
+  },
+  {
+    "keybinding": "Super+x c",
+    "description": "execute org-capture in new emacsclient frame"
+  },
+  {
+    "keybinding": "Super+x t",
+    "description": "execute org-todo-list in new emacsclient frame"
+  },
+  {
+    "keybinding": "Super+Hyper+s",
+    "description": "open rofi web search"
+  }
 ]

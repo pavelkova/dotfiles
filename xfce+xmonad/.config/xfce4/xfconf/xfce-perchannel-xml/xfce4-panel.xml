@@ -146,6 +146,7 @@
     </property>
     <property name="plugin-23" type="string" value="systray">
       <property name="names-ordered" type="array">
+        <value type="string" value="nextcloud"/>
         <value type="string" value="aw-qt"/>
         <value type="string" value="vlc"/>
         <value type="string" value="todoist"/>
