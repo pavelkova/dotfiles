@@ -3,8 +3,10 @@ beautifulsoup4
 black
 numpy
 pandas
+pip
 pyls
 pyls-black
+pyradio
 pytest
 requests
 wheel

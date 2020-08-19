@@ -45,7 +45,7 @@
         <value type="int" value="9"/>
         <value type="int" value="24"/>
         <value type="int" value="32"/>
-        <value type="int" value="14"/>
+        <value type="int" value="19"/>
         <value type="int" value="26"/>
         <value type="int" value="30"/>
         <value type="int" value="33"/>
@@ -57,6 +57,7 @@
         <value type="int" value="29"/>
         <value type="int" value="36"/>
         <value type="int" value="6"/>
+        <value type="int" value="21"/>
         <value type="int" value="18"/>
         <value type="int" value="17"/>
         <value type="int" value="23"/>
@@ -228,11 +229,6 @@
         <value type="string" value="159402208413.desktop"/>
       </property>
     </property>
-    <property name="plugin-14" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="15953931661.desktop"/>
-      </property>
-    </property>
     <property name="plugin-18" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="159402256117.desktop"/>
@@ -246,7 +242,7 @@
         <property name="plugin-2" type="empty">
           <property name="compact-mode" type="bool" value="false"/>
           <property name="bold-application-name" type="bool" value="false"/>
-          <property name="expand" type="bool" value="true"/>
+          <property name="expand" type="bool" value="false"/>
         </property>
       </property>
     </property>
@@ -255,6 +251,16 @@
       <property name="mode" type="uint" value="3"/>
       <property name="show-seconds" type="bool" value="false"/>
       <property name="fuzziness" type="uint" value="0"/>
+    </property>
+    <property name="plugin-19" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="15970445381.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-21" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="15970446012.desktop"/>
+      </property>
     </property>
   </property>
 </channel>

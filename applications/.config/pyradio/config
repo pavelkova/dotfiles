@@ -7,7 +7,7 @@
 #   player = vlc
 # or
 #   player = vlc,mpv, mplayer
-player = mpv, mplayer, vlc
+player = vlc, mpv, mplayer
 
 # Default playlist
 # This is the playlist to open if none is specified
