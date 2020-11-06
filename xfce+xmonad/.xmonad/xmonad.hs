@@ -5,7 +5,7 @@ import           XMonad.Config.Xfce
 import           System.Exit
 import qualified System.IO
 
--- import qualified XMonad.StackSet as W
+import qualified XMonad.StackSet as W
 
 -- prompts
 import           XMonad.Prompt
@@ -26,7 +26,7 @@ import           XMonad.Actions.TopicSpace
 -- utils
 import           XMonad.Util.EZConfig
 import           XMonad.Util.Run
-import           XMonad.Util.Scratchpad
+-- import           XMonad.Util.NamedScratchpad
 
 import           XMonad.Layout.BinarySpacePartition
 import           XMonad.Layout.Named            ( named )
@@ -38,6 +38,7 @@ import           Bindings                       ( myKeys, myMouseBindings )
 import           Colors                         ( myActiveBorderColor, myInactiveBorderColor )
 import           Config
 import           Layouts                        ( myLayouts )
+import           Scratchpads                    ( myScratchpadsHook )
 import           Topics                         
 
 main :: IO ()
@@ -59,14 +60,18 @@ main = do
                  , keys               = myKeys
                  , mouseBindings      = myMouseBindings
                  , layoutHook         = myLayouts
-                 , manageHook         = myManageHook <+> manageHook defaultConfig
+                 , manageHook         = myManageHook <+> myScratchpadsHook <+> manageHook defaultConfig
                  , terminal           = myTerminal
                  }
 
 myManageHook = composeAll
-  [ className =? "Xmessage" --> doFloat
-  , className =? "xfce4-appfinder" --> doFloat
-  , isDialog --> doCenterFloat
-  , isFullscreen --> doFullFloat
+  [ className =? "Tilda"           --> doFloat
+  , className =? "todoist"         --> doCenterFloat
+  , className =? "Xmessage"        --> doFloat
+  , className =? "Xfce4-appFinder" --> doFloat
+  , isDialog                       --> doCenterFloat
+  , isFullscreen                   --> doFullFloat
   , manageDocks
   ]
+
+-- scratchpads = [ NS "tilda" "tilda" (className =? "tilda") (customFloating $ W.RationalRect (1/3) (1/2) (1/3) (1/2))]

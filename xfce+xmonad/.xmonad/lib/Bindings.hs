@@ -26,8 +26,11 @@ import           XMonad.Prompt.Layout
 import           XMonad.Prompt.Workspace
 
 import           XMonad.Util.EZConfig
+import           XMonad.Util.NamedScratchpad
 
 import           Config
+import           Layouts         (myLayouts)
+import           Scratchpads     (myScratchpads)
 import           Topics
 
 
@@ -38,6 +41,7 @@ myKeys = \conf -> mkKeymap conf $
   , ("M-.",         sendMessage (IncMasterN (-1)))
     -- programs
   , ("M-<Return>",  spawn $ XMonad.terminal conf)
+  , ("M-M3-<Down>", namedScratchpadAction myScratchpads "tilda")
 
     -- emacs
   , ("M-e",         spawnEmacs "")
@@ -68,6 +72,8 @@ myKeys = \conf -> mkKeymap conf $
   -- , ("M-C-S-<Down>",  withFocused (keysResizeWindow (0,50) (0,0)))
   , ("M-S-t",         sendMessage NextLayout)
   , ("M-c l",         layoutPrompt def)
+  , ("M-c 1",         sendMessage (Toggle "smBSP"))
+  , ("M-c 2",         sendMessage (Toggle "xlBSP"))
 
   -- windows
   , ("M-w",         kill)
@@ -80,6 +86,7 @@ myKeys = \conf -> mkKeymap conf $
 
   -- workspaces / topics
   , ("M-M3-[",      promptedGoto)
+
   , ("M-M3-]",      promptedShift)
   , ("M-M3-;",      currentTopicAction myTopicConfig)
   ] ++

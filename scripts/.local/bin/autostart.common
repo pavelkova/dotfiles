@@ -1,8 +1,8 @@
 #!/usr/bin/env fish
-wpg -S oldTV.jpg &
-feh --bg-scale ~/.local/share/backgrounds/oldTV.jpg &
-xmonad --replace &
-picom -b &
+# wpg -S oldTV.jpg &
+# feh --bg-scale ~/.local/share/backgrounds/oldTV.jpg &
+# xmonad --replace &
+# picom -b &
 # picom --experimental-backends -b &
 emacs --daemon &
 xmodmap ~/.Xmodmap &

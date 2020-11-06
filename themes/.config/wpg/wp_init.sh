@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-wpg -rs 'oldTV.jpg' 'oldTV.jpg'
+wpg -rs 'LAnight-colorful.jpg' 'LAnight-colorful.jpg'

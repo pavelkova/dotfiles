@@ -4,7 +4,7 @@ configuration {
 	width: 400;
 /*	lines: 15;*/
 /*	columns: 1;*/
-	font: "Cascadia Code 10";
+	font: "VictorMonoMedium 10";
 /*	bw: 1;*/
 /*	location: 0;*/
 /*	padding: 5;*/

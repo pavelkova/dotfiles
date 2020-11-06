@@ -51,9 +51,10 @@
         <value type="int" value="33"/>
         <value type="int" value="37"/>
         <value type="int" value="28"/>
-        <value type="int" value="35"/>
         <value type="int" value="31"/>
+        <value type="int" value="35"/>
         <value type="int" value="27"/>
+        <value type="int" value="14"/>
         <value type="int" value="29"/>
         <value type="int" value="36"/>
         <value type="int" value="6"/>
@@ -147,6 +148,9 @@
     </property>
     <property name="plugin-23" type="string" value="systray">
       <property name="names-ordered" type="array">
+        <value type="string" value="qbittorrent"/>
+        <value type="string" value="guake"/>
+        <value type="string" value="udiskie"/>
         <value type="string" value="nextcloud"/>
         <value type="string" value="aw-qt"/>
         <value type="string" value="vlc"/>
@@ -181,7 +185,7 @@
     </property>
     <property name="plugin-28" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="159402235116.desktop"/>
+        <value type="string" value="15997264354.desktop"/>
       </property>
     </property>
     <property name="plugin-29" type="string" value="launcher">
@@ -260,6 +264,11 @@
     <property name="plugin-21" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="15970446012.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-14" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="15993766861.desktop"/>
       </property>
     </property>
   </property>
