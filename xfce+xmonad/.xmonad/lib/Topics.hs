@@ -51,16 +51,18 @@ myTopicConfig = def
   , defaultTopicAction = const $ spawnShell -- >*> 3
   , defaultTopic       = "hoy"
   , topicActions       = M.fromList $
-    [ ("hoy",         spawnEmacs "-e '(org-roam-dailies-today)'")
+    [ ("hoy",         spawnEmacs "-e '(org-roam-dailies-today)'" >>
+                      spawn "firefox todoist.com/app/#start" >>
+                      spawn "firefox clockify.me/tracker")
     , ("navegar",     spawn "firefox")
     , ("dgar",        spawnShell >>
-        spawnEmacsInTopic "index.org" >>
-        spawn "firefox")
+                      spawnEmacsInTopic "index.org" >>
+                      spawn "firefox")
     , ("vidal",       spawnShell >>
-        spawnEmacsInTopic "index.org" >>
-        spawn "firefox")
+                      spawnEmacsInTopic "index.org" >>
+                      spawn "firefox")
     , ("la torre",    spawn "manuskript" >>
-        spawnEmacsInTopic "la_torre.org")
+                      spawnEmacsInTopic "la_torre.org")
     , ("notas",       spawnEmacsInTopic "")
     , ("correo",      spawn "thunderbird")
     , ("aprendizaje", spawnEmacsInTopic "index.org")
@@ -74,7 +76,6 @@ spawnShell :: X ()
 spawnShell = currentTopicDir myTopicConfig >>= spawnShellIn
 
 spawnShellIn :: Dir -> X ()
--- spawnShellIn dir = spawn $ "urxvt '(cd ''" ++ dir ++ "'' && " ++ myShell ++ " )'"
 spawnShellIn dir = spawn $ myTerminal ++ " --working-directory " ++ dir
 
 spawnEmacsInTopic :: String -> X ()

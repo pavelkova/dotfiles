@@ -20,7 +20,7 @@ configuration {
 /*	run-shell-command: "{terminal} -e {cmd}";*/
 /*	window-command: "wmctrl -i -R {window}";*/
 /*	window-match-fields: "all";*/
-	icon-theme: "oomox-oldTV";
+	icon-theme: "oomox-mike-willcox-biscayne-ii";
 /*	drun-match-fields: "name,generic,exec,categories";*/
 /*	drun-show-actions: false;*/
 /*	drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";*/
@@ -42,7 +42,7 @@ configuration {
 /*	line-margin: 2;*/
 	line-padding: 5;
 /*	filter: ;*/
-	separator-style: "solid";
+	separator-style: "none";
 	hide-scrollbar: true;
 	fullscreen: true;
 	fake-transparency: true;

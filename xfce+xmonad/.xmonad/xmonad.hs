@@ -65,10 +65,12 @@ main = do
                  }
 
 myManageHook = composeAll
-  [ className =? "Tilda"           --> doFloat
-  , className =? "todoist"         --> doCenterFloat
+  [ className =? "Clockify"        --> doFloat
+  , className =? "copyq"           --> doCenterFloat
+  , className =? "Tilda"           --> doFloat
+  , className =? "todoist"         --> doFloat
   , className =? "Xmessage"        --> doFloat
-  , className =? "Xfce4-appFinder" --> doFloat
+  , className =? "Xfce4-appFinder" --> doCenterFloat
   , isDialog                       --> doCenterFloat
   , isFullscreen                   --> doFullFloat
   , manageDocks

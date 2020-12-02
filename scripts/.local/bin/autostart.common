@@ -2,11 +2,15 @@
 # wpg -S oldTV.jpg &
 # feh --bg-scale ~/.local/share/backgrounds/oldTV.jpg &
 # xmonad --replace &
-# picom -b &
-# picom --experimental-backends -b &
+picom --experimental-backends -b &
 emacs --daemon &
 xmodmap ~/.Xmodmap &
-syncthing-gtk &
-copyq &
 pg_ctl start &
+
+syncthing-gtk &
+redshift-gtk &
+nm-applet &
+pasystray &
+nextcloud &
+copyq &
 aw-qt

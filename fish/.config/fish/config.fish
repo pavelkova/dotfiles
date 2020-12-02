@@ -30,4 +30,4 @@ function autotmux --on-variable TMUX_SESSION_NAME
   end
 end
 
-eval (asdf exec direnv hook fish)
+# eval (asdf exec direnv hook fish)

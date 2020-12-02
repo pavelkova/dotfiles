@@ -22,6 +22,7 @@
         <value type="int" value="8"/>
         <value type="int" value="11"/>
         <value type="int" value="13"/>
+        <value type="int" value="34"/>
       </property>
       <property name="background-style" type="uint" value="1"/>
       <property name="background-rgba" type="array">
@@ -35,9 +36,9 @@
     </property>
     <property name="panel-2" type="empty">
       <property name="autohide-behavior" type="uint" value="0"/>
-      <property name="position" type="string" value="p=10;x=677;y=748"/>
-      <property name="position-locked" type="bool" value="true"/>
-      <property name="size" type="uint" value="26"/>
+      <property name="position" type="string" value="p=10;x=958;y=1067"/>
+      <property name="position-locked" type="bool" value="false"/>
+      <property name="size" type="uint" value="24"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="15"/>
         <value type="int" value="22"/>
@@ -62,7 +63,6 @@
         <value type="int" value="18"/>
         <value type="int" value="17"/>
         <value type="int" value="23"/>
-        <value type="int" value="12"/>
         <value type="int" value="7"/>
       </property>
       <property name="icon-size" type="uint" value="0"/>
@@ -75,7 +75,10 @@
         <value type="double" value="0.230000"/>
       </property>
       <property name="mode" type="uint" value="0"/>
-      <property name="length" type="uint" value="34"/>
+      <property name="length" type="uint" value="1"/>
+      <property name="nrows" type="uint" value="1"/>
+      <property name="enter-opacity" type="uint" value="100"/>
+      <property name="leave-opacity" type="uint" value="100"/>
     </property>
   </property>
   <property name="plugins" type="empty">
@@ -148,6 +151,14 @@
     </property>
     <property name="plugin-23" type="string" value="systray">
       <property name="names-ordered" type="array">
+        <value type="string" value="qml timer"/>
+        <value type="string" value="statusicon"/>
+        <value type="string" value="tomate-gtk"/>
+        <value type="string" value="scheduler"/>
+        <value type="string" value="pomotroid"/>
+        <value type="string" value="pa-applet"/>
+        <value type="string" value="clockify"/>
+        <value type="string" value="system-config-printer"/>
         <value type="string" value="qbittorrent"/>
         <value type="string" value="guake"/>
         <value type="string" value="udiskie"/>
@@ -250,12 +261,6 @@
         </property>
       </property>
     </property>
-    <property name="plugin-12" type="string" value="clock">
-      <property name="tooltip-format" type="string" value="%A %d %B %Y"/>
-      <property name="mode" type="uint" value="3"/>
-      <property name="show-seconds" type="bool" value="false"/>
-      <property name="fuzziness" type="uint" value="0"/>
-    </property>
     <property name="plugin-19" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="15970445381.desktop"/>
@@ -270,6 +275,12 @@
       <property name="items" type="array">
         <value type="string" value="15993766861.desktop"/>
       </property>
+    </property>
+    <property name="plugin-34" type="string" value="clock">
+      <property name="digital-format" type="string" value="%r"/>
+      <property name="mode" type="uint" value="4"/>
+      <property name="flash-separators" type="bool" value="false"/>
+      <property name="show-seconds" type="bool" value="false"/>
     </property>
   </property>
 </channel>

@@ -18,11 +18,13 @@ import           XMonad.Actions.WindowMenu
 
 import           XMonad.Layout.BinarySpacePartition
 import           XMonad.Layout.Maximize
-import           XMonad.Layout.ToggleLayouts
+-- import           XMonad.Layout.MultiToggle
 -- import qualified XMonad.Layout.WindowNavigation as N
 
 import           XMonad.Prompt
 import           XMonad.Prompt.Layout
+import           XMonad.Prompt.Shell
+import           XMonad.Prompt.Window
 import           XMonad.Prompt.Workspace
 
 import           XMonad.Util.EZConfig
@@ -41,7 +43,6 @@ myKeys = \conf -> mkKeymap conf $
   , ("M-.",         sendMessage (IncMasterN (-1)))
     -- programs
   , ("M-<Return>",  spawn $ XMonad.terminal conf)
-  , ("M-M3-<Down>", namedScratchpadAction myScratchpads "tilda")
 
     -- emacs
   , ("M-e",         spawnEmacs "")
@@ -71,9 +72,11 @@ myKeys = \conf -> mkKeymap conf $
   -- , ("M-C-S-<Up>",    withFocused (keysResizeWindow (0,-50) (0,0)))
   -- , ("M-C-S-<Down>",  withFocused (keysResizeWindow (0,50) (0,0)))
   , ("M-S-t",         sendMessage NextLayout)
-  , ("M-c l",         layoutPrompt def)
-  , ("M-c 1",         sendMessage (Toggle "smBSP"))
-  , ("M-c 2",         sendMessage (Toggle "xlBSP"))
+  , ("M-c l",         layoutPrompt myXPConfig)
+  , ("M-S-;",         shellPrompt myXPConfig)
+  , ("M-c w",         windowMultiPrompt myXPConfig [(Goto, allWindows), (Goto, wsWindows)])
+  -- , ("M-c 1",         sendMessage (Toggle "smBSP"))
+  -- , ("M-c 2",         sendMessage (Toggle "xlBSP"))
 
   -- windows
   , ("M-w",         kill)
@@ -83,6 +86,8 @@ myKeys = \conf -> mkKeymap conf $
   , ("M-c z",       withFocused $ minimizeWindow)
   , ("M-c S-z",     withLastMinimized maximizeWindowAndFocus)
   , ("M-c x",       withFocused (sendMessage . maximizeRestore))
+  , ("M-c ,",       sendMessage (IncMasterN 1))
+  , ("M-c .",       sendMessage (IncMasterN (-1)))
 
   -- workspaces / topics
   , ("M-M3-[",      promptedGoto)

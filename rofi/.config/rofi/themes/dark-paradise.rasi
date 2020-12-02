@@ -3,31 +3,31 @@
  * Rofi version: 1.5.0-dev
  **/
 * {
-    selected-normal-foreground:  #c0c0c0FF;
-    foreground:                  #808080FF;
+    selected-normal-foreground:  #ebdbb9FF;
+    foreground:                  #ebcab8FF;
     normal-foreground:           @foreground;
-    alternate-normal-background: #0707072f;
-    red:                         #efa6a279;
+    alternate-normal-background: #19171a2f;
+    red:                         #ca554579;
     selected-urgent-foreground:  @selected-urgent-foreground;
-    blue:                        #80c990FF;
+    blue:                        #5c7855FF;
     urgent-foreground:           @red;
     alternate-urgent-background: @lightbg;
     active-foreground:           @blue;
-    lightbg:                     #e0af85FF;
+    lightbg:                     #d57861FF;
     selected-active-foreground:  @background;
     alternate-active-background: @lightbg;
-    background:                  #070707AA;
+    background:                  #19171aAA;
     alternate-normal-foreground: @foreground;
-    normal-background:           #1a1a1aAA;
-    lightfg:                     #ccacedFF;
-    selected-normal-background:  #74c3e49B;
-    border-color:                #c8c874FF;
+    normal-background:           #23272dAA;
+    lightfg:                     #a98961FF;
+    selected-normal-background:  #366f799B;
+    border-color:                #f9bf79FF;
     spacing:                     2;
-    separatorcolor:              #c8c874FF;
+    separatorcolor:              #f9bf79FF;
     urgent-background:           @background;
     selected-urgent-background:  @red;
     alternate-urgent-foreground: @red;
-    background-color:            #07070700;
+    background-color:            #19171a00;
     alternate-active-foreground: @blue;
     active-background:           @background;
     selected-active-background:  @blue;
@@ -123,7 +123,7 @@ button selected {
 inputbar {
     spacing:    0;
     text-color: @normal-foreground;
-    padding:    0 10px;
+    padding:    0px 10px;
     children:   [ prompt,entry ];
     margin: 0 0;
 }
@@ -139,9 +139,10 @@ entry {
 
 prompt {
     spacing:    0;
-    padding:    10px 10px;
+    padding:    20px 20px;
     text-color: @separatorcolor;
     font:       "Symbola 36";
+    margin:     0 0 30px;
 }
 
 textbox-prompt-colon {

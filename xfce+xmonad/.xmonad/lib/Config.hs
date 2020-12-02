@@ -1,20 +1,25 @@
 module Config
   ( myTerminal
-  -- , myWorkspaces
   , myXPConfig
   , spawnEmacs) where
 
 import XMonad
 import XMonad.Prompt
 
+import Colors
+
 myTerminal   = "alacritty"
 
+myXPConfig :: XPConfig
 myXPConfig = def
-  { fgColor = "#ffffff"
-  , bgColor = "#000000"
+  { fgColor = myForegroundColor
+  , bgColor = myBackgroundColor
+  , font = "xft:Victor Mono Medium-10"
+  , defaultText = ""
+  , height = 50
+  , position = Bottom
   , promptBorderWidth = 2
-  -- , position = Center
-  , height = 30
+  -- , searchPredicate = fuzzyMatch
   }
 
 -- application functions

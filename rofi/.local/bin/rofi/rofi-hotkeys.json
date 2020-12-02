@@ -52,6 +52,10 @@
     "description": "prompt to switch xmonad layout"
   },
   {
+    "keybinding": "Super+c s",
+    "description": "xmonad shell prompt"
+  },
+  {
     "keybinding": "Super+e",
     "description": "open new emacsclient frame"
   },
