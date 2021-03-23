@@ -24,7 +24,7 @@ myTopics :: [Topic]
 myTopics =
   [ "hoy"
   , "navegar"
-  , "dgar"
+  , "soliloquy"
   , "vidal"
   , "la torre"
   , "notas"
@@ -39,23 +39,24 @@ myTopicConfig = def
   { topicDirs = M.fromList $
     [ ("hoy",         "~/Media/org")
     , ("navegar",     "~/Downloads")
-    , ("dgar",        "~/Code/Current/dgar")
+    , ("soliloquy",   "~/Code/Current/soliloquy")
     , ("vidal",       "~/Code/Current/vidal")
-    , ("la torre",    "~/Media/org/escritura/ficciones")
+    , ("la torre",    "~/Media/org")
     , ("notas",       "~/Media/org")
     , ("correo",      "~/")
-    , ("aprendizaje", "~/Media/org/aprendizaje")
-    , ("español",     "~/Media/org/aprendizaje/español")
+    , ("aprendizaje", "~/Code/Courses")
+    , ("español",     "~/Media/org")
     , ("sistema",     "~/")
     ]
   , defaultTopicAction = const $ spawnShell -- >*> 3
   , defaultTopic       = "hoy"
   , topicActions       = M.fromList $
     [ ("hoy",         spawnEmacs "-e '(org-roam-dailies-today)'" >>
-                      spawn "firefox todoist.com/app/#start" >>
-                      spawn "firefox clockify.me/tracker")
+                      spawn "ice-firefox https://todoist.com/app/#start" >>
+                      spawn "ice-firefox https://clockify.me/tracker" >>
+                      spawn "ice-firefox https://app.goalifyapp.com/home/personal/dashboard?tab=goals")
     , ("navegar",     spawn "firefox")
-    , ("dgar",        spawnShell >>
+    , ("soliloquy",   spawnShell >>
                       spawnEmacsInTopic "index.org" >>
                       spawn "firefox")
     , ("vidal",       spawnShell >>
@@ -63,9 +64,11 @@ myTopicConfig = def
                       spawn "firefox")
     , ("la torre",    spawn "manuskript" >>
                       spawnEmacsInTopic "la_torre.org")
-    , ("notas",       spawnEmacsInTopic "")
+    , ("notas",       spawnEmacs "-e '(org-journal-new-entry \"**\" (current-time))'" >>
+                      spawn "ghostwriter")
     , ("correo",      spawn "thunderbird")
     , ("aprendizaje", spawnEmacsInTopic "index.org")
+
     , ("español",     spawnEmacsInTopic "cien_años_de_soledad.org")
     , ("sistema",     runInTerm "" "gotop")
     ]

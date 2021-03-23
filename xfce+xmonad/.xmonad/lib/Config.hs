@@ -8,7 +8,8 @@ import XMonad.Prompt
 
 import Colors
 
-myTerminal   = "alacritty"
+-- myTerminal   = "alacritty"
+myTerminal   = "konsole"
 
 myXPConfig :: XPConfig
 myXPConfig = def

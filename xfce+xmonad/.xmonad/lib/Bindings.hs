@@ -13,6 +13,7 @@ import qualified XMonad.Actions.FlexibleResize as Flex
 import           XMonad.Actions.FloatKeys
 import           XMonad.Actions.FloatSnap
 import           XMonad.Actions.Minimize
+-- import           XMonad.Actions.MouseResize
 import           XMonad.Actions.TopicSpace
 import           XMonad.Actions.WindowMenu
 
@@ -26,6 +27,7 @@ import           XMonad.Prompt.Layout
 import           XMonad.Prompt.Shell
 import           XMonad.Prompt.Window
 import           XMonad.Prompt.Workspace
+import           XMonad.Prompt.XMonad
 
 import           XMonad.Util.EZConfig
 import           XMonad.Util.NamedScratchpad
@@ -52,11 +54,14 @@ myKeys = \conf -> mkKeymap conf $
   , ("M-<Tab>",     spawnEmacs "-e '(org-roam-dailies-today)'")
     -- rofi
   , ("M-<Space>",   spawn "rofi -show combi")
-  , ("M-=",         spawn "rofi -modi calc -show")
-  , ("M-M3-p",      spawn "rofi-pass")
+  , ("M-M3-=",      spawn "rofi -modi calc -show")
   , ("M-M3-k",      spawn "~/.local/bin/rofi/rofi-hotkeys")
+  , ("M-M3-l",      layoutPrompt myXPConfig)
   , ("M-M3-s",      spawn "~/.local/bin/rofi/rofi-web-search")
-
+  , ("M-M3-p",      spawn "rofi-pass")
+  , ("M-M3-w",      windowMultiPrompt myXPConfig [(Goto, allWindows), (Goto, wsWindows)])
+  , ("M-M3-x",      xmonadPrompt myXPConfig)
+  , ("M-S-;",       shellPrompt myXPConfig)
     -- layout
     -- "M-<arrow>" Go and "M-S-<arrow>" Swap bindings from Navigation2D
   , ("M-C-<Right>",   sendMessage $ ExpandTowards R)
@@ -71,21 +76,21 @@ myKeys = \conf -> mkKeymap conf $
   -- , ("M-C-S-<Right>", withFocused (keysResizeWindow (50,0) (0,0)))
   -- , ("M-C-S-<Up>",    withFocused (keysResizeWindow (0,-50) (0,0)))
   -- , ("M-C-S-<Down>",  withFocused (keysResizeWindow (0,50) (0,0)))
-  , ("M-S-t",         sendMessage NextLayout)
-  , ("M-c l",         layoutPrompt myXPConfig)
-  , ("M-S-;",         shellPrompt myXPConfig)
-  , ("M-c w",         windowMultiPrompt myXPConfig [(Goto, allWindows), (Goto, wsWindows)])
   -- , ("M-c 1",         sendMessage (Toggle "smBSP"))
   -- , ("M-c 2",         sendMessage (Toggle "xlBSP"))
 
   -- windows
   , ("M-w",         kill)
   , ("M-c <Space>", windowMenu)
+  , ("M-c =",       sendMessage $ Equalize)
+  , ("M-c S-=",     sendMessage $ Balance)
   , ("M-c f",       withFocused $ float)
+  , ("M-c r",       sendMessage $ Rotate)
+  , ("M-c S-t",     sendMessage $ NextLayout)
   , ("M-c t",       withFocused $ windows . W.sink )
+  , ("M-c x",       withFocused (sendMessage . maximizeRestore))
   , ("M-c z",       withFocused $ minimizeWindow)
   , ("M-c S-z",     withLastMinimized maximizeWindowAndFocus)
-  , ("M-c x",       withFocused (sendMessage . maximizeRestore))
   , ("M-c ,",       sendMessage (IncMasterN 1))
   , ("M-c .",       sendMessage (IncMasterN (-1)))
 
@@ -93,7 +98,7 @@ myKeys = \conf -> mkKeymap conf $
   , ("M-M3-[",      promptedGoto)
 
   , ("M-M3-]",      promptedShift)
-  , ("M-M3-;",      currentTopicAction myTopicConfig)
+  , ("M-S-.",       currentTopicAction myTopicConfig)
   ] ++
   [ (otherModMasks ++ "M-" ++ [key], action tag)
   | (tag, key)  <- zip myTopics "1234567890"

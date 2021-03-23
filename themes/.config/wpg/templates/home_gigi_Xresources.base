@@ -72,7 +72,7 @@ Xft.hintstyle:          hintfull
 Xft.lcdfilter:          lcddefault
 Xft.rgba:               rgb
 
-*URxvt.font:		xft:Cascadia Code:size=11
-URxvt.boldFont:         xft:Cascadia Code Bold:size=11
+*URxvt.font:		xft:Victor Mono:size=10
+URxvt.boldFont:         xft:Victor Mono Bold:size=10
 !URxvt.lineSpace:	10
 !URxvt.letterSpace:	0

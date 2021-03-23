@@ -2,6 +2,7 @@ python-language-server[all]
 beautifulsoup4
 black
 jupyter
+mypy
 numpy
 pandas
 pip

@@ -3,31 +3,31 @@
  * Rofi version: 1.5.0-dev
  **/
 * {
-    selected-normal-foreground:  #ebdbb9FF;
-    foreground:                  #ebcab8FF;
+    selected-normal-foreground:  #fdfefeFF;
+    foreground:                  #dfe4d7FF;
     normal-foreground:           @foreground;
-    alternate-normal-background: #19171a2f;
-    red:                         #ca554579;
+    alternate-normal-background: #0407282f;
+    red:                         #bf052d79;
     selected-urgent-foreground:  @selected-urgent-foreground;
-    blue:                        #5c7855FF;
+    blue:                        #549776FF;
     urgent-foreground:           @red;
     alternate-urgent-background: @lightbg;
     active-foreground:           @blue;
-    lightbg:                     #d57861FF;
+    lightbg:                     #e60434FF;
     selected-active-foreground:  @background;
     alternate-active-background: @lightbg;
-    background:                  #19171aAA;
+    background:                  #040728AA;
     alternate-normal-foreground: @foreground;
-    normal-background:           #23272dAA;
-    lightfg:                     #a98961FF;
-    selected-normal-background:  #366f799B;
-    border-color:                #f9bf79FF;
+    normal-background:           #000232AA;
+    lightfg:                     #1f6bd5FF;
+    selected-normal-background:  #76cadb9B;
+    border-color:                #b3ffbbFF;
     spacing:                     2;
-    separatorcolor:              #f9bf79FF;
+    separatorcolor:              #b3ffbbFF;
     urgent-background:           @background;
     selected-urgent-background:  @red;
     alternate-urgent-foreground: @red;
-    background-color:            #19171a00;
+    background-color:            #04072800;
     alternate-active-foreground: @blue;
     active-background:           @background;
     selected-active-background:  @blue;
@@ -114,6 +114,7 @@ button {
     spacing:    0;
     font:       "EtBembo 20";
     margin:     10px 0;
+    padding:    5px 0 15px;
     text-color: @normal-foreground;
 }
 button selected {
@@ -121,28 +122,23 @@ button selected {
     text-color:       @selected-normal-foreground;
 }
 inputbar {
-    spacing:    0;
     text-color: @normal-foreground;
-    padding:    0px 10px;
+    padding:    10px;
     children:   [ prompt,entry ];
-    margin: 0 0;
+
 }
 case-indicator {
-    spacing:    0;
     text-color: @normal-foreground;
 }
 entry {
-    padding:    30px 0 0;
-    spacing:    0;
+    padding:    25px 0 0;
     text-color: @normal-foreground;
 }
 
 prompt {
-    spacing:    0;
-    padding:    20px 20px;
+    padding:    0 10px 40px;
     text-color: @separatorcolor;
     font:       "Symbola 36";
-    margin:     0 0 30px;
 }
 
 textbox-prompt-colon {

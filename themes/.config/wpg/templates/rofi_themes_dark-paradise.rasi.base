@@ -114,6 +114,7 @@ button {{
     spacing:    0;
     font:       "EtBembo 20";
     margin:     10px 0;
+    padding:    5px 0 15px;
     text-color: @normal-foreground;
 }}
 button selected {{
@@ -121,25 +122,21 @@ button selected {{
     text-color:       @selected-normal-foreground;
 }}
 inputbar {{
-    spacing:    0;
     text-color: @normal-foreground;
-    padding:    0 10px;
+    padding:    10px;
     children:   [ prompt,entry ];
-    margin: 0 0;
+
 }}
 case-indicator {{
-    spacing:    0;
     text-color: @normal-foreground;
 }}
 entry {{
-    padding:    30px 0 0;
-    spacing:    0;
+    padding:    25px 0 0;
     text-color: @normal-foreground;
 }}
 
 prompt {{
-    spacing:    0;
-    padding:    10px 10px;
+    padding:    0 10px 40px;
     text-color: @separatorcolor;
     font:       "Symbola 36";
 }}

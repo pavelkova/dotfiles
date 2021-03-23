@@ -10,36 +10,36 @@ Xcursor.size: 2
 !##########
 
 !! black
-*color0:  #19171a
-*color8:  #23272d
+*color0:  #040728
+*color8:  #000232
 
 !! red
-*color1:  #ca5545
-*color9:  #d57861
+*color1:  #bf052d
+*color9:  #e60434
 
 !! green
-*color2 : #5c7855
-*color10: #728c5d
+*color2 : #549776
+*color10: #6bd5ff
 
 !! yellow
-*color3:  #ddb15a
-*color11: #f9bf79
+*color3:  #82a569
+*color11: #b3ffbb
 
 !! blue
-*color4:  #85544c
-*color12: #a98961
+*color4:  #124ab0
+*color12: #1f6bd5
 
 !! magenta
-*color5:  #ea8679
-*color13: #f09f6d
+*color5:  #c2518a
+*color13: #e86f95
 
 !! cyan
-*color6:  #275660
-*color14: #366f79
+*color6:  #31a6e4
+*color14: #76cadb
 
 !! white
-*color7:  #ebcab8
-*color15: #ebdbb9
+*color7:  #dfe4d7
+*color15: #fdfefe
 
 !#########
 !# URXVT #
@@ -57,8 +57,8 @@ URxvt.internalBorder:	25
 URxvt.depth:            30
 URxvt.saveLines:        10000
 
-URxvt.foreground:       #ebdbb9
-URxvt.background:       #19171a
+URxvt.foreground:       #fdfefe
+URxvt.background:       #040728
 
 !#########
 !# FONTS #
@@ -72,7 +72,7 @@ Xft.hintstyle:          hintfull
 Xft.lcdfilter:          lcddefault
 Xft.rgba:               rgb
 
-*URxvt.font:		xft:Cascadia Code:size=11
-URxvt.boldFont:         xft:Cascadia Code Bold:size=11
+*URxvt.font:		xft:Victor Mono:size=10
+URxvt.boldFont:         xft:Victor Mono Bold:size=10
 !URxvt.lineSpace:	10
 !URxvt.letterSpace:	0

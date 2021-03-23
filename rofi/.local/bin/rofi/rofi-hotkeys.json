@@ -12,6 +12,10 @@
     "description": "float focused window"
   },
   {
+    "keybinding": "Super+c r",
+    "description": "rotate window"
+  },
+  {
     "keybinding": "Super+c t",
     "description": "tile focused window"
   },
@@ -44,11 +48,11 @@
     "description": "open rofi-pass"
   },
   {
-    "keybinding": "Super+Hyper+;",
+    "keybinding": "Super+>",
     "description": "open xmonad topic (workspace) actions"
   },
   {
-    "keybinding": "Super+c l",
+    "keybinding": "Super+Hyper:l",
     "description": "prompt to switch xmonad layout"
   },
   {

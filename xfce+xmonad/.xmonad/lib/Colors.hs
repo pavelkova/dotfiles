@@ -5,7 +5,7 @@ import XMonad
 
 
 -- wpgtk-defined
-myBackgroundColor     = "#19171a"
-myForegroundColor     = "#ebdbb9"
-myActiveBorderColor   = "#f09f6d"
-myInactiveBorderColor = "#23272d"
+myBackgroundColor     = "#040728"
+myForegroundColor     = "#fdfefe"
+myActiveBorderColor   = "#e86f95"
+myInactiveBorderColor = "#000232"

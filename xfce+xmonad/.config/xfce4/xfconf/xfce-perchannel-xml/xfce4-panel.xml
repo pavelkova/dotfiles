@@ -36,13 +36,12 @@
     </property>
     <property name="panel-2" type="empty">
       <property name="autohide-behavior" type="uint" value="0"/>
-      <property name="position" type="string" value="p=10;x=958;y=1067"/>
-      <property name="position-locked" type="bool" value="false"/>
+      <property name="position" type="string" value="p=12;x=986;y=1067"/>
+      <property name="position-locked" type="bool" value="true"/>
       <property name="size" type="uint" value="24"/>
       <property name="plugin-ids" type="array">
-        <value type="int" value="15"/>
-        <value type="int" value="22"/>
         <value type="int" value="16"/>
+        <value type="int" value="22"/>
         <value type="int" value="9"/>
         <value type="int" value="24"/>
         <value type="int" value="32"/>
@@ -75,7 +74,7 @@
         <value type="double" value="0.230000"/>
       </property>
       <property name="mode" type="uint" value="0"/>
-      <property name="length" type="uint" value="1"/>
+      <property name="length" type="uint" value="100"/>
       <property name="nrows" type="uint" value="1"/>
       <property name="enter-opacity" type="uint" value="100"/>
       <property name="leave-opacity" type="uint" value="100"/>
@@ -104,9 +103,8 @@
     <property name="plugin-13" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
     </property>
-    <property name="plugin-15" type="string" value="showdesktop"/>
     <property name="plugin-16" type="string" value="separator">
-      <property name="style" type="uint" value="1"/>
+      <property name="style" type="uint" value="0"/>
       <property name="expand" type="bool" value="true"/>
     </property>
     <property name="plugin-22" type="string" value="directorymenu">
@@ -146,7 +144,7 @@
       <property name="show-label" type="bool" value="false"/>
     </property>
     <property name="plugin-17" type="string" value="separator">
-      <property name="style" type="uint" value="1"/>
+      <property name="style" type="uint" value="0"/>
       <property name="expand" type="bool" value="true"/>
     </property>
     <property name="plugin-23" type="string" value="systray">
@@ -178,6 +176,32 @@
         <value type="string" value="redshift-gtk"/>
       </property>
       <property name="show-frame" type="bool" value="false"/>
+      <property name="known-legacy-items" type="array">
+        <value type="string" value="redshift-gtk"/>
+        <value type="string" value="guake"/>
+        <value type="string" value="kaku"/>
+        <value type="string" value="thunar"/>
+        <value type="string" value="todoist"/>
+        <value type="string" value="pulseaudio system tray"/>
+        <value type="string" value="syncthing"/>
+        <value type="string" value="syncthing-gtk"/>
+        <value type="string" value="pasystray"/>
+        <value type="string" value="networkmanager applet"/>
+      </property>
+      <property name="known-items" type="array">
+        <value type="string" value="vlc"/>
+        <value type="string" value="Joplin1"/>
+        <value type="string" value="YouTube Music1"/>
+        <value type="string" value="com.calibre-ebook.gui"/>
+        <value type="string" value="MellowPlayer3"/>
+        <value type="string" value="youtube-music-desktop-app1"/>
+        <value type="string" value="qBittorrent"/>
+        <value type="string" value="syncthing-gtk"/>
+        <value type="string" value="Nextcloud"/>
+        <value type="string" value="aw-qt"/>
+        <value type="string" value="copyq"/>
+        <value type="string" value="redshift"/>
+      </property>
     </property>
     <property name="plugin-24" type="string" value="launcher">
       <property name="items" type="array">
@@ -282,5 +306,9 @@
       <property name="flash-separators" type="bool" value="false"/>
       <property name="show-seconds" type="bool" value="false"/>
     </property>
+    <property name="plugin-12" type="string" value="diskperf"/>
+    <property name="plugin-25" type="string" value="diskperf"/>
+    <property name="plugin-38" type="string" value="cpugraph"/>
+    <property name="plugin-39" type="string" value="systemload"/>
   </property>
 </channel>

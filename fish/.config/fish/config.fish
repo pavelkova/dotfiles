@@ -1,5 +1,6 @@
 # EDITOR ALIASES
 alias jmacs="jmacs -nobackups"
+alias ls="lsd"
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -12,6 +13,7 @@ set -g SPACEFISH_PROMPT_ADD_NEWLINE true
 set -g SPACEFISH_PROMPT_SEPARATE_LINE true
 # set -g SPACEFISH_BATTERY_SHOW false
 set -g SPACEFISH_EXIT_CODE_SHOW true
+set -x _JAVA_AWT_WM_NONREPARENTING 1
 
 # ASDF & DIRENV
 # comment when using asdf-direnv

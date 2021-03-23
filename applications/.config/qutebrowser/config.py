@@ -161,7 +161,7 @@ c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}',
 
 ## Background color of the completion widget category headers.
 ## Type: QssColor
-c.colors.completion.category.bg = 'qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #<COLOR8}, stop:1 #19171a)'
+c.colors.completion.category.bg = 'qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #<COLOR8}, stop:1 #040728)'
 
 ## Bottom border color of the completion widget category headers.
 ## Type: QssColor
@@ -177,7 +177,7 @@ c.colors.completion.category.bg = 'qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:
 
 ## Background color of the completion widget for even rows.
 ## Type: QssColor
-# c.colors.completion.even.bg = '#23272d'
+# c.colors.completion.even.bg = '#000232'
 
 ## Text color of the completion widget.
 ## Type: QtColor
@@ -185,15 +185,15 @@ c.colors.completion.category.bg = 'qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:
 
 ## Background color of the selected completion item.
 ## Type: QssColor
-c.colors.completion.item.selected.bg = '#f9bf79'
+c.colors.completion.item.selected.bg = '#b3ffbb'
 
 ## Bottom border color of the selected completion item.
 ## Type: QssColor
-c.colors.completion.item.selected.border.bottom = '#ddb15a'
+c.colors.completion.item.selected.border.bottom = '#82a569'
 
 ## Top border color of the completion widget category headers.
 ## Type: QssColor
-c.colors.completion.item.selected.border.top = '#ddb15a'
+c.colors.completion.item.selected.border.top = '#82a569'
 
 ## Foreground color of the selected completion item.
 ## Type: QtColor
@@ -201,15 +201,15 @@ c.colors.completion.item.selected.border.top = '#ddb15a'
 
 ## Foreground color of the matched text in the completion.
 ## Type: QssColor
-c.colors.completion.match.fg = '#ea8679'
+c.colors.completion.match.fg = '#c2518a'
 
 ## Background color of the completion widget for odd rows.
 ## Type: QssColor
-c.colors.completion.odd.bg = '#23272d'
+c.colors.completion.odd.bg = '#000232'
 
 ## Color of the scrollbar in completion view
 ## Type: QssColor
-c.colors.completion.scrollbar.bg = '#19171a'
+c.colors.completion.scrollbar.bg = '#040728'
 
 ## Color of the scrollbar handle in completion view.
 ## Type: QssColor
@@ -229,7 +229,7 @@ c.colors.completion.scrollbar.bg = '#19171a'
 
 ## Color gradient start for download backgrounds.
 ## Type: QtColor
-c.colors.downloads.start.bg = '#5c7855'
+c.colors.downloads.start.bg = '#549776'
 
 ## Color gradient start for download text.
 ## Type: QtColor
@@ -237,7 +237,7 @@ c.colors.downloads.start.bg = '#5c7855'
 
 ## Color gradient stop for download backgrounds.
 ## Type: QtColor
-c.colors.downloads.stop.bg = '#728c5d'
+c.colors.downloads.stop.bg = '#6bd5ff'
 
 ## Color gradient end for download text.
 ## Type: QtColor
@@ -280,11 +280,11 @@ c.colors.downloads.stop.bg = '#728c5d'
 
 ## Text color for the keyhint widget.
 ## Type: QssColor
-c.colors.keyhint.fg = '#ebdbb9'
+c.colors.keyhint.fg = '#fdfefe'
 
 ## Highlight color for keys to complete the current keychain.
 ## Type: QssColor
-c.colors.keyhint.suffix.fg = '#ea8679'
+c.colors.keyhint.suffix.fg = '#c2518a'
 
 ## Background color of an error message.
 ## Type: QssColor
@@ -292,7 +292,7 @@ c.colors.keyhint.suffix.fg = '#ea8679'
 
 ## Border color of an error message.
 ## Type: QssColor
-c.colors.messages.error.border = '#ca5545'
+c.colors.messages.error.border = '#bf052d'
 
 ## Foreground color of an error message.
 ## Type: QssColor
@@ -304,7 +304,7 @@ c.colors.messages.error.border = '#ca5545'
 
 ## Border color of an info message.
 ## Type: QssColor
-c.colors.messages.info.border = '#23272d'
+c.colors.messages.info.border = '#000232'
 
 ## Foreground color an info message.
 ## Type: QssColor
@@ -316,7 +316,7 @@ c.colors.messages.info.border = '#23272d'
 
 ## Border color of a warning message.
 ## Type: QssColor
-c.colors.messages.warning.border = '#d57861'
+c.colors.messages.warning.border = '#e60434'
 
 ## Foreground color a warning message.
 ## Type: QssColor
@@ -324,7 +324,7 @@ c.colors.messages.warning.border = '#d57861'
 
 ## Background color for prompts.
 ## Type: QssColor
-c.colors.prompts.bg = '#19171a'
+c.colors.prompts.bg = '#040728'
 
 ## Border used around UI elements in prompts.
 ## Type: String
@@ -348,7 +348,7 @@ c.colors.prompts.bg = '#19171a'
 
 ## Background color of the statusbar in caret mode with a selection.
 ## Type: QssColor
-c.colors.statusbar.caret.selection.bg = '#85544c'
+c.colors.statusbar.caret.selection.bg = '#124ab0'
 
 ## Foreground color of the statusbar in caret mode with a selection.
 ## Type: QssColor
@@ -388,7 +388,7 @@ c.colors.statusbar.caret.selection.bg = '#85544c'
 
 ## Background color of the statusbar in private browsing mode.
 ## Type: QssColor
-c.colors.statusbar.private.bg = '#19171a'
+c.colors.statusbar.private.bg = '#040728'
 
 ## Foreground color of the statusbar in private browsing mode.
 ## Type: QssColor
@@ -426,7 +426,7 @@ c.colors.statusbar.private.bg = '#19171a'
 
 ## Background color of the tab bar.
 ## Type: QtColor
-c.colors.tabs.bar.bg = '#23272d'
+c.colors.tabs.bar.bg = '#000232'
 
 ## Background color of unselected even tabs.
 ## Type: QtColor
@@ -438,15 +438,15 @@ c.colors.tabs.bar.bg = '#23272d'
 
 ## Color for the tab indicator on errors.
 ## Type: QtColor
-c.colors.tabs.indicator.error = '#ca5545'
+c.colors.tabs.indicator.error = '#bf052d'
 
 ## Color gradient start for the tab indicator.
 ## Type: QtColor
-c.colors.tabs.indicator.start = '#85544c'
+c.colors.tabs.indicator.start = '#124ab0'
 
 ## Color gradient end for the tab indicator.
 ## Type: QtColor
-c.colors.tabs.indicator.stop = '#275660'
+c.colors.tabs.indicator.stop = '#31a6e4'
 
 ## Color gradient interpolation system for the tab indicator.
 ## Type: ColorSystem

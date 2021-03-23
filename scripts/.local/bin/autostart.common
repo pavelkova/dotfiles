@@ -1,7 +1,9 @@
 #!/usr/bin/env fish
-# wpg -S oldTV.jpg &
-# feh --bg-scale ~/.local/share/backgrounds/oldTV.jpg &
-# xmonad --replace &
+screenres lg &
+wpg -S mikewilcox4.png &
+feh --bg-fill ~/.local/share/backgrounds/mike-willcox-biscayne-ii.png &
+
+xmonad --replace &
 picom --experimental-backends -b &
 emacs --daemon &
 xmodmap ~/.Xmodmap &
@@ -12,5 +14,6 @@ redshift-gtk &
 nm-applet &
 pasystray &
 nextcloud &
+tilda &
 copyq &
 aw-qt
