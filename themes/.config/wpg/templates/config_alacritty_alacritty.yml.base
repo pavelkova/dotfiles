@@ -96,7 +96,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux) monospace
     #   - (Windows) Consolas
-    family: "Victor Mono Medium"
+    family: "{mono-font-name} Medium"
 
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
@@ -106,7 +106,7 @@ font:
     #style: Italic
 
   # Point size
-  size: 9.0
+  size: {mono-font-size}
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.

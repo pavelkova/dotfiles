@@ -18,7 +18,7 @@
     horizontal_padding = 15
     frame_width = 2
 
-    frame_color = "#8fcb95"
+    frame_color = "#5ea1af"
     separator_color = auto
     sort = yes
     idle_threshold = 120
@@ -52,7 +52,7 @@
     ### Icons ###
     icon_position = left
     max_icon_size = 64
-    icon_path = .icons/flattrcolor/status/24:.icons/flattrcolor/devices/48:.icons/flattrcolor/apps/scalable:.icons/flattrcolor/actions/scalable
+    icon_path = .local/share/icons/oomox-mulholland2/status/24:.local/share/icons/oomox-mulholland2/devices/48:.local/share/icons/oomox-mulholland2/apps/scalable:.local/share/icons/oomox-mulholland2/actions/scalable
 
     ### History ###
     sticky_history = yes

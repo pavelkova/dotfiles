@@ -1,0 +1,16 @@
+UpdateInterval=0
+TimeScale=0
+Size=16
+Mode=-1
+Frame=0
+Border=0
+Bars=1
+TrackedCore=0
+Command=gotop
+InTerminal=1
+StartupNotification=0
+ColorMode=0
+Foreground1=rgb(240,159,109)
+Background=rgb(36,31,49)
+BarsColor=rgb(240,159,109)
+

@@ -1,11 +1,11 @@
 #!/usr/bin/env fish
-screenres lg &
-wpg -S mikewilcox4.png &
-feh --bg-fill ~/.local/share/backgrounds/mike-willcox-biscayne-ii.png &
+# screenres lg &
+# wpg -S mulholland2.png &
+# feh --bg-fill ~/.local/share/backgrounds/mulholland2.png &
 
-xmonad --replace &
-picom --experimental-backends -b &
-emacs --daemon &
+# xmonad --replace &
+# picom --experimental-backends -b &
+# emacs --daemon &
 xmodmap ~/.Xmodmap &
 pg_ctl start &
 

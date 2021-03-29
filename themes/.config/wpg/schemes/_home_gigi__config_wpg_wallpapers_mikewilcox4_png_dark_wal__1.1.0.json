@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/gigi/.config/wpg/wallpapers/mikewilcox4.png",
+    "alpha": "90",
+
+    "special": {
+        "background": "#19171a",
+        "foreground": "#ebdbb9",
+        "cursor": "#ebdbb9"
+    },
+    "colors": {
+        "color0": "#19171a",
+        "color1": "#ca5545",
+        "color2": "#5c7855",
+        "color3": "#ddb15a",
+        "color4": "#85544c",
+        "color5": "#ea8679",
+        "color6": "#275660",
+        "color7": "#ebcab8",
+        "color8": "#23272d",
+        "color9": "#d57861",
+        "color10": "#728c5d",
+        "color11": "#f9bf79",
+        "color12": "#a98961",
+        "color13": "#f09f6d",
+        "color14": "#366f79",
+        "color15": "#ebdbb9"
+    }
+}

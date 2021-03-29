@@ -52,7 +52,7 @@
     ### Icons ###
     icon_position = left
     max_icon_size = 64
-    icon_path = .icons/flattrcolor/status/24:.icons/flattrcolor/devices/48:.icons/flattrcolor/apps/scalable:.icons/flattrcolor/actions/scalable
+    icon_path = .local/share/icons/{icon-theme}/status/24:.local/share/icons/{icon-theme}/devices/48:.local/share/icons/{icon-theme}/apps/scalable:.local/share/icons/{icon-theme}/actions/scalable
 
     ### History ###
     sticky_history = yes

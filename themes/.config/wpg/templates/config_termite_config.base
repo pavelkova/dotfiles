@@ -73,7 +73,7 @@ color14 = {color14}
 color15 = {color15}
 
 [hints]
-font = Victor Mono 10
+font = {mono-font-name} {mono-font-size}
 foreground = {color7}
 background = {color8}
 #active_foreground = #e68080
