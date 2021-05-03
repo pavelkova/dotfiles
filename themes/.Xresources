@@ -10,36 +10,36 @@ Xcursor.size: 2
 !##########
 
 !! black
-*color0:  #040728
-*color8:  #000232
+*color0:  #040b09
+*color8:  #080e0c
 
 !! red
-*color1:  #bf052d
-*color9:  #e60434
+*color1:  #d06158
+*color9:  #e16e5f
 
 !! green
-*color2 : #549776
-*color10: #6bd5ff
+*color2 : #53786a
+*color10: #61ad91
 
 !! yellow
-*color3:  #82a569
-*color11: #b3ffbb
+*color3:  #cb8266
+*color11: #e3a171
 
 !! blue
-*color4:  #124ab0
-*color12: #1f6bd5
+*color4:  #678180
+*color12: #79bbb7
 
 !! magenta
-*color5:  #c2518a
-*color13: #e86f95
+*color5:  #6b6177
+*color13: #8c72ad
 
 !! cyan
-*color6:  #31a6e4
-*color14: #76cadb
+*color6:  #219f81
+*color14: #1fdbb1
 
 !! white
-*color7:  #dfe4d7
-*color15: #fdfefe
+*color7:  #b2bebd
+*color15: #e6e9e9
 
 !#########
 !# URXVT #
@@ -57,8 +57,8 @@ URxvt.internalBorder:	25
 URxvt.depth:            30
 URxvt.saveLines:        10000
 
-URxvt.foreground:       #fdfefe
-URxvt.background:       #040728
+URxvt.foreground:       #e6e9e9
+URxvt.background:       #040b09
 
 !#########
 !# FONTS #

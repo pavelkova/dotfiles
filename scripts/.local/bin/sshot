@@ -3,7 +3,7 @@
 # vars
 set str (date +%s)
 set timestamp (date +%Y%m%d)
-set path "$HOME/Media/capturas_de_pantalla/$timestamp_$str.png"
+set path "$HOME/Media/$timestamp_$str.png"
 
 #exec
 switch "$argv[1]"

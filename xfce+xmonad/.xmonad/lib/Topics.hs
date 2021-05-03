@@ -51,7 +51,7 @@ myTopicConfig = def
   , defaultTopicAction = const $ spawnShell -- >*> 3
   , defaultTopic       = "hoy"
   , topicActions       = M.fromList $
-    [ ("hoy",         spawnEmacs "-e '(org-roam-dailies-today)'" >>
+    [ ("hoy",         -- spawnEmacs "-e '(org-roam-dailies-today)'" >>
                       spawn "ice-firefox https://todoist.com/app/#start" >>
                       spawn "ice-firefox https://clockify.me/tracker" >>
                       spawn "ice-firefox https://app.goalifyapp.com/home/personal/dashboard?tab=goals")

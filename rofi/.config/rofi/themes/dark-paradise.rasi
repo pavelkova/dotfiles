@@ -3,31 +3,31 @@
  * Rofi version: 1.5.0-dev
  **/
 * {
-    selected-normal-foreground:  #fdfefeFF;
-    foreground:                  #dfe4d7FF;
+    selected-normal-foreground:  #e6e9e9FF;
+    foreground:                  #b2bebdFF;
     normal-foreground:           @foreground;
-    alternate-normal-background: #0407282f;
-    red:                         #bf052d79;
+    alternate-normal-background: #040b092f;
+    red:                         #d0615879;
     selected-urgent-foreground:  @selected-urgent-foreground;
-    blue:                        #549776FF;
+    blue:                        #53786aFF;
     urgent-foreground:           @red;
     alternate-urgent-background: @lightbg;
     active-foreground:           @blue;
-    lightbg:                     #e60434FF;
+    lightbg:                     #e16e5fFF;
     selected-active-foreground:  @background;
     alternate-active-background: @lightbg;
-    background:                  #040728AA;
+    background:                  #040b09AA;
     alternate-normal-foreground: @foreground;
-    normal-background:           #000232AA;
-    lightfg:                     #1f6bd5FF;
-    selected-normal-background:  #76cadb9B;
-    border-color:                #b3ffbbFF;
+    normal-background:           #080e0cAA;
+    lightfg:                     #79bbb7FF;
+    selected-normal-background:  #1fdbb19B;
+    border-color:                #e3a171FF;
     spacing:                     2;
-    separatorcolor:              #b3ffbbFF;
+    separatorcolor:              #e3a171FF;
     urgent-background:           @background;
     selected-urgent-background:  @red;
     alternate-urgent-foreground: @red;
-    background-color:            #04072800;
+    background-color:            #040b0900;
     alternate-active-foreground: @blue;
     active-background:           @background;
     selected-active-background:  @blue;

@@ -65,14 +65,20 @@ main = do
                  }
 
 myManageHook = composeAll
-  [ className =? "Clockify"        --> doFloat
-  , className =? "copyq"           --> doCenterFloat
-  , className =? "Tilda"           --> doFloat
-  , className =? "todoist"         --> doFloat
-  , className =? "Xmessage"        --> doFloat
-  , className =? "Xfce4-appFinder" --> doCenterFloat
-  , isDialog                       --> doCenterFloat
-  , isFullscreen                   --> doFullFloat
+  [ className =? "Arandr"                          --> doCenterFloat
+  , className =? "Clockify"                        --> doFloat
+  , className =? "Com.github.joseexposito.touche"  --> doCenterFloat
+  , className =? "copyq"                           --> doCenterFloat
+  , className =? "Tilda"                           --> doFloat
+  , className =? "Sxiv"                            --> doFloat
+  , className =? "todoist"                         --> doFloat
+  , className =? "Variety"                         --> doFloat
+  , className =? "Xmessage"                        --> doFloat
+  , className =? "Xfce4-appearance-settings"       --> doCenterFloat
+  , className =? "Xfce4-appFinder"                 --> doCenterFloat
+  , className =? "Xfce4-settings-manager"          --> doCenterFloat
+  , isDialog                                       --> doCenterFloat
+  , isFullscreen                                   --> doFullFloat
   , manageDocks
   ]
 

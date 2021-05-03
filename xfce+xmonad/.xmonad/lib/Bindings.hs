@@ -2,6 +2,7 @@ module Bindings
   ( myKeys
   , myMouseBindings) where
 
+import           Data.Default
 import qualified Data.Map as M -- For keybindings.
 import           Data.Maybe
 import           Graphics.X11.ExtraTypes.XF86
@@ -13,6 +14,8 @@ import qualified XMonad.Actions.FlexibleResize as Flex
 import           XMonad.Actions.FloatKeys
 import           XMonad.Actions.FloatSnap
 import           XMonad.Actions.Minimize
+import           XMonad.Actions.OnScreen
+import           XMonad.Actions.PhysicalScreens
 -- import           XMonad.Actions.MouseResize
 import           XMonad.Actions.TopicSpace
 import           XMonad.Actions.WindowMenu
@@ -39,13 +42,7 @@ import           Topics
 
 
 myKeys = \conf -> mkKeymap conf $
-  -- keep some defaults
-  [ -- ("M-S-q"),    spawn xfce4-session-logout or io (exitWith ExitSuccess)
-    ("M-,",         sendMessage (IncMasterN 1))
-  , ("M-.",         sendMessage (IncMasterN (-1)))
-    -- programs
-  , ("M-<Return>",  spawn $ XMonad.terminal conf)
-
+  [ ("M-<Return>",  spawn $ XMonad.terminal conf)
     -- emacs
   , ("M-e",         spawnEmacs "")
   , ("M-x a",       spawnEmacs "-e '(org-agenda-list)'")
@@ -68,6 +65,10 @@ myKeys = \conf -> mkKeymap conf $
   , ("M-C-<Left>",    sendMessage $ ExpandTowards L)
   , ("M-C-<Up>",      sendMessage $ ExpandTowards U)
   , ("M-C-<Down>",    sendMessage $ ExpandTowards D)
+  , ("M-,",           onPrevNeighbour def W.shift)
+  , ("M-.",           onNextNeighbour def W.shift)
+  , ("M-C-,",         onPrevNeighbour def W.view)
+  , ("M-C-.",         onNextNeighbour def W.view)
   -- , ("M-C-S-<Right>", sendMessage $ ShrinkFrom R)
   -- , ("M-C-S-<Left>",  sendMessage $ ShrinkFrom L)
   -- , ("M-C-S-<Up>",    sendMessage $ ShrinkFrom U)

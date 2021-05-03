@@ -1,19 +1,17 @@
 #!/usr/bin/env fish
-# screenres lg &
-# wpg -S mulholland2.png &
-# feh --bg-fill ~/.local/share/backgrounds/mulholland2.png &
+wpg -S paradise-leaves.jgp &
 
-# xmonad --replace &
-# picom --experimental-backends -b &
-# emacs --daemon &
+xmonad --replace &
+picom --experimental-backends -b &
+emacs --daemon &
 xmodmap ~/.Xmodmap &
-pg_ctl start &
-
+# pg_ctl start &
+variety &
 syncthing-gtk &
 redshift-gtk &
-nm-applet &
-pasystray &
+# nm-applet &
+# pasystray &
 nextcloud &
 tilda &
 copyq &
-aw-qt
+# aw-qt
