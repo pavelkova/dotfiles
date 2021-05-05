@@ -1,5 +1,5 @@
 #!/usr/bin/env fish
-wpg -S paradise-leaves.jgp &
+wpg -S paradise-leaves.jpg &
 
 xmonad --replace &
 picom --experimental-backends -b &
@@ -15,3 +15,4 @@ nextcloud &
 tilda &
 copyq &
 # aw-qt
+xfce4-panel --restart &

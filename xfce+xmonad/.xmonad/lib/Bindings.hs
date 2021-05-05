@@ -101,10 +101,16 @@ myKeys = \conf -> mkKeymap conf $
   , ("M-M3-]",      promptedShift)
   , ("M-S-.",       currentTopicAction myTopicConfig)
   ] ++
-  [ (otherModMasks ++ "M-" ++ [key], action tag)
+  -- [ (otherModMasks ++ "M-" ++ [key], action tag)
+  -- | (tag, key)  <- zip myTopics "1234567890"
+  -- , (otherModMasks, action) <- [ ("", windows . W.view) -- was W.greedyView
+  --                              , ("S-", windows . W.shift)]
+  -- ] ++
+  [ ("M-" ++ otherModMasks ++ [key], windows (action tag))
   | (tag, key)  <- zip myTopics "1234567890"
-  , (otherModMasks, action) <- [ ("", windows . W.view) -- was W.greedyView
-                               , ("S-", windows . W.shift)]
+  , (otherModMasks, action) <- [ ("",   viewOnScreen 0)
+                               , ("C-", viewOnScreen 1)
+                               , ("S-", W.shift)]
   ]
 
 myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
