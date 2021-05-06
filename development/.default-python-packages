@@ -10,5 +10,6 @@ pyls
 pyls-black
 pyradio
 pytest
+python-rofi
 requests
 wheel

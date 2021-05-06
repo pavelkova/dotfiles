@@ -15,9 +15,11 @@ myXPConfig :: XPConfig
 myXPConfig = def
   { fgColor = myForegroundColor
   , bgColor = myBackgroundColor
+  -- , fgHLight = my
+  -- , bgHLight = my
   , font = "xft:Victor Mono Medium-10"
   , defaultText = ""
-  , height = 50
+  , height = 250
   , position = Bottom
   , promptBorderWidth = 2
   -- , searchPredicate = fuzzyMatch

@@ -10,7 +10,8 @@ import           Graphics.X11.ExtraTypes.XF86
 import           XMonad
 import qualified XMonad.StackSet as W
 
-import qualified XMonad.Actions.FlexibleResize as Flex
+-- import           XMonad.Actions.AfterDrag
+-- import qualified XMonad.Actions.FlexibleResize as Flex
 import           XMonad.Actions.FloatKeys
 import           XMonad.Actions.FloatSnap
 import           XMonad.Actions.Minimize
@@ -50,25 +51,56 @@ myKeys = \conf -> mkKeymap conf $
   , ("M-x t",       spawnEmacs "-e '(org-todo-list)'")
   , ("M-<Tab>",     spawnEmacs "-e '(org-roam-dailies-today)'")
     -- rofi
-  , ("M-<Space>",   spawn "rofi -show combi")
-  , ("M-M3-=",      spawn "rofi -modi calc -show")
-  , ("M-M3-k",      spawn "~/.local/bin/rofi/rofi-hotkeys")
-  , ("M-M3-l",      layoutPrompt myXPConfig)
-  , ("M-M3-s",      spawn "~/.local/bin/rofi/rofi-web-search")
-  , ("M-M3-p",      spawn "rofi-pass")
-  , ("M-M3-w",      windowMultiPrompt myXPConfig [(Goto, allWindows), (Goto, wsWindows)])
-  , ("M-M3-x",      xmonadPrompt myXPConfig)
-  , ("M-S-;",       shellPrompt myXPConfig)
+  , ("M-<Space>",           spawn "rofi -show combi")
+  , ("M-M3-=",              spawn "rofi -modi calc -show")
+  , ("M-<XF86Calculator>",  spawn "rofi -modi calc -show") -- alt
+  , ("M-M3-k",              spawn "~/.local/bin/rofi/rofi-hotkeys")
+  , ("M-M3-l",              layoutPrompt myXPConfig)
+  , ("M-M3-p",              spawn "rofi-pass")
+  , ("M-M3-s",              spawn "~/.local/bin/rofi/rofi-web-search")
+  , ("M-M3-w",              windowMultiPrompt myXPConfig [(Goto, allWindows), (Goto, wsWindows)])
+  , ("M-M3-x",              xmonadPrompt myXPConfig)
+  , ("M-S-;",               shellPrompt myXPConfig)
+  -- workspaces / topics
+  , ("M-S-.",         currentTopicAction myTopicConfig)
     -- layout
+  , ("C-M1-<Tab>",    sendMessage $ NextLayout)
     -- "M-<arrow>" Go and "M-S-<arrow>" Swap bindings from Navigation2D
   , ("M-C-<Right>",   sendMessage $ ExpandTowards R)
   , ("M-C-<Left>",    sendMessage $ ExpandTowards L)
   , ("M-C-<Up>",      sendMessage $ ExpandTowards U)
   , ("M-C-<Down>",    sendMessage $ ExpandTowards D)
-  , ("M-,",           onPrevNeighbour def W.shift)
-  , ("M-.",           onNextNeighbour def W.shift)
-  , ("M-C-,",         onPrevNeighbour def W.view)
-  , ("M-C-.",         onNextNeighbour def W.view)
+  
+  -- snap floating windows to size
+  , ("M-S-<KP_Right>",  withFocused $ snapMove R Nothing)
+  , ("M-S-<KP_Left>",   withFocused $ snapMove L Nothing)
+  , ("M-S-<KP_Up>",     withFocused $ snapMove U Nothing)
+  , ("M-S-<KP_Down>",   withFocused $ snapMove D Nothing)
+  , ("M-C-<KP_Right>",  withFocused $ snapGrow R Nothing)
+  , ("M-C-<KP_Left>",   withFocused $ snapShrink R Nothing)
+  , ("M-C-<KP_Up>",     withFocused $ snapGrow D Nothing)
+  , ("M-C-<KP_Down>",   withFocused $ snapShrink D Nothing)
+  ---- alts
+  , ("M-S-<KP_6>",      withFocused $ snapMove R Nothing)
+  , ("M-S-<KP_4>",      withFocused $ snapMove L Nothing)
+  , ("M-S-<KP_8>",      withFocused $ snapMove U Nothing)
+  , ("M-S-<KP_2>",      withFocused $ snapMove D Nothing)
+  , ("M-C-<KP_6>",      withFocused $ snapGrow R Nothing)
+  , ("M-C-<KP_4>",      withFocused $ snapShrink R Nothing)
+  , ("M-C-<KP_8>",      withFocused $ snapGrow D Nothing)
+  , ("M-C-<KP_2>",      withFocused $ snapShrink D Nothing)
+
+  -- view or shift to other screen
+  , ("M-<KP_Prior>",   onPrevNeighbour def W.shift)
+  , ("M-<KP_Next>",    onNextNeighbour def W.shift)
+  , ("M-C-<KP_Prior>", onPrevNeighbour def W.view)
+  , ("M-C-<KP_Next>",  onNextNeighbour def W.view)
+  ---- alts
+  , ("M-<KP_9>",       onPrevNeighbour def W.shift)
+  , ("M-<KP_3>",       onNextNeighbour def W.shift)
+  , ("M-C-<KP_9>",     onPrevNeighbour def W.view)
+  , ("M-C-<KP_3>",     onNextNeighbour def W.view)
+  
   -- , ("M-C-S-<Right>", sendMessage $ ShrinkFrom R)
   -- , ("M-C-S-<Left>",  sendMessage $ ShrinkFrom L)
   -- , ("M-C-S-<Up>",    sendMessage $ ShrinkFrom U)
@@ -87,25 +119,13 @@ myKeys = \conf -> mkKeymap conf $
   , ("M-c S-=",     sendMessage $ Balance)
   , ("M-c f",       withFocused $ float)
   , ("M-c r",       sendMessage $ Rotate)
-  , ("M-c S-t",     sendMessage $ NextLayout)
   , ("M-c t",       withFocused $ windows . W.sink )
   , ("M-c x",       withFocused (sendMessage . maximizeRestore))
   , ("M-c z",       withFocused $ minimizeWindow)
   , ("M-c S-z",     withLastMinimized maximizeWindowAndFocus)
   , ("M-c ,",       sendMessage (IncMasterN 1))
   , ("M-c .",       sendMessage (IncMasterN (-1)))
-
-  -- workspaces / topics
-  , ("M-M3-[",      promptedGoto)
-
-  , ("M-M3-]",      promptedShift)
-  , ("M-S-.",       currentTopicAction myTopicConfig)
   ] ++
-  -- [ (otherModMasks ++ "M-" ++ [key], action tag)
-  -- | (tag, key)  <- zip myTopics "1234567890"
-  -- , (otherModMasks, action) <- [ ("", windows . W.view) -- was W.greedyView
-  --                              , ("S-", windows . W.shift)]
-  -- ] ++
   [ ("M-" ++ otherModMasks ++ [key], windows (action tag))
   | (tag, key)  <- zip myTopics "1234567890"
   , (otherModMasks, action) <- [ ("",   viewOnScreen 0)
@@ -114,7 +134,21 @@ myKeys = \conf -> mkKeymap conf $
   ]
 
 myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
-    [
-      ((modMask, button1), (\w -> focus w >> mouseMoveWindow w >> windows W.shiftMaster)) -- set the window to floating mode and move by dragging
-    , ((modMask, button3), (\w -> focus w >> Flex.mouseResizeWindow w)) -- set the window to floating mode and resize by dragging
+    [ -- set the window to floating mode and move by dragging
+      -- ((modMask, button1), (\w -> focus w >> mouseMoveWindow w >> windows W.shiftMaster))
+      -- set the window to floating mode and resize by dragging
+    -- , ((modMask, button3), (\w -> focus w >> Flex.mouseResizeWindow w))
+    -- float snap mouse bindings
+      ((modMask,                               button1), (\w -> focus w >> mouseMoveWindow w >>
+                                                           ifClick (snapMagicMove (Just 50) (Just 50) w)))
+    , ((modMask .|. shiftMask,                 button1), (\w -> focus w >> mouseMoveWindow w >>
+                                                           ifClick (snapMagicResize [L,R,U,D] (Just 50) (Just 50) w)))
+    , ((modMask,                               button3), (\w -> focus w >> mouseResizeWindow w >>
+                                                           ifClick (snapMagicResize [R,D] (Just 50) (Just 50) w)))
+    , ((modMask .|. controlMask,               button1), (\w -> focus w >> mouseMoveWindow w >>
+                                                           afterDrag (snapMagicMove (Just 50) (Just 50) w)))
+    , ((modMask .|. controlMask .|. shiftMask, button1), (\w -> focus w >> mouseMoveWindow w >>
+                                                           afterDrag (snapMagicResize [L,R,U,D] (Just 50) (Just 50) w)))
+    , ((modMask .|. controlMask,               button3), (\w -> focus w >> mouseResizeWindow w >>
+                                                           afterDrag (snapMagicResize [R,D] (Just 50) (Just 50) w)))
     ]

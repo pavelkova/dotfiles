@@ -1,71 +1,11 @@
 [
   {
-    "keybinding": "Super+w",
-    "description": "kill window"
-  },
-  {
-    "keybinding": "Super+c Space",
-    "description": "open window menu"
-  },
-  {
-    "keybinding": "Super+c f",
-    "description": "float focused window"
-  },
-  {
-    "keybinding": "Super+c r",
-    "description": "rotate window"
-  },
-  {
-    "keybinding": "Super+c t",
-    "description": "tile focused window"
-  },
-  {
-    "keybinding": "Super+c z",
-    "description": "minimize focused window"
-  },
-  {
-    "keybinding": "Super+c Z",
-    "description": "restore last minimized window"
-  },
-  {
-    "keybinding": "Super+c x",
-    "description": "maximize focused window"
-  },
-  {
     "keybinding": "Super+Return",
-    "description": "open new terminal (alacritty)"
-  },
-  {
-    "keybinding": "Super+Space",
-    "description": "open rofi combi launcher"
-  },
-  {
-    "keybinding": "Super+=",
-    "description": "open rofi-calculator"
-  },
-  {
-    "keybinding": "Super+Hyper+p",
-    "description": "open rofi-pass"
-  },
-  {
-    "keybinding": "Super+>",
-    "description": "open xmonad topic (workspace) actions"
-  },
-  {
-    "keybinding": "Super+Hyper:l",
-    "description": "prompt to switch xmonad layout"
-  },
-  {
-    "keybinding": "Super+c s",
-    "description": "xmonad shell prompt"
+    "description": "open new terminal (konsole)"
   },
   {
     "keybinding": "Super+e",
     "description": "open new emacsclient frame"
-  },
-  {
-    "keybinding": "Super+Tab",
-    "description": "execute org-roam-dailies-today in new emacsclient frame"
   },
   {
     "keybinding": "Super+x a",
@@ -80,7 +20,213 @@
     "description": "execute org-todo-list in new emacsclient frame"
   },
   {
+    "keybinding": "Super+Tab",
+    "description": "execute org-roam-dailies-today in new emacsclient frame"
+  },
+  {
+    "keybinding": "Super+Space",
+    "description": "open rofi combi launcher"
+  },
+  {
+    "keybinding": "Super+Hyper+=",
+    "description": "open rofi-calculator"
+  },
+  {
+    "keybinding": "Super+XF86Calculator",
+    "description": "open rofi-calculator"
+  },
+  {
+    "keybinding": "Super+Hyper+k",
+    "description": "open rofi hotkeys"
+  },
+  {
+    "keybinding": "Super+Hyper+l",
+    "description": "open xmonad layout prompt"
+  },
+  {
+    "keybinding": "Super+Hyper+p",
+    "description": "open rofi-pass"
+  },
+  {
     "keybinding": "Super+Hyper+s",
-    "description": "open rofi web search"
+    "description": "open rofi-web-search"
+  },
+  {
+    "keybinding": "Super+Hyper+w",
+    "description": "open xmonad window switch prompt"
+  },
+  {
+    "keybinding": "Super+Hyper+x",
+    "description": "open xmonad wm prompt"
+  },
+  {
+    "keybinding": "Super+Shift+;",
+    "description": "open xmonad shell prompt"
+  },
+  {
+    "keybinding": "Super+Shift+.",
+    "description": "run current topic action"
+  },
+  {
+    "keybinding": "Control+Alt+Tab",
+    "description": "switch to next xmonad layout"
+  },
+  {
+    "keybinding": "Super+Control+Right",
+    "description": "expand current window to the right"
+  },
+  {
+    "keybinding": "Super+Control+Left",
+    "description": "expand current window to the left"
+  },
+  {
+    "keybinding": "Super+Control+Up",
+    "description": "expand current window upwards"
+  },
+  {
+    "keybinding": "Super+Control+Down",
+    "description": "expand current window downwards"
+  },
+  {
+    "keybinding": "Super+Shift+KP_Right",
+    "description": "snap move floating window right"
+  },
+  {
+    "keybinding": "Super+Shift+KP_6",
+    "description": "snap move floating window right"
+  },
+  {
+    "keybinding": "Super+Shift+KP_Left",
+    "description": "snap move floating window left"
+  },
+  {
+    "keybinding": "Super+Shift+KP_4",
+    "description": "snap move floating window left"
+  },
+  {
+    "keybinding": "Super+Shift+KP_Up",
+    "description": "snap move floating window up"
+  },
+  {
+    "keybinding": "Super+Shift+KP_8",
+    "description": "snap move floating window up"
+  },
+  {
+    "keybinding": "Super+Shift+KP_Down",
+    "description": "snap move floating window down"
+  },
+  {
+    "keybinding": "Super+Shift+KP_2",
+    "description": "snap move floating window down"
+  },
+
+  {
+    "keybinding": "Super+Control+KP_Right",
+    "description": "snap grow floating window right"
+  },
+  {
+    "keybinding": "Super+Control+KP_6",
+    "description": "snap grow floating window right"
+  },
+  {
+    "keybinding": "Super+Control+KP_Left",
+    "description": "snap shrink floating window right"
+  },
+  {
+    "keybinding": "Super+Control+KP_4",
+    "description": "snap shrink floating window right"
+  },
+  {
+    "keybinding": "Super+Control+KP_Up",
+    "description": "snap grow floating window down"
+  },
+  {
+    "keybinding": "Super+Control+KP_8",
+    "description": "snap grow floating window down"
+  },
+  {
+    "keybinding": "Super+Control+KP_Down",
+    "description": "snap shrink floating window down"
+  },
+  {
+    "keybinding": "Super+Control+KP_2",
+    "description": "snap shrink floating window down"
+  },
+
+  {
+    "keybinding": "Super+KP_Prior",
+    "description": "shift current window to previous screen"
+  },
+  {
+    "keybinding": "Super+KP_9",
+    "description": "shift current window to previous screen"
+  },
+  {
+    "keybinding": "Super+KP_Next",
+    "description": "shift current window to next screen"
+  },
+  {
+    "keybinding": "Super+KP_3",
+    "description": "shift current window to next screen"
+  },
+  {
+    "keybinding": "Super+Control+KP_Prior",
+    "description": "view previous screen"
+  },
+  {
+    "keybinding": "Super+Control+KP_9",
+    "description": "view previous screen"
+  },
+  {
+    "keybinding": "Super+Control+KP_Next",
+    "description": "view next screen"
+  },
+  {
+    "keybinding": "Super+Control+KP_3",
+    "description": "view next screen"
+  },
+  {
+    "keybinding": "Super+w",
+    "description": "kill window"
+  },
+  {
+    "keybinding": "Super+c Space",
+    "description": "open window menu"
+  },
+  {
+    "keybinding": "Super+c =",
+    "description": "equalize window layout"
+  },
+  {
+    "keybinding": "Super+c Shift+=",
+    "description": "balance window layout"
+  },
+  {
+    "keybinding": "Super+c f",
+    "description": "float focused window"
+  },
+  {
+    "keybinding": "Super+c r",
+    "description": "rotate window"
+  },
+  {
+    "keybinding": "Super+c t",
+    "description": "tile focused window"
+  },
+  {
+    "keybinding": "Super+c x",
+    "description": "maximize focused window"
+  },
+  {
+    "keybinding": "Super+c z",
+    "description": "minimize focused window"
+  },
+  {
+    "keybinding": "Super+c Shift+z",
+    "description": "restore last minimized window"
+  },
+  {
+    "keybinding": "Super+c ,",
+    "description": "increase number of master windows"
   }
 ]
