@@ -20,57 +20,109 @@ import           XMonad.Util.Run
 import           Config
 
 
+-- myTopics :: [Topic]
+-- myTopics =
+--   [ "hoy"
+--   , "navegar"
+--   , "soliloquy"
+--   , "vidal"
+--   , "la torre"
+--   , "notas"
+--   , "correo"
+--   , "aprendizaje"
+--   , "español"
+--   , "sistema"
+--   ]
+
+-- myTopicConfig :: TopicConfig
+-- myTopicConfig = def
+--   { topicDirs = M.fromList $
+--     [ ("hoy",         "~/Org")
+--     , ("navegar",     "~/Descargas")
+--     , ("soliloquy",   "~/Code/Current/soliloquy")
+--     , ("vidal",       "~/Code/Current/vidal")
+--     , ("la torre",    "~/Org")
+--     , ("notas",       "~/Org")
+--     , ("correo",      "~/")
+--     , ("aprendizaje", "~/Code/Courses")
+--     , ("español",     "~/Org")
+--     , ("sistema",     "~/")
+--     ]
+--   , defaultTopicAction = const $ spawnShell -- >*> 3
+--   , defaultTopic       = "hoy"
+--   , topicActions       = M.fromList $
+--     [ ("hoy",         -- spawnEmacs "-e '(org-roam-dailies-today)'" >>
+--                       spawn "ice-firefox https://todoist.com/app/#start" >>
+--                       spawn "ice-firefox https://clockify.me/tracker" >>
+--                       spawn "ice-firefox https://app.goalifyapp.com/home/personal/dashboard?tab=goals")
+--     , ("navegar",     spawn "firefox")
+--     , ("soliloquy",   spawnShell >>
+--                       spawnEmacsInTopic "index.org" >>
+--                       spawn "firefox")
+--     , ("vidal",       spawnShell >>
+--                       spawnEmacsInTopic "index.org" >>
+--                       spawn "firefox")
+--     , ("la torre",    spawn "manuskript" >>
+--                       spawnEmacsInTopic "la_torre.org")
+--     , ("notas",       spawnEmacs "-e '(org-journal-new-entry \"**\" (current-time))'" >>
+--                       spawn "ghostwriter")
+--     , ("correo",      spawn "thunderbird")
+--     , ("aprendizaje", spawnEmacsInTopic "index.org")
+
+--     , ("español",     spawnEmacsInTopic "cien_años_de_soledad.org")
+--     , ("sistema",     runInTerm "" "gotop")
+--     ]
+--   }
 myTopics :: [Topic]
 myTopics =
-  [ "hoy"
-  , "navegar"
-  , "soliloquy"
-  , "vidal"
-  , "la torre"
-  , "notas"
-  , "correo"
-  , "aprendizaje"
-  , "español"
-  , "sistema"
+  [ "I hoy"
+  , "II nav"
+  , "III sol"
+  , "IV vid"
+  , "V aug"
+  , "VI not"
+  , "VII cor"
+  , "VIII apr"
+  , "IX esp"
+  , "X sis"
   ]
 
 myTopicConfig :: TopicConfig
 myTopicConfig = def
   { topicDirs = M.fromList $
-    [ ("hoy",         "~/Media/org")
-    , ("navegar",     "~/Downloads")
-    , ("soliloquy",   "~/Code/Current/soliloquy")
-    , ("vidal",       "~/Code/Current/vidal")
-    , ("la torre",    "~/Media/org")
-    , ("notas",       "~/Media/org")
-    , ("correo",      "~/")
-    , ("aprendizaje", "~/Code/Courses")
-    , ("español",     "~/Media/org")
-    , ("sistema",     "~/")
+    [ ("I hoy",    "~/Org")
+    , ("II nav",   "~/Descargas")
+    , ("III sol",  "~/Code/Current/soliloquy")
+    , ("IV vid",   "~/Code/Current/vidal")
+    , ("V aug",    "~/Org")
+    , ("VI not",   "~/Org")
+    , ("VII cor",  "~/")
+    , ("VIII apr", "~/Code/Courses")
+    , ("IX esp",   "~/Org")
+    , ("X sis",    "~/")
     ]
   , defaultTopicAction = const $ spawnShell -- >*> 3
   , defaultTopic       = "hoy"
   , topicActions       = M.fromList $
-    [ ("hoy",         -- spawnEmacs "-e '(org-roam-dailies-today)'" >>
-                      spawn "ice-firefox https://todoist.com/app/#start" >>
-                      spawn "ice-firefox https://clockify.me/tracker" >>
-                      spawn "ice-firefox https://app.goalifyapp.com/home/personal/dashboard?tab=goals")
-    , ("navegar",     spawn "firefox")
-    , ("soliloquy",   spawnShell >>
-                      spawnEmacsInTopic "index.org" >>
-                      spawn "firefox")
-    , ("vidal",       spawnShell >>
-                      spawnEmacsInTopic "index.org" >>
-                      spawn "firefox")
-    , ("la torre",    spawn "manuskript" >>
-                      spawnEmacsInTopic "la_torre.org")
-    , ("notas",       spawnEmacs "-e '(org-journal-new-entry \"**\" (current-time))'" >>
-                      spawn "ghostwriter")
-    , ("correo",      spawn "thunderbird")
-    , ("aprendizaje", spawnEmacsInTopic "index.org")
+    [ ("I hoy",    spawn "ice-firefox https://todoist.com/app/#start" >>
+                   spawn "ice-firefox https://clockify.me/tracker" >>
+                   spawn "ice-firefox https://app.goalifyapp.com/home/personal/dashboard?tab=goals")
+    , ("II nav",   spawn "firefox")
+    , ("III sol",  spawnShell >>
+                     spawnEmacsInTopic "README.org" >>
+                     spawn "firefox")
+    , ("IV vid",   spawnShell >>
+                     spawnEmacsInTopic "README.org" >>
+                     spawn "firefox")
+    , ("V aug",    spawn "manuskript" >>
+                     spawnEmacsInTopic "la_torre.org")
+    , ("VI not",   spawnEmacs "-e '(org-roam-dailies-today)'" >>
+                     spawn "ghostwriter")
+    , ("VII cor",  spawn "thunderbird")
+    , ("VIII apr", spawnEmacsInTopic "index.org")
 
-    , ("español",     spawnEmacsInTopic "cien_años_de_soledad.org")
-    , ("sistema",     runInTerm "" "gotop")
+    , ("IX esp",   spawnEmacsInTopic "cien_años_de_soledad.org")
+    , ("X sis",     runInTerm "" "gotop")
     ]
   }
 

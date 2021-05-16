@@ -49,7 +49,8 @@ myKeys = \conf -> mkKeymap conf $
   , ("M-x a",       spawnEmacs "-e '(org-agenda-list)'")
   , ("M-x c",       spawnEmacs "-e '(org-capture)'")
   , ("M-x t",       spawnEmacs "-e '(org-todo-list)'")
-  , ("M-<Tab>",     spawnEmacs "-e '(org-roam-dailies-today)'")
+  , ("M-<Tab>",     spawnEmacs "-e '(org-roam-dailies-find-today)'")
+  , ("M-M3-<Tab>",  spawnEmacs "-e '(org-roam-dailies-capture-today)'")
     -- rofi
   , ("M-<Space>",           spawn "rofi -show combi")
   , ("M-M3-=",              spawn "rofi -modi calc -show")

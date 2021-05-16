@@ -1,7 +1,14 @@
 # EDITOR ALIASES
+alias cat="bat"
+alias current="cd ~/Code/Current"
+alias em="emacsclient -a '' -nw"
+alias es="crow -t es"
 alias jmacs="jmacs -nobackups"
 alias ls="lsd"
 alias ll="lsd -l"
+alias yeet="yay -Rsn"
+alias yayfind="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S"
+
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
