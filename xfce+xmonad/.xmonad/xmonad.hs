@@ -76,6 +76,8 @@ myManageHook = composeAll
   , className =? "Xfce4-appearance-settings"       --> doCenterFloat
   , className =? "Xfce4-appFinder"                 --> doCenterFloat
   , className =? "Xfce4-settings-manager"          --> doCenterFloat
+  -- , resource  =? "findOrgToday"                    --> doCenterFloat
+  -- , resource  =? "captureOrgToday"                 --> doCenterFloat
   , isDialog                                       --> doCenterFloat
   , isFullscreen                                   --> doFullFloat
   , manageDocks
