@@ -9,13 +9,13 @@
     <property name="panel-1" type="empty">
       <property name="autohide-behavior" type="uint" value="0"/>
       <property name="background-rgba" type="array">
-        <value type="double" value="0.091333"/>
-        <value type="double" value="0.100000"/>
-        <value type="double" value="0.095185"/>
-        <value type="double" value="0.230000"/>
+        <value type="double" value="1.000000"/>
+        <value type="double" value="1.000000"/>
+        <value type="double" value="1.000000"/>
+        <value type="double" value="0.000000"/>
       </property>
       <property name="background-style" type="uint" value="1"/>
-      <property name="icon-size" type="uint" value="18"/>
+      <property name="icon-size" type="uint" value="0"/>
       <property name="length" type="uint" value="100"/>
       <property name="mode" type="uint" value="0"/>
       <property name="plugin-ids" type="array">
@@ -31,12 +31,12 @@
         <value type="int" value="15"/>
         <value type="int" value="7"/>
         <value type="int" value="23"/>
-        <value type="int" value="13"/>
-        <value type="int" value="9"/>
-        <value type="int" value="16"/>
-        <value type="int" value="34"/>
         <value type="int" value="17"/>
         <value type="int" value="12"/>
+        <value type="int" value="16"/>
+        <value type="int" value="9"/>
+        <value type="int" value="13"/>
+        <value type="int" value="34"/>
         <value type="int" value="25"/>
       </property>
       <property name="position" type="string" value="p=6;x=0;y=0"/>
@@ -46,10 +46,10 @@
     <property name="panel-2" type="empty">
       <property name="autohide-behavior" type="uint" value="0"/>
       <property name="background-rgba" type="array">
-        <value type="double" value="0.091333"/>
-        <value type="double" value="0.100000"/>
-        <value type="double" value="0.095185"/>
-        <value type="double" value="0.230000"/>
+        <value type="double" value="1.000000"/>
+        <value type="double" value="1.000000"/>
+        <value type="double" value="1.000000"/>
+        <value type="double" value="0.000000"/>
       </property>
       <property name="background-style" type="uint" value="1"/>
       <property name="disable-struts" type="bool" value="false"/>
@@ -157,9 +157,9 @@
       </property>
     </property>
     <property name="plugin-34" type="string" value="clock">
-      <property name="digital-format" type="string" value="%I:%M %p"/>
+      <property name="digital-format" type="string" value="%I:%M "/>
       <property name="flash-separators" type="bool" value="false"/>
-      <property name="mode" type="uint" value="0"/>
+      <property name="mode" type="uint" value="2"/>
       <property name="show-seconds" type="bool" value="false"/>
       <property name="tooltip-format" type="string" value="%A, %d %B %Y [%T]"/>
     </property>
@@ -254,7 +254,7 @@
     </property>
     <property name="plugin-23" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="firefox.instance2612398;firefox.instance4091;firefox.instance5754;firefox.instance9082"/>
+      <property name="mpris-players" type="string" value="chromium.instance643992;firefox.instance1371299;firefox.instance2612398;firefox.instance4091;firefox.instance5754;firefox.instance9082"/>
     </property>
     <property name="plugin-25" type="string" value="xkb">
       <property name="display-type" type="uint" value="2"/>
