@@ -19,60 +19,6 @@ import           XMonad.Util.Run
 
 import           Config
 
-
--- myTopics :: [Topic]
--- myTopics =
---   [ "hoy"
---   , "navegar"
---   , "soliloquy"
---   , "vidal"
---   , "la torre"
---   , "notas"
---   , "correo"
---   , "aprendizaje"
---   , "español"
---   , "sistema"
---   ]
-
--- myTopicConfig :: TopicConfig
--- myTopicConfig = def
---   { topicDirs = M.fromList $
---     [ ("hoy",         "~/Org")
---     , ("navegar",     "~/Descargas")
---     , ("soliloquy",   "~/Code/Current/soliloquy")
---     , ("vidal",       "~/Code/Current/vidal")
---     , ("la torre",    "~/Org")
---     , ("notas",       "~/Org")
---     , ("correo",      "~/")
---     , ("aprendizaje", "~/Code/Courses")
---     , ("español",     "~/Org")
---     , ("sistema",     "~/")
---     ]
---   , defaultTopicAction = const $ spawnShell -- >*> 3
---   , defaultTopic       = "hoy"
---   , topicActions       = M.fromList $
---     [ ("hoy",         -- spawnEmacs "-e '(org-roam-dailies-today)'" >>
---                       spawn "ice-firefox https://todoist.com/app/#start" >>
---                       spawn "ice-firefox https://clockify.me/tracker" >>
---                       spawn "ice-firefox https://app.goalifyapp.com/home/personal/dashboard?tab=goals")
---     , ("navegar",     spawn "firefox")
---     , ("soliloquy",   spawnShell >>
---                       spawnEmacsInTopic "index.org" >>
---                       spawn "firefox")
---     , ("vidal",       spawnShell >>
---                       spawnEmacsInTopic "index.org" >>
---                       spawn "firefox")
---     , ("la torre",    spawn "manuskript" >>
---                       spawnEmacsInTopic "la_torre.org")
---     , ("notas",       spawnEmacs "-e '(org-journal-new-entry \"**\" (current-time))'" >>
---                       spawn "ghostwriter")
---     , ("correo",      spawn "thunderbird")
---     , ("aprendizaje", spawnEmacsInTopic "index.org")
-
---     , ("español",     spawnEmacsInTopic "cien_años_de_soledad.org")
---     , ("sistema",     runInTerm "" "gotop")
---     ]
---   }
 myTopics :: [Topic]
 myTopics =
   [ "I hoy"

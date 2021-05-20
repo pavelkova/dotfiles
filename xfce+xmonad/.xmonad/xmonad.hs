@@ -60,13 +60,12 @@ main = do
                  , keys               = myKeys
                  , mouseBindings      = myMouseBindings
                  , layoutHook         = myLayouts
-                 , manageHook         = myManageHook <+> myScratchpadsHook <+> manageHook defaultConfig
+                 , manageHook         = myManageHook <+> myScratchpadsHook <+> manageHook def
                  , terminal           = myTerminal
                  }
 
 myManageHook = composeAll
-  [ className =? "Arandr"                          --> doCenterFloat
-  , className =? "Clockify"                        --> doFloat
+  [ className =? "Clockify"                        --> doFloat
   , className =? "Com.github.joseexposito.touche"  --> doCenterFloat
   , className =? "copyq"                           --> doCenterFloat
   , className =? "Tilda"                           --> doFloat

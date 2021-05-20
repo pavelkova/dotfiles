@@ -7,7 +7,7 @@ import qualified Data.Map as M -- For keybindings.
 import           Data.Maybe
 import           Graphics.X11.ExtraTypes.XF86
 
-import           XMonad
+import           XMonad hiding ( (|||) )
 import qualified XMonad.StackSet as W
 
 -- import           XMonad.Actions.AfterDrag
@@ -17,13 +17,16 @@ import           XMonad.Actions.FloatSnap
 import           XMonad.Actions.Minimize
 import           XMonad.Actions.OnScreen
 import           XMonad.Actions.PhysicalScreens
--- import           XMonad.Actions.MouseResize
+import           XMonad.Actions.MouseResize
 import           XMonad.Actions.TopicSpace
 import           XMonad.Actions.WindowMenu
 
 import           XMonad.Layout.BinarySpacePartition
+import           XMonad.Layout.LayoutCombinators
 import           XMonad.Layout.Maximize
--- import           XMonad.Layout.MultiToggle
+import           XMonad.Layout.MouseResizableTile
+import           XMonad.Layout.Spacing
+import           XMonad.Layout.ZoomRow
 -- import qualified XMonad.Layout.WindowNavigation as N
 
 import           XMonad.Prompt
@@ -43,15 +46,18 @@ import           Topics
 
 
 myKeys = \conf -> mkKeymap conf $
-  [ ("M-<Return>",  spawn $ XMonad.terminal conf)
+  [ ("M-<Return>",    spawn $ XMonad.terminal conf)
+  , ("M-M3-<Return>", namedScratchpadAction myScratchpads "retroTerm")
+  , ("M-M3-<Tab>",    namedScratchpadAction myScratchpads "findOrgRoam")
+  , ("M-M3-c",        namedScratchpadAction myScratchpads "captureOrgRoam")
     -- emacs
   , ("M-e",         spawnEmacs "")
   , ("M-x a",       spawnEmacs "-e '(org-agenda-list)'")
-  , ("M-x c",       spawnEmacs "-e '(org-capture)'")
+  , ("M-x c",       spawnEmacs "-e '(org-roam-dailies-capture-today)'")
   , ("M-x t",       spawnEmacs "-e '(org-todo-list)'")
   , ("M-<Tab>",     spawnEmacs "-e '(org-roam-dailies-find-today)'")
-  , ("M-M3-<Tab>",  spawnEmacs "-e '(org-roam-dailies-capture-today)'")
-    -- rofi
+
+  -- rofi
   , ("M-<Space>",           spawn "rofi -show combi")
   , ("M-M3-=",              spawn "rofi -modi calc -show")
   , ("M-<XF86Calculator>",  spawn "rofi -modi calc -show") -- alt
@@ -62,16 +68,34 @@ myKeys = \conf -> mkKeymap conf $
   , ("M-M3-w",              windowMultiPrompt myXPConfig [(Goto, allWindows), (Goto, wsWindows)])
   , ("M-M3-x",              xmonadPrompt myXPConfig)
   , ("M-S-;",               shellPrompt myXPConfig)
+
   -- workspaces / topics
-  , ("M-S-.",         currentTopicAction myTopicConfig)
+  , ("M-S-.",           currentTopicAction myTopicConfig)
     -- layout
-  , ("C-M1-<Tab>",    sendMessage $ NextLayout)
+  , ("C-M1-<Tab>",      sendMessage $ NextLayout)
+  , ("M-l S-=",         incScreenWindowSpacing 5)
+  , ("M-l =",           incScreenWindowSpacing 10)
+  , ("M-l -",           decScreenWindowSpacing 5)
+  , ("M-l S--",         decScreenWindowSpacing 10)
+  , ("M-l a",           sendMessage $ JumpToLayout "accord")
+  , ("M-l b",           sendMessage $ JumpToLayout "basic")
+  , ("M-l o",           sendMessage $ JumpToLayout "circ")
+  , ("M-l c",           sendMessage $ JumpToLayout "cross")
+  , ("M-l l",           sendMessage $ JumpToLayout "full")
+  , ("M-l r",           sendMessage $ JumpToLayout "rolex")
+  , ("M-l f",           sendMessage $ JumpToLayout "simpFl")
+  , ("M-l s",           sendMessage $ JumpToLayout "smBSP")
+  , ("M-l m",           sendMessage $ JumpToLayout "smMouse")
+  , ("M-l S-3",         sendMessage $ JumpToLayout "threeCol")
+  , ("M-l 3",           sendMessage $ JumpToLayout "threeMid")
+  , ("M-l x",           sendMessage $ JumpToLayout "xlBSP")
+  , ("M-l z",           sendMessage $ JumpToLayout "zoomR")
+
     -- "M-<arrow>" Go and "M-S-<arrow>" Swap bindings from Navigation2D
-  , ("M-C-<Right>",   sendMessage $ ExpandTowards R)
-  , ("M-C-<Left>",    sendMessage $ ExpandTowards L)
-  , ("M-C-<Up>",      sendMessage $ ExpandTowards U)
-  , ("M-C-<Down>",    sendMessage $ ExpandTowards D)
-  
+  , ("M-C-<Right>",     sendMessage $ ExpandTowards R)
+  , ("M-C-<Left>",      sendMessage $ ExpandTowards L)
+  , ("M-C-<Up>",        sendMessage $ ExpandTowards U)
+  , ("M-C-<Down>",      sendMessage $ ExpandTowards D)
   -- snap floating windows to size
   , ("M-S-<KP_Right>",  withFocused $ snapMove R Nothing)
   , ("M-S-<KP_Left>",   withFocused $ snapMove L Nothing)
@@ -90,17 +114,21 @@ myKeys = \conf -> mkKeymap conf $
   , ("M-C-<KP_4>",      withFocused $ snapShrink R Nothing)
   , ("M-C-<KP_8>",      withFocused $ snapGrow D Nothing)
   , ("M-C-<KP_2>",      withFocused $ snapShrink D Nothing)
-
+  -- window management in zoomRow layout
+  , ("M-S-=",           sendMessage zoomIn)
+  , ("M--",             sendMessage zoomOut)
+  , ("M-z",             sendMessage zoomReset)
+  , ("M-S-z",           sendMessage ZoomFullToggle)
   -- view or shift to other screen
-  , ("M-<KP_Prior>",   onPrevNeighbour def W.shift)
-  , ("M-<KP_Next>",    onNextNeighbour def W.shift)
-  , ("M-C-<KP_Prior>", onPrevNeighbour def W.view)
-  , ("M-C-<KP_Next>",  onNextNeighbour def W.view)
+  , ("M-<KP_Prior>",    onPrevNeighbour def W.shift)
+  , ("M-<KP_Next>",     onNextNeighbour def W.shift)
+  , ("M-C-<KP_Prior>",  onPrevNeighbour def W.view)
+  , ("M-C-<KP_Next>",   onNextNeighbour def W.view)
   ---- alts
-  , ("M-<KP_9>",       onPrevNeighbour def W.shift)
-  , ("M-<KP_3>",       onNextNeighbour def W.shift)
-  , ("M-C-<KP_9>",     onPrevNeighbour def W.view)
-  , ("M-C-<KP_3>",     onNextNeighbour def W.view)
+  , ("M-<KP_9>",        onPrevNeighbour def W.shift)
+  , ("M-<KP_3>",        onNextNeighbour def W.shift)
+  , ("M-C-<KP_9>",      onPrevNeighbour def W.view)
+  , ("M-C-<KP_3>",      onNextNeighbour def W.view)
   
   -- , ("M-C-S-<Right>", sendMessage $ ShrinkFrom R)
   -- , ("M-C-S-<Left>",  sendMessage $ ShrinkFrom L)
@@ -110,8 +138,6 @@ myKeys = \conf -> mkKeymap conf $
   -- , ("M-C-S-<Right>", withFocused (keysResizeWindow (50,0) (0,0)))
   -- , ("M-C-S-<Up>",    withFocused (keysResizeWindow (0,-50) (0,0)))
   -- , ("M-C-S-<Down>",  withFocused (keysResizeWindow (0,50) (0,0)))
-  -- , ("M-c 1",         sendMessage (Toggle "smBSP"))
-  -- , ("M-c 2",         sendMessage (Toggle "xlBSP"))
 
   -- windows
   , ("M-w",         kill)
