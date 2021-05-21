@@ -1,6 +1,5 @@
-/*-*- mode: css; -*-*/
 configuration {
-	modi: "combi,window,keys,ssh,drun";
+	modi: "combi,window,keys,ssh,drun,file-browser-extended";
 	width: 400;
 /*	lines: 15;*/
 /*	columns: 1;*/
@@ -20,10 +19,12 @@ configuration {
 /*	run-shell-command: "{terminal} -e {cmd}";*/
 /*	window-command: "wmctrl -i -R {window}";*/
 /*	window-match-fields: "all";*/
-	icon-theme: "oomox-mulholland2";
-/*	drun-match-fields: "name,generic,exec,categories";*/
+	icon-theme: "oomox-paradise-leaves";
+/*	drun-match-fields: "name,generic,exec,categories,keywords";*/
+/*	drun-categories: ;*/
 /*	drun-show-actions: false;*/
 /*	drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";*/
+/*	drun-url-launcher: "xdg-open";*/
 /*	disable-history: false;*/
 /*	ignored-prefixes: "";*/
 /*	sort: false;*/
@@ -36,7 +37,7 @@ configuration {
 /*	parse-hosts: false;*/
 /*	parse-known-hosts: true;*/
 	combi-modi: "run,window";
-	matching: "regex";
+	matching: "fuzzy";
 /*	tokenize: true;*/
 /*	m: "-5";*/
 /*	line-margin: 2;*/
@@ -63,14 +64,22 @@ configuration {
 /*	combi-hide-mode-prefix: false;*/
 /*	matching-negate-char: '-' /* unsupported */;*/
 /*	cache-dir: ;*/
+/*	window-thumbnail: false;*/
+/*	drun-use-desktop-cache: false;*/
+/*	drun-reload-desktop-cache: false;*/
+/*	normalize-match: false;*/
 /*	pid: "/run/user/1000/rofi.pid";*/
 	display-window: "🗗";
 /*	display-windowcd: ;*/
-	/* display-run: ; */
+/*	display-run: ;*/
 	display-ssh: "🔑";
 	display-drun: "✨";
 	display-combi: "🌴";
 	display-keys: "🍍";
+	display-file-browser: "🗊";
+	display-file-browser-extended: "🗊";
+/*	display-calc: ;*/
+/*	display-blocks: ;*/
 /*	kb-primary-paste: "Control+V,Shift+Insert";*/
 /*	kb-secondary-paste: "Control+v,Insert";*/
 /*	kb-clear-line: "Control+w";*/

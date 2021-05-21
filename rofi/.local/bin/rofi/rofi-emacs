@@ -4,9 +4,19 @@
 # find PATHS TO SEARCH
 
 
-set rofi_path (fd -e conf -e el -e epub -e js -e lua -e md -e org -e py -e pdf -e rb -e rc --search-path=/home/gigi/{.config,.local/bin,Code/Current,Media/{biblioteca,documentos,org},Sync/.dotfiles/*/.*} | rofi -dmenu -p "🗊")
+set rofi_path (fd --search-path=/home/gigi/{.config,.local/bin,Code/Current,Documentos,Org,Sync/.dotfiles/*/.*} \
+    -E '*.ai' -E '*.jp*g' -E '*.mp*' -E '.od*' \
+    -E '*.otf' -E '*.png' -E '*.svg' \
+    -E '*.ttf' -E '*.xcf' -E '*.xls*' | \
+    rofi -show file-browser-extended -p "🗊" \
+    -file-browser-dir "~/" \
+    -file-browser-depth 3 \
+    -file-browser-only-files \
+    -file-browser-show-hidden \
+    -file-browser-stdin \
+    -file-browser-stdout)
 
 if [ -n "$rofi_path" ]
     echo $rofi_path
-    emacsclient -c $rofi_path
+    emacsclient -a '' -c $rofi_path
 end

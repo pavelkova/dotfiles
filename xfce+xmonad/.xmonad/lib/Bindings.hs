@@ -30,7 +30,6 @@ import           XMonad.Layout.ZoomRow
 -- import qualified XMonad.Layout.WindowNavigation as N
 
 import           XMonad.Prompt
-import           XMonad.Prompt.Layout
 import           XMonad.Prompt.Shell
 import           XMonad.Prompt.Window
 import           XMonad.Prompt.Workspace
@@ -62,8 +61,8 @@ myKeys = \conf -> mkKeymap conf $
   , ("M-<Space>",           spawn "rofi -show combi")
   , ("M-M3-=",              spawn "rofi -modi calc -show")
   , ("M-<XF86Calculator>",  spawn "rofi -modi calc -show") -- alt
+  , ("M-M3-e",              spawn "~/.local/bin/rofi/rofi-emacs")
   , ("M-M3-k",              spawn "~/.local/bin/rofi/rofi-hotkeys")
-  , ("M-M3-l",              layoutPrompt myXPConfig)
   , ("M-M3-p",              spawn "rofi-pass")
   , ("M-M3-s",              spawn "~/.local/bin/rofi/rofi-web-search")
   , ("M-M3-w",              windowMultiPrompt myXPConfig [(Goto, allWindows), (Goto, wsWindows)])

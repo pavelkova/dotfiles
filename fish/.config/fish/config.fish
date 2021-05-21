@@ -7,13 +7,14 @@ alias jmacs="jmacs -nobackups"
 alias ls="lsd"
 alias ll="lsd -l"
 alias yeet="yay -Rsn"
-alias yayfind="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S"
+alias ys="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S"
 
 # ENV VARIABLES
 set -gx LC_ALL en_US.UTF-8
 set -gx LANG en_US.UTF-8
 set -gx CALIBRE_USE_DARK_PALETTE 1
 set -gx QT_QPA_PLATFORMTHEME qt5ct
+set -gx EDITOR emacsclient
 
 # SPACEFISH PROMPT CONFIG
 set -g SPACEFISH_TIME_SHOW false
