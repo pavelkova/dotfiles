@@ -55,7 +55,7 @@ myTopicConfig = def
                    spawn "ice-firefox https://app.goalifyapp.com/home/personal/dashboard?tab=goals")
     , ("II nav",   spawn "firefox")
     , ("III sol",  spawnShell >>
-                     spawnEmacsInTopic "README.org" >>
+                     spawnEmacsInTopic "pages/index.tsx" >>
                      spawn "firefox")
     , ("IV vid",   spawnShell >>
                      spawnEmacsInTopic "README.org" >>
@@ -64,7 +64,10 @@ myTopicConfig = def
                      spawnEmacsInTopic "la_torre.org")
     , ("VI not",   spawnEmacs "-e '(org-roam-dailies-today)'" >>
                      spawn "ghostwriter")
-    , ("VII cor",  spawn "thunderbird")
+    , ("VII cor",  spawn "thunderbird" >>
+      spawn "cawbird" >>
+      spawn "discord" >>
+      spawn "telegram-desktop")
     , ("VIII apr", spawnEmacsInTopic "index.org")
 
     , ("IX esp",   spawnEmacsInTopic "cien_años_de_soledad.org")

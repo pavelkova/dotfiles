@@ -21,11 +21,12 @@ import           XMonad.Layout.Tabbed
 import           XMonad.Layout.ThreeColumns
 import           XMonad.Layout.ZoomRow
 
-import           XMonad.Layout.Decoration
+-- import           XMonad.Layout.Decoration
 import           XMonad.Layout.Maximize
 import           XMonad.Layout.Minimize
 import           XMonad.Layout.Named
 import           XMonad.Layout.NoBorders
+import           XMonad.Layout.PerWorkspace
 import           XMonad.Layout.Spacing
 import           XMonad.Layout.WindowArranger
 
@@ -38,17 +39,22 @@ myLayouts = N.windowNavigation
   $ minimize
   $ avoidStruts
   $ smartBorders
-  -- $ buttonDeco shrinkText defaultThemeWithButtons
   $ mySpacing 5
+  -- start certain workspaces with specific layouts
+  -- $ onWorkspace "I hoy" threeCol
+  -- $ onWorkspace "VII cor" threeMid
   $ ( basic
     ||| accord
     ||| circ
     ||| cross
     ||| full
+    ||| long
     ||| rolex
+    ||| row
     ||| simpFl
     ||| smBSP
     ||| smMouse
+    ||| spir
     ||| threeCol
     ||| threeMid
     ||| xlBSP
@@ -56,15 +62,19 @@ myLayouts = N.windowNavigation
     )
   where
     -- named layouts
-    accord      = named "accord"   $ Accordion
     basic       = named "basic"    $ emptyBSP
+    accord      = named "accord"   $ Accordion
     circ        = named "circ"     $ Circle
     cross       = named "cross"    $ simpleCross
     full        = named "full"     $ noBorders Full
+    long        = named "long"     $ Tall 1 (3/100) (3/5)
     rolex       = named "rolex"    $ Roledex
+    row         = named "row"      $ Mirror long
     simpFl      = named "simpFl"   $ simplestFloat
-    threeCol    = named "threeCol" $ ThreeCol 1 (3/100) (1/2)
-    threeMid    = named "threeMid" $ ThreeColMid 1 (3/100) (1/2)
+    -- spir        = named "spir"     $ spiralWithDir East CW (6/7)
+    spir        = named "spir"     $ spiral (3/2)
+    threeCol    = named "threeCol" $ ThreeCol 1 (3/100) (1/3)
+    threeMid    = named "threeMid" $ ThreeColMid 1 (3/100) (3/8)
     zoomR       = named "zoomR"    $ zoomRow
     -- spacing formula
     --                       smartBorder  screenBorder     screenBorderEnabled  windowBorder     windowBorderEnabled

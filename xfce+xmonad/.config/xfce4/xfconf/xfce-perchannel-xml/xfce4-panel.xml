@@ -39,9 +39,10 @@
         <value type="int" value="34"/>
         <value type="int" value="25"/>
       </property>
-      <property name="position" type="string" value="p=6;x=0;y=0"/>
+      <property name="position" type="string" value="p=6;x=3200;y=11"/>
       <property name="position-locked" type="bool" value="true"/>
       <property name="size" type="uint" value="20"/>
+      <property name="span-monitors" type="bool" value="false"/>
     </property>
     <property name="panel-2" type="empty">
       <property name="autohide-behavior" type="uint" value="0"/>
@@ -75,7 +76,7 @@
         <value type="int" value="18"/>
         <value type="int" value="44"/>
       </property>
-      <property name="position" type="string" value="p=12;x=1328;y=1422"/>
+      <property name="position" type="string" value="p=8;x=3200;y=1423"/>
       <property name="position-locked" type="bool" value="true"/>
       <property name="size" type="uint" value="31"/>
       <property name="length-adjust" type="bool" value="false"/>
@@ -235,6 +236,8 @@
         <value type="string" value="optimus manager qt"/>
       </property>
       <property name="known-items" type="array">
+        <value type="string" value="TelegramDesktop"/>
+        <value type="string" value="discord1"/>
         <value type="string" value="syncthing-gtk"/>
         <value type="string" value="qBittorrent"/>
         <value type="string" value="blueman"/>

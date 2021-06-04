@@ -91,7 +91,7 @@
     "keybinding": "Super+l Shift+=",
     "description": "increase spacing between windows by 5"
 },
-  {
+ayou  {
     "keybinding": "Super+l =",
     "description": "increase spacing between windows by 10"
 },
@@ -112,40 +112,40 @@
     "description": "switch to default (bsp) layout"
 },
 {
-    "keybinding": "Super+l o",
-    "description": "switch to circle layout"
-},
-{
     "keybinding": "Super+l c",
     "description": "switch to cross layout"
 },
+  {
+    "keybinding": "Super+l f",
+    "description": "switch to floating layout"
+  },
+  {
+    "keybinding": "Super+l i",
+    "description": "switch to spiral layout"
+  },
 {
     "keybinding": "Super+l l",
     "description": "switch to fullscreen layout"
-},
-{
-    "keybinding": "Super+l r",
-    "description": "switch to roledex layout"
-},
-{
-    "keybinding": "Super+l f",
-    "description": "switch to floating layout"
-},
-{
-    "keybinding": "Super+l s",
-    "description": "switch to bsp layout with small spacing"
 },
 {
     "keybinding": "Super+l m",
     "description": "switch to mouse resizable layout"
 },
 {
-    "keybinding": "Super+l Shift+3",
-    "description": "switch to 3-column layout"
+    "keybinding": "Super+l o",
+    "description": "switch to circle layout"
 },
 {
-    "keybinding": "Super+l 3",
-    "description": "switch to 3-column layout with wide center"
+    "keybinding": "Super+l r",
+    "description": "switch to row layout (mirrored tall)"
+},
+{
+  "keybinding": "Super+l Shift+r",
+  "description": "switch to roledex layout"
+},
+  {
+    "keybinding": "Super+l s",
+    "description": "switch to bsp layout with small spacing"
 },
 {
     "keybinding": "Super+l x",
@@ -154,6 +154,14 @@
 {
     "keybinding": "Super+l z",
     "description": "switch to zoom row layout"
+},
+{
+    "keybinding": "Super+l 3",
+    "description": "switch to 3-column layout with wide center"
+},
+{
+    "keybinding": "Super+l Shift+3",
+    "description": "switch to 3-column layout"
 },
 {
     "keybinding": "Super+Control+Right",
@@ -305,10 +313,22 @@
     "keybinding": "Super+c f",
     "description": "float focused window"
   },
+  "keybinding": "Super+c n",
+  "description": "shift window by splitting its next neighbor"
+},
   {
-    "keybinding": "Super+c r",
-    "description": "rotate window"
+    "keybinding": "Super+c p",
+    "description": "shift window by splitting its previous neighbor"
   },
+  "keybinding": "Super+c r",
+  "description": "rotate window"
+},
+  "keybinding": "Super+c Left",
+  "description": "rotate tree to the left around the parent node"
+},
+  "keybinding": "Super+c Right",
+  "description": "rotate tree to the right around the parent node"
+},
   {
     "keybinding": "Super+c t",
     "description": "tile focused window"
