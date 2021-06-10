@@ -238,6 +238,7 @@
         <value type="string" value="optimus manager qt"/>
       </property>
       <property name="known-items" type="array">
+        <value type="string" value="ckb-next_ckb-next"/>
         <value type="string" value="TelegramDesktop"/>
         <value type="string" value="discord1"/>
         <value type="string" value="syncthing-gtk"/>
@@ -259,7 +260,7 @@
     </property>
     <property name="plugin-23" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="chromium.instance643992;firefox.instance1371299;firefox.instance2612398;firefox.instance4091;firefox.instance5754;firefox.instance9082"/>
+      <property name="mpris-players" type="string" value="chromium.instance1346517;chromium.instance643992;firefox.instance1371299;firefox.instance2612398;firefox.instance4091;firefox.instance5754;firefox.instance9082"/>
     </property>
     <property name="plugin-25" type="string" value="xkb">
       <property name="display-type" type="uint" value="2"/>

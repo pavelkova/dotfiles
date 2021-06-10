@@ -7,6 +7,6 @@ php 7.3.11
 python system
 ruby 2.7.0
 sqlite 3.27.2
-#postgres 12.0
+#postgres 13.3
 postgres 11.3
 

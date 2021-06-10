@@ -66,12 +66,15 @@ main = do
 
 myManageHook = composeAll
   [ className =? "Clockify"                        --> doFloat
-  , className =? "Com.github.joseexposito.touche"  --> doCenterFloat
+  -- , className =? "Com.github.joseexposito.touche"  --> doCenterFloat
+  , className =? "ckb-next"                        --> doCenterFloat
   , className =? "copyq"                           --> doCenterFloat
   , className =? "Tilda"                           --> doFloat
   , className =? "Sxiv"                            --> doFloat
   , className =? "todoist"                         --> doFloat
   , className =? "Variety"                         --> doFloat
+  , className =? "vncviewer"                       --> doFullFloat
+  , className =? "Vncviewer"                       --> doFullFloat
   , className =? "Xmessage"                        --> doFloat
   , className =? "Xfce4-appearance-settings"       --> doCenterFloat
   , className =? "Xfce4-appFinder"                 --> doCenterFloat
