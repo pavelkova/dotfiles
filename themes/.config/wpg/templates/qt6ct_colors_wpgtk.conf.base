@@ -1,0 +1,10 @@
+#               FG          BTN_BG      bright      less_br     dark        less_dk     txt_fg      br_text     btn_fg      txt_bg      bg          shadow      sel_bg      sel_fg      link       visited     alt_bg      default     tooltip_bg   tooltip_fg    placeholder_fg
+[ColorScheme]
+  active_colors={color15},  {color8},   {color8},   {color0},   {color0},   {color0},   {color15},  {color15},  {color11},  {color8},   {color0},   {color0},   {color9},   {color0},   {color13}, {color5},   {color8},   {color15},  {color8},    {color12},    {color12}
+disabled_colors={color7},   {color8},   {color8},   {color0},   {color0},   {color0},   {color7},   {color7},   {color11},  {color8},   {color0},   {color0},   {color9},   {color0},   {color13}, {color5},   {color8},   {color7},   {color8},    {color4},     {color4}
+inactive_colors={color15},  {color8},   {color8},   {color0},   {color0},   {color0},   {color15},  {color15},  {color11},  {color8},   {color0},   {color0},   {color9},   {color0},   {color13}, {color5},   {color8},   {color15},  {color8},    {color12},    {color12}
+
+#               FG          BTN_BG      bright      less_br     dark        less_dk     txt_fg      br_text     btn_fg      txt_bg      bg          shadow      sel_bg      sel_fg      link       visited     alt_bg      default     tooltip_bg   tooltip_fg    placeholder_fg
+  active_colors={color15},  {color8},   {color8},   {color0},   {color0},   {color0},   {color15},  {color15},  {color11},  {color8},   {color0},   {color0},   {color9},   {color0},   {color13}, {color5},   {color8},   {color15},  {color8},    {color12},    {color12}
+disabled_colors={color7},   {color8},   {color8},   {color0},   {color0},   {color0},   {color7},   {color7},   {color11},  {color8},   {color0},   {color0},   {color9},   {color0},   {color13}, {color5},   {color8},   {color7},   {color8},    {color4},     {color4}
+inactive_colors={color15},  {color8},   {color8},   {color0},   {color0},   {color0},   {color15},  {color15},  {color11},  {color8},   {color0},   {color0},   {color9},   {color0},   {color13}, {color5},   {color8},   {color15},  {color8},    {color12},    {color12}

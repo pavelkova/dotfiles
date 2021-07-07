@@ -1,5 +1,7 @@
 -- import Graphics.X11.ExtraTypes.XF86
 import           XMonad
+import           XMonad.Config.Desktop
+-- import           XMonad.Config.Kde
 import           XMonad.Config.Xfce
 
 import           System.Exit
@@ -60,30 +62,46 @@ main = do
                  , keys               = myKeys
                  , mouseBindings      = myMouseBindings
                  , layoutHook         = myLayouts
-                 , manageHook         = myManageHook <+> myScratchpadsHook <+> manageHook def
+                 , manageHook         = myManageHook <+> myScratchpadsHook <+> manageHook desktopConfig -- def
                  , terminal           = myTerminal
                  }
+-- myManageHook = composeAll [ className =? "Clockify"                        --> doFloat
+--                           , className =? "ckb-next"                        --> doCenterFloat
+--                           , className =? "copyq"                           --> doCenterFloat
+--                           , className =? "ICE-SSB-nts"                     --> doFloat
+--                           , className =? "Tilda"                           --> doFloat
+--                           , className =? "Sxiv"                            --> doFloat
+--                           , className =? "Solaar"                          --> doCenterFloat
+--                           , className =? "systemsettings"                  --> doCenterFloat -- KDE
+--                           , className =? "todoist"                         --> doFloat
+--                           , className =? "Variety"                         --> doFloat
+--                           , className =? "vncviewer"                       --> doFullFloat
+--                           , className =? "Vncviewer"                       --> doFullFloat
+--                           , className =? "Xmessage"                        --> doFloat
+--                           , className =? "Xfce4-appearance-settings"       --> doCenterFloat
+--                           , className =? "Xfce4-appFinder"                 --> doCenterFloat
+--                           , className =? "Xfce4-settings-manager"          --> doCenterFloat
+--                           , isDialog                                       --> doCenterFloat
+--                           , isFullscreen                                   --> doFullFloat
+--                           , manageDocks
+--                           ]
 
-myManageHook = composeAll
-  [ className =? "Clockify"                        --> doFloat
-  -- , className =? "Com.github.joseexposito.touche"  --> doCenterFloat
-  , className =? "ckb-next"                        --> doCenterFloat
-  , className =? "copyq"                           --> doCenterFloat
-  , className =? "Tilda"                           --> doFloat
-  , className =? "Sxiv"                            --> doFloat
-  , className =? "todoist"                         --> doFloat
-  , className =? "Variety"                         --> doFloat
-  , className =? "vncviewer"                       --> doFullFloat
-  , className =? "Vncviewer"                       --> doFullFloat
-  , className =? "Xmessage"                        --> doFloat
-  , className =? "Xfce4-appearance-settings"       --> doCenterFloat
-  , className =? "Xfce4-appFinder"                 --> doCenterFloat
-  , className =? "Xfce4-settings-manager"          --> doCenterFloat
-  -- , resource  =? "findOrgToday"                    --> doCenterFloat
-  -- , resource  =? "captureOrgToday"                 --> doCenterFloat
-  , isDialog                                       --> doCenterFloat
-  , isFullscreen                                   --> doFullFloat
-  , manageDocks
-  ]
-
--- scratchpads = [ NS "tilda" "tilda" (className =? "tilda") (customFloating $ W.RationalRect (1/3) (1/2) (1/3) (1/2))]
+myManageHook = composeAll . concat $ [ [className =? c --> doFloat               | c <- myFloatsByClass]
+                                     , [title     =? t --> doFloat               | t <- myFloatsByTitle]
+                                     , [className =? c --> doCenterFloat         | c <- myCenterFloatsByClass]
+                                     , [className =? c --> doFullFloat           | c <- myFullFloatsByClass]
+                                     , [className =? c --> doF (W.shift "I hoy") | c <- myHomescreenApps]
+                                     ]
+  where
+    myFloatsByClass       = ["copyq", "Tilda", "Sxiv",                       -- utilities
+                             "Klipper", "Kmix", "krunner",                   -- KDE
+                             "Plasma", "plasmashell", "Plasmoidviewer",
+                             "Variety", "Xmessage"]                          -- system
+    myFloatsByTitle       = ["plasma-desktop", "win7"]                       -- KDE
+    myCenterFloatsByClass = ["ckb-next", "Solaar",                           -- device config
+                             "systemsettings",                               -- KDE
+                             "Xfce4-appearance-settings", "Xfce4-appFinder", -- XFCE
+                             "Xfce4-settings-manager"]
+    myFullFloatsByClass   = ["vncviewer", "Vncviewer"]
+    myHomescreenApps      = ["ICE-SSB-clockify", "ICE-SSB-goalify", "ICE-SSB-todoist",
+                             "Clockify", "todoist"]

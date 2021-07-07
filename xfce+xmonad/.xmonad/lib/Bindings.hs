@@ -46,6 +46,8 @@ import           Topics
 
 myKeys = \conf -> mkKeymap conf $
   [ ("M-<Return>",    spawn $ XMonad.terminal conf)
+  , ("M-<F12>",       spawn "~/.local/bin/dictate start")
+  , ("M-S-<F12>",     spawn "~/.local/bin/dictate stop")
   , ("M-M3-<Return>", namedScratchpadAction myScratchpads "retroTerm")
   , ("M-M3-<Tab>",    namedScratchpadAction myScratchpads "findOrgRoam")
   , ("M-M3-c",        namedScratchpadAction myScratchpads "captureOrgRoam")
@@ -61,6 +63,7 @@ myKeys = \conf -> mkKeymap conf $
   , ("M-<Space>",           spawn "rofi -show combi")
   , ("M-M3-=",              spawn "rofi -modi calc -show")
   , ("M-<XF86Calculator>",  spawn "rofi -modi calc -show") -- alt
+  , ("M-M3-b",              spawn "rofi-bluetooth")
   , ("M-M3-e",              spawn "~/.local/bin/rofi/rofi-emacs")
   , ("M-M3-k",              spawn "~/.local/bin/rofi/rofi-hotkeys")
   , ("M-M3-p",              spawn "rofi-pass")
@@ -172,6 +175,8 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- float snap mouse bindings
       ((modMask,                               button1), (\w -> focus w >> mouseMoveWindow w >>
                                                            ifClick (snapMagicMove (Just 50) (Just 50) w)))
+    -- , ((modMask,                               button8), (\w -> spawn "nerd-dictation begin"))
+    -- , ((modMask,                               button9), (\w -> spawn "nerd-dictation end"))
     , ((modMask .|. shiftMask,                 button1), (\w -> focus w >> mouseMoveWindow w >>
                                                            ifClick (snapMagicResize [L,R,U,D] (Just 50) (Just 50) w)))
     , ((modMask,                               button3), (\w -> focus w >> mouseResizeWindow w >>

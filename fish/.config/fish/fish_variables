@@ -1,9 +1,9 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR CURRENT:date
 SETUVAR EDITOR:emacs\x20\x2da\x20\x27\x27\x20\x2dc\x20
 SETUVAR GTK_MODULES:\x3d\x1eappmenu\x2dgtk\x2dmodule
 SETUVAR --path PATH:/home/gigi/\x2ecabal/bin\x1e/home/gigi/\x2ecabal/bin\x1e/home/gigi/\x2elocal/bin/rofi\x1e/home/gigi/\x2easdf/bin\x1e/home/gigi/\x2elocal/bin\x1e/usr/local/sbin\x1e/usr/local/bin\x1e/usr/bin\x1e/usr/bin/site_perl\x1e/usr/bin/vendor_perl\x1e/usr/bin/core_perl
-SETUVAR QT_QPA_PLATFORM:gtk
 SETUVAR QT_QPA_PLATFORMTHEME:qt5ct
 SETUVAR __fish_initialized:3100
 SETUVAR fish_color_autosuggestion:9C9C9C
