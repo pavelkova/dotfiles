@@ -1,0 +1,36 @@
+#!/usr/bin/env fish
+
+function tell_me
+    echo $argv
+    notify-send $argv
+end
+
+switch $argv
+    case start
+        if test $NOW
+            tell_me "Recording is already active"
+        else
+            set -l NOW (date)
+            set -l ORG_DATE (date -d $NOW +"[%Y-%m-%d %a %H:%M]")
+            set -Ux CURRENT_RECORDING (date -d $NOW +"%Y-%m-%d_%T")
+
+            rec ~/Org/.audio/$CURRENT_RECORDING.wav &
+            nerd-dictation begin --full-sentence &
+                echo :PROPERTIES:\n:CREATED: $ORG_DATE\n:AUDIO: [[emms:~/Org/.audio/$CURRENT_RECORDING.wav]]\n:END:\n | xclip -selection clipboard
+            tell_me "Now recording"
+        end
+    case stop
+        if test $CURRENT_RECORDING
+            kill (pgrep -f $CURRENT_RECORDING)
+            nerd-dictation end
+        echo [[emms:~/Org/.audio/$CURRENT_RECORDING.wav]] | xclip -selection clipboard
+        tell_me "Recording ended.
+Audio saved to ~/Org/.audio/$CURRENT_RECORDING.wav"
+
+        set -e CURRENT_RECORDING
+        else
+            tell_me "No current recording"
+        end
+ case '*'
+        echo Invalid command
+end

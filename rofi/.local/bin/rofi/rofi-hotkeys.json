@@ -12,7 +12,7 @@
     "description": "open org-roam today in scratchpad"
   },
   {
-    "keybinding": "Super+Hyper+c",
+    "keybinding": "Super+Hyper+Space",
     "description": "open org-roam capture in scratchpad"
   },
   {
@@ -52,8 +52,24 @@
     "description": "open rofi-calculator"
   },
   {
+    "keybinding": "Super+Hyper+b",
+    "description": "open rofi-bluetooth"
+  },
+  {
+    "keybinding": "Super+Hyper+c",
+    "description": "open rofi-copyq"
+  },
+  {
+    "keybinding": "Super+Hyper+d",
+    "description": "open rofi-systemd"
+  },
+  {
     "keybinding": "Super+Hyper+e",
     "description": "open file in emacsclient with rofi"
+  },
+  {
+    "keybinding": "Super+Hyper+f",
+    "description": "open rofi file browser"
   },
   {
     "keybinding": "Super+Hyper+k",
@@ -68,12 +84,12 @@
     "description": "open rofi-web-search"
   },
   {
-    "keybinding": "Super+Hyper+w",
-    "description": "open xmonad window switch prompt"
+    "keybinding": "Super+Hyper+x",
+    "description": "open rofi-tmux"
   },
   {
-    "keybinding": "Super+Hyper+x",
-    "description": "open xmonad wm prompt"
+    "keybinding": "Super+Hyper+z",
+    "description": "browse documentation with rofi-zeal"
   },
   {
     "keybinding": "Super+Shift+;",

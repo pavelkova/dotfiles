@@ -10,7 +10,8 @@ import          Config
 
 orgRoam x      = "emacsclient -a '' -c -e '(org-roam-dailies-" ++ x ++ "-today)' -F '((name . \"" ++ x ++ "OrgRoam\"))'"
 captureOrgRoam = orgRoam "capture"
-findOrgRoam    = orgRoam "find"
+-- findOrgRoam    = orgRoam "find"
+findOrgRoam   = "~/.local/bin/orgtoday"
 
 floatRect h w = customFloating $ W.RationalRect l t w h where
   t = (1 - h) / 2

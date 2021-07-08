@@ -5,6 +5,7 @@ golang 1.12.5
 nodejs 16.0.0
 php 7.3.11
 python system
+#python 3.9.1
 ruby 2.7.0
 sqlite 3.27.2
 #postgres 13.3

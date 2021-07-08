@@ -50,26 +50,33 @@ myKeys = \conf -> mkKeymap conf $
   , ("M-S-<F12>",     spawn "~/.local/bin/dictate stop")
   , ("M-M3-<Return>", namedScratchpadAction myScratchpads "retroTerm")
   , ("M-M3-<Tab>",    namedScratchpadAction myScratchpads "findOrgRoam")
-  , ("M-M3-c",        namedScratchpadAction myScratchpads "captureOrgRoam")
+  , ("M-M3-<Space>",  namedScratchpadAction myScratchpads "captureOrgRoam")
   , ("M-M3-m",        namedScratchpadAction myScratchpads "minitube")
     -- emacs
   , ("M-e",         spawnEmacs "")
   , ("M-x a",       spawnEmacs "-e '(org-agenda-list)'")
-  , ("M-x c",       spawnEmacs "-e '(org-roam-dailies-capture-today)'")
+  , ("M-x <Space>", spawnEmacs "-e '(org-roam-dailies-capture-today)'")
   , ("M-x t",       spawnEmacs "-e '(org-todo-list)'")
-  , ("M-<Tab>",     spawnEmacs "-e '(org-roam-dailies-find-today)'")
+  -- , ("M-<Tab>",     spawnEmacs "-e '(org-roam-dailies-find-today)'")
+  , ("M-<Tab>",     spawn "~/.local/bin/orgtoday")
 
   -- rofi
   , ("M-<Space>",           spawn "rofi -show combi")
   , ("M-M3-=",              spawn "rofi -modi calc -show")
   , ("M-<XF86Calculator>",  spawn "rofi -modi calc -show") -- alt
   , ("M-M3-b",              spawn "rofi-bluetooth")
+  , ("M-M3-c",              spawn "~/.local/bin/rofi/rofi-copyq")
+  , ("M-M3-d",              spawn "~/.local/bin/rofi/rofi-systemd")
   , ("M-M3-e",              spawn "~/.local/bin/rofi/rofi-emacs")
+  , ("M-M3-f",              spawn "rofi -modi file-browser-extended -show")
   , ("M-M3-k",              spawn "~/.local/bin/rofi/rofi-hotkeys")
   , ("M-M3-p",              spawn "rofi-pass")
   , ("M-M3-s",              spawn "~/.local/bin/rofi/rofi-web-search")
-  , ("M-M3-w",              windowMultiPrompt myXPConfig [(Goto, allWindows), (Goto, wsWindows)])
-  , ("M-M3-x",              xmonadPrompt myXPConfig)
+  , ("M-M3-t",              spawn "rofi-translate")
+  , ("M-M3-x",              spawn "~/.local/bin/rofi/rofi-tmux")
+  , ("M-M3-z",              spawn "rofi-zeal")
+  -- , ("M-M3-w",              windowMultiPrompt myXPConfig [(Goto, allWindows), (Goto, wsWindows)])
+  -- , ("M-M3-x",              xmonadPrompt myXPConfig)
   , ("M-S-;",               shellPrompt myXPConfig)
 
   -- workspaces / topics

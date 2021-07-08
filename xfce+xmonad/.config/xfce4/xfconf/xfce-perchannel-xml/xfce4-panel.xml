@@ -62,24 +62,17 @@
       <property name="nrows" type="uint" value="1"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="43"/>
-        <value type="int" value="22"/>
-        <value type="int" value="24"/>
         <value type="int" value="32"/>
-        <value type="int" value="35"/>
-        <value type="int" value="19"/>
-        <value type="int" value="33"/>
+        <value type="int" value="22"/>
+        <value type="int" value="28"/>
         <value type="int" value="27"/>
-        <value type="int" value="14"/>
-        <value type="int" value="36"/>
-        <value type="int" value="6"/>
-        <value type="int" value="21"/>
-        <value type="int" value="18"/>
         <value type="int" value="44"/>
       </property>
       <property name="position" type="string" value="p=8;x=3200;y=1423"/>
       <property name="position-locked" type="bool" value="true"/>
       <property name="size" type="uint" value="31"/>
-      <property name="length-adjust" type="bool" value="false"/>
+      <property name="length-adjust" type="bool" value="true"/>
+      <property name="output-name" type="string" value="Automatic"/>
     </property>
   </property>
   <property name="plugins" type="empty">
@@ -97,21 +90,6 @@
     <property name="plugin-13" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
     </property>
-    <property name="plugin-14" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="15993766861.desktop"/>
-      </property>
-    </property>
-    <property name="plugin-18" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="159402256117.desktop"/>
-      </property>
-    </property>
-    <property name="plugin-19" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="15970445381.desktop"/>
-      </property>
-    </property>
     <property name="plugin-2" type="string" value="appmenu">
       <property name="plugins" type="empty">
         <property name="plugin-2" type="empty">
@@ -124,38 +102,13 @@
     <property name="plugin-20" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
     </property>
-    <property name="plugin-21" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="15970446012.desktop"/>
-      </property>
-    </property>
     <property name="plugin-22" type="string" value="directorymenu">
       <property name="base-directory" type="string" value="/home/gigi"/>
       <property name="icon-name" type="string" value="user-home"/>
     </property>
-    <property name="plugin-24" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="15940177661.desktop"/>
-      </property>
-    </property>
-    <property name="plugin-27" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="159402111810.desktop"/>
-      </property>
-    </property>
     <property name="plugin-3" type="string" value="separator">
       <property name="expand" type="bool" value="true"/>
       <property name="style" type="uint" value="0"/>
-    </property>
-    <property name="plugin-32" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="15945761501.desktop"/>
-      </property>
-    </property>
-    <property name="plugin-33" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="16191697642.desktop"/>
-      </property>
     </property>
     <property name="plugin-34" type="string" value="clock">
       <property name="digital-format" type="string" value="%I:%M "/>
@@ -163,16 +116,6 @@
       <property name="mode" type="uint" value="2"/>
       <property name="show-seconds" type="bool" value="false"/>
       <property name="tooltip-format" type="string" value="%A, %d %B %Y [%T]"/>
-    </property>
-    <property name="plugin-35" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="15940210407.desktop"/>
-      </property>
-    </property>
-    <property name="plugin-36" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="159402113812.desktop"/>
-      </property>
     </property>
     <property name="plugin-4" type="string" value="pager">
       <property name="miniature-view" type="bool" value="false"/>
@@ -189,11 +132,6 @@
     </property>
     <property name="plugin-5" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
-    </property>
-    <property name="plugin-6" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="159402208413.desktop"/>
-      </property>
     </property>
     <property name="plugin-8" type="string" value="windowmenu">
       <property name="style" type="uint" value="1"/>
@@ -222,6 +160,9 @@
     <property name="plugin-12" type="string" value="notification-plugin"/>
     <property name="plugin-15" type="string" value="systray">
       <property name="known-legacy-items" type="array">
+        <value type="string" value="tomatestatusicon"/>
+        <value type="string" value="tomate-gtk"/>
+        <value type="string" value="qxkb"/>
         <value type="string" value="solaar"/>
         <value type="string" value="xfce4-power-manager"/>
         <value type="string" value="nextcloud"/>
@@ -239,6 +180,12 @@
         <value type="string" value="optimus manager qt"/>
       </property>
       <property name="known-items" type="array">
+        <value type="string" value="Zeal"/>
+        <value type="string" value="CherryTomato"/>
+        <value type="string" value="QML Timer"/>
+        <value type="string" value="tomate"/>
+        <value type="string" value="TrayIcon"/>
+        <value type="string" value="com.gkayaalp.pomodorino"/>
         <value type="string" value="vlc"/>
         <value type="string" value="audio-recorder application"/>
         <value type="string" value="Clockify1"/>
@@ -271,13 +218,59 @@
     </property>
     <property name="plugin-23" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="chromium.instance1198510;chromium.instance1346517;chromium.instance1629455;chromium.instance643992;Cozy;firefox.instance1371299;firefox.instance1593934;firefox.instance1601771;firefox.instance1603;firefox.instance1604425;firefox.instance2612398;firefox.instance2859125;firefox.instance2881001;firefox.instance36558;firefox.instance4091;firefox.instance5754;firefox.instance7702;firefox.instance9082;vlc"/>
+      <property name="mpris-players" type="string" value="chromium.instance1198510;chromium.instance1346517;chromium.instance140513;chromium.instance142124;chromium.instance1629455;chromium.instance643992;Cozy;firefox.instance1371299;firefox.instance1593934;firefox.instance1601771;firefox.instance1603;firefox.instance1604425;firefox.instance2612398;firefox.instance2859125;firefox.instance2881001;firefox.instance29514;firefox.instance36558;firefox.instance4091;firefox.instance5754;firefox.instance7702;firefox.instance9082;firefox.instance99936;vlc"/>
     </property>
     <property name="plugin-25" type="string" value="xkb">
       <property name="display-type" type="uint" value="2"/>
       <property name="display-name" type="uint" value="0"/>
       <property name="caps-lock-indicator" type="bool" value="true"/>
       <property name="group-policy" type="uint" value="0"/>
+    </property>
+    <property name="plugin-28" type="string" value="dockbarx">
+      <property name="block-autohide" type="bool" value="false"/>
+      <property name="expand" type="bool" value="false"/>
+      <property name="orient" type="string" value="bottom"/>
+    </property>
+    <property name="plugin-27" type="string" value="xfce4-time-out-plugin"/>
+    <property name="plugin-32" type="string" value="weather">
+      <property name="location" type="empty">
+        <property name="name" type="string" value="Greenville, South Carolina"/>
+        <property name="latitude" type="string" value="34.830799"/>
+        <property name="longitude" type="string" value="-82.350700"/>
+      </property>
+      <property name="msl" type="int" value="299"/>
+      <property name="timezone" type="string" value="America/New_York"/>
+      <property name="offset" type="string" value="-04:00"/>
+      <property name="cache-max-age" type="int" value="172800"/>
+      <property name="power-saving" type="bool" value="true"/>
+      <property name="units" type="empty">
+        <property name="temperature" type="int" value="1"/>
+        <property name="pressure" type="int" value="2"/>
+        <property name="windspeed" type="int" value="1"/>
+        <property name="precipitation" type="int" value="1"/>
+        <property name="altitude" type="int" value="1"/>
+        <property name="apparent-temperature" type="int" value="0"/>
+      </property>
+      <property name="round" type="bool" value="true"/>
+      <property name="single-row" type="bool" value="true"/>
+      <property name="tooltip-style" type="int" value="1"/>
+      <property name="forecast" type="empty">
+        <property name="layout" type="int" value="1"/>
+        <property name="days" type="int" value="5"/>
+      </property>
+      <property name="theme-dir" type="string" value="/usr/share/xfce4/weather/icons/simplistic"/>
+      <property name="scrollbox" type="empty">
+        <property name="show" type="bool" value="true"/>
+        <property name="animate" type="bool" value="true"/>
+        <property name="lines" type="int" value="1"/>
+        <property name="color" type="string" value="rgba(0,0,0,0)"/>
+        <property name="use-color" type="bool" value="false"/>
+      </property>
+    </property>
+    <property name="notes" type="empty">
+      <property name="global" type="empty">
+        <property name="skip-taskbar-hint" type="bool" value="false"/>
+      </property>
     </property>
   </property>
 </channel>

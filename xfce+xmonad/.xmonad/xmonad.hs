@@ -62,7 +62,7 @@ main = do
                  , keys               = myKeys
                  , mouseBindings      = myMouseBindings
                  , layoutHook         = myLayouts
-                 , manageHook         = myManageHook <+> myScratchpadsHook <+> manageHook desktopConfig -- def
+                 , manageHook         = myBaseHook <+> myManageHook <+> myScratchpadsHook <+> manageHook desktopConfig -- def
                  , terminal           = myTerminal
                  }
 -- myManageHook = composeAll [ className =? "Clockify"                        --> doFloat
@@ -86,6 +86,8 @@ main = do
 --                           , manageDocks
 --                           ]
 
+myBaseHook = composeAll [ isDialog     --> doCenterFloat
+                        , isFullscreen --> doFullFloat]
 myManageHook = composeAll . concat $ [ [className =? c --> doFloat               | c <- myFloatsByClass]
                                      , [title     =? t --> doFloat               | t <- myFloatsByTitle]
                                      , [className =? c --> doCenterFloat         | c <- myCenterFloatsByClass]
@@ -93,7 +95,7 @@ myManageHook = composeAll . concat $ [ [className =? c --> doFloat              
                                      , [className =? c --> doF (W.shift "I hoy") | c <- myHomescreenApps]
                                      ]
   where
-    myFloatsByClass       = ["copyq", "Tilda", "Sxiv",                       -- utilities
+    myFloatsByClass       = ["copyq", "Tilda", "Toplevel", "Sxiv",           -- utilities
                              "Klipper", "Kmix", "krunner",                   -- KDE
                              "Plasma", "plasmashell", "Plasmoidviewer",
                              "Variety", "Xmessage"]                          -- system
@@ -102,6 +104,6 @@ myManageHook = composeAll . concat $ [ [className =? c --> doFloat              
                              "systemsettings",                               -- KDE
                              "Xfce4-appearance-settings", "Xfce4-appFinder", -- XFCE
                              "Xfce4-settings-manager"]
-    myFullFloatsByClass   = ["vncviewer", "Vncviewer"]
+    myFullFloatsByClass   = ["ksmserver","vncviewer", "Vncviewer"]
     myHomescreenApps      = ["ICE-SSB-clockify", "ICE-SSB-goalify", "ICE-SSB-todoist",
                              "Clockify", "todoist"]
