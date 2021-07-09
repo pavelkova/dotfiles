@@ -99,7 +99,8 @@ myManageHook = composeAll . concat $ [ [className =? c --> doFloat              
                              "Klipper", "Kmix", "krunner",                   -- KDE
                              "Plasma", "plasmashell", "Plasmoidviewer",
                              "Variety", "Xmessage"]                          -- system
-    myFloatsByTitle       = ["plasma-desktop", "win7"]                       -- KDE
+    myFloatsByTitle       = [ "Panel Preferences"                            -- XFCE
+                            , "plasma-desktop", "win7"]                      -- KDE
     myCenterFloatsByClass = ["ckb-next", "Solaar",                           -- device config
                              "systemsettings",                               -- KDE
                              "Xfce4-appearance-settings", "Xfce4-appFinder", -- XFCE
