@@ -1,4 +1,4 @@
-python-language-server[all]
+#python-language-server[all]
 beautifulsoup4
 black
 jupyter
@@ -6,9 +6,10 @@ mypy
 numpy
 pandas
 pip
-pyls
-pyls-black
+#pyls
+#pyls-black
 pyradio
+#pyright
 pytest
 python-rofi
 requests

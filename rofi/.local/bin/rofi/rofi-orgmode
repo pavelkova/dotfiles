@@ -1,0 +1,52 @@
+#!/usr/bin/env python
+
+from rofi import Rofi
+
+rofi = Rofi()
+
+
+
+def parse_org_file(file_path):
+    base_folder, file_name = file_path.rsplit('/', 1)
+    title = file_name
+    lines = []
+    drawer_ends = [':PROPERTIES:', ':END:', ':ID:']
+    entry_begins = [ '#+', '- ', '*']
+
+    with open(file_path) as f:
+        file_lines = f.readlines()
+
+    for i in range(10):
+        if '#+title' in file_lines[i].lower():
+            title = file_lines[i]
+            break
+
+    for i, line in enumerate(file_lines):
+        if all(x not in line for x in drawer_ends) and line != '\n':
+            if len(lines) == 0 or any(line.startswith(y) for y in entry_begins):
+                line = line.replace('\n', '&#x0a;')
+                # while len(line) > 0:
+
+                lines.append({ 'ln': i, 'text': line  })
+            else:
+                lines[-1]['text'] += line
+
+    return { 'title': title, 'lines': lines }
+
+
+def run_rofi(org_file):
+    lines = []
+    for line in org_file['lines']:
+        lines.append(line['text'])
+
+    index, key = rofi.select(org_file['title'], lines)
+    if key == 0:
+        out, err = subprocess.Popen(
+            send_key(options_list[index][action_value]),
+            shell=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE).communicate()
+
+
+if __name__ == '__main__':
+    run_rofi(parse_org_file('~/Org/an_unnatural_growth.org'))

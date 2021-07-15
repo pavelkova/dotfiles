@@ -1,18 +1,19 @@
 #!/usr/bin/env fish
+variety &
 xmonad --replace &
 wpg -S paradise-leaves.jpg &
-picom --experimental-backends -b &&
-
+# variety &
+picom --experimental-backends -b &
 xmodmap ~/.Xmodmap &
 # pg_ctl start &
-variety &
-syncthing-gtk &
-redshift-gtk &
+# syncthing-gtk &
+# redshift-gtk &
 # nm-applet &
 # pasystray &
 # nextcloud &
-tilda &
-copyq &
+# tilda &
+# copyq &
 # aw-qt
+sleep 5 &
 emacs --daemon &
 xfce4-panel --restart &

@@ -75,9 +75,9 @@ myKeys = \conf -> mkKeymap conf $
   , ("M-M3-t",              spawn "rofi-translate")
   , ("M-M3-x",              spawn "~/.local/bin/rofi/rofi-tmux")
   , ("M-M3-z",              spawn "rofi-zeal")
+  , ("M-S-;",               shellPrompt myXPConfig)
   -- , ("M-M3-w",              windowMultiPrompt myXPConfig [(Goto, allWindows), (Goto, wsWindows)])
   -- , ("M-M3-x",              xmonadPrompt myXPConfig)
-  , ("M-S-;",               shellPrompt myXPConfig)
 
   -- workspaces / topics
   , ("M-S-.",           currentTopicAction myTopicConfig)
@@ -95,6 +95,7 @@ myKeys = \conf -> mkKeymap conf $
   , ("M-l l",           sendMessage $ JumpToLayout "full")
   , ("M-l m",           sendMessage $ JumpToLayout "smMouse")
   , ("M-l o",           sendMessage $ JumpToLayout "circ")
+  , ("M-l p",           sendMessage $ JumpToLayout "saveFL")
   , ("M-l r",           sendMessage $ JumpToLayout "row")
   , ("M-l S-r",         sendMessage $ JumpToLayout "rolex")
   , ("M-l s",           sendMessage $ JumpToLayout "smBSP")

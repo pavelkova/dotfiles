@@ -13,6 +13,7 @@ import           XMonad.Layout.Circle
 import           XMonad.Layout.Cross
 import           XMonad.Layout.LayoutCombinators -- hiding ( (|||) )
 import           XMonad.Layout.MouseResizableTile
+import           XMonad.Layout.PositionStoreFloat
 import           XMonad.Layout.Roledex
 import           XMonad.Layout.SimpleFloat
 import           XMonad.Layout.SimplestFloat
@@ -22,17 +23,24 @@ import           XMonad.Layout.ThreeColumns
 import           XMonad.Layout.ZoomRow
 
 -- import           XMonad.Layout.Decoration
+import           XMonad.Layout.BorderResize
 import           XMonad.Layout.Maximize
 import           XMonad.Layout.Minimize
 import           XMonad.Layout.Named
 import           XMonad.Layout.NoBorders
+import           XMonad.Layout.NoFrillsDecoration
 import           XMonad.Layout.PerWorkspace
 import           XMonad.Layout.Spacing
 import           XMonad.Layout.WindowArranger
 
 import qualified XMonad.Layout.WindowNavigation as N
 
+-- decoratedFloat = floatingDeco $ borderResize $ positionStoreFloat
+-- where floatingDeco l = noFrillsDecoShrinkText def l
+
 myLayouts = N.windowNavigation
+  -- $ floatingDeco
+  -- $ borderResize
   $ mouseResize
   $ windowArrange
   $ maximize
@@ -51,6 +59,7 @@ myLayouts = N.windowNavigation
     ||| long
     ||| rolex
     ||| row
+    ||| saveFl
     ||| simpFl
     ||| smBSP
     ||| smMouse
@@ -70,6 +79,7 @@ myLayouts = N.windowNavigation
     long        = named "long"     $ Tall 1 (3/100) (3/5)
     rolex       = named "rolex"    $ Roledex
     row         = named "row"      $ Mirror long
+    saveFl      = named "saveFl"   $ positionStoreFloat
     simpFl      = named "simpFl"   $ simplestFloat
     -- spir        = named "spir"     $ spiralWithDir East CW (6/7)
     spir        = named "spir"     $ spiral (6/7)
@@ -87,3 +97,5 @@ myLayouts = N.windowNavigation
     smBSP       = named "smBSP" $ smSpace $ emptyBSP
     xlBSP       = named "xlBSP" $ xlSpace $ emptyBSP
     smMouse     = named "smMouse" $ smSpace $ mouseResizableTile
+    -- window decorations
+    floatingDeco l = noFrillsDeco shrinkText def l
