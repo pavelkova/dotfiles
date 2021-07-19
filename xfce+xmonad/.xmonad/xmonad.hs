@@ -95,18 +95,19 @@ myManageHook = composeAll . concat $ [ [className =? c --> doFloat              
                                      , [className =? c --> doF (W.shift "I hoy") | c <- myHomescreenApps]
                                      ]
   where
-    myFloatsByClass       = ["copyq", "Tilda", "Toplevel", "Sxiv",           -- utilities
-                             "Klipper", "Kmix", "krunner",                   -- KDE
-                             "Plasma", "plasmashell", "Plasmoidviewer",
-                             "Variety", "Xmessage"]                          -- system
-    myFloatsByTitle       = [ "Breathing",                                   -- utilities
-                              "Panel Preferences"                            -- XFCE
-                            , "plasma-desktop", "win7"]                      -- KDE
-    myCenterFloatsByClass = ["ckb-next", -- "Planner",
-                             "Solaar",                                       -- device config
-                             "systemsettings",                               -- KDE
-                             "Xfce4-appearance-settings", "Xfce4-appFinder", -- XFCE
-                             "Xfce4-panel", "Xfce4-settings-manager"]
-    myFullFloatsByClass   = ["ksmserver","vncviewer", "Vncviewer"]
+    myFloatsByClass       = [ "Tilda", "Toplevel", "Sxiv" -- "copyq"
+                            , "Pavucontrol"                                  -- utilities
+                            , "Klipper", "Kmix", "krunner"                   -- KDE
+                            , "Plasma", "plasmashell", "Plasmoidviewer"
+                            , "Variety", "Xmessage" ]                        -- system
+    myFloatsByTitle       = [ "Breathing"                                    -- utilities
+                            , "Panel Preferences"                            -- XFCE
+                            , "plasma-desktop", "win7" ]                     -- KDE
+    myCenterFloatsByClass = [ "ckb-next" -- "Planner",
+                            , "Solaar"                                       -- device config
+                            , "systemsettings"                               -- KDE
+                            , "Xfce4-appearance-settings", "Xfce4-appFinder" -- XFCE
+                            , "Xfce4-panel", "Xfce4-settings-manager" ]
+    myFullFloatsByClass   = [ "ksmserver","vncviewer", "Vncviewer" ]
     myHomescreenApps      = ["ICE-SSB-clockify", "ICE-SSB-goalify", "ICE-SSB-todoist",
                              "Clockify", "todoist"]
