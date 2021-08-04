@@ -51,7 +51,9 @@ myKeys = \conf -> mkKeymap conf $
   , ("M-M3-<Return>", namedScratchpadAction myScratchpads "retroTerm")
   , ("M-M3-<Tab>",    namedScratchpadAction myScratchpads "findOrgRoam")
   , ("M-M3-<Space>",  namedScratchpadAction myScratchpads "captureOrgRoam")
+  , ("M-M3-a",        namedScratchpadAction myScratchpads "orgAgenda")
   , ("M-M3-m",        namedScratchpadAction myScratchpads "minitube")
+  , ("M-M3-t",        namedScratchpadAction myScratchpads "orgTodo")
     -- emacs
   , ("M-e",         spawnEmacs "")
   , ("M-x a",       spawnEmacs "-e '(org-agenda-list)'")
