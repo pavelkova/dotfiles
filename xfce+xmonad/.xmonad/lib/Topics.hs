@@ -52,8 +52,8 @@ myTopicConfig = def
   , defaultTopic       = "hoy"
   , topicActions       =
     M.fromList
-      $ [ ( "I hoy", spawn "planner"
-            >> spawn "clockify"
+      $ [ ( "I hoy", spawn "ice-firefox https://clockify.me/tracker"
+            >> spawn "ice-firefox https://todoist.com/app/today"
             >> spawn "ice-firefox https://app.goalifyapp.com/home/personal/dashboard?tab=goals"
           )
         , ("II nav", spawn "firefox")
