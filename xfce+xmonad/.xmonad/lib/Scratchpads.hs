@@ -11,11 +11,11 @@ import          Config
 org x          = "emacsclient -a '' -c -e '(" ++ x ++ ")'"
 orgRoam x      = "emacsclient -a '' -c -e '(org-roam-dailies-" ++ x ++ "-today)' -F '((name . \"" ++ x ++ "OrgRoam\"))'"
 
-orgAgenda      = org "org-agenda-list"
-orgTodo        = org "org-todo-list"
+orgAgenda      = org "org-agenda-list" ++ "-F '((name . \"orgAgenda\"))'"
+orgTodo        = org "org-todo-list" ++ "-F '((name . \"orgTodo\"))'"
 captureOrgRoam = orgRoam "capture"
--- findOrgRoam    = orgRoam "find"
-findOrgRoam    = "~/.local/bin/orgtoday"
+findOrgRoam    = orgRoam "goto"
+-- findOrgRoam    = "~/.local/bin/orgtoday"
 
 floatRect h w = customFloating $ W.RationalRect l t w h where
   t = (1 - h) / 2

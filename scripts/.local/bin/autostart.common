@@ -1,5 +1,5 @@
 #!/usr/bin/env fish
-variety &
+# variety &
 xmonad --replace &
 wpg -S paradise-leaves.jpg &
 # variety &
@@ -14,6 +14,6 @@ xmodmap ~/.Xmodmap &
 # tilda &
 # copyq &
 # aw-qt
-sleep 5 &
-emacs --daemon &
+# sleep 5 &
+# emacs --daemon &
 xfce4-panel --restart &

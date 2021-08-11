@@ -17,6 +17,7 @@ import           XMonad.Prompt.Shell
 import           XMonad.Hooks.DynamicLog
 import           XMonad.Hooks.ManageDocks
 import           XMonad.Hooks.ManageHelpers
+import           XMonad.Hooks.Minimize
 import           XMonad.Hooks.UrgencyHook
 
 -- actions
@@ -37,7 +38,7 @@ import           XMonad.Layout.SimpleDecoration
 
 -- local modules
 import           Bindings                       ( myKeys, myMouseBindings )
-import           Colors                         ( myActiveBorderColor, myInactiveBorderColor )
+import           Colors                         ( myActiveColor, myInactiveColor )
 import           Config
 import           Layouts                        ( myLayouts )
 import           Scratchpads                    ( myScratchpadsHook )
@@ -47,44 +48,26 @@ main :: IO ()
 main = do
   checkTopicConfig myTopics myTopicConfig
   xmonad
-    $ navigation2D
-        def
-        (xK_Up, xK_Left, xK_Down, xK_Right)
-        [(mod4Mask, windowGo), (mod4Mask .|. shiftMask, windowSwap)]
+    $ navigation2DP
+      def
+      ("<Up>", "<Left>", "<Down>", "<Right>")
+      [ ("M-",   windowGo  )
+      , ("M-S-", windowSwap)]
         False
     $ docks
     $ xfceConfig { modMask            = mod4Mask
                  , focusFollowsMouse  = True
                  , borderWidth        = 3
-                 , normalBorderColor  = myInactiveBorderColor
-                 , focusedBorderColor = myActiveBorderColor
+                 , normalBorderColor  = myInactiveColor
+                 , focusedBorderColor = myActiveColor
                  , workspaces         = myTopics
                  , keys               = myKeys
                  , mouseBindings      = myMouseBindings
                  , layoutHook         = myLayouts
                  , manageHook         = myBaseHook <+> myManageHook <+> myScratchpadsHook <+> manageHook desktopConfig -- def
+                 , handleEventHook    = minimizeEventHook
                  , terminal           = myTerminal
                  }
--- myManageHook = composeAll [ className =? "Clockify"                        --> doFloat
---                           , className =? "ckb-next"                        --> doCenterFloat
---                           , className =? "copyq"                           --> doCenterFloat
---                           , className =? "ICE-SSB-nts"                     --> doFloat
---                           , className =? "Tilda"                           --> doFloat
---                           , className =? "Sxiv"                            --> doFloat
---                           , className =? "Solaar"                          --> doCenterFloat
---                           , className =? "systemsettings"                  --> doCenterFloat -- KDE
---                           , className =? "todoist"                         --> doFloat
---                           , className =? "Variety"                         --> doFloat
---                           , className =? "vncviewer"                       --> doFullFloat
---                           , className =? "Vncviewer"                       --> doFullFloat
---                           , className =? "Xmessage"                        --> doFloat
---                           , className =? "Xfce4-appearance-settings"       --> doCenterFloat
---                           , className =? "Xfce4-appFinder"                 --> doCenterFloat
---                           , className =? "Xfce4-settings-manager"          --> doCenterFloat
---                           , isDialog                                       --> doCenterFloat
---                           , isFullscreen                                   --> doFullFloat
---                           , manageDocks
---                           ]
 
 myBaseHook = composeAll [ isDialog     --> doCenterFloat
                         , isFullscreen --> doFullFloat]

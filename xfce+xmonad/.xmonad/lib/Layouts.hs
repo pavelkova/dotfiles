@@ -22,8 +22,9 @@ import           XMonad.Layout.Tabbed
 import           XMonad.Layout.ThreeColumns
 import           XMonad.Layout.ZoomRow
 
--- import           XMonad.Layout.Decoration
 import           XMonad.Layout.BorderResize
+import           XMonad.Layout.ButtonDecoration
+import           XMonad.Layout.DecorationAddons
 import           XMonad.Layout.Maximize
 import           XMonad.Layout.Minimize
 import           XMonad.Layout.Named
@@ -35,11 +36,9 @@ import           XMonad.Layout.WindowArranger
 
 import qualified XMonad.Layout.WindowNavigation as N
 
--- decoratedFloat = floatingDeco $ borderResize $ positionStoreFloat
--- where floatingDeco l = noFrillsDecoShrinkText def l
+import           Config     ( myThemeWithButtons )
 
 myLayouts = N.windowNavigation
-  -- $ floatingDeco
   -- $ borderResize
   $ mouseResize
   $ windowArrange
@@ -79,7 +78,7 @@ myLayouts = N.windowNavigation
     long        = named "long"     $ Tall 1 (3/100) (3/5)
     rolex       = named "rolex"    $ Roledex
     row         = named "row"      $ Mirror long
-    saveFl      = named "saveFl"   $ positionStoreFloat
+    saveFl      = named "saveFl"   $ floatingDeco $ borderResize $ positionStoreFloat
     simpFl      = named "simpFl"   $ simplestFloat
     -- spir        = named "spir"     $ spiralWithDir East CW (6/7)
     spir        = named "spir"     $ spiral (6/7)
@@ -98,4 +97,6 @@ myLayouts = N.windowNavigation
     xlBSP       = named "xlBSP" $ xlSpace $ emptyBSP
     smMouse     = named "smMouse" $ smSpace $ mouseResizableTile
     -- window decorations
-    floatingDeco l = noFrillsDeco shrinkText def l
+    -- floatingDeco l = noFrillsDeco shrinkText def l
+    -- floatingDeco l = buttonDeco shrinkText myThemeWithButtons l
+    floatingDeco l = buttonDeco shrinkText defaultThemeWithButtons l

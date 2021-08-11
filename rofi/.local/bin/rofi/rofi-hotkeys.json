@@ -152,6 +152,10 @@
     "description": "switch to circle layout"
   },
   {
+    "keybinding": "Super+l p",
+    "description": "switch to stored position floating layout"
+  },
+  {
     "keybinding": "Super+l r",
     "description": "switch to row layout (mirrored tall)"
   },
