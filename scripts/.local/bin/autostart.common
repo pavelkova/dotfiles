@@ -1,10 +1,13 @@
 #!/usr/bin/env fish
-# variety &
-xmonad --replace &
-wpg -S paradise-leaves.jpg &
-# variety &
-picom --experimental-backends -b &
 xmodmap ~/.Xmodmap &
+sleep 5 &
+xmonad --replace &
+picom --experimental-backends -b &
+wpg -S paradise-leaves.jpg
+# sleep 5 &
+# systemctl --user restart emacs
+
+# variety &
 # pg_ctl start &
 # syncthing-gtk &
 # redshift-gtk &
@@ -16,4 +19,3 @@ xmodmap ~/.Xmodmap &
 # aw-qt
 # sleep 5 &
 # emacs --daemon &
-xfce4-panel --restart &

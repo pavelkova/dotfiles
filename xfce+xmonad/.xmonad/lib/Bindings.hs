@@ -16,6 +16,7 @@ import           XMonad.Actions.FloatKeys
 import           XMonad.Actions.FloatSnap
 import           XMonad.Actions.Minimize
 import           XMonad.Actions.OnScreen
+import           XMonad.Actions.PerWorkspaceKeys
 import           XMonad.Actions.PhysicalScreens
 import           XMonad.Actions.MouseResize
 import           XMonad.Actions.TopicSpace
@@ -59,8 +60,8 @@ myKeys = \conf -> mkKeymap conf $
   , ("M-x a",       spawnEmacs "-e '(org-agenda-list)'")
   , ("M-x <Space>", spawnEmacs "-e '(org-roam-dailies-capture-today)'")
   , ("M-x t",       spawnEmacs "-e '(org-todo-list)'")
-  -- , ("M-<Tab>",     spawnEmacs "-e '(org-roam-dailies-find-today)'")
-  , ("M-<Tab>",     spawn "~/.local/bin/orgtoday")
+  , ("M-<Tab>",     spawnEmacs "-e '(org-roam-dailies-find-today)'")
+  -- , ("M-<Tab>",     spawn "~/.local/bin/orgtoday")
 
   -- rofi
   , ("M-<Space>",           spawn "rofi -show combi")
@@ -110,6 +111,11 @@ myKeys = \conf -> mkKeymap conf $
   , ("M-C-<Left>",      sendMessage $ ExpandTowards L)
   , ("M-C-<Up>",        sendMessage $ ExpandTowards U)
   , ("M-C-<Down>",      sendMessage $ ExpandTowards D)
+  -- , ("M-C-<Right>",     bindOn [ ("", sendMessage $ ExpandTowards R)
+  --                              , ("", withFocused $ snapGrow R Nothing)])
+  -- , ("M-C-<Left>",      bindOn [("", sendMessage $ ExpandTowards L)])
+  -- , ("M-C-<Up>",        bindOn [("", sendMessage $ ExpandTowards U)])
+  -- , ("M-C-<Down>",      bindOn [("", sendMessage $ ExpandTowards D)])
   -- snap floating windows to size
   , ("M-S-<KP_Right>",  withFocused $ snapMove R Nothing)
   , ("M-S-<KP_Left>",   withFocused $ snapMove L Nothing)
@@ -143,15 +149,7 @@ myKeys = \conf -> mkKeymap conf $
   , ("M-<KP_3>",        onNextNeighbour def W.shift)
   , ("M-C-<KP_9>",      onPrevNeighbour def W.view)
   , ("M-C-<KP_3>",      onNextNeighbour def W.view)
-  
-  -- , ("M-C-S-<Right>", sendMessage $ ShrinkFrom R)
-  -- , ("M-C-S-<Left>",  sendMessage $ ShrinkFrom L)
-  -- , ("M-C-S-<Up>",    sendMessage $ ShrinkFrom U)
-  -- , ("M-C-S-<Down>",  sendMessage $ ShrinkFrom D)
-  -- , ("M-C-S-<Left>",  withFocused (keysResizeWindow (-50,0) (0,0)))
-  -- , ("M-C-S-<Right>", withFocused (keysResizeWindow (50,0) (0,0)))
-  -- , ("M-C-S-<Up>",    withFocused (keysResizeWindow (0,-50) (0,0)))
-  -- , ("M-C-S-<Down>",  withFocused (keysResizeWindow (0,50) (0,0)))
+
   -- windows
   , ("M-w",         kill)
   , ("M-c <Space>", windowMenu)

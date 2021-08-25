@@ -39,8 +39,6 @@ import qualified XMonad.Layout.WindowNavigation as N
 import           Config     ( myThemeWithButtons )
 
 myLayouts = N.windowNavigation
-  -- $ borderResize
-  $ mouseResize
   $ windowArrange
   $ maximize
   $ minimize
@@ -95,8 +93,8 @@ myLayouts = N.windowNavigation
     -- layouts with standard spacings
     smBSP       = named "smBSP" $ smSpace $ emptyBSP
     xlBSP       = named "xlBSP" $ xlSpace $ emptyBSP
-    smMouse     = named "smMouse" $ smSpace $ mouseResizableTile
+    smMouse     = named "smMouse" $ smSpace $ mouseResize $ mouseResizableTile
     -- window decorations
-    -- floatingDeco l = noFrillsDeco shrinkText def l
+    floatingDeco l = noFrillsDeco shrinkText def l
     -- floatingDeco l = buttonDeco shrinkText myThemeWithButtons l
-    floatingDeco l = buttonDeco shrinkText defaultThemeWithButtons l
+    -- floatingDeco l = buttonDeco shrinkText defaultThemeWithButtons l

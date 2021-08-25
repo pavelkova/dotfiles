@@ -18,6 +18,7 @@ import           XMonad.Hooks.DynamicLog
 import           XMonad.Hooks.ManageDocks
 import           XMonad.Hooks.ManageHelpers
 import           XMonad.Hooks.Minimize
+import           XMonad.Hooks.PositionStoreHooks
 import           XMonad.Hooks.UrgencyHook
 
 -- actions
@@ -39,7 +40,7 @@ import           XMonad.Layout.SimpleDecoration
 -- local modules
 import           Bindings                       ( myKeys, myMouseBindings )
 import           Colors                         ( myActiveColor, myInactiveColor )
-import           Config
+import           Config                         -- ( myThemeWithButtons )
 import           Layouts                        ( myLayouts )
 import           Scratchpads                    ( myScratchpadsHook )
 import           Topics                         
@@ -64,14 +65,16 @@ main = do
                  , keys               = myKeys
                  , mouseBindings      = myMouseBindings
                  , layoutHook         = myLayouts
-                 , manageHook         = myBaseHook <+> myManageHook <+> myScratchpadsHook <+> manageHook desktopConfig -- def
-                 , handleEventHook    = minimizeEventHook
+                 , handleEventHook    = myHandleEventHook
+                 , manageHook         = myManageHook <+> myScratchpadsHook <+> positionStoreManageHook Nothing <+> manageHook desktopConfig -- def
                  , terminal           = myTerminal
                  }
 
-myBaseHook = composeAll [ isDialog     --> doCenterFloat
-                        , isFullscreen --> doFullFloat]
-myManageHook = composeAll . concat $ [ [className =? c --> doFloat               | c <- myFloatsByClass]
+myHandleEventHook = minimizeEventHook <+> positionStoreEventHook
+
+myManageHook = composeAll . concat $ [ [isDialog       --> doCenterFloat]
+                                     , [isFullscreen   --> doFullFloat]
+                                     , [className =? c --> doFloat               | c <- myFloatsByClass]
                                      , [title     =? t --> doFloat               | t <- myFloatsByTitle]
                                      , [className =? c --> doCenterFloat         | c <- myCenterFloatsByClass]
                                      , [className =? c --> doFullFloat           | c <- myFullFloatsByClass]
@@ -90,7 +93,8 @@ myManageHook = composeAll . concat $ [ [className =? c --> doFloat              
                             , "Solaar"                                       -- device config
                             , "systemsettings"                               -- KDE
                             , "Xfce4-appearance-settings", "Xfce4-appFinder" -- XFCE
-                            , "Xfce4-panel", "Xfce4-settings-manager" ]
+                            , "Xfce4-panel", "Xfce4-settings-manager"
+                            , "Zeal" ]
     myFullFloatsByClass   = [ "ksmserver","vncviewer", "Vncviewer" ]
     myHomescreenApps      = ["ICE-SSB-clockify", "ICE-SSB-goalify", "ICE-SSB-todoist",
                              "Clockify", "todoist"]
