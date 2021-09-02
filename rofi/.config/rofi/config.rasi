@@ -1,37 +1,33 @@
 configuration {
 	modi: "combi,window,keys,ssh,drun,file-browser-extended";
-	width: 20;
-/*	lines: 15;*/
-/*	columns: 1;*/
-	font: "VictorMonoMedium 10";
-/*	bw: 1;*/
+	font: "VictorMonoMedium 11";
 /*	location: 0;*/
-/*	padding: 5;*/
 	yoffset: -200;
 /*	xoffset: 0;*/
-	fixed-num-lines: false;
+        fixed-num-lines: false;
 	show-icons: true;
 	terminal: "konsole";
 /*	ssh-client: "ssh";*/
-/*	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";*/
-/*	run-command: "{cmd}";*/
-/*	run-list-command: "";*/
-/*	run-shell-command: "{terminal} -e {cmd}";*/
-/*	window-command: "wmctrl -i -R {window}";*/
-/*	window-match-fields: "all";*/
-	icon-theme: "oomox-paradise-leaves";
-/*	drun-match-fields: "name,generic,exec,categories,keywords";*/
-/*	drun-categories: ;*/
-/*	drun-show-actions: false;*/
-/*	drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";*/
-/*	drun-url-launcher: "xdg-open";*/
-/*	disable-history: false;*/
-/*	ignored-prefixes: "";*/
-/*	sort: false;*/
+/*      ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";*/
+/*      run-command: "{cmd}";*/
+/*      run-list-command: "";*/
+/*      run-shell-command: "{terminal} -e {cmd}";*/
+/*      window-command: "wmctrl -i -R {window}";*/
+/*      window-match-fields: "all";*/
+        icon-theme: "oomox-paradise-leaves";
+/*      drun-match-fields: "name,generic,exec,categories,keywords";*/
+/*      drun-categories: ;*/
+/*      drun-show-actions: false;*/
+/*      drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";*/
+/*      drun-url-launcher: "xdg-open";*/
+/*      disable-history: false;*/
+/*      ignored-prefixes: "";*/
+/*      sort: false;*/
 	sorting-method: "levenshtein";
 /*	case-sensitive: false;*/
 /*	cycle: true;*/
 	sidebar-mode: true;
+/*      hover-select: false;*/
 /*	eh: 1;*/
 /*	auto-select: false;*/
 /*	parse-hosts: false;*/
@@ -40,34 +36,24 @@ configuration {
 	matching: "fuzzy";
 /*	tokenize: true;*/
 /*	m: "-5";*/
-/*	line-margin: 2;*/
-	line-padding: 5;
 /*	filter: ;*/
-	separator-style: "none";
-	hide-scrollbar: true;
-	fullscreen: true;
-	fake-transparency: true;
-/*	dpi: -1;*/
-/*	threads: 0;*/
-/*	scrollbar-width: 8;*/
-/*	scroll-method: 0;*/
-	fake-background: "background";
-/*	window-format: "{w}    {c}   {t}";*/
+/*      dpi: -1;*/
+/*      threads: 0;*/
+/*      scroll-method: 0;*/
+/*      window-format: "{w}    {c}   {t}";*/
 /*	click-to-exit: true;*/
 /*	show-match: true;*/
 	theme: "/home/gigi/.config/rofi/themes/dark-paradise.rasi";
-/*	color-normal: ;*/
-/*	color-urgent: ;*/
-/*	color-active: ;*/
-/*	color-window: ;*/
-/*	max-history-size: 25;*/
-/*	combi-hide-mode-prefix: false;*/
-/*	matching-negate-char: '-' /* unsupported */;*/
-/*	cache-dir: ;*/
-/*	window-thumbnail: false;*/
-/*	drun-use-desktop-cache: false;*/
-/*	drun-reload-desktop-cache: false;*/
-/*	normalize-match: false;*/
+/*      max-history-size: 25;*/
+/*      combi-hide-mode-prefix: false;*/
+/*      matching-negate-char: '-' /* unsupported */;*/
+/*      cache-dir: ;*/
+/*      window-thumbnail: false;*/
+/*      drun-use-desktop-cache: false;*/
+/*      drun-reload-desktop-cache: false;*/
+/*      normalize-match: false;*/
+/*      steal-focus: false;*/
+/*      application-fallback-icon: ;*/
 /*	pid: "/run/user/1000/rofi.pid";*/
 	display-window: "🗗";
 /*	display-windowcd: ;*/
@@ -76,7 +62,7 @@ configuration {
 	display-drun: "✨";
 	display-combi: "🌴";
 	display-keys: "🍍";
-	display-file-browser: "🗊";
+/*	display-file-browser: "🗊";*/
 	display-file-browser-extended: "🗊";
 /*	display-calc: ;*/
 /*	display-blocks: ;*/
@@ -152,4 +138,12 @@ configuration {
 /*	me-select-entry: "MousePrimary";*/
 /*	me-accept-entry: "MouseDPrimary";*/
 /*	me-accept-custom: "Control+MouseDPrimary";*/
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
 }

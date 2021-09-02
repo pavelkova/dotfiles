@@ -81,7 +81,7 @@ myManageHook = composeAll . concat $ [ [isDialog       --> doCenterFloat]
                                      , [className =? c --> doF (W.shift "I hoy") | c <- myHomescreenApps]
                                      ]
   where
-    myFloatsByClass       = [ "Tilda", "Toplevel", "Sxiv" -- "copyq"
+    myFloatsByClass       = [ "Tilda", "Toplevel", "Sxiv", "copyq"
                             , "Pavucontrol"                                  -- utilities
                             , "Klipper", "Kmix", "krunner"                   -- KDE
                             , "Plasma", "plasmashell", "Plasmoidviewer"
