@@ -47,6 +47,7 @@ import           Topics
 
 myKeys = \conf -> mkKeymap conf $
   [ ("M-<Return>",    spawn $ XMonad.terminal conf)
+  , ("C-M-t",         spawn $ XMonad.terminal conf)
   , ("M-<F12>",       spawn "~/.local/bin/dictate start")
   , ("M-S-<F12>",     spawn "~/.local/bin/dictate stop")
   , ("M-M3-<Return>", namedScratchpadAction myScratchpads "retroTerm")
@@ -144,6 +145,7 @@ myKeys = \conf -> mkKeymap conf $
   , ("M-<KP_Next>",     onNextNeighbour def W.shift)
   , ("M-C-<KP_Prior>",  onPrevNeighbour def W.view)
   , ("M-C-<KP_Next>",   onNextNeighbour def W.view)
+  , ("M-S-s",           spawn "~/.local/bin/switch_primary_monitor.py")
   ---- alts
   , ("M-<KP_9>",        onPrevNeighbour def W.shift)
   , ("M-<KP_3>",        onNextNeighbour def W.shift)

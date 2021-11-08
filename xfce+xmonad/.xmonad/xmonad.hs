@@ -86,8 +86,8 @@ myManageHook = composeAll . concat $ [ [isDialog       --> doCenterFloat]
                             , "Klipper", "Kmix", "krunner"                   -- KDE
                             , "Plasma", "plasmashell", "Plasmoidviewer"
                             , "Variety", "Xmessage" ]                        -- system
-    myFloatsByTitle       = [ "Breathing"                                    -- utilities
-                            , "Panel Preferences"                            -- XFCE
+    myFloatsByTitle       = [ "Breathing", "Dictionary"                      -- utilities
+                            , "Panel Preferences", "Whisker Menu"            -- XFCE
                             , "plasma-desktop", "win7" ]                     -- KDE
     myCenterFloatsByClass = [ "ckb-next" -- "Planner",
                             , "Solaar"                                       -- device config
