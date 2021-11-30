@@ -92,7 +92,7 @@ myManageHook = composeAll . concat $ [ [isDialog       --> doCenterFloat]
     myCenterFloatsByClass = [ "ckb-next" -- "Planner",
                             , "Solaar"                                       -- device config
                             , "systemsettings"                               -- KDE
-                            , "Xfce4-appearance-settings", "Xfce4-appFinder" -- XFCE
+                            , "Xfce4-appearance-settings", "Xfce4-appfinder" -- XFCE
                             , "Xfce4-panel", "Xfce4-settings-manager"
                             , "Zeal" ]
     myFullFloatsByClass   = [ "ksmserver","vncviewer", "Vncviewer" ]

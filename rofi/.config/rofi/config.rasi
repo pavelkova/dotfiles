@@ -43,7 +43,6 @@ configuration {
 /*      window-format: "{w}    {c}   {t}";*/
 /*	click-to-exit: true;*/
 /*	show-match: true;*/
-	theme: "/home/gigi/.config/rofi/themes/dark-paradise.rasi";
 /*      max-history-size: 25;*/
 /*      combi-hide-mode-prefix: false;*/
 /*      matching-negate-char: '-' /* unsupported */;*/
@@ -147,3 +146,5 @@ configuration {
       sorting-method:    "name";
   }
 }
+
+@theme "/home/gigi/.config/rofi/themes/dark-paradise.rasi"
