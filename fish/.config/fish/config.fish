@@ -27,7 +27,7 @@ set -x _JAVA_AWT_WM_NONREPARENTING 1
 
 # ASDF & DIRENV
 # comment when using asdf-direnv
-# source ~/.asdf/asdf.fish
+source ~/.asdf/asdf.fish
 
 # automatically start or connect to tmux session when entering project directory
 function autotmux --on-variable TMUX_SESSION_NAME

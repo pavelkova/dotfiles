@@ -1,0 +1,14 @@
+[Desktop Entry]
+Categories=Settings
+Comment=Xmonad layout that is completely pointless which acts like Microsoft's Flip 3D
+Exec=/home/gigi/.local/bin/xmlayout R_rolex
+Icon=/home/gigi/.xmonad/layout-indicators/R_rolex.svg
+Name=xmonad-layout-rolodex
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

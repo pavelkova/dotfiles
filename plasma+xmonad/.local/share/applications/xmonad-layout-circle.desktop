@@ -1,0 +1,14 @@
+[Desktop Entry]
+Categories=Settings
+Comment=Xmonad circle layout is an elliptical, overlapping layout
+Exec=/home/gigi/.local/bin/xmlayout o_circ
+Icon=/home/gigi/.xmonad/layout-indicators/o_circ.svg
+Name=xmonad-layout-circle
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

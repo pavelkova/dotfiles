@@ -1,0 +1,14 @@
+[Desktop Entry]
+Categories=Settings
+Comment=Xmonad layout where new windows will split the focused window in half, based off of BSPWM, with small gaps.
+Exec=/home/gigi/.local/bin/xmlayout s_smBSP
+Icon=/home/gigi/.xmonad/layout-indicators/s_smBSP.svg
+Name=xmonad-layout-small-gaps-basic
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

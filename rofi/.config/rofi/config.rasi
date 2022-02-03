@@ -1,5 +1,6 @@
 configuration {
-	modi: "combi,window,keys,ssh,drun,file-browser-extended";
+/*	modi: "combi,window,keys,ssh,drun,file-browser-extended";*/
+	modi: "combi,window,keys,ssh,drun";
 	font: "VictorMonoMedium 11";
 /*	location: 0;*/
 	yoffset: -200;

@@ -8,12 +8,12 @@ sleep 2 &
 xfdesktop --reload &
 xfce4-panel --restart &
 
-xfce4-clipman &
-xfce4-power-manager &
-xfce4-screensaver &
-nm-applet &
-blueman-applet &
-syncthing-gtk -m &
+#xfce4-clipman &
+#xfce4-power-manager &
+#xfce4-screensaver &
+#nm-applet &
+#blueman-applet &
+#syncthing-gtk -m &
 
 # pg_ctl start &
 # tilda &

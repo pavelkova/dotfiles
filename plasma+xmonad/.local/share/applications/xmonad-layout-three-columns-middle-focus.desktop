@@ -1,0 +1,14 @@
+[Desktop Entry]
+Categories=Settings
+Comment=Xmonad layout that places all windows in one column with the middle column in larger focus.
+Exec=/home/gigi/.local/bin/xmlayout t_threeMid
+Icon=/home/gigi/.xmonad/layout-indicators/t_threeMid.svg
+Name=xmonad-layout-three-columns-middle-focus
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

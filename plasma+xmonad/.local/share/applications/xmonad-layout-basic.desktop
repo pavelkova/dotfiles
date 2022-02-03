@@ -1,0 +1,14 @@
+[Desktop Entry]
+Categories=Settings
+Comment=Xmonad layout where new windows will split the focused window in half, based off of BSPWM.
+Exec=/home/gigi/.local/bin/xmlayout b_basic
+Icon=/home/gigi/.xmonad/layout-indicators/b_basic.svg
+Name=xmonad-layout-basic
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

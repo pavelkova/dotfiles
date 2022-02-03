@@ -1,0 +1,4 @@
+#!/usr/bin/env fish
+
+xdotool key Super+l (string sub --length 1 $argv[1])
+ln -sf ~/.xmonad/layout-indicators/$argv[1].svg ~/.xmonad/current_layout.svg

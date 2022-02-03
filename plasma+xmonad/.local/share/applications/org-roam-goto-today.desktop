@@ -1,0 +1,14 @@
+[Desktop Entry]
+Categories=Office
+Comment=Go to today's daily file in Org Roam.
+Exec=/usr/bin/emacsclient -c -e '(org-roam-dailies-goto-today)'
+Icon=calendar-go-today
+Name=Org Roam - GoTo (Today)
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

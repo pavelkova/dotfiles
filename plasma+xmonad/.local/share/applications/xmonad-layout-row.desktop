@@ -1,0 +1,14 @@
+[Desktop Entry]
+Categories=Settings
+Comment=Xmonad layout in horizontal rows (rotated column layout).
+Exec=/home/gigi/.local/bin/xmlayout r_row
+Icon=/home/gigi/.xmonad/layout-indicators/r_row.svg
+Name=xmonad-layout-row
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

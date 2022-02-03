@@ -1,0 +1,14 @@
+[Desktop Entry]
+Categories=Settings
+Comment=Xmonad layout that tiles in a spiral pattern.
+Exec=/home/gigi/.local/bin/xmlayout i_spir
+Icon=/home/gigi/.xmonad/layout-indicators/i_spir.svg
+Name=xmonad-layout-spiral
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

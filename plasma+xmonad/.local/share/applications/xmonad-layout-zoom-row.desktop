@@ -1,0 +1,14 @@
+[Desktop Entry]
+Categories=Settings
+Comment=Xmonad layout in rows with individually resizable elements.
+Exec=/home/gigi/.local/bin/xmlayout z_zoomR
+Icon=/home/gigi/.xmonad/layout-indicators/z_zoomR.svg
+Name=xmonad-layout-zoom-row
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

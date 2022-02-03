@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=
+Exec=
+Icon=/home/gigi/.xmonad/current_layout.svg
+Name=Xmonad Layouts
+NoDisplay=false
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

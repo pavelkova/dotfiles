@@ -1,0 +1,14 @@
+[Desktop Entry]
+Categories=Settings
+Comment=Xmonad layout that puts non-focused windows in ribbons at the top and bottom of the screen.
+Exec=/home/gigi/.local/bin/xmlayout a_accord
+Icon=/home/gigi/.xmonad/layout-indicators/a_accord.svg
+Name=xmonad-layout-accordion
+NoDisplay=true
+Path[$e]=
+StartupNotify=true
+Terminal=0
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=
