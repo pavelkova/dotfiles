@@ -1,12 +1,13 @@
 #!/usr/bin/env fish
 xmodmap ~/.Xmodmap &
 picom --experimental-backends -b &
-xmonad --replace &
 wpg -S paradise-leaves.jpg &
+xmonad --recompile &
+xmonad --replace &
 
-sleep 2 &
-xfdesktop --reload &
-xfce4-panel --restart &
+#sleep 2 &
+#xfdesktop --reload &
+#xfce4-panel --restart &
 
 #xfce4-clipman &
 #xfce4-power-manager &

@@ -52,9 +52,8 @@ myTopicConfig = def
   , defaultTopic       = "hoy"
   , topicActions       =
     M.fromList
-      $ [ ( "I hoy", spawn "ice-firefox https://clockify.me/tracker"
-            >> spawn "ice-firefox https://todoist.com/app/today"
-            >> spawn "ice-firefox https://app.goalifyapp.com/home/personal/dashboard?tab=goals"
+      $ [ ( "I hoy", spawn "clockify"
+            >> spawn "todoist"
           )
         , ("II nav", spawn "firefox")
         , ( "III sol", spawnShell
@@ -66,9 +65,9 @@ myTopicConfig = def
             >> spawn "firefox"
           )
         , ("V aug", spawn "manuskript"
-            >> spawnEmacsInTopic "la_torre.org")
-        , ( "VI not", spawnEmacs "-e '(org-roam-dailies-today)'"
-            >> spawn "ghostwriter"
+            >> spawnEmacsInTopic "an_unnatural_growth.org")
+        , ( "VI not", spawnEmacs "-e '(org-roam-dailies-goto-today)'"
+            -- >> spawn "ghostwriter"
           )
         , ( "VII cor", spawn "thunderbird"
             >> spawn "cawbird"

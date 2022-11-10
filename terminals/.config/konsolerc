@@ -4,31 +4,61 @@ StatusBar=Disabled
 [Desktop Entry]
 DefaultProfile=gigi.profile
 
+[FileDialogSize]
+HDMI-1-0 eDP-2 Height 2560x1440=780
+HDMI-1-0 eDP-2 Width 2560x1440=1300
+
+[General]
+ConfigVersion=1
+
+[KFileDialog Settings]
+Recent Files[$e]=file:$HOME/@s\\,@s\\,@s\\,@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@sdxcfffffff      zx [1;5A[1;5A[1;5A@sx@sx@sx@sm@s]]].txt,file:$HOME/@s\\,@s\\,@s\\,@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@s@sdxcfffffff      zx [1;5A[1;5A[1;5A@sx@sx@sx@sm@s]]].txt
+Recent URLs[$e]=file:$HOME/
+detailViewIconSize=16
+
 [KonsoleWindow]
 RememberWindowSize=false
 ShowMenuBarByDefault=false
 
 [MainWindow]
-HDMI-1-0 eDP-1 Height 1920x1080=496
-HDMI-1-0 eDP-1 Height 2560x1440=675
-HDMI-1-0 eDP-1 Width 1920x1080=797
-HDMI-1-0 eDP-1 Width 2560x1440=621
-HDMI-1-0 eDP-1 XPosition 2560x1440=1933
-HDMI-1-0 eDP-1 YPosition 2560x1440=720
-HDMI-1-0 eDP-2 Height 1920x1080=1074
-HDMI-1-0 eDP-2 Height 2560x1440=1090
-HDMI-1-0 eDP-2 Width 1920x1080=1914
-HDMI-1-0 eDP-2 Width 2560x1440=2019
-HDMI-1-0 eDP-2 XPosition 1920x1080=3
-HDMI-1-0 eDP-2 XPosition 2560x1440=2538
-HDMI-1-0 eDP-2 YPosition 1920x1080=3
-HDMI-1-0 eDP-2 YPosition 2560x1440=-9
-LVDS-1 Height 1600x900=409
+HDMI-1-0 Height 2560x1440=677
+HDMI-1-0 Width 2560x1440=1259
+HDMI-1-0 eDP-1=HDMI-1-0
+HDMI-1-0 eDP-1 Height 1440x900=894
+HDMI-1-0 eDP-1 Height 1920x1080=1059
+HDMI-1-0 eDP-1 Height 2560x1440=1389
+HDMI-1-0 eDP-1 Height 2560x1440 HDMI-1-0=686
+HDMI-1-0 eDP-1 Width 1440x900=1434
+HDMI-1-0 eDP-1 Width 1920x1080=939
+HDMI-1-0 eDP-1 Width 2560x1440=1259
+HDMI-1-0 eDP-1 Width 2560x1440 HDMI-1-0=1259
+HDMI-1-0 eDP-1 XPosition 1440x900=3
+HDMI-1-0 eDP-1 XPosition 1920x1080=13
+HDMI-1-0 eDP-1 XPosition 2560x1440=13
+HDMI-1-0 eDP-1 XPosition 2560x1440 HDMI-1-0=13
+HDMI-1-0 eDP-1 YPosition 1440x900=1443
+HDMI-1-0 eDP-1 YPosition 1920x1080=1448
+HDMI-1-0 eDP-1 YPosition 2560x1440=38
+HDMI-1-0 eDP-1 YPosition 2560x1440 HDMI-1-0=38
+HDMI-1-0 eDP-2 Height 1920x1080=511
+HDMI-1-0 eDP-2 Height 2560x1440=686
+HDMI-1-0 eDP-2 Width 1920x1080=1226
+HDMI-1-0 eDP-2 Width 2560x1440=1259
+HDMI-1-0 eDP-2 XPosition 1920x1080=13
+HDMI-1-0 eDP-2 XPosition 2560x1440=1288
+HDMI-1-0 eDP-2 YPosition 1920x1080=28
+HDMI-1-0 eDP-2 YPosition 2560x1440=38
+LVDS-1=LVDS-1
+LVDS-1 Height 1600x900=835
+LVDS-1 Height 1600x900 LVDS-1=410
 LVDS-1 Width 1600x900=779
+LVDS-1 Width 1600x900 LVDS-1=342
 LVDS-1 XPosition 1600x900=13
+LVDS-1 XPosition 1600x900 LVDS-1=887
 LVDS-1 YPosition 1600x900=28
+LVDS-1 YPosition 1600x900 LVDS-1=453
 MenuBar=Disabled
-State=AAAA/wAAAAD9AAAAAQAAAAAAAAAAAAAAAPwCAAAAAfsAAAAcAFMAUwBIAE0AYQBuAGEAZwBlAHIARABvAGMAawAAAAAA/////wAAANUBAAADAAAGQAAAA1gAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAACAAAAAgAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAAAAAAD/////AAAAAAAAAAAAAAAcAHMAZQBzAHMAaQBvAG4AVABvAG8AbABiAGEAcgAAAAAA/////wAAAAAAAAAA
+State=AAAA/wAAAAD9AAAAAQAAAAAAAAAAAAAAAPwCAAAAAvsAAAAcAFMAUwBIAE0AYQBuAGEAZwBlAHIARABvAGMAawAAAAAA/////wAAANMBAAAD+wAAACIAUQB1AGkAYwBrAEMAbwBtAG0AYQBuAGQAcwBEAG8AYwBrAAAAAAD/////AAABSgEAAAMAAATrAAAFdwAAAAQAAAAEAAAACAAAAAj8AAAAAQAAAAIAAAACAAAAFgBtAGEAaQBuAFQAbwBvAGwAQgBhAHIAAAAAAP////8AAAAAAAAAAAAAABwAcwBlAHMAcwBpAG8AbgBUAG8AbwBsAGIAYQByAAAAAAD/////AAAAAAAAAAA=
 StatusBar=Disabled
 ToolBarsMovable=Disabled
 eDP-1 HDMI-1-0 Height 1920x1080=1014
@@ -39,22 +69,25 @@ eDP-1 HDMI-1-0 XPosition 1920x1080=3
 eDP-1 HDMI-1-0 XPosition 2560x1440=3208
 eDP-1 HDMI-1-0 YPosition 1920x1080=33
 eDP-1 HDMI-1-0 YPosition 2560x1440=8
-eDP-1 Height 1920x1080=1050
-eDP-1 Width 1920x1080=1920
-eDP-1 XPosition 1920x1080=0
-eDP-1 YPosition 1920x1080=30
+eDP-1 Height 1920x1080=1009
+eDP-1 Width 1920x1080=175
+eDP-1 XPosition 1920x1080=681
+eDP-1 YPosition 1920x1080=28
 eDP-2 HDMI-1-0 Height 1920x1080=1014
-eDP-2 HDMI-1-0 Height 2560x1440=342
+eDP-2 HDMI-1-0 Height 2560x1440=688
 eDP-2 HDMI-1-0 Width 1920x1080=1914
-eDP-2 HDMI-1-0 Width 2560x1440=749
-eDP-2 HDMI-1-0 XPosition 1920x1080=490
-eDP-2 HDMI-1-0 XPosition 2560x1440=1933
-eDP-2 HDMI-1-0 YPosition 1920x1080=38
-eDP-2 HDMI-1-0 YPosition 2560x1440=8
-eDP-2 Height 1920x1080=491
+eDP-2 HDMI-1-0 Width 2560x1440=1387
+eDP-2 HDMI-1-0 XPosition 1920x1080=3
+eDP-2 HDMI-1-0 XPosition 2560x1440=3080
+eDP-2 HDMI-1-0 YPosition 1920x1080=33
+eDP-2 HDMI-1-0 YPosition 2560x1440=35
+eDP-2 Height 1920x1080=999
 eDP-2 Width 1920x1080=939
-eDP-2 XPosition 1920x1080=13
+eDP-2 XPosition 1920x1080=968
 eDP-2 YPosition 1920x1080=38
 
+[SaveHistory Settings]
+Recent URLs[$e]=file:$HOME
+
 [UiSettings]
-ColorScheme=Default
+ColorScheme=

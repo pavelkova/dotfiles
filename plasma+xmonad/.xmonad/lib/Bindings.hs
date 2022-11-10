@@ -61,15 +61,15 @@ myKeys = \conf -> mkKeymap conf $
   , ("M-x a",       spawnEmacs "-e '(org-agenda-list)'")
   , ("M-x <Space>", spawnEmacs "-e '(org-roam-dailies-capture-today)'")
   , ("M-x t",       spawnEmacs "-e '(org-todo-list)'")
-  , ("M-<Tab>",     spawnEmacs "-e '(org-roam-dailies-find-today)'")
+  , ("M-<Tab>",     spawnEmacs "-e '(org-roam-dailies-goto-today)'")
   -- , ("M-<Tab>",     spawn "~/.local/bin/orgtoday")
 
   -- rofi
   , ("M-<Space>",           spawn "rofi -show combi")
+  , ("M-C-<Space>",         spawn "krunner 'e'")
   , ("M-M3-=",              spawn "rofi -modi calc -show")
   , ("M-<XF86Calculator>",  spawn "rofi -modi calc -show") -- alt
   , ("M-M3-b",              spawn "rofi-bluetooth")
-  , ("M-M3-c",              spawn "~/.local/bin/rofi/rofi-copyq")
   , ("M-M3-d",              spawn "~/.local/bin/rofi/rofi-systemd")
   , ("M-M3-e",              spawn "~/.local/bin/rofi/rofi-emacs")
   , ("M-M3-f",              spawn "rofi -modi file-browser-extended -show")
